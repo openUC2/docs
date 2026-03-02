@@ -1,453 +1,453 @@
-- from: /ARCHIVE/CourseBox/CourseBoxBuild
+- from: /docs/ARCHIVE/CourseBox/CourseBoxBuild
   to: https://github.com/openUC2/UC2-GIT/blob/master/TheBOX/CourseBOX/BUILD_ME/Readme.md
-- from: /ARCHIVE/LightSheetOldStuff/LightSheet
+- from: /docs/ARCHIVE/LightSheetOldStuff/LightSheet
   to: https://docs.openuc2.com/archive/LightSheetOldStuff/LightSheet/
-- from: /ARCHIVE/LightSheetOldStuff/LightSheetOld
-- from: /ARCHIVE/Polarisation_Experiments/APP_POL_Brewster_Angle_Experiment/
+- from: /docs/ARCHIVE/LightSheetOldStuff/LightSheetOld
+- from: /docs/ARCHIVE/Polarisation_Experiments/APP_POL_Brewster_Angle_Experiment/
   to: https://docs.openuc2.com/archive/Polarisation_Experiments/APP_POL_Brewster_Angle_Experiment/
-- from: /ARCHIVE/Polarisation_Experiments/APP_POL_Circular_Polarizer/
+- from: /docs/ARCHIVE/Polarisation_Experiments/APP_POL_Circular_Polarizer/
   to: https://docs.openuc2.com/archive/Polarisation_Experiments/APP_POL_Circular_Polarizer/
-- from: /ARCHIVE/Polarisation_Experiments/APP_POL_Many_Microscope_Slides_Experiment/
+- from: /docs/ARCHIVE/Polarisation_Experiments/APP_POL_Many_Microscope_Slides_Experiment/
   to: https://docs.openuc2.com/archive/Polarisation_Experiments/APP_POL_Many_Microscope_Slides_Experiment/
-- from: /ARCHIVE/Polarisation_Experiments/APP_POL_Newtons_Rings_Experiment/
+- from: /docs/ARCHIVE/Polarisation_Experiments/APP_POL_Newtons_Rings_Experiment/
   to: https://docs.openuc2.com/archive/Polarisation_Experiments/APP_POL_Newtons_Rings_Experiment/
-- from: /ARCHIVE/Polarisation_Experiments/APP_POL_Polarization_using_optically_active_solution/
+- from: /docs/ARCHIVE/Polarisation_Experiments/APP_POL_Polarization_using_optically_active_solution/
   to: https://docs.openuc2.com/archive/Polarisation_Experiments/APP_POL_Polarization_using_optically_active_solution/
-- from: /ARCHIVE/Seeed Microscope/seeedmicroscope
+- from: /docs/ARCHIVE/Seeed Microscope/seeedmicroscope
   to: https://docs.openuc2.com/archive/SeeedMicroscope/seeedmicroscope
-- from: /ARCHIVE/SpektrometryOldStuff/spectrometer
+- from: /docs/ARCHIVE/SpektrometryOldStuff/spectrometer
   to: https://github.com/openUC2/UC2-Spectrometer/blob/master/README.md
-- from: /ARCHIVE/XYZMicroscope/AlignLaser
+- from: /docs/ARCHIVE/XYZMicroscope/AlignLaser
   to: https://docs.openuc2.com/archive/XYZMicroscope/AlignLaser
-- from: /ARCHIVE/XYZMicroscope/FiveD_v1
+- from: /docs/ARCHIVE/XYZMicroscope/FiveD_v1
   to: https://docs.openuc2.com/archive/XYZMicroscope/FiveD_v1
-- from: /ARCHIVE/XYZMicroscope/FiveD_v2
+- from: /docs/ARCHIVE/XYZMicroscope/FiveD_v2
   to: https://docs.openuc2.com/archive/XYZMicroscope/FiveD_v2
-- from: /ARCHIVE/XYZMicroscope/FiveD_v3
+- from: /docs/ARCHIVE/XYZMicroscope/FiveD_v3
   to: https://docs.openuc2.com/archive/XYZMicroscope/FiveD_v3
-- from: /ARCHIVE/XYZMicroscope/FiveD_v4
+- from: /docs/ARCHIVE/XYZMicroscope/FiveD_v4
   to: https://docs.openuc2.com/archive/XYZMicroscope/FiveD_v4
-- from: /ARCHIVE/XYZMicroscope/HistoScan
+- from: /docs/ARCHIVE/XYZMicroscope/HistoScan
   to: https://docs.openuc2.com/archive/XYZMicroscope/HistoScan
-- from: /ARCHIVE/XYZMicroscope/MCTPlugin
+- from: /docs/ARCHIVE/XYZMicroscope/MCTPlugin
   to: https://docs.openuc2.com/archive/XYZMicroscope/MCTPlugin
-- from: /ARCHIVE/XYZMicroscope/ROIScanner
+- from: /docs/ARCHIVE/XYZMicroscope/ROIScanner
   to: https://docs.openuc2.com/archive/XYZMicroscope/ROIScanner
-- from: /ARCHIVE/XYZMicroscope/SetupPhasecontrast
+- from: /docs/ARCHIVE/XYZMicroscope/SetupPhasecontrast
   to: https://docs.openuc2.com/archive/XYZMicroscope/SetupPhasecontrast
-- from: /ARCHIVE/XYZMicroscope/SetupTubelens
+- from: /docs/ARCHIVE/XYZMicroscope/SetupTubelens
   to: https://docs.openuc2.com/archive/XYZMicroscope/SetupTubelens
-- from: /ARCHIVE/XYZMicroscope/SmartMicroscopy
+- from: /docs/ARCHIVE/XYZMicroscope/SmartMicroscopy
   to: https://docs.openuc2.com/archive/XYZMicroscope/SmartMicroscopy
-- from: /ARCHIVE/XYZMicroscope/StageCalibration
+- from: /docs/ARCHIVE/XYZMicroscope/StageCalibration
   to: https://docs.openuc2.com/archive/XYZMicroscope/StageCalibration
-- from: /ARCHIVE/XYZMicroscope/StageScanning
+- from: /docs/ARCHIVE/XYZMicroscope/StageScanning
   to: https://docs.openuc2.com/archive/XYZMicroscope/StageScanning
-- from: /ARCHIVE/ZMicroscope/UpackZMicroscope
+- from: /docs/ARCHIVE/ZMicroscope/UpackZMicroscope
   to: https://docs.openuc2.com/archive/ZMicroscope/
-- from: /Electronics/Advanced/
-- from: /Electronics/Advanced/Hardware-Interfaces/
+- from: /docs/Electronics/Advanced/
+- from: /docs/Electronics/Advanced/Hardware-Interfaces/
   to: https://docs.openuc2.com/dev/hw/electronics/
-- from: /Electronics/Advanced/Hardware-Interfaces/CANInterface
+- from: /docs/Electronics/Advanced/Hardware-Interfaces/CANInterface
   to: https://docs.openuc2.com/dev/sw/can-protocol
-- from: /Electronics/Advanced/Hardware-Interfaces/RaspberryPiHat+
+- from: /docs/Electronics/Advanced/Hardware-Interfaces/RaspberryPiHat+
   to: https://docs.openuc2.com/dev/hw/electronics/hat-plus/v1/
-- from: /Electronics/Advanced/Hardware-Interfaces/RaspberryPiHat+v2
+- from: /docs/Electronics/Advanced/Hardware-Interfaces/RaspberryPiHat+v2
   to: https://docs.openuc2.com/dev/hw/electronics/hat-plus/v2/
-- from: /Electronics/Advanced/Hardware-Interfaces/StepperMotorBackpack
+- from: /docs/Electronics/Advanced/Hardware-Interfaces/StepperMotorBackpack
   to: https://docs.openuc2.com/dev/hw/electronics/stepper-backpack/
-- from: /Electronics/Advanced/UC2-ESP32/
+- from: /docs/Electronics/Advanced/UC2-ESP32/
   to: https://docs.openuc2.com/dev/sw/uc2-esp32/
-- from: /Electronics/Advanced/UC2-ESP32/APIDescription/DigitalInput
+- from: /docs/Electronics/Advanced/UC2-ESP32/APIDescription/DigitalInput
   to: https://docs.openuc2.com/dev/sw/uc2-esp32/APIDescription/DigitalInput
-- from: /Electronics/Advanced/UC2-ESP32/APIDescription/Encoder
+- from: /docs/Electronics/Advanced/UC2-ESP32/APIDescription/Encoder
   to: https://docs.openuc2.com/dev/sw/uc2-esp32/APIDescription/Encoder
-- from: /Electronics/Advanced/UC2-ESP32/APIDescription/Home
+- from: /docs/Electronics/Advanced/UC2-ESP32/APIDescription/Home
   to: https://docs.openuc2.com/dev/sw/uc2-esp32/APIDescription/Home
-- from: /Electronics/Advanced/UC2-ESP32/APIDescription/INTRO
+- from: /docs/Electronics/Advanced/UC2-ESP32/APIDescription/INTRO
   to: https://docs.openuc2.com/dev/sw/uc2-esp32/APIDescription/
-- from: /Electronics/Advanced/UC2-ESP32/APIDescription/Laser
+- from: /docs/Electronics/Advanced/UC2-ESP32/APIDescription/Laser
   to: https://docs.openuc2.com/dev/sw/uc2-esp32/APIDescription/Laser
-- from: /Electronics/Advanced/UC2-ESP32/APIDescription/LEDArray
+- from: /docs/Electronics/Advanced/UC2-ESP32/APIDescription/LEDArray
   to: https://docs.openuc2.com/dev/sw/uc2-esp32/APIDescription/LEDArray
-- from: /Electronics/Advanced/UC2-ESP32/APIDescription/Motor
+- from: /docs/Electronics/Advanced/UC2-ESP32/APIDescription/Motor
   to: https://docs.openuc2.com/dev/sw/uc2-esp32/APIDescription/Motor
-- from: /Electronics/Advanced/UC2-ESP32/APIDescription/Objective
+- from: /docs/Electronics/Advanced/UC2-ESP32/APIDescription/Objective
   to: https://docs.openuc2.com/dev/sw/uc2-esp32/APIDescription/Objective
-- from: /Electronics/Advanced/UC2-ESP32/APIDescription/PinConfig
+- from: /docs/Electronics/Advanced/UC2-ESP32/APIDescription/PinConfig
   to: https://docs.openuc2.com/dev/sw/uc2-esp32/APIDescription/PinConfig
-- from: /Electronics/Advanced/UC2-ESP32/APIDescription/TMC
+- from: /docs/Electronics/Advanced/UC2-ESP32/APIDescription/TMC
   to: https://docs.openuc2.com/dev/sw/uc2-esp32/APIDescription/TMC
-- from: /Electronics/Advanced/UC2-ESP32/Controlling_the_ESP32_APP
+- from: /docs/Electronics/Advanced/UC2-ESP32/Controlling_the_ESP32_APP
   to: https://docs.openuc2.com/dev/sw/uc2-esp32/Controlling_the_ESP32_APP
-- from: /Electronics/Advanced/UC2-ESP32/Setup_Buildenvironment
+- from: /docs/Electronics/Advanced/UC2-ESP32/Setup_Buildenvironment
   to: https://docs.openuc2.com/dev/sw/uc2-esp32/Setup_Buildenvironment
-- from: /Electronics/Advanced/UC2-ESP32/UC2_Firmware_Description
+- from: /docs/Electronics/Advanced/UC2-ESP32/UC2_Firmware_Description
   to: https://docs.openuc2.com/dev/sw/uc2-esp32/UC2_Firmware_Description
-- from: /Electronics/Advanced/UC2-ESP32/uc2e5.2
+- from: /docs/Electronics/Advanced/UC2-ESP32/uc2e5.2
   to: https://docs.openuc2.com/dev/sw/uc2-esp32/uc2e5.2
-- from: /Electronics/Advanced/UC2-ESP32/uc2e7
+- from: /docs/Electronics/Advanced/UC2-ESP32/uc2e7
   to: https://docs.openuc2.com/dev/sw/uc2-esp32/uc2e7
-- from: /Electronics/Advanced/UC2-ESP32/uc2e8
+- from: /docs/Electronics/Advanced/UC2-ESP32/uc2e8
   to: https://docs.openuc2.com/dev/sw/uc2-esp32/uc2e8
-- from: /Electronics/Advanced/UC2-REST/
+- from: /docs/Electronics/Advanced/UC2-REST/
   to: https://docs.openuc2.com/dev/sw/uc2-rest/
-- from: /Electronics/Advanced/UC2-REST/ESP32_Messaging_Callback
+- from: /docs/Electronics/Advanced/UC2-REST/ESP32_Messaging_Callback
   to: https://docs.openuc2.com/dev/sw/uc2-rest/ESP32_Messaging_Callback
-- from: /Electronics/Advanced/UC2-REST/ESP32_Motor
+- from: /docs/Electronics/Advanced/UC2-REST/ESP32_Motor
   to: https://docs.openuc2.com/dev/sw/uc2-rest/ESP32_Motor
-- from: /Electronics/Advanced/UC2-REST/INTRO
+- from: /docs/Electronics/Advanced/UC2-REST/INTRO
   to: https://docs.openuc2.com/dev/sw/uc2-rest/INTRO
-- from: /Electronics/Advanced/UC2-REST/UC2-REST/
+- from: /docs/Electronics/Advanced/UC2-REST/UC2-REST/
   to: https://docs.openuc2.com/dev/sw/uc2-rest/UC2-REST/
-- from: /Electronics/Advanced/UC2-REST/UC2-REST/configuration_management_
+- from: /docs/Electronics/Advanced/UC2-REST/UC2-REST/configuration_management_
   to: https://docs.openuc2.com/dev/sw/uc2-rest/UC2-REST/configuration_management_
-- from: /Electronics/Advanced/UC2-REST/UC2-REST/logging_
+- from: /docs/Electronics/Advanced/UC2-REST/UC2-REST/logging_
   to: https://docs.openuc2.com/dev/sw/uc2-rest/UC2-REST/logging_
-- from: /Electronics/Advanced/UC2-REST/UC2-REST/uc2client_
+- from: /docs/Electronics/Advanced/UC2-REST/UC2-REST/uc2client_
   to: https://docs.openuc2.com/dev/sw/uc2-rest/UC2-REST/uc2client_
-- from: /Electronics/Advanced/UC2-REST/uc2e5
+- from: /docs/Electronics/Advanced/UC2-REST/uc2e5
   to: https://docs.openuc2.com/dev/sw/uc2-rest/Intro_to_ESP32
-- from: /Electronics/Advanced/UC2-REST/uc2e5.1
+- from: /docs/Electronics/Advanced/UC2-REST/uc2e5.1
   to: https://docs.openuc2.com/dev/sw/uc2-rest/Sending_Commands
-- from: /Electronics/HIKCamera/
+- from: /docs/Electronics/HIKCamera/
   to: https://docs.openuc2.com/usage/components/hik-camera/
-- from: /Electronics/HIKCamera/SoftwareTutorial
+- from: /docs/Electronics/HIKCamera/SoftwareTutorial
   to: https://docs.openuc2.com/usage/components/hik-camera/SoftwareTutorial
-- from: /Electronics/ODMR/
+- from: /docs/Electronics/ODMR/
   to: https://docs.openuc2.com/usage/disc/qbox/ODMR/
-- from: /Electronics/ODMR/ODMR
+- from: /docs/Electronics/ODMR/ODMR
   to: https://docs.openuc2.com/usage/disc/qbox/ODMR/tech-ref
-- from: /Electronics/PS4-Controller/
+- from: /docs/Electronics/PS4-Controller/
   to: https://docs.openuc2.com/dev/hw/electronics/ps4-controller/
-- from: /Electronics/PS4-Controller/PS4-Controller
+- from: /docs/Electronics/PS4-Controller/PS4-Controller
   to: https://docs.openuc2.com/dev/hw/electronics/ps4-controller/PS4-Controller
-- from: /Electronics/Quickstart
+- from: /docs/Electronics/Quickstart
   to: https://docs.openuc2.com/usage/disc/electronics-addon/Quickstart/
-- from: /Electronics/uc2e6
+- from: /docs/Electronics/uc2e6
   to: https://docs.openuc2.com/usage/disc/electronics-addon/uc2e6
-- from: /Electronics/uc2e9
+- from: /docs/Electronics/uc2e9
   to: https://docs.openuc2.com/usage/disc/electronics-addon/uc2e9
-- from: /Electronics/UC2StandaloneBoard/
+- from: /docs/Electronics/UC2StandaloneBoard/
   to: https://docs.openuc2.com/dev/hw/electronics/uc2-standalone-board/
-- from: /Electronics/UC2StandaloneBoard/uc2e2v2
+- from: /docs/Electronics/UC2StandaloneBoard/uc2e2v2
   to: https://docs.openuc2.com/dev/hw/electronics/uc2-standalone-board/schematics-v2
-- from: /Electronics/UC2StandaloneBoard/uc2e2v3
+- from: /docs/Electronics/UC2StandaloneBoard/uc2e2v3
   to: https://docs.openuc2.com/dev/hw/electronics/uc2-standalone-board/schematics-v3
-- from: /Electronics/UC2StandaloneBoard/uc2e2v4
+- from: /docs/Electronics/UC2StandaloneBoard/uc2e2v4
   to: https://docs.openuc2.com/dev/hw/electronics/uc2-standalone-board/schematics-v4
-- from: /Electronics/XYZStage/
+- from: /docs/Electronics/XYZStage/
   to: https://docs.openuc2.com/usage/disc/lightsheet-addon/components/xyz-stage/
-- from: /Electronics/XYZStage/XYZ_stage_mico
+- from: /docs/Electronics/XYZStage/XYZ_stage_mico
   to: https://docs.openuc2.com/usage/disc/lightsheet-addon/components/xyz-stage/XYZ_stage_mico
-- from: /General/ModuleDeveloperKit/
+- from: /docs/General/ModuleDeveloperKit/
   to: https://docs.openuc2.com/dev/hw/module-inserts/
-- from: /ImSwitch/Advanced/
+- from: /docs/ImSwitch/Advanced/
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/
-- from: /ImSwitch/Advanced/Configuration/
+- from: /docs/ImSwitch/Advanced/Configuration/
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Configuration/
-- from: /ImSwitch/Advanced/Device-Specific/
+- from: /docs/ImSwitch/Advanced/Device-Specific/
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Device-Specific/
-- from: /ImSwitch/Advanced/Device-Specific/Daheng-Camera
+- from: /docs/ImSwitch/Advanced/Device-Specific/Daheng-Camera
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Device-Specific/Daheng-Camera
-- from: /ImSwitch/Advanced/Device-Specific/ImSwitch-Client
+- from: /docs/ImSwitch/Advanced/Device-Specific/ImSwitch-Client
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Device-Specific/ImSwitch-Client
-- from: /ImSwitch/Advanced/Experimental/
+- from: /docs/ImSwitch/Advanced/Experimental/
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Experimental/
-- from: /ImSwitch/Advanced/Experimental/Headless-Mode
+- from: /docs/ImSwitch/Advanced/Experimental/Headless-Mode
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Experimental/
-- from: /ImSwitch/Advanced/Experimental/ImSwitch_Jupyter_Integration_README
+- from: /docs/ImSwitch/Advanced/Experimental/ImSwitch_Jupyter_Integration_README
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Experimental/ImSwitch_Jupyter_Integration_README
-- from: /ImSwitch/Advanced/Experimental/JUPYTER_INTEGRATION
+- from: /docs/ImSwitch/Advanced/Experimental/JUPYTER_INTEGRATION
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Experimental/JUPYTER_INTEGRATION
-- from: /ImSwitch/Advanced/Installation/
+- from: /docs/ImSwitch/Advanced/Installation/
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Installation/
-- from: /ImSwitch/Advanced/Installation/Docker
+- from: /docs/ImSwitch/Advanced/Installation/Docker
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Installation/
-- from: /ImSwitch/Advanced/Installation/ForkLift
+- from: /docs/ImSwitch/Advanced/Installation/ForkLift
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Installation/
-- from: /ImSwitch/Advanced/Installation/Installer
+- from: /docs/ImSwitch/Advanced/Installation/Installer
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Installation/
-- from: /ImSwitch/Advanced/Installation/Native
+- from: /docs/ImSwitch/Advanced/Installation/Native
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Installation/
-- from: /ImSwitch/Advanced/Tutorials/
+- from: /docs/ImSwitch/Advanced/Tutorials/
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Tutorials/
-- from: /ImSwitch/Advanced/Tutorials/Image-Processing
+- from: /docs/ImSwitch/Advanced/Tutorials/Image-Processing
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Tutorials/Image-Processing
-- from: /ImSwitch/Advanced/Tutorials/Jupyter-Workflows
+- from: /docs/ImSwitch/Advanced/Tutorials/Jupyter-Workflows
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Tutorials/Jupyter-Workflows
-- from: /ImSwitch/Advanced/Tutorials/STORM
+- from: /docs/ImSwitch/Advanced/Tutorials/STORM
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Tutorials/STORM
-- from: /ImSwitch/Advanced/Tutorials/TileScanning
+- from: /docs/ImSwitch/Advanced/Tutorials/TileScanning
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Tutorials/TileScanning
-- from: /ImSwitch/Advanced/Tutorials/UC2-ESP-Getting-Started
+- from: /docs/ImSwitch/Advanced/Tutorials/UC2-ESP-Getting-Started
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Tutorials/UC2-ESP-Getting-Started
-- from: /ImSwitch/Advanced/Tutorials/UC2-REST-Getting-Started
+- from: /docs/ImSwitch/Advanced/Tutorials/UC2-REST-Getting-Started
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Tutorials/UC2-REST-Getting-Started
-- from: /ImSwitch/Advanced/Usage/
+- from: /docs/ImSwitch/Advanced/Usage/
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Usage/
-- from: /ImSwitch/Advanced/Usage/AcceptanceTest
+- from: /docs/ImSwitch/Advanced/Usage/AcceptanceTest
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Usage/AcceptanceTest
-- from: /ImSwitch/Advanced/Usage/Micromanager
+- from: /docs/ImSwitch/Advanced/Usage/Micromanager
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Usage/Micromanager
-- from: /ImSwitch/Advanced/Usage/UC2-REST
+- from: /docs/ImSwitch/Advanced/Usage/UC2-REST
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Usage/UC2-REST
-- from: /ImSwitch/Advanced/Usage/Updates
+- from: /docs/ImSwitch/Advanced/Usage/Updates
   to: https://docs.openuc2.com/dev/sw/imswitch/Advanced/Usage/Updates
-- from: /ImSwitch/Quickstart
+- from: /docs/ImSwitch/Quickstart
   to: https://docs.openuc2.com/dev/sw/imswitch/Quickstart
-- from: /intro
+- from: /docs/intro
   to: https://docs.openuc2.com
-- from: /Investigator/
+- from: /docs/Investigator/
   to: https://docs.openuc2.com/usage/pro/
-- from: /Investigator/Addons/FocusLock
+- from: /docs/Investigator/Addons/FocusLock
   to: https://docs.openuc2.com/usage/pro/frame/addons/focus-lock/
-- from: /Investigator/FRAME/
+- from: /docs/Investigator/FRAME/
   to: https://docs.openuc2.com/usage/pro/frame/
-- from: /Investigator/FRAME/06_02_Firmware_and_updates_pro
+- from: /docs/Investigator/FRAME/06_02_Firmware_and_updates_pro
   to: https://docs.openuc2.com/Investigator/FRAME/06_02_Firmware_and_updates_pro/
-- from: /Investigator/FRAME/Appendix
+- from: /docs/Investigator/FRAME/Appendix
   to: https://docs.openuc2.com/Investigator/FRAME/Appendix/
-- from: /Investigator/FRAME/config_examples/Coordinate_System_Reference
+- from: /docs/Investigator/FRAME/config_examples/Coordinate_System_Reference
   to: https://docs.openuc2.com/Investigator/FRAME/config_examples/Coordinate_System_Reference/
-- from: /Investigator/FRAME/config_examples/Optical_Alignment_Procedures
+- from: /docs/Investigator/FRAME/config_examples/Optical_Alignment_Procedures
   to: https://docs.openuc2.com/Investigator/FRAME/config_examples/Optical_Alignment_Procedures/
-- from: /Investigator/FRAME/Cover_Page
+- from: /docs/Investigator/FRAME/Cover_Page
   to: https://docs.openuc2.com/Investigator/FRAME/Cover_Page/
-- from: /Investigator/FRAME/Electronics/FRAMEElectronics
+- from: /docs/Investigator/FRAME/Electronics/FRAMEElectronics
   to: https://docs.openuc2.com/dev/hw/electronics/frame/
-- from: /Investigator/FRAME/Extras
+- from: /docs/Investigator/FRAME/Extras
   to: https://docs.openuc2.com/usage/pro/frame/addons/
-- from: /Investigator/FRAME/Installation_and_Setup
+- from: /docs/Investigator/FRAME/Installation_and_Setup
   to: https://docs.openuc2.com/Investigator/FRAME/Installation_and_Setup/
-- from: /Investigator/FRAME/Introduction_and_Overview
+- from: /docs/Investigator/FRAME/Introduction_and_Overview
   to: https://docs.openuc2.com/Investigator/FRAME/Introduction_and_Overview/
-- from: /Investigator/FRAME/Maintenance_and_Troubleshooting
+- from: /docs/Investigator/FRAME/Maintenance_and_Troubleshooting
   to: https://docs.openuc2.com/Investigator/FRAME/Maintenance_and_Troubleshooting/
-- from: /Investigator/FRAME/Operation_Manual
+- from: /docs/Investigator/FRAME/Operation_Manual
   to: https://docs.openuc2.com/Investigator/FRAME/Operation_Manual
-- from: /Investigator/FRAME/Safety_and_Compliance
+- from: /docs/Investigator/FRAME/Safety_and_Compliance
   to: https://docs.openuc2.com/Investigator/FRAME/Safety_and_Compliance/
-- from: /Investigator/FRAME/Technical_Specifications
+- from: /docs/Investigator/FRAME/Technical_Specifications
   to: https://docs.openuc2.com/Investigator/FRAME/Technical_Specifications/
-- from: /Investigator/miniFRAME/
+- from: /docs/Investigator/miniFRAME/
   to: https://docs.openuc2.com/usage/pro/miniframe/
-- from: /Investigator/miniFRAME/miniFRAME_DPC
+- from: /docs/Investigator/miniFRAME/miniFRAME_DPC
   to: https://docs.openuc2.com/usage/pro/miniframe/miniFRAME_DPC
-- from: /Investigator/miniFRAME/miniFRAME_Software
+- from: /docs/Investigator/miniFRAME/miniFRAME_Software
   to: https://docs.openuc2.com/usage/pro/miniframe/miniFRAME_Software
-- from: /Investigator/New_OSSIM/
+- from: /docs/Investigator/New_OSSIM/
   to: https://docs.openuc2.com/dev/examples/os-sim/
-- from: /Investigator/New_OSSIM/OS-SIM
+- from: /docs/Investigator/New_OSSIM/OS-SIM
   to: https://docs.openuc2.com/dev/examples/os-sim/tutorial
-- from: /Investigator/STORM/
+- from: /docs/Investigator/STORM/
   to: https://github.com/openUC2/UC2-STORM-and-Fluorescence
-- from: /Investigator/STORM/Electronics
+- from: /docs/Investigator/STORM/Electronics
   to: https://github.com/openUC2/UC2-STORM-and-Fluorescence/blob/main/04_Electronics.md
-- from: /Investigator/STORM/Illumination
+- from: /docs/Investigator/STORM/Illumination
   to: https://github.com/openUC2/UC2-STORM-and-Fluorescence/blob/main/01_Illumination.md
-- from: /Investigator/STORM/Main
+- from: /docs/Investigator/STORM/Main
   to: https://github.com/openUC2/UC2-STORM-and-Fluorescence
-- from: /Investigator/STORM/Results
+- from: /docs/Investigator/STORM/Results
   to: https://github.com/openUC2/UC2-STORM-and-Fluorescence/blob/main/05_Results.md
-- from: /Investigator/STORM/Software
+- from: /docs/Investigator/STORM/Software
   to: https://github.com/openUC2/UC2-STORM-and-Fluorescence/blob/main/03_Software.md
-- from: /Investigator/STORM/Stability
+- from: /docs/Investigator/STORM/Stability
   to: https://github.com/openUC2/UC2-STORM-and-Fluorescence/blob/main/02_Stability.md
-- from: /Misc/MultiarrayMicroscope/
+- from: /docs/Misc/MultiarrayMicroscope/
   to: https://github.com/openUC2/openUC2_MultiCam/blob/master/README.md
-- from: /Toolboxes/
+- from: /docs/Toolboxes/
   to: https://docs.openuc2.com/usage/disc/
-- from: /Toolboxes/DiscoveryCore/ARABIAN/CoreLensAR
+- from: /docs/Toolboxes/DiscoveryCore/ARABIAN/CoreLensAR
   to: https://docs.openuc2.com/archive/minibox/ar/CoreLensAR
-- from: /Toolboxes/DiscoveryCore/ARABIAN/coreMicroscopeAR
+- from: /docs/Toolboxes/DiscoveryCore/ARABIAN/coreMicroscopeAR
   to: https://docs.openuc2.com/archive/minibox/ar/coreMicroscopeAR
-- from: /Toolboxes/DiscoveryCore/ARABIAN/CoreTelescopeAR
+- from: /docs/Toolboxes/DiscoveryCore/ARABIAN/CoreTelescopeAR
   to: https://docs.openuc2.com/archive/minibox/ar/CoreTelescopeAR
-- from: /Toolboxes/DiscoveryCore/ARABIAN/coreTroubleshoot
+- from: /docs/Toolboxes/DiscoveryCore/ARABIAN/coreTroubleshoot
   to: https://docs.openuc2.com/archive/minibox/ar/coreTroubleshoot
-- from: /Toolboxes/DiscoveryCore/ARABIAN/Smartphone Microscope
+- from: /docs/Toolboxes/DiscoveryCore/ARABIAN/Smartphone Microscope
   to: https://docs.openuc2.com/archive/minibox/ar/Smartphone%20Microscope
-- from: /Toolboxes/DiscoveryCore/ARABIAN/uc2miniboxAR
+- from: /docs/Toolboxes/DiscoveryCore/ARABIAN/uc2miniboxAR
   to: https://docs.openuc2.com/archive/minibox/ar/uc2miniboxAR
-- from: /Toolboxes/DiscoveryCore/ENGLISH/
+- from: /docs/Toolboxes/DiscoveryCore/ENGLISH/
   to: https://docs.openuc2.com/usage/disc/corebox/en/
-- from: /Toolboxes/DiscoveryCore/ENGLISH/coreBOXen
+- from: /docs/Toolboxes/DiscoveryCore/ENGLISH/coreBOXen
   to: https://docs.openuc2.com/usage/disc/corebox/en/core_intro
-- from: /Toolboxes/DiscoveryCore/ENGLISH/CoreLens
+- from: /docs/Toolboxes/DiscoveryCore/ENGLISH/CoreLens
   to: https://docs.openuc2.com/usage/disc/corebox/en/CoreLens
-- from: /Toolboxes/DiscoveryCore/ENGLISH/coreMicroscope
+- from: /docs/Toolboxes/DiscoveryCore/ENGLISH/coreMicroscope
   to: https://docs.openuc2.com/usage/disc/corebox/en/coreMicroscope
-- from: /Toolboxes/DiscoveryCore/ENGLISH/CoreTelescope
+- from: /docs/Toolboxes/DiscoveryCore/ENGLISH/CoreTelescope
   to: https://docs.openuc2.com/usage/disc/corebox/en/CoreTelescope
-- from: /Toolboxes/DiscoveryCore/ENGLISH/coreTroubleshoot
+- from: /docs/Toolboxes/DiscoveryCore/ENGLISH/coreTroubleshoot
   to: https://docs.openuc2.com/usage/disc/corebox/en/coreTroubleshoot
-- from: /Toolboxes/DiscoveryCore/ENGLISH/Showcasing Smartphone Microscope Images
+- from: /docs/Toolboxes/DiscoveryCore/ENGLISH/Showcasing Smartphone Microscope Images
   to: https://docs.openuc2.com/usage/disc/corebox/en/Showcasing%20Smartphone%20Microscope%20Images
-- from: /Toolboxes/DiscoveryCore/ENGLISH/Smartphone Microscope
+- from: /docs/Toolboxes/DiscoveryCore/ENGLISH/Smartphone Microscope
   to: https://docs.openuc2.com/usage/disc/corebox/en/Smartphone%20Microscope
-- from: /Toolboxes/DiscoveryCore/ENGLISH/uc2miniboxEN
+- from: /docs/Toolboxes/DiscoveryCore/ENGLISH/uc2miniboxEN
   to: https://docs.openuc2.com/archive/minibox/en/uc2miniboxEN
-- from: /Toolboxes/DiscoveryCore/FRENCH/CoreLensFR
+- from: /docs/Toolboxes/DiscoveryCore/FRENCH/CoreLensFR
   to: https://docs.openuc2.com/archive/minibox/fr/CoreLensFR
-- from: /Toolboxes/DiscoveryCore/FRENCH/coreMicroscopeFR
+- from: /docs/Toolboxes/DiscoveryCore/FRENCH/coreMicroscopeFR
   to: https://docs.openuc2.com/archive/minibox/fr/coreMicroscopeFR
-- from: /Toolboxes/DiscoveryCore/FRENCH/CoreTelescopeFR
+- from: /docs/Toolboxes/DiscoveryCore/FRENCH/CoreTelescopeFR
   to: https://docs.openuc2.com/archive/minibox/fr/CoreTelescopeFR
-- from: /Toolboxes/DiscoveryCore/FRENCH/coreTroubleshoot
+- from: /docs/Toolboxes/DiscoveryCore/FRENCH/coreTroubleshoot
   to: https://docs.openuc2.com/archive/minibox/fr/coreTroubleshoot
-- from: /Toolboxes/DiscoveryCore/FRENCH/Smartphone Microscope
+- from: /docs/Toolboxes/DiscoveryCore/FRENCH/Smartphone Microscope
   to: https://docs.openuc2.com/archive/minibox/fr/Smartphone%20Microscope
-- from: /Toolboxes/DiscoveryCore/FRENCH/uc2miniboxFR
+- from: /docs/Toolboxes/DiscoveryCore/FRENCH/uc2miniboxFR
   to: https://docs.openuc2.com/archive/minibox/fr/uc2miniboxFR
-- from: /Toolboxes/DiscoveryCore/GERMAN/CoreLens
+- from: /docs/Toolboxes/DiscoveryCore/GERMAN/CoreLens
   to: https://docs.openuc2.com/archive/minibox/de/CoreLens
-- from: /Toolboxes/DiscoveryCore/GERMAN/coreMicroscope
+- from: /docs/Toolboxes/DiscoveryCore/GERMAN/coreMicroscope
   to: https://docs.openuc2.com/archive/minibox/de/coreMicroscope
-- from: /Toolboxes/DiscoveryCore/GERMAN/CoreTelescope
+- from: /docs/Toolboxes/DiscoveryCore/GERMAN/CoreTelescope
   to: https://docs.openuc2.com/archive/minibox/de/CoreTelescope
-- from: /Toolboxes/DiscoveryCore/GERMAN/coreTroubleshoot
+- from: /docs/Toolboxes/DiscoveryCore/GERMAN/coreTroubleshoot
   to: https://docs.openuc2.com/archive/minibox/de/coreTroubleshoot
-- from: /Toolboxes/DiscoveryCore/GERMAN/Smartphone Microsjop
+- from: /docs/Toolboxes/DiscoveryCore/GERMAN/Smartphone Microsjop
   to: https://docs.openuc2.com/archive/minibox/de/Smartphone%20Microsjop
-- from: /Toolboxes/DiscoveryCore/GERMAN/uc2miniboxDE
+- from: /docs/Toolboxes/DiscoveryCore/GERMAN/uc2miniboxDE
   to: https://docs.openuc2.com/archive/minibox/de/uc2miniboxDE
-- from: /Toolboxes/DiscoveryCore/ITALIAN/coreBOXit
+- from: /docs/Toolboxes/DiscoveryCore/ITALIAN/coreBOXit
   to: https://docs.openuc2.com/usage/disc/corebox/it/core_intro
-- from: /Toolboxes/DiscoveryCore/ITALIAN/CoreLensIT
+- from: /docs/Toolboxes/DiscoveryCore/ITALIAN/CoreLensIT
   to: https://docs.openuc2.com/usage/disc/corebox/it/CoreLensIT
-- from: /Toolboxes/DiscoveryCore/ITALIAN/coreMicroscopeIT
+- from: /docs/Toolboxes/DiscoveryCore/ITALIAN/coreMicroscopeIT
   to: https://docs.openuc2.com/usage/disc/corebox/it/coreMicroscopeIT
-- from: /Toolboxes/DiscoveryCore/ITALIAN/CoreTelescopeIT
+- from: /docs/Toolboxes/DiscoveryCore/ITALIAN/CoreTelescopeIT
   to: https://docs.openuc2.com/usage/disc/corebox/it/CoreTelescopeIT
-- from: /Toolboxes/DiscoveryCore/ITALIAN/coreTroubleshootIT
+- from: /docs/Toolboxes/DiscoveryCore/ITALIAN/coreTroubleshootIT
   to: https://docs.openuc2.com/usage/disc/corebox/it/coreTroubleshootIT
-- from: /Toolboxes/DiscoveryCore/ITALIAN/Showcasing Smartphone Microscope ImagesIT
+- from: /docs/Toolboxes/DiscoveryCore/ITALIAN/Showcasing Smartphone Microscope ImagesIT
   to: https://docs.openuc2.com/usage/disc/corebox/it/Showcasing%20Smartphone%20Microscope%20ImagesIT
-- from: /Toolboxes/DiscoveryCore/ITALIAN/Smartphone MicroscopeIT
+- from: /docs/Toolboxes/DiscoveryCore/ITALIAN/Smartphone MicroscopeIT
   to: https://docs.openuc2.com/usage/disc/corebox/it/Smartphone%20MicroscopeIT
-- from: /Toolboxes/DiscoveryCore/ITALIAN/uc2miniboxIT
+- from: /docs/Toolboxes/DiscoveryCore/ITALIAN/uc2miniboxIT
   to: https://docs.openuc2.com/archive/minibox/it/uc2miniboxIT
-- from: /Toolboxes/DiscoveryCore/SPANISH/CoreLens
+- from: /docs/Toolboxes/DiscoveryCore/SPANISH/CoreLens
   to: https://docs.openuc2.com/archive/minibox/es/CoreLens
-- from: /Toolboxes/DiscoveryCore/SPANISH/coreMicroscope
+- from: /docs/Toolboxes/DiscoveryCore/SPANISH/coreMicroscope
   to: https://docs.openuc2.com/archive/minibox/es/coreMicroscope
-- from: /Toolboxes/DiscoveryCore/SPANISH/CoreTelescope
+- from: /docs/Toolboxes/DiscoveryCore/SPANISH/CoreTelescope
   to: https://docs.openuc2.com/archive/minibox/es/CoreTelescope
-- from: /Toolboxes/DiscoveryCore/SPANISH/coreTroubleshoot
+- from: /docs/Toolboxes/DiscoveryCore/SPANISH/coreTroubleshoot
   to: https://docs.openuc2.com/archive/minibox/es/coreTroubleshoot
-- from: /Toolboxes/DiscoveryCore/SPANISH/Smartphone Microscope
+- from: /docs/Toolboxes/DiscoveryCore/SPANISH/Smartphone Microscope
   to: https://docs.openuc2.com/archive/minibox/es/Smartphone%20Microscope
-- from: /Toolboxes/DiscoveryCore/SPANISH/uc2miniboxES
+- from: /docs/Toolboxes/DiscoveryCore/SPANISH/uc2miniboxES
   to: https://docs.openuc2.com/archive/minibox/es/uc2miniboxES
-- from: /Toolboxes/DiscoveryFluorescence/
+- from: /docs/Toolboxes/DiscoveryFluorescence/
   to: https://docs.openuc2.com/usage/disc/fluorescence-addon/
-- from: /Toolboxes/DiscoveryFluorescence/Alligment of the LED-Mikroscope
+- from: /docs/Toolboxes/DiscoveryFluorescence/Alligment of the LED-Mikroscope
   to: https://docs.openuc2.com/usage/disc/fluorescence-addon/LED_Fluorescence_Microscope_Alignment
-- from: /Toolboxes/DiscoveryFluorescence/LASER_Fluoresence_microscope
+- from: /docs/Toolboxes/DiscoveryFluorescence/LASER_Fluoresence_microscope
   to: https://docs.openuc2.com/usage/disc/fluorescence-addon/LASER_Fluoresence_microscope
-- from: /Toolboxes/DiscoveryFluorescence/LED_Fluoresence_microscope_V1
+- from: /docs/Toolboxes/DiscoveryFluorescence/LED_Fluoresence_microscope_V1
   to: https://docs.openuc2.com/usage/disc/fluorescence-addon/LED_Fluoresence_microscope_V1
-- from: /Toolboxes/ElectronicsBox/
+- from: /docs/Toolboxes/ElectronicsBox/
   to: https://docs.openuc2.com/usage/disc/electronics-addon/
-- from: /Toolboxes/ElectronicsBox/automation_intro
+- from: /docs/Toolboxes/ElectronicsBox/automation_intro
   to: https://docs.openuc2.com/usage/disc/electronics-addon/automation_intro
-- from: /Toolboxes/FourierOptics/
+- from: /docs/Toolboxes/FourierOptics/
   to: https://github.com/openUC2/UC2-GIT/blob/master/TheBOX/CourseBOX/Readme.md
-- from: /Toolboxes/FourierOptics/CBoxAligmentFinite
+- from: /docs/Toolboxes/FourierOptics/CBoxAligmentFinite
   to: https://github.com/openUC2/UC2-GIT/blob/master/TheBOX/CourseBOX/ALIGNMENT_FinOptics/Readme.md
-- from: /Toolboxes/FourierOptics/CBoxAligmentInfinte
+- from: /docs/Toolboxes/FourierOptics/CBoxAligmentInfinte
   to: https://github.com/openUC2/UC2-GIT/blob/master/TheBOX/CourseBOX/ALIGNMENT_InfOptics/Readme.md
-- from: /Toolboxes/FourierOptics/MicroscopyCore
+- from: /docs/Toolboxes/FourierOptics/MicroscopyCore
   to: https://github.com/openUC2/UC2-GIT/blob/master/TheBOX/CourseBOX/Readme.md
-- from: /Toolboxes/GalvoBox/
+- from: /docs/Toolboxes/GalvoBox/
   to: https://docs.openuc2.com/usage/disc/galvo-addon/
-- from: /Toolboxes/GalvoBox/GalvoIntro
-- from: /Toolboxes/GalvoBox/LaserScanner
+- from: /docs/Toolboxes/GalvoBox/GalvoIntro
+- from: /docs/Toolboxes/GalvoBox/LaserScanner
   to: https://docs.openuc2.com/usage/disc/galvo-addon/LaserScanner
-- from: /Toolboxes/GalvoBox/Profiling
+- from: /docs/Toolboxes/GalvoBox/Profiling
   to: https://docs.openuc2.com/usage/disc/galvo-addon/Profiling
-- from: /Toolboxes/HoloBox/
+- from: /docs/Toolboxes/HoloBox/
   to: https://docs.openuc2.com/usage/disc/holobox/
-- from: /Toolboxes/HoloBox/DiscoveryPolarization/
+- from: /docs/Toolboxes/HoloBox/DiscoveryPolarization/
   to: https://docs.openuc2.com/usage/disc/holobox/DiscoveryPolarization/
-- from: /Toolboxes/HoloBox/DiscoveryPolarization/APP_POL_Crossed_Polarizers/
+- from: /docs/Toolboxes/HoloBox/DiscoveryPolarization/APP_POL_Crossed_Polarizers/
   to: https://docs.openuc2.com/usage/disc/holobox/DiscoveryPolarization/APP_POL_Crossed_Polarizers/
-- from: /Toolboxes/HoloBox/DiscoveryPolarization/APP_POL_Stress_Birefringence/
+- from: /docs/Toolboxes/HoloBox/DiscoveryPolarization/APP_POL_Stress_Birefringence/
   to: https://docs.openuc2.com/usage/disc/holobox/DiscoveryPolarization/APP_POL_Stress_Birefringence/
-- from: /Toolboxes/HoloBox/DiscoveryPolarization/APP_POL_Three_Polarizers/
+- from: /docs/Toolboxes/HoloBox/DiscoveryPolarization/APP_POL_Three_Polarizers/
   to: https://docs.openuc2.com/usage/disc/holobox/DiscoveryPolarization/APP_POL_Three_Polarizers/
-- from: /Toolboxes/HoloBox/HoloBox_OffAxis_Tomographic_Microscope/chromatix_offaxis_tomography
+- from: /docs/Toolboxes/HoloBox/HoloBox_OffAxis_Tomographic_Microscope/chromatix_offaxis_tomography
   to: https://docs.openuc2.com/usage/disc/holobox/HoloBox_OffAxis_Tomographic_Microscope/chromatix_offaxis_tomography
-- from: /Toolboxes/HoloBox/HoloBox_plus_Calliope/MichelsonInterferometer_calliopeDE
+- from: /docs/Toolboxes/HoloBox/HoloBox_plus_Calliope/MichelsonInterferometer_calliopeDE
   to: https://docs.openuc2.com/usage/disc/holobox/HoloBox_plus_Calliope/MichelsonInterferometer_calliopeDE
-- from: /Toolboxes/HoloBox/HoloBox_plus_Calliope/MichelsonInterferometer_calliopeEN
+- from: /docs/Toolboxes/HoloBox/HoloBox_plus_Calliope/MichelsonInterferometer_calliopeEN
   to: https://docs.openuc2.com/usage/disc/holobox/HoloBox_plus_Calliope/MichelsonInterferometer_calliopeEN
-- from: /Toolboxes/HoloBox/Inline_holography/InlineHolography
+- from: /docs/Toolboxes/HoloBox/Inline_holography/InlineHolography
   to: https://docs.openuc2.com/usage/disc/holobox/Inline_holography/InlineHolography
-- from: /Toolboxes/HoloBox/MachZehnderInterferometer/MachZenderInterferometer
+- from: /docs/Toolboxes/HoloBox/MachZehnderInterferometer/MachZenderInterferometer
   to: https://docs.openuc2.com/usage/disc/holobox/MachZehnderInterferometer/mach-zehnder_interferometer
-- from: /Toolboxes/HoloBox/MachZehnderInterferometer/MachZenderInterferometer2
+- from: /docs/Toolboxes/HoloBox/MachZehnderInterferometer/MachZenderInterferometer2
   to: https://docs.openuc2.com/usage/disc/holobox/MachZehnderInterferometer/mach-zehnder_interferometer
-- from: /Toolboxes/HoloBox/MichelsonInterferometer/MichelsonInterferometer
+- from: /docs/Toolboxes/HoloBox/MichelsonInterferometer/MichelsonInterferometer
   to: https://docs.openuc2.com/usage/disc/holobox/MachZehnderInterferometer/OffAxisHolography
-- from: /Toolboxes/InfinityBox/
+- from: /docs/Toolboxes/InfinityBox/
   to: https://docs.openuc2.com/usage/disc/infinity-addon/
-- from: /Toolboxes/InfinityBox/ABBE
+- from: /docs/Toolboxes/InfinityBox/ABBE
   to: https://docs.openuc2.com/usage/disc/infinity-addon/ABBE
-- from: /Toolboxes/InfinityBox/DPCmicroscopy
+- from: /docs/Toolboxes/InfinityBox/DPCmicroscopy
   to: https://docs.openuc2.com/usage/disc/infinity-addon/DPCmicroscopy
-- from: /Toolboxes/LightsheetBox/
+- from: /docs/Toolboxes/LightsheetBox/
   to: https://docs.openuc2.com/usage/disc/lightsheet-addon/
-- from: /Toolboxes/LightsheetBox/Light_sheet_Fluoresence_microscope
+- from: /docs/Toolboxes/LightsheetBox/Light_sheet_Fluoresence_microscope
   to: https://docs.openuc2.com/usage/disc/lightsheet-addon/Light_sheet_Fluoresence_microscope
-- from: /Toolboxes/LightsheetBox/LightSheet Sample
+- from: /docs/Toolboxes/LightsheetBox/LightSheet Sample
   to: https://docs.openuc2.com/usage/disc/lightsheet-addon/LightSheet%20Sample
-- from: /Toolboxes/LightsheetBox/LightsheetCalibration
+- from: /docs/Toolboxes/LightsheetBox/LightsheetCalibration
   to: https://docs.openuc2.com/usage/disc/lightsheet-addon/LightsheetCalibration
-- from: /Toolboxes/QuantumBox/
+- from: /docs/Toolboxes/QuantumBox/
   to: https://docs.openuc2.com/usage/disc/qbox/
-- from: /Toolboxes/QuantumBox/DiscoveryPolarization/
+- from: /docs/Toolboxes/QuantumBox/DiscoveryPolarization/
   to: https://docs.openuc2.com/usage/disc/qbox/DiscoveryPolarization/
-- from: /Toolboxes/QuantumBox/DiscoveryPolarization/APP_POL_Crossed_Polarizers/
+- from: /docs/Toolboxes/QuantumBox/DiscoveryPolarization/APP_POL_Crossed_Polarizers/
   to: https://docs.openuc2.com/usage/disc/qbox/DiscoveryPolarization/APP_POL_Crossed_Polarizers/
-- from: /Toolboxes/QuantumBox/DiscoveryPolarization/APP_POL_Stress_Birefringence/
+- from: /docs/Toolboxes/QuantumBox/DiscoveryPolarization/APP_POL_Stress_Birefringence/
   to: https://docs.openuc2.com/usage/disc/qbox/DiscoveryPolarization/APP_POL_Stress_Birefringence/
-- from: /Toolboxes/QuantumBox/DiscoveryPolarization/APP_POL_Three_Polarizers/
+- from: /docs/Toolboxes/QuantumBox/DiscoveryPolarization/APP_POL_Three_Polarizers/
   to: https://docs.openuc2.com/usage/disc/qbox/DiscoveryPolarization/APP_POL_Three_Polarizers/
-- from: /Toolboxes/QuantumBox/DiscoveryPolarization/Malus_principle/
+- from: /docs/Toolboxes/QuantumBox/DiscoveryPolarization/Malus_principle/
   to: https://docs.openuc2.com/usage/disc/qbox/DiscoveryPolarization/Malus_principle/
-- from: /Toolboxes/QuantumBox/MachZehnderInterferometer/MachZenderInterferometer
+- from: /docs/Toolboxes/QuantumBox/MachZehnderInterferometer/MachZenderInterferometer
   to: https://docs.openuc2.com/usage/disc/qbox/MachZehnderInterferometer/mach-zehnder_interferometer
-- from: /Toolboxes/QuantumBox/MachZehnderInterferometer/OffAxisHolography
+- from: /docs/Toolboxes/QuantumBox/MachZehnderInterferometer/OffAxisHolography
   to: https://docs.openuc2.com/usage/disc/qbox/MachZehnderInterferometer/off_axis_holography
-- from: /Toolboxes/QuantumBox/MichelsonInterferometer/MichelsonInterferometer
+- from: /docs/Toolboxes/QuantumBox/MichelsonInterferometer/MichelsonInterferometer
   to: https://docs.openuc2.com/usage/disc/qbox/MichelsonInterferometer/
-- from: /Toolboxes/QuantumBox/ODMR/ENG/odmr_experiment_eng
+- from: /docs/Toolboxes/QuantumBox/ODMR/ENG/odmr_experiment_eng
   to: https://docs.openuc2.com/usage/disc/qbox/ODMR/en/odmr_experiment_eng
-- from: /Toolboxes/QuantumBox/ODMR/ENG/odmr_intro_eng
+- from: /docs/Toolboxes/QuantumBox/ODMR/ENG/odmr_intro_eng
   to: https://docs.openuc2.com/usage/disc/qbox/ODMR/en/odmr_intro_eng
-- from: /Toolboxes/QuantumBox/ODMR/GER/odmr_experiment_ger
+- from: /docs/Toolboxes/QuantumBox/ODMR/GER/odmr_experiment_ger
   to: https://docs.openuc2.com/usage/disc/qbox/ODMR/de/odmr_experiment_ger
-- from: /Toolboxes/QuantumBox/ODMR/GER/odmr_intro_ger
+- from: /docs/Toolboxes/QuantumBox/ODMR/GER/odmr_intro_ger
   to: https://docs.openuc2.com/usage/disc/qbox/ODMR/de/odmr_intro_ger
-- from: /Toolboxes/QuantumBox/Quantum_Eraser/quantum_eraser
+- from: /docs/Toolboxes/QuantumBox/Quantum_Eraser/quantum_eraser
   to: https://docs.openuc2.com/usage/disc/qbox/Quantum_Eraser/
-- from: /Toolboxes/SeeedMicroscope/
+- from: /docs/Toolboxes/SeeedMicroscope/
   to: https://docs.openuc2.com/usage/disc/xiao-microscope/
-- from: /Toolboxes/SeeedMicroscope/04_1_seeedmicroscope
+- from: /docs/Toolboxes/SeeedMicroscope/04_1_seeedmicroscope
   to: https://docs.openuc2.com/usage/disc/xiao-microscope/04_1_seeedmicroscope
-- from: /Toolboxes/SeeedMicroscope/04_2_seeedmicroscopepcb
+- from: /docs/Toolboxes/SeeedMicroscope/04_2_seeedmicroscopepcb
   to: https://docs.openuc2.com/usage/disc/xiao-microscope/04_2_seeedmicroscopepcb
-- from: /Toolboxes/SeeedMicroscope/04_3_seeedmicroscoperepair
+- from: /docs/Toolboxes/SeeedMicroscope/04_3_seeedmicroscoperepair
   to: https://docs.openuc2.com/usage/disc/xiao-microscope/04_3_seeedmicroscoperepair
-- from: /Toolboxes/SeeedMicroscope/04_4_seeedmicroscopeapp
+- from: /docs/Toolboxes/SeeedMicroscope/04_4_seeedmicroscopeapp
   to: https://docs.openuc2.com/usage/disc/xiao-microscope/04_4_seeedmicroscopeapp
-- from: /WORKSHOPS/
+- from: /docs/WORKSHOPS/
   to: https://docs.openuc2.com/workshops/
-- from: /WORKSHOPS/DigitalMicroscopy
+- from: /docs/WORKSHOPS/DigitalMicroscopy
   to: https://docs.openuc2.com/workshops/DigitalMicroscopy
-- from: /WORKSHOPS/Opticsintro
+- from: /docs/WORKSHOPS/Opticsintro
   to: https://docs.openuc2.com/workshops/Opticsintro
-- from: /WORKSHOPS/Template_experiements
+- from: /docs/WORKSHOPS/Template_experiements
   to: https://docs.openuc2.com/workshops/
