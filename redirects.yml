@@ -3,6 +3,7 @@
 - from: /ARCHIVE/LightSheetOldStuff/LightSheet
   to: https://docs.openuc2.com/archive/LightSheetOldStuff/LightSheet/
 - from: /ARCHIVE/LightSheetOldStuff/LightSheetOld
+  to: https://github.com/openUC2/UC2-GIT/blob/master/WORKSHOP/MAKE_LIGHT_SHEET/APP_LIGHTSHEET_Workshop/Readme.md
 - from: /ARCHIVE/Polarisation_Experiments/APP_POL_Brewster_Angle_Experiment/
   to: https://docs.openuc2.com/archive/Polarisation_Experiments/APP_POL_Brewster_Angle_Experiment/
 - from: /ARCHIVE/Polarisation_Experiments/APP_POL_Circular_Polarizer/
