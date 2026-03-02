@@ -46,6 +46,7 @@
 - from: /ARCHIVE/ZMicroscope/UpackZMicroscope
   to: https://docs.openuc2.com/archive/ZMicroscope/
 - from: /Electronics/Advanced/
+  to: https://docs.openuc2.com/dev/hw/electronics/
 - from: /Electronics/Advanced/Hardware-Interfaces/
   to: https://docs.openuc2.com/dev/hw/electronics/
 - from: /Electronics/Advanced/Hardware-Interfaces/CANInterface
@@ -363,6 +364,7 @@
 - from: /Toolboxes/GalvoBox/
   to: https://docs.openuc2.com/usage/disc/galvo-addon/
 - from: /Toolboxes/GalvoBox/GalvoIntro
+  to: https://docs.openuc2.com/usage/disc/galvo-addon/reference
 - from: /Toolboxes/GalvoBox/LaserScanner
   to: https://docs.openuc2.com/usage/disc/galvo-addon/LaserScanner
 - from: /Toolboxes/GalvoBox/Profiling
