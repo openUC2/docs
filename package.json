@@ -7,7 +7,7 @@
     "start": "docusaurus start",
     "preprocess-minimal": "./preprocess-variant.sh minimal",
     "preprocess-full": "./preprocess-variant.sh full",
-    "postprocess-external-redirects": "node ./postprocess-external-redirects.js",
+    "postprocess-external-redirects": "./postprocess-external-redirects.sh",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",

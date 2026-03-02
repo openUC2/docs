@@ -1,16 +1,17 @@
+{{- $target := env.Getenv "TARGET" -}}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url={{ target }}">
-    <link rel="canonical" href="{{ target }}" />
+    <meta http-equiv="refresh" content="0; url={{ $target }}">
+    <link rel="canonical" href="{{ $target }}" />
   </head>
   <script>
-    window.location.href = '{{ target }}' + window.location.search + window.location.hash;
+    window.location.href = '{{ $target }}' + window.location.search + window.location.hash;
   </script>
   <body>
     <p>
-      This page has moved to: <a href="{{ target }}">{{ target }}</a>. Please update your bookmarks!
+      This page has moved to: <a href="{{ $target }}">{{ $target }}</a>. Please update your bookmarks!
     </p>
   </body>
 </html>
