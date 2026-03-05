@@ -39,7 +39,7 @@ To undo this change:
 
 After [enabling persistent logging](#how-to-enable-persistent-logging):
 
-1. Enter the RPi's terminal.
+1. [Enter the RPi's terminal](../../day-1/sw-access/README.md#the-frames-terminal).
 2. Run the command `journalctl --boot=-{n}` to check the logs from `n` boots ago.
    For example, run `journalctl --boot=-1` to check the logs from the previous boot.
 
