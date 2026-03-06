@@ -91,7 +91,7 @@ If you would normally [access the landing page](../connectivity/README.md#how-to
 For security reasons, by default the FRAME is configured to block access [over Local Area Networks (LAN)](../connectivity/README.md#via-a-local-area-network) to browser apps (such as the Machine Administration app, Dozzle, and the system file manager) which can perform administrative operations without user authentication. You can override this default behavior to allow access to those apps over LANs:
 
 1. [Enter the RPi's terminal](../sw-access/README.md#the-frames-terminal).
-2. Run the command:
+2. Run the commands:
    ```bash
    forklift plt disable-depl-feat infra/caddy-ingress-untrusted firewall-forward-http-public
    forklift plt enable-depl-feat infra/caddy-ingress firewall-allow-public
@@ -107,10 +107,30 @@ You should ensure that your LAN has its own firewall settings to prevent people 
 :::
 
 To undo this change:
-1. Run the command:
+1. Run the commands:
    ```bash
    forklift plt enable-depl-feat infra/caddy-ingress-untrusted firewall-forward-http-public
    forklift plt disable-depl-feat infra/caddy-ingress firewall-allow-public
    forklift plt stage
    ```
 2. Apply your changes by rebooting.
+
+### to Cockpit from non-standard origins
+
+For security reasons, Cockpit only allows logins from explicitly-specified origins (in `{protocol}{domain name or IP address}{port}` form, e.g. `http://my.domain.tld` or `http://my.domain.tld:9090` or `https://10.196.250.1`). To add another origin `{origin}` to Cockpit's list of allowed origins:
+
+1. [Enter the RPi's terminal](../sw-access/README.md#the-frames-terminal).
+2. Run the following command:
+   ```bash
+   sudo tee -a <<<'{origin}' /etc/cockpit/origins.d/80-custom-origins
+   ```
+   For example, to allow logins from `http://my.domain.tld:9090`, run:
+   ```bash
+   sudo tee -a <<<'http://my.domain.tld:9090' /etc/cockpit/origins.d/80-custom-origins
+   ```
+3. Apply your changes by rebooting or running the following commands:
+   ```bash
+   sudo systemctl restart \
+      assemble-cockpit-origins.service \
+      assemble-cockpit-config.service
+   ```
