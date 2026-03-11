@@ -15,5 +15,5 @@ The how-to guides here are written for people who already have previous familiar
 Here, we assume that you just need guidance for planning a successful deployment of another FRAME machine, or for re-deploying an existing FRAME machine.
 
 1. [Hardware Assembly](./hw-assembly/README.md): these guides help you to plan the final assembly of your FRAME machine's hardware.
-2. [Software Installation](./sw-install/README.md): these guides help you to determine whether you will need to install any software and/or firmware onto your FRAME machine, and what software and/or firmware you will need to install.
-3. [Machine Connectivity](./connectivity/README.md): these guides help you to determine how you will connect to your FRAME machine's software, and how you will make your machine's software easy to access— since the FRAME supports many ways of doing these things depending on your operational requirements.
+2. [Software Installation](./sw-install/README.md): these guides help you to determine whether you will need to install any software and/or firmware onto your machine, and what software and/or firmware you will need to install.
+3. [Machine Connectivity](../../../../components/os/guides/day-0/connectivity/README.md): these guides help you to determine how you will connect to your FRAME's software, and how you will make your FRAME's software easy to access— since the FRAME supports many ways of doing these things depending on your operational requirements.

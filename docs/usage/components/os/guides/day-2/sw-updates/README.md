@@ -8,12 +8,12 @@ sidebar_position: 100
 
 ### to the latest development version
 
-1. Enter the RPi's terminal.
+1. Enter the machine's terminal.
 2. Run the following command:
    ```bash
    forklift pallet upgrade @main
    ```
-3. Reboot the RPi, e.g. by running:
+3. Reboot the machine, e.g. by running:
    ```bash
    sudo reboot
    ```
@@ -44,7 +44,7 @@ If the above command fails with an error message that you have changes which are
 
    :::
 
-5. Reboot the RPi, e.g. by running:
+5. Reboot the machine, e.g. by running:
    ```bash
    sudo reboot
    ```

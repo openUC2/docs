@@ -5,28 +5,28 @@ sidebar_position: 21
 # Software Access
 
 The how-to guides here will help you to:
-- access your FRAME's graphical interfaces using your web browser
-- use your FRAME's command-line interface over SSH
-- allow access to your FRAME's software from more devices
+- access your openUC2 machine's graphical interfaces using your web browser
+- use your machine's command-line interface over SSH
+- allow access to your machine's software from more devices
 
 ## How to access
 
 ### browser apps
 
-1. [Connect to the FRAME](../connectivity/README.md#how-to-connect-to-the-frame).
+1. [Connect to the machine](../connectivity/README.md#how-to-connect-to-the-machine).
 
-2. In your computer's web browser, open [the FRAME's landing page](../connectivity/README.md#how-to-access-the-frames-landing-page).
+2. In your computer's web browser, open [the machine's landing page](../connectivity/README.md#how-to-access-the-machines-landing-page).
 
 3. Click on the link for the browser app.
    For example, to open ImSwitch, click on the landing page's link for ImSwitch.
 
-   If the browser app doesn't load and you're indirectly connected to the FRAME [via a Local Area Network](../connectivity/README.md#via-a-local-area-network), then you must add port 8000 to the URL in your address bar.
+   If the browser app doesn't load and you're indirectly connected to the machine [via a Local Area Network](../connectivity/README.md#via-a-local-area-network), then you must add port 8000 to the URL in your address bar.
    For example, if the landing page's link for ImSwitch opened [openuc2.local/imswitch/ui/index.html](http://openuc2.local/imswitch/ui/index.html), then you should instead open [openuc2.local:8000/imswitch/ui/index.html](http://openuc2.local:8000/imswitch/ui/index.html).
    Note that administrative apps cannot be used on port 8000.
 
    :::tip
 
-   You can also open the FRAME's landing page on port 8000.
+   You can also open the machine's landing page on port 8000.
    For example, if you use [openuc2.local](http://openuc2.local), then you can open [openuc2.local:8000](http://openuc2.local:8000)
 
    :::
@@ -46,9 +46,9 @@ The how-to guides here will help you to:
 
 If something has gone wrong with the operating system, you may be able to access Cockpit through its direct-access fallback instead:
 
-1. [Connect to the FRAME](../connectivity/README.md#how-to-connect-to-the-frame).
+1. [Connect to the machine](../connectivity/README.md#how-to-connect-to-the-machine).
 
-2. In your computer's web browser, enter the URL for [the FRAME's landing page](../connectivity/README.md#how-to-access-the-frames-landing-page), but append `:9090/admin/cockpit/` to it.
+2. In your computer's web browser, enter the URL for [the machine's landing page](../connectivity/README.md#how-to-access-the-machines-landing-page), but append `:9090/admin/cockpit/` to it.
    For example, if you would normally open the landing page at [http://openuc2.local](http://openuc2.local), then you should instead open [http://openuc2.local:9090/admin/cockpit/](http://openuc2.local:9090/admin/cockpit/).
 
    :::info
@@ -58,7 +58,7 @@ If something has gone wrong with the operating system, you may be able to access
 
    :::
 
-### the FRAME's terminal
+### the machine's terminal
 
 #### via Cockpit
 
@@ -68,7 +68,7 @@ If something has gone wrong with the operating system, you may be able to access
 
 #### via SSH
 
-If you would normally [access the landing page](../connectivity/README.md#how-to-access-the-frames-landing-page) via the URL `http://{domain name}`, then:
+If you would normally [access the landing page](../connectivity/README.md#how-to-access-the-machines-landing-page) via the URL `http://{domain name}`, then:
 
 1. Open a local terminal on your computer.
 
@@ -88,9 +88,9 @@ If you would normally [access the landing page](../connectivity/README.md#how-to
 
 ### to unauthenticated administrative apps over Local Area Networks
 
-For security reasons, by default the FRAME is configured to block access [over Local Area Networks (LAN)](../connectivity/README.md#via-a-local-area-network) to browser apps (such as the Machine Administration app, Dozzle, and the system file manager) which can perform administrative operations without user authentication. You can override this default behavior to allow access to those apps over LANs:
+For security reasons, by default the machine is configured to block access [over Local Area Networks (LAN)](../connectivity/README.md#via-a-local-area-network) to browser apps (such as the Machine Administration app, Dozzle, and the system file manager) which can perform administrative operations without user authentication. You can override this default behavior to allow access to those apps over LANs:
 
-1. [Enter the RPi's terminal](../sw-access/README.md#the-frames-terminal).
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the commands:
    ```bash
    forklift plt disable-depl-feat infra/caddy-ingress-untrusted firewall-forward-http-public
@@ -101,8 +101,8 @@ For security reasons, by default the FRAME is configured to block access [over L
 
 :::danger
 
-This could allow anyone on the same LAN to do whatever they want with your FRAME!
-You should ensure that your LAN has its own firewall settings to prevent people you don't trust from using the LAN to access your FRAME over port 80.
+This could allow anyone on the same LAN to do whatever they want with your machine!
+You should ensure that your LAN has its own firewall settings to prevent people you don't trust from using the LAN to access your machine over port 80.
 
 :::
 
@@ -119,7 +119,7 @@ To undo this change:
 
 For security reasons, Cockpit only allows logins from explicitly-specified origins (in `{protocol}{domain name or IP address}{port}` form, e.g. `http://my.domain.tld` or `http://my.domain.tld:9090` or `https://10.196.250.1`). To add another origin `{origin}` to Cockpit's list of allowed origins:
 
-1. [Enter the RPi's terminal](../sw-access/README.md#the-frames-terminal).
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the following command:
    ```bash
    sudo tee -a <<<'{origin}' /etc/cockpit/origins.d/80-custom-origins

@@ -11,7 +11,7 @@ The update process involves three main components:
 
 ## In openUC2 OS
 
-Refer to our [usage guides](../../../../../usage/pro/frame/guides/day-2/sw-updates/README.md).
+Refer to our [usage guides](../../../../../usage/components/os/guides/day-2/sw-updates/README.md).
 
 ## With Native Python Installation
 
@@ -217,12 +217,12 @@ chmod +x update_imswitch.sh
 3. **Test UC2-REST:**
    ```python
    from UC2REST import UC2Client
-               client = UC2Client(serialport="/dev/ttyUSB0")
-               if client.is_connected:
-                   print("UC2-REST connection successful")
-                   # Test basic commands
-                   client.led.set_led(channel=1, intensity=50)
-                   client.led.set_led(channel=1, intensity=0)
+                  client = UC2Client(serialport="/dev/ttyUSB0")
+                  if client.is_connected:
+                      print("UC2-REST connection successful")
+                      # Test basic commands
+                      client.led.set_led(channel=1, intensity=50)
+                      client.led.set_led(channel=1, intensity=0)
    ```
 
 4. **Test New Features:**
