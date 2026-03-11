@@ -7,8 +7,8 @@ toc_max_heading_level: 4
 # Machine Connectivity
 
 The how-to guides here will help you to:
-- access your FRAME's software
-- make your FRAME's software easy to access
+- connect to your FRAME, so that you can [access its software](../sw-access/README.md)
+- make your FRAME's software easy to connect to
 
 This process will be less stressful for you if you've already done [the relevant day-0 planning](../../day-0/connectivity/README.md).
 
@@ -46,7 +46,7 @@ To choose which of the following methods you will use for connecting to the FRAM
 
 1. On your computer, connect to the FRAME's Wi-Fi hotspot.
 
-   :::tip
+   :::info
 
    By default, the Wi-Fi hotspot's name is `openuc2-{machine name}`, where `{machine name}` is your FRAME's machine name.
    For example, if your FRAME's machine name is `great-example-1234`, then the Wi-Fi hotspot's name is `openuc2-great-example-1234`.
@@ -58,6 +58,7 @@ To choose which of the following methods you will use for connecting to the FRAM
    :::tip
 
    By default, the Wi-Fi hotspot's password is `youseetoo`.
+   You should [change it to a more secure password](../security/README.md#how-to-change-the-wi-fi-hotspots-password).
 
    :::
 
@@ -78,6 +79,12 @@ To choose which of the following methods you will use for connecting to the FRAM
 
 1. Connect your FRAME to a Local Area Network (LAN) by following the same procedure you would use to [connect your FRAME to the internet](#how-to-connect-the-frame-to-the-internet) via a network router or external Wi-Fi network.
 2. Connect your computer to the same LAN.
+
+:::tip
+
+If you intend to access administrative apps over the LAN, you will need to explicitly [allow access to unauthenticated administrative apps over the LAN](../sw-access/README.md#to-unauthenticated-administrative-apps-over-local-area-networks).
+
+:::
 
 ## How to access the FRAME's landing page
 
