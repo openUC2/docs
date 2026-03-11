@@ -2,7 +2,8 @@
 
 This reference guide describes the firewall system in openUC2 OS.
 
-openUC2 OS uses [firewalld](https://firewalld.org/) as its firewall.
+openUC2 OS uses [firewalld](https://firewalld.org/documentation/) as its firewall.
+The firewall is run as the systemd service `firewalld.service`.
 
 firewalld is configured using openUC2 OS's pattern for [drop-in configuration files](../../configuration/drop-in-files.md).
 The drop-in configuration file system for firewalld is provided by Forklift package deployment `networking/firewalld`.
@@ -16,7 +17,9 @@ Configuration variables in [`/etc/firewalld/firewalld.conf`](https://firewalld.o
 | `DefaultZone`:<br />`public`     | `20-default-zone.conf`         | `networking/firewalld`                              | yes                   |
 | `StrictForwardPorts`:<br />`yes` | `20-strict-forward-ports.conf` | `networking/firewalld`:<br /> `govern-docker-ports` |                       |
 
-TODO: describe systemd services and `/run` file paths
+`/etc/firewalld/firewalld.conf` is generated as follows:
+- The systemd service `assemble-firewalld-config.service` concatenates the contents of `/etc/firewalld/firewalld.conf.d/` and writes the output to `/run/overlays/generated/etc/firewalld/firewalld.conf`.
+- `/etc/firewalld/firewalld.conf` is a symlink to `/run/overlays/generated/etc/firewalld/firewalld.conf`.
 
 ## Services
 
@@ -106,7 +109,9 @@ Naming conventions:
   - The prefix `70-` is used for specific applications.
 - Feature flags configuring firewalld to allow access to ports should be named `firewall-allow-direct`.
 
-TODO: describe systemd services and `/run` file paths
+`/etc/firewalld/zones/nm-shared.xml` is generated as follows:
+- The systemd service `assemble-firewalld-config.service` concatenates the contents of `/etc/firewalld/zones.d/nm-shared/` and writes the output to `/run/overlays/generated/etc/firewalld/zones/nm-shared.xml`.
+- `/etc/firewalld/zones/nm-shared.xml` is a symlink to `/run/overlays/generated/etc/firewalld/zones/nm-shared.xml`.
 
 ### `public`
 
@@ -145,4 +150,6 @@ Naming conventions:
   - The prefix `70-` is used for specific applications.
 - Feature flags configuring firewalld to allow access to ports should be named `firewall-allow-public`.
 
-TODO: describe systemd services and `/run` file paths
+`/etc/firewalld/zones/public.xml` is generated as follows:
+- The systemd service `assemble-firewalld-config.service` concatenates the contents of `/etc/firewalld/zones.d/public/` and writes the output to `/run/overlays/generated/etc/firewalld/zones/public.xml`.
+- `/etc/firewalld/zones/public.xml` is a symlink to `/run/overlays/generated/etc/firewalld/zones/public.xml`.
