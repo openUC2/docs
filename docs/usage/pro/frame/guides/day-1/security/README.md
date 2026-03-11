@@ -17,7 +17,7 @@ Because your FRAME includes an embedded computer which comes with some default s
 By default, the password used for [connecting to the FRAME's Wi-Fi hotspot](../connectivity/README.md#via-the-frames-wi-fi-hotspot) is `youseetoo`.
 You should change this password to something more secure:
 
-1. [Enter the RPi's terminal](../../day-1/sw-access/README.md#the-frames-terminal).
+1. [Enter the RPi's terminal](../sw-access/README.md#the-frames-terminal).
 2. Run the following command and follow the displayed instructions:
    ```bash
    read -sp "Enter a new password: " password && echo "psk=$password" | sudo tee >/dev/null \
@@ -117,7 +117,7 @@ By default, the firewall is configured to bind Tailscale to firewalld's `nm-shar
    ```
 3. Apply your changes by rebooting.
 
-Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over Local Area Networks](../sw-access/README.md#to-unauthenticated-apps-over-local-area-networks).
+Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over Local Area Networks](../sw-access/README.md#to-unauthenticated-administrative-apps-over-local-area-networks).
 
 To undo your changes:
 
