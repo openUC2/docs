@@ -5,19 +5,19 @@ toc_max_heading_level: 4
 
 # Security
 
-Because your FRAME includes an embedded computer which comes with some default settings which make it less secure and easier to access for initial deployment & setup, the how-to guides here will help you override these default settings in order to:
+Because openUC2 OS comes with some default settings which make it less secure and easier to access for initial deployment & setup, the how-to guides here will help you override these default settings in order to:
 
-- reduce your FRAME's exposure to unauthorized access
+- reduce your openUC2 OS machine's exposure to unauthorized access
 - limit the potential impact of any security breaches
 
 ## Connectivity
 
 ### How to change the Wi-Fi hotspot's password
 
-By default, the password used for [connecting to the FRAME's Wi-Fi hotspot](../connectivity/README.md#via-the-frames-wi-fi-hotspot) is `youseetoo`.
+By default, the password used for [connecting to the machine's Wi-Fi hotspot](../connectivity/README.md#via-the-machines-wi-fi-hotspot) is `youseetoo`.
 You should change this password to something more secure:
 
-1. [Enter the RPi's terminal](../sw-access/README.md#the-frames-terminal).
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the following command and follow the displayed instructions:
    ```bash
    read -sp "Enter a new password: " password && echo "psk=$password" | sudo tee >/dev/null \
@@ -37,16 +37,16 @@ You should change this password to something more secure:
 
 By default, the `pi` user's password is `youseetoo`, and it's used for:
 
-- [accessing the RPi's terminal via Cockpit](../sw-access/README.md#via-cockpit)
-- [accessing the RPi's terminal via SSH](../sw-access/README.md#via-ssh)
-- running `sudo` commands in the RPi's terminal
+- [accessing the machine's terminal via Cockpit](../sw-access/README.md#via-cockpit)
+- [accessing the machine's terminal via SSH](../sw-access/README.md#via-ssh)
+- running `sudo` commands in the machine's terminal
 
 You should change this password to something more secure.
 
 :::warning
 
 **PLEASE** change this password if you choose not to [block access to Cockpit](#to-cockpit) and [to SSH](#to-ssh) over Local Area Networks!
-Otherwise, anyone on the same network as your RPi may be able to do anything they want to your RPi by logging in as the `pi` user with the password `youseetoo`.
+Otherwise, anyone on the same network as your machine may be able to do anything they want to your machine by logging in as the `pi` user with the password `youseetoo`.
 
 :::
 
@@ -60,16 +60,16 @@ Otherwise, anyone on the same network as your RPi may be able to do anything the
 
 #### via the terminal
 
-1. [Enter the RPi's terminal](../sw-access/README.md#the-frames-terminal).
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the command `passwd` and follow the displayed instructions.
 
 ### How to block access over Local Area Networks (LANs)
 
 #### to Cockpit
 
-To prevent Cockpit from being accessible by any other device on the same LAN as your RPi:
+To prevent Cockpit from being accessible by any other device on the same LAN as your machine:
 
-1. [Enter the RPi's terminal](../sw-access/README.md#the-frames-terminal).
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt disable-depl-feat --stage admin/cockpit firewall-allow-public frontend-untrusted
@@ -78,7 +78,7 @@ To prevent Cockpit from being accessible by any other device on the same LAN as 
 
 To undo your changes:
 
-1. [Enter the RPi's terminal](../sw-access/README.md#the-frames-terminal).
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt enable-depl-feat --stage admin/cockpit firewall-allow-public frontend-untrusted
@@ -87,9 +87,9 @@ To undo your changes:
 
 #### to SSH
 
-To prevent your RPi from being accessible over SSH from any other device on the same LAN:
+To prevent your machine from being accessible over SSH from any other device on the same LAN:
 
-1. [Enter the RPi's terminal](../sw-access/README.md#the-frames-terminal).
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt disable-depl-feat --stage admin/sshd firewall-allow-public
@@ -98,7 +98,7 @@ To prevent your RPi from being accessible over SSH from any other device on the 
 
 To undo your changes:
 
-1. [Enter the RPi's terminal](../sw-access/README.md#the-frames-terminal).
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt enable-depl-feat --stage admin/sshd firewall-allow-public
@@ -107,9 +107,9 @@ To undo your changes:
 
 ### How to control access to unauthenticated administrative apps over Tailscale
 
-By default, the firewall is configured to bind Tailscale to firewalld's `nm-shared` zone for trusted networks like the RPi's Wi-Fi hotspot. You can instead change the firewall to bind Tailscale to the default zone, `public`, so that it will be treated like any other untrusted Local Area Network:
+By default, the firewall is configured to bind Tailscale to firewalld's `nm-shared` zone for trusted networks like the machine's Wi-Fi hotspot. You can instead change the firewall to bind Tailscale to the default zone, `public`, so that it will be treated like any other untrusted Local Area Network:
 
-1. [Enter the RPi's terminal](../sw-access/README.md#the-frames-terminal).
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt disable-depl-feat networking/tailscale firewall-zone-nm-shared
@@ -121,7 +121,7 @@ Afterwards, access to unauthenticated administrative apps (such as the Machine A
 
 To undo your changes:
 
-1. [Enter the RPi's terminal](../sw-access/README.md#the-frames-terminal).
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt enable-depl-feat networking/tailscale firewall-zone-nm-shared
@@ -134,7 +134,7 @@ To undo your changes:
 Docker containers which forward ports to `0.0.0.0`/`[::]` (instead of forwarding ports to a particular IP address such as `127.0.0.1`) will bypass all firewall rules and be accessible on all network interfaces.
 To only allow a forwarded ports to be accessible (in all firewalld zones) when a port-forwarding firewall rule exists for that port (in any firewalld zone):
 
-1. [Enter the RPi's terminal](../sw-access/README.md#the-frames-terminal).
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt enable-depl-feat networking/firewalld govern-docker-ports
@@ -151,7 +151,7 @@ This appears to be a consequence of how Docker implements port forwarding.
 
 To undo your changes:
 
-1. [Enter the RPi's terminal](../sw-access/README.md#the-frames-terminal).
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt disable-depl-feat networking/firewalld govern-docker-ports

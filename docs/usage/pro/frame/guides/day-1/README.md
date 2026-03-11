@@ -16,4 +16,5 @@ Here, we assume that you have already [planned](../day-0/README.md) your next FR
 
 1. [Hardware Assembly](./hw-assembly/README.md): these guides help you perform final assembly of your FRAME machine's hardware, so that the FRAME hardware will be ready for use.
 2. [Software Installation](./sw-install/README.md): these guides help you to perform any necessary installation of software and firmware onto your FRAME machine's hardware, so that the FRAME machine can be turned on.
-3. [Machine Connectivity](./connectivity/README.md): these guides help you to connect to your FRAME machine's software, and to make your machine's software easy to access.
+3. [Machine Connectivity](../../../../components/os/guides/day-1/connectivity/README.md): these guides help you to connect to your FRAME's software, and to make it easy to access.
+4. [Security](../../../../components/os/guides/day-1/security/README.md): these guides help you to protect your FRAME from computer/network security threats.
