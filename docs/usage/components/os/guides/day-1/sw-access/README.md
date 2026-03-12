@@ -7,7 +7,7 @@ sidebar_position: 21
 The how-to guides here will help you to:
 - access your openUC2 machine's graphical interfaces using your web browser
 - use your machine's command-line interface over SSH
-- allow access to your machine's software from more devices
+- allow access to your machine's software from more devices than what the default OS configuration allows
 
 ## How to access
 

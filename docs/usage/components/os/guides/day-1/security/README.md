@@ -8,7 +8,7 @@ toc_max_heading_level: 4
 Because openUC2 OS comes with some default settings which make it less secure and easier to access for initial deployment & setup, the how-to guides here will help you override these default settings in order to:
 
 - reduce your openUC2 OS machine's exposure to unauthorized access
-- limit the potential impact of any security breaches
+- limit the potential impacts (such as ransomware attacks) of any security breaches
 
 ## Connectivity
 
@@ -67,7 +67,7 @@ Otherwise, anyone on the same network as your machine may be able to do anything
 
 #### to Cockpit
 
-To prevent Cockpit from being accessible by any other device on the same LAN as your machine:
+To prevent Cockpit  from being accessible by any other device on the same LAN as your machine:
 
 1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the command:
@@ -87,7 +87,7 @@ To undo your changes:
 
 #### to SSH
 
-To prevent your machine from being accessible over SSH from any other device on the same LAN:
+To prevent your machine from being accessible over SSH (which exposes full administrative access to the OS) from any other device on the same LAN:
 
 1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the command:
@@ -102,6 +102,46 @@ To undo your changes:
 2. Run the command:
    ```bash
    forklift plt enable-depl-feat --stage admin/sshd firewall-allow-public
+   ```
+3. Apply your changes by rebooting.
+
+#### to ImSwitch
+
+To prevent ImSwitch (which can arbitrarily control hardware attached to the openUC2 OS machine) from being accessible by any other device on the same LAN as your machine:
+
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+2. Run the command:
+   ```bash
+   forklift plt disable-depl-feat --stage imswitch frontend-untrusted firewall-allow-public
+   ```
+3. Apply your changes by rebooting.
+
+To undo your changes:
+
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+2. Run the command:
+   ```bash
+   forklift plt enable-depl-feat --stage imswitch frontend-untrusted firewall-allow-public
+   ```
+3. Apply your changes by rebooting.
+
+#### to the user file manager
+
+To prevent the user file manager (which can download and delete data acquired by ImSwitch) from being accessible by any other device on the same LAN as your machine:
+
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+2. Run the command:
+   ```bash
+   forklift plt disable-depl-feat --stage admin/filebrowser-rootfs frontend-untrusted
+   ```
+3. Apply your changes by rebooting.
+
+To undo your changes:
+
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+2. Run the command:
+   ```bash
+   forklift plt enable-depl-feat --stage admin/filebrowser-rootfs frontend-untrusted
    ```
 3. Apply your changes by rebooting.
 

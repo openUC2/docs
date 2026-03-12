@@ -22,3 +22,9 @@ Our guides are organized by a progression of the kinds of tasks you need to do w
 
 - [Day 1](./day-1/README.md) (deployment):
   When you need to deploy a new FRAME machine, or when you need to re-deploy a FRAME machine into a different operating environment, these guides will help you to perform that deployment smoothly and with less stress.
+
+- [Day 2](./day-2/README.md) (routine operations):
+  These guides will help you to perform various day-to-day operations with your FRAME after initial deployment.
+
+- [Day *n*](./day-n/README.md) (reconfiguration and extension):
+  These guides will help you to customize and extend your FRAME after initial deployment in order to match your requirements.

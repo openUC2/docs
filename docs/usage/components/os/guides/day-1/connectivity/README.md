@@ -55,10 +55,10 @@ To choose which of the following methods you will use for connecting to the mach
 
    When prompted, enter the password for the machine's Wi-Fi hotspot.
 
-   :::tip
+   :::warning
 
    By default, the Wi-Fi hotspot's password is `youseetoo`.
-   You should [change it to a more secure password](../security/README.md#how-to-change-the-wi-fi-hotspots-password).
+   You should [change it to a more secure password](../security/README.md#how-to-change-the-wi-fi-hotspots-password); otherwise, anyone within range of your machine's Wi-Fi hotspot will be able to do anything they want to your machine.
 
    :::
 
@@ -74,8 +74,16 @@ To choose which of the following methods you will use for connecting to the mach
 4. Connect your computer to the internet.
 5. Activate your computer's connection to the tailnet with your machine.
 6. Ensure that your tailnet doesn't have any security policies which would prevent your computer from connecting to the machine.
+7. Ensure that your tailnet's security policies protect it from undesired access by other devices on the tailnet.
 
 #### via a Local Area Network
+
+:::warning
+
+Before you connect your machine to the internet this way, you should [change the `pi` user's password](../security/README.md#how-to-change-the-pi-users-password) to something more secure than the default value of `youseetoo`.
+Otherwise, anyone on the same network as your machine may be able to do anything they want to your machine by logging in as the `pi` user with the password `youseetoo`.
+
+:::
 
 1. Connect your machine to a Local Area Network (LAN) by following the same procedure you would use to [connect your machine to the internet](#how-to-connect-the-machine-to-the-internet) via a network router or external Wi-Fi network.
 2. Connect your computer to the same LAN.
@@ -193,6 +201,13 @@ To choose which of the following methods you will use for giving the machine int
 
 ### via an Ethernet connection to a network router
 
+:::warning
+
+Before you connect your machine to the internet this way, you should [change the `pi` user's password](../security/README.md#how-to-change-the-pi-users-password) to something more secure than the default value of `youseetoo`.
+Otherwise, anyone on the same network as your machine may be able to do anything they want to your machine by logging in as the `pi` user with the password `youseetoo`.
+
+:::
+
 1. [Connect your computer directly to the machine](#directly).
 
 2. Plug one end of an Ethernet cable into the machine's Ethernet port.
@@ -212,6 +227,13 @@ To choose which of the following methods you will use for giving the machine int
 If you need to know the MAC address of your machine's Ethernet module in order to register your machine with the network router, you can see the MAC address by expanding the "Other" panel of the `eth0` module information card on the Internet Access page.
 
 ### via an external Wi-Fi network
+
+:::warning
+
+Before you connect your machine to the internet this way, you should [change the `pi` user's password](../security/README.md#how-to-change-the-pi-users-password) to something more secure than the default value of `youseetoo`.
+Otherwise, anyone on the same network as your machine may be able to do anything they want to your machine by logging in as the `pi` user with the password `youseetoo`.
+
+:::
 
 1. [Connect your computer directly to the machine](#directly).
 

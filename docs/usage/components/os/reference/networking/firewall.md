@@ -5,7 +5,7 @@ This reference guide describes the firewall system in openUC2 OS.
 openUC2 OS uses [firewalld](https://firewalld.org/documentation/) as its firewall.
 The firewall is run as the systemd service `firewalld.service`.
 
-firewalld is configured using openUC2 OS's pattern for [drop-in configuration files](../../configuration/drop-in-files.md).
+firewalld is configured using openUC2 OS's pattern for [drop-in configuration files](../configuration/drop-in-files.md).
 The drop-in configuration file system for firewalld is provided by Forklift package deployment `networking/firewalld`.
 
 ## `firewalld.conf`
@@ -71,6 +71,8 @@ firewalld is configured with the following [zones](https://firewalld.org/documen
 | ----------- | ------------------------------------------------------- | --------------------- |
 | `nm-shared` | `networking/firewalld`'s feature<br /> `zone-nm-shared` | yes                   |
 | `public`    | `networking/firewalld`'s feature<br /> `zone-public`    | yes                   |
+
+For an explanation of the design of firewall configurations for these zones, please refer to our explanation for [exposure of software](../../explanations/networking/exposure.md#firewalling) in openUC2 OS.
 
 ### `nm-shared`
 
