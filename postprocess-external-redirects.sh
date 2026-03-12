@@ -8,10 +8,6 @@ tmp_bin="$(mktemp -d --tmpdir=/tmp bin.XXXXXXX)"
 "$config_files_root/tools/download-gomplate.sh" "$tmp_bin"
 export PATH="$tmp_bin:$PATH"
 
-# Prepare build
-rm -rf "$config_files_root/build"
-mkdir "$config_files_root/build"
-
 # Generate redirects
 readarray redirects < <(yq e -o=j -I=0 '.[]' redirects.yml)
 for redirect in "${redirects[@]}"; do
