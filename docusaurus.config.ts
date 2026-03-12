@@ -127,7 +127,7 @@ module.exports = async function createConfigAsync() {
         // Public API key: it is safe to commit it
         apiKey: '6a00ab9727a589fca841d4a7d9776c46',
 
-        indexName: 'openuc2io',
+        indexName: `docs-${releaseChannel}`,
 
         // Optional: see doc section below
         contextualSearch: true,
