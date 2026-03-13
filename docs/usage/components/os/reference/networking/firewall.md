@@ -206,4 +206,4 @@ NetworkManager connection profiles are bound to firewall zones as follows:
 | `tailscale0`                      | `nm-shared`        | `networking/tailscale`:<br /> `firewall-as-direct`                       | yes                      |
 | `tailscale0`                      | `public`           | `networking/firewalld`:<br /> `default-zone-public`                      |                          |
 
-How-to guides are available for changing firewall zone bindings to [limit access](../../guides/day-1/sw-access/README.md#to-all-unauthenticated-administrative-apps) and [increase access](../../guides/day-1/security/README.md#how-to-control-access-to-unauthenticated-administrative-apps) for particular NetworkManager connection profiles.
+How-to guides are available for changing firewall zone bindings to [limit access](../../guides/day-1/access.md#to-all-unauthenticated-administrative-apps) and [increase access](../../guides/day-1/security.md#how-to-control-access-to-unauthenticated-administrative-apps) for particular NetworkManager connection profiles.

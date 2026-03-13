@@ -14,10 +14,10 @@ Because openUC2 OS comes with some default settings which make it less secure an
 
 ### How to change the Wi-Fi hotspot's password
 
-By default, the password used for [connecting to the machine's Wi-Fi hotspot](../connectivity/README.md#via-the-machines-wi-fi-hotspot) is `youseetoo`.
+By default, the password used for [connecting to the machine's Wi-Fi hotspot](./connectivity.md#via-the-machines-wi-fi-hotspot) is `youseetoo`.
 You should change this password to something more secure:
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the following command and follow the displayed instructions:
    ```bash
    read -sp "Enter a new password: " password && echo "psk=$password" | sudo tee >/dev/null \
@@ -37,8 +37,8 @@ You should change this password to something more secure:
 
 By default, the `pi` user's password is `youseetoo`, and it's used for:
 
-- [accessing the machine's terminal via Cockpit](../sw-access/README.md#via-cockpit)
-- [accessing the machine's terminal via SSH](../sw-access/README.md#via-ssh)
+- [accessing the machine's terminal via Cockpit](./access.md#via-cockpit)
+- [accessing the machine's terminal via SSH](./access.md#via-ssh)
 - running `sudo` commands in the machine's terminal
 
 You should change this password to something more secure.
@@ -52,7 +52,7 @@ Otherwise, anyone on the same network as your machine may be able to do anything
 
 #### via Cockpit
 
-1. [Open Cockpit](../sw-access/README.md#cockpit).
+1. [Open Cockpit](./access.md#cockpit).
 2. Open the "Accounts" page using Cockpit's navigation sidebar.
 3. Click on the "pi" username to open the page for editing the `pi` user.
 4. Click on the "Set password" button.
@@ -60,7 +60,7 @@ Otherwise, anyone on the same network as your machine may be able to do anything
 
 #### via the terminal
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command `passwd` and follow the displayed instructions.
 
 ### How to block access to all apps
@@ -79,7 +79,7 @@ Otherwise, you will lock yourself out of being able to make other administrative
 
 To block access from other devices via your any LAN connection:
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt --stage enable-depl-feat networking/firewalld default-zone-block
@@ -104,7 +104,7 @@ Otherwise, you will lock yourself out of being able to make other administrative
 
 To block access from other devices via your machine's Ethernet connection to a LAN (i.e. an external Wi-Fi network):
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    sudo nmcli conn modify wlan1-internet connection.zone block
@@ -127,7 +127,7 @@ Otherwise, you will lock yourself out of being able to make other administrative
 
 To block access from other devices via your machine's Ethernet connection to a LAN:
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt --stage enable-depl-feat networking/networkmanager/base eth0-default-firewall-block
@@ -157,7 +157,7 @@ Otherwise, you will lock yourself out of being able to make other administrative
 
 To prevent Cockpit from being accessible by any other device on the same LAN as your machine:
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt disable-depl-feat --stage admin/cockpit firewall-allow-public frontend-untrusted
@@ -166,7 +166,7 @@ To prevent Cockpit from being accessible by any other device on the same LAN as 
 
 To undo your changes:
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt enable-depl-feat --stage admin/cockpit firewall-allow-public frontend-untrusted
@@ -184,7 +184,7 @@ Otherwise, you will lock yourself out of being able to make other administrative
 
 To prevent your machine from being accessible over SSH (which exposes full administrative access to the OS) from any other device on the same LAN:
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt disable-depl-feat --stage admin/sshd firewall-allow-public
@@ -193,7 +193,7 @@ To prevent your machine from being accessible over SSH (which exposes full admin
 
 To undo your changes:
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt enable-depl-feat --stage admin/sshd firewall-allow-public
@@ -204,7 +204,7 @@ To undo your changes:
 
 To prevent ImSwitch (which can arbitrarily control hardware attached to the openUC2 OS machine) from being accessible by any other device on the same LAN as your machine:
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt disable-depl-feat --stage imswitch frontend-untrusted firewall-allow-public
@@ -213,7 +213,7 @@ To prevent ImSwitch (which can arbitrarily control hardware attached to the open
 
 To undo your changes:
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt enable-depl-feat --stage imswitch frontend-untrusted firewall-allow-public
@@ -224,7 +224,7 @@ To undo your changes:
 
 To prevent the user file manager (which can download and delete data acquired by ImSwitch) from being accessible by any other device on the same LAN as your machine:
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt disable-depl-feat --stage admin/filebrowser-rootfs frontend-untrusted
@@ -233,7 +233,7 @@ To prevent the user file manager (which can download and delete data acquired by
 
 To undo your changes:
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt enable-depl-feat --stage admin/filebrowser-rootfs frontend-untrusted
@@ -253,7 +253,7 @@ Otherwise, you will lock yourself out of being able to make other administrative
 
 :::
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt enable-depl-feat networking/networkmanager/wifi-hotspot wlan0-firewall-public
@@ -261,11 +261,11 @@ Otherwise, you will lock yourself out of being able to make other administrative
    ```
 3. Apply your changes by rebooting.
 
-Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over LANs](../sw-access/README.md#over-all-lan-connections).
+Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over LANs](./access.md#over-all-lan-connections).
 
 To undo your changes:
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt disable-depl-feat networking/networkmanager/wifi-hotspot wlan0-firewall-public
@@ -284,7 +284,7 @@ Otherwise, you will lock yourself out of being able to make other administrative
 
 :::
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt enable-depl-feat networking/networkmanager/base eth0-static-firewall-public
@@ -292,11 +292,11 @@ Otherwise, you will lock yourself out of being able to make other administrative
    ```
 3. Apply your changes by rebooting.
 
-Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over LANs](../sw-access/README.md#over-all-lan-connections).
+Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over LANs](./access.md#over-all-lan-connections).
 
 To undo your changes:
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt disable-depl-feat networking/networkmanager/base eth0-static-firewall-public
@@ -315,7 +315,7 @@ Otherwise, you will lock yourself out of being able to make other administrative
 
 :::
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt enable-depl-feat networking/networkmanager/base usb0-static-firewall-public
@@ -323,11 +323,11 @@ Otherwise, you will lock yourself out of being able to make other administrative
    ```
 3. Apply your changes by rebooting.
 
-Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over LANs](../sw-access/README.md#over-all-lan-connections).
+Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over LANs](./access.md#over-all-lan-connections).
 
 To undo your changes:
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt disable-depl-feat networking/networkmanager/base usb0-static-firewall-public
@@ -346,7 +346,7 @@ Otherwise, you will lock yourself out of being able to make other administrative
 
 By default, the firewall is configured to bind Tailscale to firewalld's `nm-shared` zone for trusted networks like the machine's Wi-Fi hotspot. You can instead change the firewall to bind Tailscale to the default zone, `public`, so that it will be treated like any other untrusted LAN:
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt disable-depl-feat networking/tailscale firewall-zone-nm-shared
@@ -354,11 +354,11 @@ By default, the firewall is configured to bind Tailscale to firewalld's `nm-shar
    ```
 3. Apply your changes by rebooting.
 
-Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over LANs](../sw-access/README.md#over-all-lan-connections).
+Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over LANs](./access.md#over-all-lan-connections).
 
 To undo your changes:
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt enable-depl-feat networking/tailscale firewall-zone-nm-shared
@@ -371,7 +371,7 @@ To undo your changes:
 Docker containers which forward ports to `0.0.0.0`/`[::]` (instead of forwarding ports to a particular IP address such as `127.0.0.1`) will bypass all firewall rules and be accessible on all network interfaces.
 To only allow a forwarded ports to be accessible (in all firewalld zones) when a port-forwarding firewall rule exists for that port (in any firewalld zone):
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt enable-depl-feat networking/firewalld govern-docker-ports
@@ -388,7 +388,7 @@ This appears to be a consequence of how Docker implements port forwarding.
 
 To undo your changes:
 
-1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](./access.md#the-machines-terminal).
 2. Run the command:
    ```bash
    forklift plt disable-depl-feat networking/firewalld govern-docker-ports
