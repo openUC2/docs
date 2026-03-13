@@ -5,7 +5,16 @@ import {themes} from 'prism-react-renderer';
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
-import {siteURL, baseURL, variant, releaseChannel, shortTitle, announcement, buildDate} from './config/site';
+import {
+  siteURL,
+  baseURL,
+  variant,
+  releaseChannel,
+  shortReleaseChannel,
+  shortTitle,
+  announcement,
+  buildDate,
+} from './config/site';
 
 /** @type {() => Promise<import('@docusaurus/types').Config>} */
 module.exports = async function createConfigAsync() {
@@ -127,7 +136,7 @@ module.exports = async function createConfigAsync() {
         // Public API key: it is safe to commit it
         apiKey: 'ee1437989ff3a8cb821cc0ec3cddc083',
 
-        indexName: `docs-${releaseChannel}`,
+        indexName: `docs-${shortReleaseChannel}`,
 
         // Optional: see doc section below
         contextualSearch: true,

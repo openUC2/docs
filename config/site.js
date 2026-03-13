@@ -5,6 +5,18 @@ export const baseURL = process.env.BASE_URL || "/";
 
 export const variant = process.env.VARIANT || "full";
 export const releaseChannel = process.env.RELEASE_CHANNEL || "development";
+export const shortReleaseChannel = ((channel) => {
+	switch (channel) {
+		case "":
+		case "stable":
+		case "production":
+			return "prod";
+		case "development":
+			return "dev";
+		default:
+			return channel;
+	}
+})(releaseChannel);
 export const title = ((channel) => {
 	switch (channel) {
 		case "":
