@@ -2,7 +2,7 @@
 sidebar_position: 100
 ---
 
-# Software Updates
+# Updates
 
 ## How to upgrade
 

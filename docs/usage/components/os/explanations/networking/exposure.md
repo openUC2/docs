@@ -1,6 +1,6 @@
 # Exposure of Software
 
-Because openUC2 OS is designed for [headless](https://en.wikipedia.org/wiki/Headless_software) operation, its software is exposed to be [accessed](../../guides/day-1/sw-access/README.md) over [network connections](../../guides/day-1/connectivity/README.md).
+Because openUC2 OS is designed for [headless](https://en.wikipedia.org/wiki/Headless_software) operation, its software is exposed to be [accessed](../../guides/day-1/access.md) over [network connections](../../guides/day-1/connectivity.md).
 Here, we explain the OS's mechanisms for making software accessible over network connections— including the operational and security implications of the default configuration of these mechanisms.
 
 The overall model is that a user (or computer or software program) trying to access a software program on an openUC2 OS machine will initiate a connection to the machine.
@@ -34,28 +34,31 @@ This is the most generally-usable way that users can access openUC2 OS's softwar
 Thus, the firewall is configured to allow full access from such connections to all known programs running on the machine, including apps exposed by the [ingress proxy for trusted access](#trusted-access) which give unauthenticated users full administrative privileges on the OS.
 
 The security assumptions implied by this configuration are that:
-- The [password of the machine's Wi-Fi hotspot has been changed](../../guides/day-1/security/README.md#how-to-change-the-wi-fi-hotspots-password) to something more secure than the default value of `youseetoo`; otherwise, it would be trivially easy for an attacker to gain access to the machine from a nearby location.
+- The [password of the machine's Wi-Fi hotspot has been changed](../../guides/day-1/security.md#how-to-change-the-wi-fi-hotspots-password) to something more secure than the default value of `youseetoo`; otherwise, it would be trivially easy for an attacker to gain access to the machine from a nearby location.
 - If someone has enough physical access to the openUC2 OS machine to be able set up a direct connection to the machine from another computer, then that person should be able to access all software on the machine from that other computer.
 
 By default, connections through a [Tailscale](https://tailscale.com/) tailnet are treated as direct connections.
-This configuration is needed to support the OS's [remote-assistance functionality](../../guides/day-1/connectivity/README.md#for-remote-assistance-from-openuc2); however, this configuration can be changed to [make the firewall treat the tailnet like an untrusted network](../../guides/day-1/security/README.md#how-to-control-access-to-unauthenticated-administrative-apps-over-tailscale).
+This configuration is needed to support the OS's [remote-assistance functionality](../../guides/day-1/connectivity.md#for-remote-assistance-from-openuc2); however, this configuration can be changed to [make the firewall treat the tailnet like an untrusted network](../../guides/day-1/security.md#over-tailscale).
+
+Similarly, networking configurations can be changed to [make the firewall treat a particular direct physical connection like an untrusted network](../../guides/day-1/security.md#how-to-block-access-to-all-apps).
 
 ### Public access
 
 [Connections from public networks](../../reference/networking/firewall.md#public) are connections to the machine from a network which may have untrusted computers and/or people.
 
-By default, any network connection which isn't a direct connection is assumed to be significantly more vulnerable to undesired access and malicious attacks. Thus, the firewall is configured to deny access to programs which give unauthenticated users full administrative privileges on the OS; however, this can be overridden to [allow access](../../guides/day-1/sw-access/README.md#to-unauthenticated-administrative-apps-over-local-area-networks).
+By default, any network connection which isn't a direct connection is assumed to be significantly more vulnerable to undesired access and malicious attacks. Thus, the firewall is configured to deny access to programs which give unauthenticated users full administrative privileges on the OS; however, this can be overridden to [allow access](../../guides/day-1/access.md#to-all-unauthenticated-administrative-apps).
 
 However, the firewall is configured allow access to programs which give users full administrative privileges on the OS upon authentication, as well as programs for unprivileged operation of the machine:
-- By default, access to Cockpit (which exposes full administrative access to the OS) on port 9090 is allowed, because it requires authentication; however, this configuration can be changed to [block access](../../guides/day-1/security/README.md#to-cockpit).
-- By default, access to SSH (which exposes full administrative access to the OS) is allowed, because it requires authentication; however, this configuration can be changed to [block access](../../guides/day-1/security/README.md#to-ssh).
+- By default, access to Cockpit (which exposes full administrative access to the OS) on port 9090 is allowed, because it requires authentication; however, this configuration can be changed to [block access](../../guides/day-1/security.md#to-cockpit).
+- By default, access to SSH (which exposes full administrative access to the OS) is allowed, because it requires authentication; however, this configuration can be changed to [block access](../../guides/day-1/security.md#to-ssh).
 - By default, access to the [ingress proxy for untrusted access](#untrusted-access) is allowed on port 80 (through a port-forwarding rule to port 8000 where the ingress proxy listens), instead of the [ingress proxy for trusted access](#trusted-access); as a result, all apps exposed by the untrusted-access ingress proxy are exposed for public access.
 
 The security assumptions implied by this configuration are that:
-- The [password of the machine's `pi` user has been changed](../../guides/day-1/security/README.md#how-to-change-the-pi-users-password) to something more secure than the default value of `youseetoo`; otherwise, it would be trivially easy for an attacker to gain access to the machine over an untrusted network.
+- The [password of the machine's `pi` user has been changed](../../guides/day-1/security.md#how-to-change-the-pi-users-password) to something more secure than the default value of `youseetoo`; otherwise, it would be trivially easy for an attacker to gain access to the machine over an untrusted network.
 - The operator of the machine intends to access non-administrative programs from other computers on the network.
 
-If a particular network should be granted the same level of access as direct connections, the firewall configuration can be adjusted accordingly. (TODO: add link to a how-to guide)
+If a particular network should be granted the same level of access as direct connections, [the firewall configuration can be adjusted accordingly](../../guides/day-1/access.md#to-all-unauthenticated-administrative-apps).
+Or, if a particular network should not allow any access, [the firewall configuration can be adjusted accordingly](../../guides/day-1/security.md#how-to-block-access-to-specific-apps-over-lans).
 
 ## Ingress proxying
 
@@ -116,9 +119,9 @@ Untrusted access is exposed on a separate port (in this case port 8000) so that 
 By default, access to the following application servers is allowed for convenience:
 
 - The landing page; however, this configuration can be changed to block access.
-- ImSwitch, which can arbitrarily control hardware attached to the openUC2 OS machine; however, this configuration can be changed to [block access](../../guides/day-1/security/README.md#to-imswitch).
-- The user file manager, which can download and delete data acquired by ImSwitch; however, this configuration can be changed to [block access](../../guides/day-1/security/README.md#to-the-user-file-manager).
-- Cockpit, which exposes full administrative access to the OS after user authentication; however, this configuration can be changed to [block access](../../guides/day-1/security/README.md#to-cockpit).
+- ImSwitch, which can arbitrarily control hardware attached to the openUC2 OS machine; however, this configuration can be changed to [block access](../../guides/day-1/security.md#to-imswitch).
+- The user file manager, which can download and delete data acquired by ImSwitch; however, this configuration can be changed to [block access](../../guides/day-1/security.md#to-the-user-file-manager).
+- Cockpit, which exposes full administrative access to the OS after user authentication; however, this configuration can be changed to [block access](../../guides/day-1/security.md#to-cockpit).
 - The embedded openUC2 documentation; however, this configuration can be changed to block access.
 
 This ingress proxy is always accessible on port 8000; however, in the [firewall zone for public access](#public-access) this ingress proxy is also accessible on port 80 (since the trusted-access ingress proxy is not accessible on port 80 in that zone).

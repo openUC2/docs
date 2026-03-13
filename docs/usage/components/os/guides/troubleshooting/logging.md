@@ -39,7 +39,7 @@ To undo this change:
 
 After [enabling persistent logging](#how-to-enable-persistent-logging):
 
-1. [Enter the machine's terminal](../day-1/sw-access/README.md#the-machines-terminal).
+1. [Enter the machine's terminal](../day-1/access.md#the-machines-terminal).
 2. Run the command `journalctl --boot=-{n}` to check the logs from `n` boots ago.
    For example, run `journalctl --boot=-1` to check the logs from the previous boot.
 
@@ -49,7 +49,7 @@ After [enabling persistent logging](#how-to-enable-persistent-logging):
 
 To install and enable our developer tool for viewing serial communication messages between the machine and all attached microcontrollers:
 
-1. [Connect the machine to the internet](../day-1/connectivity/README.md#how-to-connect-the-machine-to-the-internet).
+1. [Connect the machine to the internet](../day-1/connectivity.md#how-to-connect-the-machine-to-the-internet).
 2. Run `forklift pallet enable-depl --apply dev/serial-monitor`.
 
 To undo this change:
@@ -60,7 +60,7 @@ To undo this change:
 
 After [enabling the serial monitor tool](#how-to-enable-the-serial-monitor-tool):
 
-1. [Open the machine's landing page](../day-1/connectivity/README.md#how-to-access-the-machines-landing-page).
+1. [Open the machine's landing page](../day-1/connectivity.md#how-to-access-the-machines-landing-page).
 2. Add `/dev/serial-monitor` to the landing page's URL in your web browser's address bar, and open the resulting URL.
    For example, if you access the landing page at [http://openuc2.local](http://openuc2.local), then you should open [http://openuc2.local/dev/serial-monitor](http://openuc2.local/dev/serial-monitor)
 3. ??? (TODO: add instructions for how to use the serial monitor tool!)

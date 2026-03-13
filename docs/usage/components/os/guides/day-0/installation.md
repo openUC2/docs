@@ -2,7 +2,7 @@
 sidebar_position: 10
 ---
 
-# Software Installation
+# Installation
 
 ## How to choose an operating system
 

@@ -7,14 +7,14 @@ toc_max_heading_level: 4
 # Machine Connectivity
 
 The how-to guides here will help you to:
-- connect to your openUC2 OS machine, so that you can [access its software](../sw-access/README.md)
+- connect to your openUC2 OS machine, so that you can [access its software](./access.md)
 - make your machine's software easy to connect to
 
-This process will be less stressful for you if you've already done [the relevant day-0 planning](../../day-0/connectivity/README.md).
+This process will be less stressful for you if you've already done [the relevant day-0 planning](../day-0/connectivity.md).
 
 ## How to connect to the machine
 
-To choose which of the following methods you will use for connecting to the machine, refer to our guide for [how to choose a networking topology](../../day-0/connectivity/README.md#how-to-choose-a-networking-topology).
+To choose which of the following methods you will use for connecting to the machine, refer to our guide for [how to choose a networking topology](../day-0/connectivity.md#how-to-choose-a-networking-topology).
 
 ### directly
 
@@ -58,7 +58,7 @@ To choose which of the following methods you will use for connecting to the mach
    :::warning
 
    By default, the Wi-Fi hotspot's password is `youseetoo`.
-   You should [change it to a more secure password](../security/README.md#how-to-change-the-wi-fi-hotspots-password); otherwise, anyone within range of your machine's Wi-Fi hotspot will be able to do anything they want to your machine.
+   You should [change it to a more secure password](./security.md#how-to-change-the-wi-fi-hotspots-password); otherwise, anyone within range of your machine's Wi-Fi hotspot will be able to do anything they want to your machine.
 
    :::
 
@@ -76,21 +76,21 @@ To choose which of the following methods you will use for connecting to the mach
 6. Ensure that your tailnet doesn't have any security policies which would prevent your computer from connecting to the machine.
 7. Ensure that your tailnet's security policies protect it from undesired access by other devices on the tailnet.
 
-#### via a Local Area Network
+#### via a LAN
 
 :::warning
 
-Before you connect your machine to the internet this way, you should [change the `pi` user's password](../security/README.md#how-to-change-the-pi-users-password) to something more secure than the default value of `youseetoo`.
+Before you connect your machine to the internet this way, you should [change the `pi` user's password](./security.md#how-to-change-the-pi-users-password) to something more secure than the default value of `youseetoo`.
 Otherwise, anyone on the same network as your machine may be able to do anything they want to your machine by logging in as the `pi` user with the password `youseetoo`.
 
 :::
 
-1. Connect your machine to a Local Area Network (LAN) by following the same procedure you would use to [connect your machine to the internet](#how-to-connect-the-machine-to-the-internet) via a network router or external Wi-Fi network.
+1. Connect your machine to a LAN by following the same procedure you would use to [connect your machine to the internet](#how-to-connect-the-machine-to-the-internet) via a network router or external Wi-Fi network.
 2. Connect your computer to the same LAN.
 
 :::tip
 
-If you intend to access administrative apps over the LAN, you will need to explicitly [allow access to unauthenticated administrative apps over the LAN](../sw-access/README.md#to-unauthenticated-administrative-apps-over-local-area-networks).
+If you intend to access administrative apps over the LAN, you will need to explicitly [allow access to unauthenticated administrative apps over the LAN](access.md#to-all-unauthenticated-administrative-apps).
 
 :::
 
@@ -98,7 +98,7 @@ If you intend to access administrative apps over the LAN, you will need to expli
 
 The following factors will determine which access methods work for you:
 
-- The [networking topology](../../day-0/connectivity/README.md#how-to-choose-a-networking-topology) you've selected.
+- The [networking topology](../day-0/connectivity.md#how-to-choose-a-networking-topology) you've selected.
 - The specific way in which you're [connecting your computer to the machine](#how-to-connect-to-the-machine).
 - Your operating system's settings, and its mDNS support.
 - Your web browser's DNS settings, and its mDNS support.
@@ -109,7 +109,7 @@ If none of the following access methods work in your situation, please contact o
 
 :::info
 
-This method may result in surprising behaviors if your computer is [connected to multiple machines](../../day-0/connectivity/README.md#for-multiple-machines); in such scenarios, you should instead use [a machine-specific domain name](#via-a-machine-specific-domain-name).
+This method may result in surprising behaviors if your computer is [connected to multiple machines](../day-0/connectivity.md#for-multiple-machines); in such scenarios, you should instead use [a machine-specific domain name](#via-a-machine-specific-domain-name).
 
 :::
 
@@ -197,13 +197,13 @@ MagicDNS only works for [Tailscale connections to machines](#via-tailscale).
 
 ## How to connect the machine to the internet
 
-To choose which of the following methods you will use for giving the machine internet access, refer to our guide for [how to choose a networking topology](../../day-0/connectivity/README.md#how-to-choose-a-networking-topology).
+To choose which of the following methods you will use for giving the machine internet access, refer to our guide for [how to choose a networking topology](../day-0/connectivity.md#how-to-choose-a-networking-topology).
 
 ### via an Ethernet connection to a network router
 
 :::warning
 
-Before you connect your machine to the internet this way, you should [change the `pi` user's password](../security/README.md#how-to-change-the-pi-users-password) to something more secure than the default value of `youseetoo`.
+Before you connect your machine to the internet this way, you should [change the `pi` user's password](./security.md#how-to-change-the-pi-users-password) to something more secure than the default value of `youseetoo`.
 Otherwise, anyone on the same network as your machine may be able to do anything they want to your machine by logging in as the `pi` user with the password `youseetoo`.
 
 :::
@@ -230,7 +230,7 @@ If you need to know the MAC address of your machine's Ethernet module in order t
 
 :::warning
 
-Before you connect your machine to the internet this way, you should [change the `pi` user's password](../security/README.md#how-to-change-the-pi-users-password) to something more secure than the default value of `youseetoo`.
+Before you connect your machine to the internet this way, you should [change the `pi` user's password](./security.md#how-to-change-the-pi-users-password) to something more secure than the default value of `youseetoo`.
 Otherwise, anyone on the same network as your machine may be able to do anything they want to your machine by logging in as the `pi` user with the password `youseetoo`.
 
 :::
