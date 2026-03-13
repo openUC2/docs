@@ -125,7 +125,7 @@ module.exports = async function createConfigAsync() {
         appId: 'DB3UCAMZ89',
 
         // Public API key: it is safe to commit it
-        apiKey: '6a00ab9727a589fca841d4a7d9776c46',
+        apiKey: 'ee1437989ff3a8cb821cc0ec3cddc083',
 
         indexName: `docs-${releaseChannel}`,
 
