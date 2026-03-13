@@ -145,7 +145,109 @@ To undo your changes:
    ```
 3. Apply your changes by rebooting.
 
-### How to control access to unauthenticated administrative apps over Tailscale
+### How to control access to unauthenticated administrative apps
+
+#### over the Wi-Fi hotspot
+
+By default, the firewall is configured to bind the machine's Wi-Fi hotspot to firewalld's `nm-shared` zone for trusted networks. You can instead change the firewall to bind the Wi-Fi hotspot to the default zone, `public`, so that it will be treated like any other untrusted Local Area Network:
+
+:::warning
+
+Before you make this change, you should ensure that you will have some way to access the machine's terminal afterwards!
+Otherwise, you will lock yourself out of being able to make other administrative changes to your system.
+
+:::
+
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+2. Run the command:
+   ```bash
+   forklift plt enable-depl-feat networking/networkmanager/wifi-hotspot wlan0-firewall-public
+   forklift plt stage
+   ```
+3. Apply your changes by rebooting.
+
+Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over Local Area Networks](../sw-access/README.md#to-unauthenticated-administrative-apps-over-local-area-networks).
+
+To undo your changes:
+
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+2. Run the command:
+   ```bash
+   forklift plt disable-depl-feat networking/networkmanager/wifi-hotspot wlan0-firewall-public
+   forklift plt stage
+   ```
+3. Apply your changes by rebooting.
+
+#### over Ethernet
+
+By default, the firewall is configured to bind direct Ethernet connections to firewalld's `nm-shared` zone for trusted networks. You can instead change the firewall to bind Ethernet connections to the default zone, `public`, so that it will be treated like any other untrusted Local Area Network:
+
+:::warning
+
+Before you make this change, you should ensure that you will have some way to access the machine's terminal afterwards!
+Otherwise, you will lock yourself out of being able to make other administrative changes to your system.
+
+:::
+
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+2. Run the command:
+   ```bash
+   forklift plt enable-depl-feat networking/networkmanager/base eth0-static-firewall-public
+   forklift plt stage
+   ```
+3. Apply your changes by rebooting.
+
+Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over Local Area Networks](../sw-access/README.md#to-unauthenticated-administrative-apps-over-local-area-networks).
+
+To undo your changes:
+
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+2. Run the command:
+   ```bash
+   forklift plt disable-depl-feat networking/networkmanager/base eth0-static-firewall-public
+   forklift plt stage
+   ```
+3. Apply your changes by rebooting.
+
+#### over USB-C
+
+By default, the firewall is configured to bind direct USB-C networking connections to firewalld's `nm-shared` zone for trusted networks. You can instead change the firewall to bind USB-C networking connections to the default zone, `public`, so that it will be treated like any other untrusted Local Area Network:
+
+:::warning
+
+Before you make this change, you should ensure that you will have some way to access the machine's terminal afterwards!
+Otherwise, you will lock yourself out of being able to make other administrative changes to your system.
+
+:::
+
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+2. Run the command:
+   ```bash
+   forklift plt enable-depl-feat networking/networkmanager/base usb0-static-firewall-public
+   forklift plt stage
+   ```
+3. Apply your changes by rebooting.
+
+Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over Local Area Networks](../sw-access/README.md#to-unauthenticated-administrative-apps-over-local-area-networks).
+
+To undo your changes:
+
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+2. Run the command:
+   ```bash
+   forklift plt disable-depl-feat networking/networkmanager/base usb0-static-firewall-public
+   forklift plt stage
+   ```
+3. Apply your changes by rebooting.
+
+#### over Tailscale
+
+:::warning
+
+Before you make this change, you should ensure that you will have some way to access the machine's terminal afterwards!
+Otherwise, you will lock yourself out of being able to make other administrative changes to your system.
+
+:::
 
 By default, the firewall is configured to bind Tailscale to firewalld's `nm-shared` zone for trusted networks like the machine's Wi-Fi hotspot. You can instead change the firewall to bind Tailscale to the default zone, `public`, so that it will be treated like any other untrusted Local Area Network:
 
