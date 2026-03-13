@@ -1,5 +1,6 @@
 ---
 sidebar_position: 21
+toc_max_heading_level: 4
 ---
 
 # Software Access
@@ -20,7 +21,7 @@ The how-to guides here will help you to:
 3. Click on the link for the browser app.
    For example, to open ImSwitch, click on the landing page's link for ImSwitch.
 
-   If the browser app doesn't load and you're indirectly connected to the machine [via a Local Area Network](../connectivity/README.md#via-a-local-area-network), then you must add port 8000 to the URL in your address bar.
+   If the browser app doesn't load and you're indirectly connected to the machine [via a LAN](../connectivity/README.md#via-a-lan), then you must add port 8000 to the URL in your address bar.
    For example, if the landing page's link for ImSwitch opened [openuc2.local/imswitch/ui/index.html](http://openuc2.local/imswitch/ui/index.html), then you should instead open [openuc2.local:8000/imswitch/ui/index.html](http://openuc2.local:8000/imswitch/ui/index.html).
    Note that administrative apps cannot be used on port 8000.
 
@@ -86,9 +87,61 @@ If you would normally [access the landing page](../connectivity/README.md#how-to
 
 ## How to allow access
 
-### to unauthenticated administrative apps over Local Area Networks
+### to all unauthenticated administrative apps
 
-For security reasons, by default the machine is configured to block access [over Local Area Networks (LAN)](../connectivity/README.md#via-a-local-area-network) to browser apps (such as the Machine Administration app, Dozzle, and the system file manager) which can perform administrative operations without user authentication. You can override this default behavior to allow access to those apps over LANs:
+For security reasons, by default the machine is configured to block access [over all LANs (LANs)](../connectivity/README.md#via-a-lan) to browser apps (such as the Machine Administration app, Dozzle, and the system file manager) which can perform administrative operations without user authentication. You can override this default behavior.
+
+#### only over an Ethernet connection to a LAN
+
+You can override the default behavior and allow access to all of unauthenticated administrative apps over a LAN connected by Ethernet:
+
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+2. Run the command:
+   ```bash
+   forklift plt --stage enable-depl-feat networking/networkmanager/base eth0-default-firewall-direct
+   ```
+3. Apply your changes by rebooting.
+
+:::danger
+
+This could allow anyone on the same LAN to do whatever they want with your machine!
+You should ensure that your LAN has its own firewall settings to prevent people you don't trust from using the LAN to access your machine over port 80.
+
+:::
+
+To undo this change:
+1. Run the command:
+   ```bash
+   forklift plt disable-depl-feat networking/networkmanager/base eth0-default-firewall-direct
+   ```
+2. Apply your changes by rebooting.
+
+#### only over Wi-Fi connection to a LAN
+
+You can override the default behavior and allow access to all of unauthenticated administrative apps over a LAN (i.e. an external Wi-Fi network) connected by Wi-Fi:
+
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+2. Run the command:
+   ```bash
+   sudo nmcli conn modify wlan1-internet connection.zone nm-shared
+   ```
+
+:::danger
+
+This could allow anyone on the same LAN to do whatever they want with your machine!
+You should ensure that your LAN has its own firewall settings to prevent people you don't trust from using the LAN to access your machine over port 80.
+
+:::
+
+To undo this change:
+1. Run the command:
+   ```bash
+   sudo nmcli conn modify wlan1-internet connection.zone ""
+   ```
+
+#### over all LAN connections
+
+You can override the default behavior and allow access to all of unauthenticated administrative apps over aall LANs connected by any method:
 
 1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the commands:

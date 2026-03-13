@@ -160,7 +160,7 @@ The how-to guides here will help you to determine why you can't access a particu
    2. In the resulting modal dialogue, either:
       - Click on the "Services" radio button, select a known service associated with the port, and then click on the "Add services" button; or
       - Click on the "Custom ports" radio button, enter the requested information, and then click on the "Add ports" button.
-6. If the port needs to be accessible over indirect connections to the machine [via a Local Area Network](../day-1/connectivity/README.md#via-a-local-area-network), add a firewall service for the port in the "Public" zone:
+6. If the port needs to be accessible over indirect connections to the machine [via a LAN](../day-1/connectivity/README.md#via-a-lan), add a firewall service for the port in the "Public" zone:
    1. In the "Public zone" section, click on the "Add services" button to create a new firewalld service.
    2. In the resulting modal dialogue, either:
       - Click on the "Services" radio button, select a known service associated with the port, and then click on the "Add services" button; or
@@ -204,7 +204,7 @@ To open up a new port `{port}` in protocol `{protocol}`:
       sudo tee -a <<<'  <port port="8080" protocol="tcp"/>' \
          /etc/firewalld/zones.d/nm-shared/80-custom-ports.xml
       ```
-3. If the port needs to be accessible over indirect connections to the machine [via a Local Area Network](../day-1/connectivity/README.md#via-a-local-area-network), add a rule for the port in the "public" zone:
+3. If the port needs to be accessible over indirect connections to the machine [via a LAN](../day-1/connectivity/README.md#via-a-lan), add a rule for the port in the "public" zone:
    1. Run the following command:
       ```bash
       sudo tee -a <<<'  <port port="{port}" protocol="{protocol}"/>' \
@@ -256,7 +256,7 @@ To undo this change:
 
 :::danger
 
-If your machine is connected to a Local Area Network (e.g. for internet access), this could allow anyone on the same network to do whatever they want with your machine!
+If your machine is connected to a LAN (e.g. for internet access), this could allow anyone on the same network to do whatever they want with your machine!
 You should ensure that:
 - The network has its own firewall settings to prevent people you don't trust from using the network to access your machine (including over ports 80 and 443 for various administrative browser apps, and port 9090 for Cockpit).
 - Your machine has a secure [password for the `pi` user](../day-1/security/README.md#how-to-change-the-pi-users-password), because it can be used for remotely [accessing the machine's terminal](../day-1/sw-access/README.md#the-machines-terminal).

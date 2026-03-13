@@ -38,13 +38,15 @@ The security assumptions implied by this configuration are that:
 - If someone has enough physical access to the openUC2 OS machine to be able set up a direct connection to the machine from another computer, then that person should be able to access all software on the machine from that other computer.
 
 By default, connections through a [Tailscale](https://tailscale.com/) tailnet are treated as direct connections.
-This configuration is needed to support the OS's [remote-assistance functionality](../../guides/day-1/connectivity/README.md#for-remote-assistance-from-openuc2); however, this configuration can be changed to [make the firewall treat the tailnet like an untrusted network](../../guides/day-1/security/README.md#how-to-control-access-to-unauthenticated-administrative-apps-over-tailscale).
+This configuration is needed to support the OS's [remote-assistance functionality](../../guides/day-1/connectivity/README.md#for-remote-assistance-from-openuc2); however, this configuration can be changed to [make the firewall treat the tailnet like an untrusted network](../../guides/day-1/security/README.md#over-tailscale).
+
+Similarly, networking configurations can be changed to [make the firewall treat a particular direct physical connection like an untrusted network](../../guides/day-1/security/README.md#how-to-block-access-to-all-apps).
 
 ### Public access
 
 [Connections from public networks](../../reference/networking/firewall.md#public) are connections to the machine from a network which may have untrusted computers and/or people.
 
-By default, any network connection which isn't a direct connection is assumed to be significantly more vulnerable to undesired access and malicious attacks. Thus, the firewall is configured to deny access to programs which give unauthenticated users full administrative privileges on the OS; however, this can be overridden to [allow access](../../guides/day-1/sw-access/README.md#to-unauthenticated-administrative-apps-over-local-area-networks).
+By default, any network connection which isn't a direct connection is assumed to be significantly more vulnerable to undesired access and malicious attacks. Thus, the firewall is configured to deny access to programs which give unauthenticated users full administrative privileges on the OS; however, this can be overridden to [allow access](../../guides/day-1/sw-access/README.md#to-all-unauthenticated-administrative-apps).
 
 However, the firewall is configured allow access to programs which give users full administrative privileges on the OS upon authentication, as well as programs for unprivileged operation of the machine:
 - By default, access to Cockpit (which exposes full administrative access to the OS) on port 9090 is allowed, because it requires authentication; however, this configuration can be changed to [block access](../../guides/day-1/security/README.md#to-cockpit).
@@ -55,7 +57,8 @@ The security assumptions implied by this configuration are that:
 - The [password of the machine's `pi` user has been changed](../../guides/day-1/security/README.md#how-to-change-the-pi-users-password) to something more secure than the default value of `youseetoo`; otherwise, it would be trivially easy for an attacker to gain access to the machine over an untrusted network.
 - The operator of the machine intends to access non-administrative programs from other computers on the network.
 
-If a particular network should be granted the same level of access as direct connections, the firewall configuration can be adjusted accordingly. (TODO: add link to a how-to guide)
+If a particular network should be granted the same level of access as direct connections, [the firewall configuration can be adjusted accordingly](../../guides/day-1/sw-access/README.md#to-all-unauthenticated-administrative-apps).
+Or, if a particular network should not allow any access, [the firewall configuration can be adjusted accordingly](../../guides/day-1/security/README.md#how-to-block-access-to-specific-apps-over-lans).
 
 ## Ingress proxying
 

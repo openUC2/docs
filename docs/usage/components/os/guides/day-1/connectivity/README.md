@@ -76,7 +76,7 @@ To choose which of the following methods you will use for connecting to the mach
 6. Ensure that your tailnet doesn't have any security policies which would prevent your computer from connecting to the machine.
 7. Ensure that your tailnet's security policies protect it from undesired access by other devices on the tailnet.
 
-#### via a Local Area Network
+#### via a LAN
 
 :::warning
 
@@ -85,12 +85,12 @@ Otherwise, anyone on the same network as your machine may be able to do anything
 
 :::
 
-1. Connect your machine to a Local Area Network (LAN) by following the same procedure you would use to [connect your machine to the internet](#how-to-connect-the-machine-to-the-internet) via a network router or external Wi-Fi network.
+1. Connect your machine to a LAN by following the same procedure you would use to [connect your machine to the internet](#how-to-connect-the-machine-to-the-internet) via a network router or external Wi-Fi network.
 2. Connect your computer to the same LAN.
 
 :::tip
 
-If you intend to access administrative apps over the LAN, you will need to explicitly [allow access to unauthenticated administrative apps over the LAN](../sw-access/README.md#to-unauthenticated-administrative-apps-over-local-area-networks).
+If you intend to access administrative apps over the LAN, you will need to explicitly [allow access to unauthenticated administrative apps over the LAN](../sw-access/README.md#to-all-unauthenticated-administrative-apps).
 
 :::
 

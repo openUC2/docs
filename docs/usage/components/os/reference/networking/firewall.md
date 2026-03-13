@@ -172,25 +172,25 @@ NetworkManager connection profiles are bound to firewall zones as follows:
 | NetworkManager connection profile | ...binding to zone | ...from                                                                  | ...is active by default? |
 | --------------------------------- | ------------------ | ------------------------------------------------------------------------ | ------------------------ |
 | `eth0-default`                    | `nm-shared`        | `networking/networkmanager/base`:<br /> `eth0-default-firewall-direct`   |                          |
-| `eth0-default`                    | `public`           | `networking/firewalld`:<br /> `default-zone-direct`                      | yes                      |
+| `eth0-default`                    | `public`           | `networking/firewalld`:<br /> `default-zone-public`                      | yes                      |
 | `eth0-default`                    | `block`            | `networking/networkmanager/base`:<br /> `eth0-default-firewall-block`    |                          |
 | `eth0-static`                     | `nm-shared`        | NetworkManager default behavior                                          | yes                      |
 | `eth0-static`                     | `public`           | `networking/networkmanager/base`:<br /> `eth0-static-firewall-public`    |                          |
 | `eth0-static`                     | `block`            | `networking/networkmanager/base`:<br /> `eth0-static-firewall-block`     |                          |
 | `eth1-default`                    | `nm-shared`        | `networking/networkmanager/base`:<br /> `eth1-default-firewall-direct`   |                          |
-| `eth1-default`                    | `public`           | `networking/firewalld`:<br /> `default-zone-direct`                      | yes                      |
+| `eth1-default`                    | `public`           | `networking/firewalld`:<br /> `default-zone-public`                      | yes                      |
 | `eth1-default`                    | `block`            | `networking/networkmanager/base`:<br /> `eth1-default-firewall-block`    |                          |
 | `eth1-static`                     | `nm-shared`        | NetworkManager default behavior                                          | yes                      |
 | `eth1-static`                     | `public`           | `networking/networkmanager/base`:<br /> `eth1-static-firewall-public`    |                          |
 | `eth1-static`                     | `block`            | `networking/networkmanager/base`:<br /> `eth1-static-firewall-block`     |                          |
 | `usb0-default`                    | `nm-shared`        | `networking/networkmanager/base`:<br /> `usb0-default-firewall-direct`   |                          |
-| `usb0-default`                    | `public`           | `networking/firewalld`:<br /> `default-zone-direct`                      | yes                      |
+| `usb0-default`                    | `public`           | `networking/firewalld`:<br /> `default-zone-public`                      | yes                      |
 | `usb0-default`                    | `block`            | `networking/networkmanager/base`:<br /> `usb0-default-firewall-block`    |                          |
 | `usb0-static`                     | `nm-shared`        | NetworkManager default behavior                                          | yes                      |
 | `usb0-static`                     | `public`           | `networking/networkmanager/base`:<br /> `usb0-static-firewall-public`    |                          |
 | `usb0-static`                     | `block`            | `networking/networkmanager/base`:<br /> `usb0-static-firewall-block`     |                          |
 | `usb1-default`                    | `nm-shared`        | `networking/networkmanager/base`:<br /> `usb1-default-firewall-direct`   |                          |
-| `usb1-default`                    | `public`           | `networking/firewalld`:<br /> `default-zone-direct`                      | yes                      |
+| `usb1-default`                    | `public`           | `networking/firewalld`:<br /> `default-zone-public`                      | yes                      |
 | `usb1-default`                    | `block`            | `networking/networkmanager/base`:<br /> `usb1-default-firewall-block`    |                          |
 | `usb1-static`                     | `nm-shared`        | NetworkManager default behavior                                          | yes                      |
 | `usb1-static`                     | `public`           | `networking/networkmanager/base`:<br /> `usb1-static-firewall-public`    |                          |
@@ -198,8 +198,12 @@ NetworkManager connection profiles are bound to firewall zones as follows:
 | `wlan0-hotspot`                   | `nm-shared`        | NetworkManager default behavior                                          | yes                      |
 | `wlan0-hotspot`                   | `public`           | `networking/networkmanager/wifi-hotspot`:<br /> `wlan0-firewall-public`  |                          |
 | `wlan0-hotspot`                   | `block`            | `networking/networkmanager/wifi-hotspot`:<br /> `wlan0-firewall-block`   |                          |
+| `wlan0-internet`                  | `public`           | `networking/firewalld`:<br /> `default-zone-public`                      | yes                      |
 | `wlan1-hotspot`                   | `nm-shared`        | NetworkManager default behavior                                          | yes                      |
 | `wlan1-hotspot`                   | `public`           | `networking/networkmanager/wifi-hotspot`:<br /> `wlan1-firewall-public`  |                          |
 | `wlan1-hotspot`                   | `block`            | `networking/networkmanager/wifi-hotspot`:<br /> `wlan1-firewall-block`   |                          |
+| `wlan1-internet`                  | `public`           | `networking/firewalld`:<br /> `default-zone-public`                      | yes                      |
 | `tailscale0`                      | `nm-shared`        | `networking/tailscale`:<br /> `firewall-as-direct`                       | yes                      |
-| `tailscale0`                      | `public`           | `networking/firewalld`:<br /> `default-zone-direct`                      |                          |
+| `tailscale0`                      | `public`           | `networking/firewalld`:<br /> `default-zone-public`                      |                          |
+
+How-to guides are available for changing firewall zone bindings to [limit access](../../guides/day-1/sw-access/README.md#to-all-unauthenticated-administrative-apps) and [increase access](../../guides/day-1/security/README.md#how-to-control-access-to-unauthenticated-administrative-apps) for particular NetworkManager connection profiles.

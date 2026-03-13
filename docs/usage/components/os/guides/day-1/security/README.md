@@ -45,7 +45,7 @@ You should change this password to something more secure.
 
 :::warning
 
-**PLEASE** change this password if you choose not to [block access to Cockpit](#to-cockpit) and [to SSH](#to-ssh) over Local Area Networks!
+**PLEASE** change this password if you choose not to [block access to Cockpit](#to-cockpit) and [to SSH](#to-ssh) over LANs!
 Otherwise, anyone on the same network as your machine may be able to do anything they want to your machine by logging in as the `pi` user with the password `youseetoo`.
 
 :::
@@ -63,11 +63,99 @@ Otherwise, anyone on the same network as your machine may be able to do anything
 1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the command `passwd` and follow the displayed instructions.
 
-### How to block access over Local Area Networks (LANs)
+### How to block access to all apps
+
+By default, several apps are exposed over LANs.
+You can prevent any of those apps from being accessible by another device on a particular LAN which your machine is connected to:
+
+#### over all LAN connections
+
+:::warning
+
+Before you make this change, you should ensure that you will have some way to access the machine's terminal afterwards!
+Otherwise, you will lock yourself out of being able to make other administrative changes to your system.
+
+:::
+
+To block access from other devices via your any LAN connection:
+
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+2. Run the command:
+   ```bash
+   forklift plt --stage enable-depl-feat networking/firewalld default-zone-block
+   ```
+3. Apply your changes by rebooting.
+
+To undo this change:
+1. Run the command:
+   ```bash
+   forklift plt disable-depl-feat networking/firewalld default-zone-block
+   ```
+2. Apply your changes by rebooting.
+
+#### only over a Wi-Fi connection to a LAN
+
+:::warning
+
+Before you make this change, you should ensure that you will have some way to access the machine's terminal afterwards!
+Otherwise, you will lock yourself out of being able to make other administrative changes to your system.
+
+:::
+
+To block access from other devices via your machine's Ethernet connection to a LAN (i.e. an external Wi-Fi network):
+
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+2. Run the command:
+   ```bash
+   sudo nmcli conn modify wlan1-internet connection.zone block
+   ```
+
+To undo this change:
+1. Run the command:
+   ```bash
+   sudo nmcli conn modify wlan1-internet connection.zone ""
+   ```
+
+#### only over an Ethernet connection to a LAN
+
+:::warning
+
+Before you make this change, you should ensure that you will have some way to access the machine's terminal afterwards!
+Otherwise, you will lock yourself out of being able to make other administrative changes to your system.
+
+:::
+
+To block access from other devices via your machine's Ethernet connection to a LAN:
+
+1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
+2. Run the command:
+   ```bash
+   forklift plt --stage enable-depl-feat networking/networkmanager/base eth0-default-firewall-block
+   ```
+3. Apply your changes by rebooting.
+
+To undo this change:
+1. Run the command:
+   ```bash
+   forklift plt disable-depl-feat networking/networkmanager/base eth0-default-firewall-block
+   ```
+2. Apply your changes by rebooting.
+
+### How to block access to specific apps over LANs
+
+By default, several apps are exposed over LANs.
+You can prevent specific apps from being accessible by another device on the same LAN as your machine:
 
 #### to Cockpit
 
-To prevent Cockpit  from being accessible by any other device on the same LAN as your machine:
+:::warning
+
+Before you make this change, you should ensure that you will have some way to access the machine's terminal afterwards!
+Otherwise, you will lock yourself out of being able to make other administrative changes to your system.
+
+:::
+
+To prevent Cockpit from being accessible by any other device on the same LAN as your machine:
 
 1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the command:
@@ -86,6 +174,13 @@ To undo your changes:
 3. Apply your changes by rebooting.
 
 #### to SSH
+
+:::warning
+
+Before you make this change, you should ensure that you will have some way to access the machine's terminal afterwards!
+Otherwise, you will lock yourself out of being able to make other administrative changes to your system.
+
+:::
 
 To prevent your machine from being accessible over SSH (which exposes full administrative access to the OS) from any other device on the same LAN:
 
@@ -149,7 +244,7 @@ To undo your changes:
 
 #### over the Wi-Fi hotspot
 
-By default, the firewall is configured to bind the machine's Wi-Fi hotspot to firewalld's `nm-shared` zone for trusted networks. You can instead change the firewall to bind the Wi-Fi hotspot to the default zone, `public`, so that it will be treated like any other untrusted Local Area Network:
+By default, the firewall is configured to bind the machine's Wi-Fi hotspot to firewalld's `nm-shared` zone for trusted networks. You can instead change the firewall to bind the Wi-Fi hotspot to the default zone, `public`, so that it will be treated like any other untrusted LAN:
 
 :::warning
 
@@ -166,7 +261,7 @@ Otherwise, you will lock yourself out of being able to make other administrative
    ```
 3. Apply your changes by rebooting.
 
-Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over Local Area Networks](../sw-access/README.md#to-unauthenticated-administrative-apps-over-local-area-networks).
+Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over LANs](../sw-access/README.md#over-all-lan-connections).
 
 To undo your changes:
 
@@ -178,9 +273,9 @@ To undo your changes:
    ```
 3. Apply your changes by rebooting.
 
-#### over Ethernet
+#### over direct Ethernet connections
 
-By default, the firewall is configured to bind direct Ethernet connections to firewalld's `nm-shared` zone for trusted networks. You can instead change the firewall to bind Ethernet connections to the default zone, `public`, so that it will be treated like any other untrusted Local Area Network:
+By default, the firewall is configured to bind direct Ethernet connections to firewalld's `nm-shared` zone for trusted networks. You can instead change the firewall to bind Ethernet connections to the default zone, `public`, so that it will be treated like any other untrusted LAN:
 
 :::warning
 
@@ -197,7 +292,7 @@ Otherwise, you will lock yourself out of being able to make other administrative
    ```
 3. Apply your changes by rebooting.
 
-Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over Local Area Networks](../sw-access/README.md#to-unauthenticated-administrative-apps-over-local-area-networks).
+Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over LANs](../sw-access/README.md#over-all-lan-connections).
 
 To undo your changes:
 
@@ -211,7 +306,7 @@ To undo your changes:
 
 #### over USB-C
 
-By default, the firewall is configured to bind direct USB-C networking connections to firewalld's `nm-shared` zone for trusted networks. You can instead change the firewall to bind USB-C networking connections to the default zone, `public`, so that it will be treated like any other untrusted Local Area Network:
+By default, the firewall is configured to bind direct USB-C networking connections to firewalld's `nm-shared` zone for trusted networks. You can instead change the firewall to bind USB-C networking connections to the default zone, `public`, so that it will be treated like any other untrusted LAN:
 
 :::warning
 
@@ -228,7 +323,7 @@ Otherwise, you will lock yourself out of being able to make other administrative
    ```
 3. Apply your changes by rebooting.
 
-Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over Local Area Networks](../sw-access/README.md#to-unauthenticated-administrative-apps-over-local-area-networks).
+Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over LANs](../sw-access/README.md#over-all-lan-connections).
 
 To undo your changes:
 
@@ -249,7 +344,7 @@ Otherwise, you will lock yourself out of being able to make other administrative
 
 :::
 
-By default, the firewall is configured to bind Tailscale to firewalld's `nm-shared` zone for trusted networks like the machine's Wi-Fi hotspot. You can instead change the firewall to bind Tailscale to the default zone, `public`, so that it will be treated like any other untrusted Local Area Network:
+By default, the firewall is configured to bind Tailscale to firewalld's `nm-shared` zone for trusted networks like the machine's Wi-Fi hotspot. You can instead change the firewall to bind Tailscale to the default zone, `public`, so that it will be treated like any other untrusted LAN:
 
 1. [Enter the machine's terminal](../sw-access/README.md#the-machines-terminal).
 2. Run the command:
@@ -259,7 +354,7 @@ By default, the firewall is configured to bind Tailscale to firewalld's `nm-shar
    ```
 3. Apply your changes by rebooting.
 
-Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over Local Area Networks](../sw-access/README.md#to-unauthenticated-administrative-apps-over-local-area-networks).
+Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over LANs](../sw-access/README.md#over-all-lan-connections).
 
 To undo your changes:
 

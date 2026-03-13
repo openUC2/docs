@@ -90,5 +90,5 @@ Once you've connected to the machines, you will be able to access their landing 
 
 #### with indirect connections over a LAN
 
-1. Set up connections between your computer and each machine [via the same Local Area Network](../../day-1/connectivity/README.md#via-a-local-area-network) (LAN), e.g. a Wi-Fi router or an Ethernet router.
+1. Set up connections between your computer and each machine [via the same LAN](../../day-1/connectivity/README.md#via-a-lan), e.g. a Wi-Fi router or an Ethernet router.
 2. Access each machine's landing page via its `http://openuc2-{machine name}.local` domain name, as described in the guide for [using a machine-specific domain name](../../day-1/connectivity/README.md#via-a-machine-specific-domain-name).
