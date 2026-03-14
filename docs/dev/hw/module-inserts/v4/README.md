@@ -59,8 +59,79 @@ The editable Fusion360 design files for the UC2 v4 cube and baseplate can be fou
 
 ## Design for the Master Insert
 
-*Coming Soon*... Eager to wait? Write us a message *support @ openuc2 . com*.
+## Design for the Master Insert
 
+The v4 cube introduces a specialized mechanical interlocking system. We have integrated precision **grooves and notches** along the internal edges of the cube. These work in tandem with the new **Master Insert**, which features specific "teeth" designed to lock the component perfectly perpendicular to the optical axis.
+
+
+![](./images/masterinsert_v4_7.png)
+*Current Design of the Master Insert in Autodesk Inventor. It's relatively hard to interact with this design due to the lack of direct editability. Hence we decided to share the STEP file for reference for now. Feel free to use it if you still want to explore the design using Inventor :)*
+
+### Why use the Master Insert?
+
+In optical setups, even a tiny tilt in a lens can cause significant aberrations. The Master Insert ensures that:
+
+![](./images/masterinsert_v4_6.png)
+
+* **Perfect Centration:** Your optics sit exactly in the middle of the cube.
+* **Perpendicular Alignment:** The insert cannot "wiggle," keeping the lens parallel to the optical axis.
+* **Discrete Positioning:** You can snap the insert into specific, repeatable positions within the cube.
+
+
+![](./images/masterinsert_v4_5.png)
+*An Example arrangement for a lens hold with a nodge-based insert in the exact position, centered*
+
+
+
+
+### Two Versions for Maximum Flexibility
+
+To account for 3D printing tolerances and different use cases, the Master Insert comes in two distinct flavors:
+
+1. **With Teeth:** These are designed to "bite" into the cube’s internal grooves, locking the insert firmly in place.
+2. **Without Teeth:** These feature smooth edges, allowing you to slide the insert freely along the internal tracks for fine-tuning the distance between components.
+
+![](./images/masterinsert_v4_4.png)
+
+While we provide these as high-precision injection-molded parts to ensure the center is always spot-on, they are also fully 3D-printable.
+
+### Advanced Features: The 45° Locking System
+
+The internal geometry of the Master Insert isn't just a simple hole; it’s a conical shape featuring **8 internal teeth**. This allows for discrete orientation in **45° increments**.
+
+![](./images/masterinsert_v4_2.png)
+
+This is a game-changer for components like mirrors or beamsplitters. You can use the same Master Insert "blank" and simply click it into the cube at the specific angle required (e.g., 45° or 90°) without needing to design a custom angled bracket.
+
+![](./images/masterinsert_v4_1.png)
+
+
+
+
+### Assembly Guide: Lens Insert
+
+In the example below, you can see how the system works for a standard lens:
+
+* **The Sandwich Design:** A lens set consists of an internal Master Insert with a central aperture. The lens is securely clamped between two identical halves.
+* **Fastening:** The Master Insert features integrated screw holes. Simply align the two halves and screw them together to lock the lens in place.
+* **Adjustment:** The lens position can be adjusted within the inner cavity or held in place using custom pressure elements.
+
+![](./images/masterinsert_v4_3.png)
+
+
+### How to Integrate Your Own Designs
+
+We are currently developing a **CadQuery tool** that will allow you to take any custom geometry and perform a "Boolean subtract" using the Master Insert’s STEP file. This means you can turn almost any object into a UC2-compatible insert with perfect fitment.
+
+**Need help with your design?**
+If you need support integrating a specific sensor or optical component into the v4 system, reach out to us at `support@openuc2.com`. We are eager to help you get your project off the ground!
+
+### Design Files
+
+* **STEP** [Lens Cube Module (incl. Cube)](./stp/ASS-2030-CUBLEND16F44.5-V04-A.stp) 
+* **STEP** [Master Insert Base (Teeth)](./stp/PRT-2100-MASINS-V04-B.stp) 
+* **STEP** [Master Insert Base (Smooth)](./stp/PRT-2123-MASLCK-V04-B.stp) 
+* **STEP** [Master Insert Lens](./stp/PRT-2129-MASINSLEND16F44.5-V04-A.stp)
 ## Design Files
 
 ### Cad Query
