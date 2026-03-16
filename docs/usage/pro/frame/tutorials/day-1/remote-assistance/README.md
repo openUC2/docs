@@ -82,9 +82,56 @@ If/when the RPi connects, you will see updates to the status of the wlan1 module
 
 ![Machine Admin app: Internet Access page: Wi-Fi section: All modules section](./machine-admin-internet-wi-fi-modules.png)
 
-## Enable remote assistance
-
-Here, you should see `wlan1`'s status be reported as `activated` and its connectivity be reported as `full`, which indicates that the FRAME's RPi has internet access to the internet through `wlan1`.
-Finally, the name of the external network (which is `I'm a little teapot!` above) should match what you expect.
+Here, you should see `wlan1`'s status be reported as "activated" and its connectivity be reported as `full`, which indicates that the FRAME's RPi has internet access to the internet through `wlan1`.
+Finally, the name of the external network (which is "I'm a little teapot!" above) should match what you expect.
 
 Now that we've connected your FRAME machine to the internet, we're ready to enable remote assistance!
+
+## Enable remote assistance
+
+First, open the "Remote Access" page of the Machine Administration app by clicking on the link labeled "Remote" in the navbar.
+The page may initially look like one of the two following options:
+
+| Not pre-registered | Already pre-registered |
+| ------------------ | ---------------------- |
+| ![Machine Admin app: Remote Access page: needs login](./machine-admin-remote-needs-login.png) | ![Machine Admin app: Remote Access page: already pre-registered](./machine-admin-remote-preregistered.png) |
+
+On the left, the status is listed as "needs login", and there is no "network" or "domain name" listed.
+This means that openUC2 has not pre-registered your machine with openUC2's remote-assistance network.
+By contrast, on the right, the status is listed as "stopped", and a "network" and "domain name" are listed.
+This means that openUC2 has already pre-registered your machine.
+
+If the page looks like the left (i.e. "needs login" is the status), then in the "Remote assistance" box you should enter the device authentication key given to you by openUC2 customer support, and then you should press the "Enable" button:
+
+![Machine Admin app: Remote Access page: adding device auth key](./machine-admin-remote-deviceauthkey.png)
+
+:::info
+
+For security reasons, your device authentication key can only be used once.
+This device authentication key adds your RPi to openUC2's remote-assistance [Tailscale](https://tailscale.com) virtual network so that customer-support staff at openUC2 can connect to your RPi through that Tailscale virtual network.
+
+:::
+
+Otherwise (i.e. openUC2 already pre-registered your machine) you can simply press the "Enable" button without entering a device authentication key:
+
+![Machine Admin app: Remote Access page: enabling](./machine-admin-remote-enable.png)
+
+Assuming your RPi has internet access, then the status will be updated to "running", and the connectivity will be shown as "connected":
+
+![Machine Admin app: Remote Access page: connected](./machine-admin-remote-connected.png)
+
+Additionally, as you can see above, the domain name will be the domain name for the customer-support staff at openUC2 to connect to your RPi to help you.
+Here it's `openuc2-sweet-lead-1137.queue-macaroni.ts.net`.
+
+Congratulations! Now we know how to enable remote assistance on your machine for getting help from openUC2 customer support.
+
+## Disable remote assistance
+
+In general, it's probably better for your own computer security to only enable remote assistance when someone at openUC2 actually needs remote access to your RPi.
+When remote access isn't needed, you can disable remote assistance by pressing the blue "Disable" button visible in the screenshot above.
+Then the Remote Access page will look like this:
+
+![Machine Admin app: Remote Access page: disabled](./machine-admin-remote-disabled.png)
+
+Note how the status is reported as "stopped" and connectivity is reported as "disconnected".
+As described above, you can re-enable remote assistance from this state simply by clicking the blue "Enable" button.
