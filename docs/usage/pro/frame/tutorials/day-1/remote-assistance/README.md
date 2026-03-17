@@ -9,7 +9,7 @@ In this tutorial, we will set up remote assistance on your FRAME machine, so tha
 
 ## Connect your FRAME to the internet via Wi-Fi
 
-First, let's open the FRAME's landing page in your web browser (we learned how to do this [in the First Connection tutorial](../first-connection/README.md#open-the-frames-web-browser-interface)).
+First, let's open the FRAME's landing page in your web browser (we learned how to do this [in the First Connection tutorial](../first-connection/README.md#open-the-frames-web-browser-landing-page)).
 
 Next, open the "Machine administration" link in the landing page's "Browser applications" section.
 The Machine Administration app provides a simple way to manage various computer-related settings of the RPi in your FRAME.

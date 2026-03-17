@@ -43,6 +43,8 @@ Throughout this process, the FRAME's indicator LEDs will report what it's doing 
 
 ## Connect to the FRAME's Wi-Fi hotspot
 
+Now that the FRAME has finished booting up, we're ready to connect your computer to the FRAME in order to access the FRAME's software.
+
 The RPi makes a Wi-Fi network from its internal Wi-Fi module; we call this network the FRAME's *Wi-Fi hotspot*.
 The name of the Wi-Fi hotspot has the format `openuc2-{machine name}`, where `{machine name}` should be replaced with the RPi's machine name.
 For example, if the machine name is `separate-bath-30666`, then the Wi-Fi hotspot will be named `openuc2-separate-bath-30666`.
@@ -69,9 +71,11 @@ Alternative ways of giving your computer internet access while it's connected to
 
 :::
 
-## Open the FRAME's web browser interface
+## Open the FRAME's web browser landing page
 
-Next, open your computer's web browser and try navigating to each of address in the following list, and in the following order, until you find the first one which works for you (which will depend on your computer's operating system and how your web browser is installed):
+Now that your computer has a network connection to the FRAME, we're ready to access the FRAME's software from the web browser on your computer.
+
+Open your computer's web browser and try navigating to each of address in the following list, and in the following order, until you find the first one which works for you (which will depend on your computer's operating system and how your web browser is installed):
 
 1. [http://openuc2.local](http://openuc2.local)
 
@@ -105,9 +109,11 @@ You can bookmark this page in your web browser for easy access, so that you don'
 
 :::
 
-For now, we will open *ImSwitch*, which is the app for operating the microscopy-related functions of your FRAME machine.
+## Open ImSwitch
 
-Click on the "ImSwitch dashboard" link which can be seen under the "Browser applications" section of the screenshot above.
+Now that you have the landing page open in your web browser, we're ready to open *ImSwitch*, which is the app for operating the microscopy-related functions of your FRAME machine.
+
+On the landing page, click on the "ImSwitch dashboard" link; it can be seen under the "Browser applications" section of the screenshot above (in the previous section).
 The link will open ImSwitch in a new tab, and you will see something like this:
 
 ![ImSwitch Live View](./imswitch-live-view.png)
