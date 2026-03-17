@@ -195,6 +195,14 @@ module.exports = async function createConfigAsync() {
                 label: 'Contact',
                 href: 'https://openuc2.com/imprint/',
               },
+              {
+                label: 'Privacy Policy',
+                href: 'https://openuc2.com/privacy-policy/',
+              },
+              {
+                label: 'Imprint',
+                href: 'https://openuc2.com/imprint/',
+              },
             ],
           },
         ],
