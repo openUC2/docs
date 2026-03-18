@@ -215,7 +215,7 @@ To open up a new port `{port}` in protocol `{protocol}`:
       sudo tee -a <<<'  <port port="8080" protocol="tcp"/>' \
          /etc/firewalld/zones.d/public/80-custom-ports.xml
       ```
-4. Apply your changes by rebooting or running the following commands:
+4. Apply your changes by rebooting, soft-rebooting, or running the following commands:
    ```bash
    sudo systemctl restart \
       assemble-firewalld-zone@public.service \
@@ -244,7 +244,7 @@ To undo this change:
       /etc/firewalld/zones.d/public/80-custom-ports.xml \
       /etc/firewalld/zones.d/nm-shared/80-custom-ports.xml
    ```
-3. Apply your changes by rebooting or running the following commands:
+3. Apply your changes by rebooting, soft-rebooting, or running the following commands:
    ```bash
    sudo systemctl restart \
       assemble-firewalld-zone@public.service \

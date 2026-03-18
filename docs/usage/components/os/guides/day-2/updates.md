@@ -13,9 +13,9 @@ sidebar_position: 100
    ```bash
    forklift pallet upgrade @main
    ```
-3. Reboot the machine, e.g. by running:
+3. Reboot or soft-reboot the machine, e.g. by running:
    ```bash
-   sudo reboot
+   sudo systemctl soft-reboot
    ```
 
 If the above command fails with an error message that you have changes which are not yet saved in a Git commit or which might not be in a remote Git repo:
@@ -44,7 +44,7 @@ If the above command fails with an error message that you have changes which are
 
    :::
 
-5. Reboot the machine, e.g. by running:
+5. Reboot or soft-reboot the machine, e.g. by running:
    ```bash
-   sudo reboot
+   sudo systemctl soft-reboot
    ```

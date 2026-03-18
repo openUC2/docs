@@ -100,7 +100,10 @@ You can override the default behavior and allow access to all of unauthenticated
    ```bash
    forklift plt --stage enable-depl-feat networking/networkmanager/base eth0-default-firewall-direct
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 :::danger
 
@@ -114,7 +117,10 @@ To undo this change:
    ```bash
    forklift plt disable-depl-feat networking/networkmanager/base eth0-default-firewall-direct
    ```
-2. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 #### only over Wi-Fi connection to a LAN
 
@@ -150,7 +156,10 @@ You can override the default behavior and allow access to all of unauthenticated
    forklift plt enable-depl-feat infra/caddy-ingress firewall-allow-public
    forklift plt stage
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 :::danger
 
@@ -166,7 +175,10 @@ To undo this change:
    forklift plt disable-depl-feat infra/caddy-ingress firewall-allow-public
    forklift plt stage
    ```
-2. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 ### to Cockpit from non-standard origins
 
@@ -181,7 +193,7 @@ For security reasons, Cockpit only allows logins from explicitly-specified origi
    ```bash
    sudo tee -a <<<'http://my.domain.tld:9090' /etc/cockpit/origins.d/80-custom-origins
    ```
-3. Apply your changes by rebooting or running the following commands:
+3. Apply your changes by rebooting, soft-rebooting, or running the following commands:
    ```bash
    sudo systemctl restart \
       assemble-cockpit-origins.service \

@@ -23,7 +23,7 @@ You should change this password to something more secure:
    read -sp "Enter a new password: " password && echo "psk=$password" | sudo tee >/dev/null \
       /etc/NetworkManager/system-connections.d/wlan0-hotspot/51-wifi-security-password.nmconnection
    ```
-3. Apply your changes by rebooting or running the following commands:
+3. Apply your changes by rebooting, soft-rebooting, or running the following commands:
    ```bash
    sudo systemctl restart \
       assemble-networkmanager-connection-templated@wlan0-hotspot.service \
@@ -84,14 +84,20 @@ To block access from other devices via your any LAN connection:
    ```bash
    forklift plt --stage enable-depl-feat networking/firewalld default-zone-block
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 To undo this change:
 1. Run the command:
    ```bash
    forklift plt disable-depl-feat networking/firewalld default-zone-block
    ```
-2. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 #### only over a Wi-Fi connection to a LAN
 
@@ -132,14 +138,20 @@ To block access from other devices via your machine's Ethernet connection to a L
    ```bash
    forklift plt --stage enable-depl-feat networking/networkmanager/base eth0-default-firewall-block
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 To undo this change:
 1. Run the command:
    ```bash
    forklift plt disable-depl-feat networking/networkmanager/base eth0-default-firewall-block
    ```
-2. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 ### How to block access to specific apps over LANs
 
@@ -162,7 +174,10 @@ To prevent Cockpit from being accessible by any other device on the same LAN as 
    ```bash
    forklift plt disable-depl-feat --stage admin/cockpit firewall-allow-public frontend-untrusted
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 To undo your changes:
 
@@ -171,7 +186,10 @@ To undo your changes:
    ```bash
    forklift plt enable-depl-feat --stage admin/cockpit firewall-allow-public frontend-untrusted
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 #### to SSH
 
@@ -189,7 +207,10 @@ To prevent your machine from being accessible over SSH (which exposes full admin
    ```bash
    forklift plt disable-depl-feat --stage admin/sshd firewall-allow-public
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 To undo your changes:
 
@@ -198,7 +219,10 @@ To undo your changes:
    ```bash
    forklift plt enable-depl-feat --stage admin/sshd firewall-allow-public
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 #### to ImSwitch
 
@@ -209,7 +233,10 @@ To prevent ImSwitch (which can arbitrarily control hardware attached to the open
    ```bash
    forklift plt disable-depl-feat --stage imswitch frontend-untrusted firewall-allow-public
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 To undo your changes:
 
@@ -218,7 +245,10 @@ To undo your changes:
    ```bash
    forklift plt enable-depl-feat --stage imswitch frontend-untrusted firewall-allow-public
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 #### to the user file manager
 
@@ -229,7 +259,10 @@ To prevent the user file manager (which can download and delete data acquired by
    ```bash
    forklift plt disable-depl-feat --stage admin/filebrowser-rootfs frontend-untrusted
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 To undo your changes:
 
@@ -238,7 +271,10 @@ To undo your changes:
    ```bash
    forklift plt enable-depl-feat --stage admin/filebrowser-rootfs frontend-untrusted
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 ### How to control access to unauthenticated administrative apps
 
@@ -259,7 +295,10 @@ Otherwise, you will lock yourself out of being able to make other administrative
    forklift plt enable-depl-feat networking/networkmanager/wifi-hotspot wlan0-firewall-public
    forklift plt stage
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over LANs](./access.md#over-all-lan-connections).
 
@@ -271,7 +310,10 @@ To undo your changes:
    forklift plt disable-depl-feat networking/networkmanager/wifi-hotspot wlan0-firewall-public
    forklift plt stage
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 #### over direct Ethernet connections
 
@@ -290,7 +332,10 @@ Otherwise, you will lock yourself out of being able to make other administrative
    forklift plt enable-depl-feat networking/networkmanager/base eth0-static-firewall-public
    forklift plt stage
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over LANs](./access.md#over-all-lan-connections).
 
@@ -302,7 +347,10 @@ To undo your changes:
    forklift plt disable-depl-feat networking/networkmanager/base eth0-static-firewall-public
    forklift plt stage
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 #### over USB-C
 
@@ -321,7 +369,10 @@ Otherwise, you will lock yourself out of being able to make other administrative
    forklift plt enable-depl-feat networking/networkmanager/base usb0-static-firewall-public
    forklift plt stage
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over LANs](./access.md#over-all-lan-connections).
 
@@ -333,7 +384,10 @@ To undo your changes:
    forklift plt disable-depl-feat networking/networkmanager/base usb0-static-firewall-public
    forklift plt stage
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 #### over Tailscale
 
@@ -352,7 +406,10 @@ By default, the firewall is configured to bind Tailscale to firewalld's `nm-shar
    forklift plt disable-depl-feat networking/tailscale firewall-zone-nm-shared
    forklift plt stage
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 Afterwards, access to unauthenticated administrative apps (such as the Machine Administration app, Dozzle, and the system file manager) will only be possible if you explicitly [allow such access over LANs](./access.md#over-all-lan-connections).
 
@@ -364,7 +421,10 @@ To undo your changes:
    forklift plt enable-depl-feat networking/tailscale firewall-zone-nm-shared
    forklift plt stage
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 ### How to prevent Docker's port-forwarding from bypassing firewall rules
 
@@ -377,7 +437,10 @@ To only allow a forwarded ports to be accessible (in all firewalld zones) when a
    forklift plt enable-depl-feat networking/firewalld govern-docker-ports
    forklift plt stage
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
 
 :::warning
 
@@ -394,4 +457,7 @@ To undo your changes:
    forklift plt disable-depl-feat networking/firewalld govern-docker-ports
    forklift plt stage
    ```
-3. Apply your changes by rebooting.
+3. Apply your changes by rebooting or soft-rebooting the machine, e.g. by running:
+   ```bash
+   sudo systemctl soft-reboot
+   ```
