@@ -52,7 +52,10 @@ This will display the image file in ImSwitch's File Manager app:
 
 ![ImSwitch app: File Manager app](./imswitch-file-manager.png)
 
-Then we can right-click on the image to open a menu with entries to download the image or to preview it in ImSwitch:
+We can see in the above screenshot that the image filename begins with the timestamp `2026-03-17T12-39-33-019192` (i.e. March 17, 2026 at 12:39), while the "Modified" timestamp is `3/17/2026 1:39 PM` (i.e. March 17, 2026 at 13:39).
+The reason for this one-hour difference is that the timestamp in the image filename is always specified in the [UTC timezone](https://en.wikipedia.org/wiki/Coordinated_Universal_Time), while the "Modified" timestamp is always displayed in the local timezone of your web browser (which for the above screenshot is Central European Time, which is UTC+1).
+
+Now we can right-click on the image to open a menu with entries to download the image or to preview it in ImSwitch:
 
 ![ImSwitch app: File Manager app: context menu: preview with ImJoy](./imswitch-file-manager-imjoy.png)
 
