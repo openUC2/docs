@@ -57,7 +57,6 @@ The editable Fusion360 design files for the UC2 v4 cube and baseplate can be fou
 
 ![](./images/fusion360v4.png)
 
-## Design for the Master Insert
 
 ## Design for the Master Insert
 
@@ -125,6 +124,13 @@ We are currently developing a **CadQuery tool** that will allow you to take any 
 
 **Need help with your design?**
 If you need support integrating a specific sensor or optical component into the v4 system, reach out to us at `support@openuc2.com`. We are eager to help you get your project off the ground!
+
+### Online Lens Insert Maker 
+
+We are also working on an online tool that will allow you to create custom lens inserts by simply inputting your lens parameters (focal length, diameter, thickness). The tool will then generate a ready-to-print STL file for you to use with the v4 cube. Stay tuned for updates on this! You can find the current version of the tool here: [https://youseetoo.github.io/openuc2-lens-designer](https://youseetoo.github.io/openuc2-lens-designer)
+
+![](./images/lensmaker.png)
+*You can set the lens diameter and thickness and generate the inserts that go into the master insert. You need two halfs and sandwich the lens in between. The tool will generate the STL files for you to print. We are working on a more advanced version that will allow you to set more parameters and also generate the master insert itself.*
 
 ### Design Files
 
