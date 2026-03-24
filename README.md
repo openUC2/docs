@@ -6,7 +6,7 @@ This repository is used to build and deploy openUC2's documentation site.
 
 People who are just end-users of openUC2 products & projects should go to [docs.openuc2.com](https://docs.openuc2.com).
 
-Developers should view the current state of the [openUC2/docs](https://github.com/openUC2/docs](https://docs-dev.openuc2.com).
+Developers should view the current state of the [openUC2/docs](https://github.com/openUC2/docs) repo at [docs-dev.openuc2.com](https://docs-dev.openuc2.com).
 That site should be treated as a developer preview which can have disruptive changes without any prior notice; thus, customers should not be sent to `docs-dev.openuc2.com`.
 
 [docs-staging.openuc2.com](https://docs-staging.openuc2.com) should be used as an intermediate "beta preview" version of `docs.openuc2.com`: it is more stable (i.e. has less accidental disruption) compared to `docs-dev.openuc2.com`, but it may still have a few subtle problems which need to be discovered and fixed before the changes are generally exposed to all customers.
@@ -31,9 +31,9 @@ Then open: <http://localhost:3000>
 
 The openUC2 docs site has three GitHub Pages deployments, each with its own repository:
 
-- development/edge release channel: the `master` branch of [openUC2/docs](https://github.com/openUC2/docs)
-- staging/beta release channel: the `deploy` branch of [openUC2/docs-staging](https://github.com/openUC2/docs-staging)
-- prod/stable release channel: the `deploy` branch of [openUC2/docs-prod](https://github.com/openUC2/docs-prod)
+- development/edge release channel: the `master` branch of [openUC2/docs](https://github.com/openUC2/docs); deploys to [docs-dev.openuc2.com](https://docs-dev.openuc2.com).
+- staging/beta release channel: the `deploy` branch of [openUC2/docs-staging](https://github.com/openUC2/docs-staging); deploys to [docs-staging.openuc2.com](https://docs-staging.openuc2.com)
+- prod/stable release channel: the `deploy` branch of [openUC2/docs-prod](https://github.com/openUC2/docs-prod); deploys to [docs.openuc2.com](https://docs.openuc2.com).
 
 To set up a local development environment which can deploy to all three channels, run:
 
