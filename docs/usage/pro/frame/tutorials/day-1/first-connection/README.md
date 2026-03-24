@@ -6,6 +6,7 @@ sidebar_label: First Connection
 # Establish Your First Connection to the FRAME
 
 In this tutorial, we will connect to your FRAME machine and open ImSwitch for the first time, so that you know how to access the software on your FRAME machine.
+Along the way, we will encounter the FRAME's landing page for its web browser apps.
 
 ## Turn on the FRAME
 
@@ -119,5 +120,7 @@ The link will open ImSwitch in a new tab, and you will see something like this:
 ![ImSwitch Live View](./imswitch-live-view.png)
 
 This screenshot shows ImSwitch's "Live View" page, which is a general-purpose interface for previewing the FRAME's camera, adjusting its camera settings, and moving the FRAME's sample stage.
+
+## What's next
 
 Now that you know how to access ImSwitch on your FRAME machine, you're ready to use ImSwitch to [check your FRAME's operational readiness](../operational-readiness/README.md) in our next tutorial!

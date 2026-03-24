@@ -6,6 +6,7 @@ sidebar_label: Remote Assistance
 # Set Up Remote Assistance on Your FRAME
 
 In this tutorial, we will set up remote assistance on your FRAME machine, so that you know how to enable remote assistance when you need help from openUC2 customer support.
+Along the way, we will encounter the FRAME's Machine Administration app and see how to use it to adjust various settings in the FRAME's embedded Raspberry Pi computer.
 
 ## Connect your FRAME to the internet via Wi-Fi
 
@@ -135,3 +136,8 @@ Then the Remote Access page will look like this:
 
 Note how the status is reported as "stopped" and connectivity is reported as "disconnected".
 As described above, you can re-enable remote assistance from this state simply by clicking the blue "Enable" button.
+
+## What's next
+
+Now that we know how to make your FRAME machine available for remote assistance from openUC2 customer support, we're almost done with the day-1 tutorials!
+Next, we'll learn about how to [safely shut down](../shutdown/README.md) your FRAME machine in a way that prevents data corruption of the data you acquire on your FRAME.
