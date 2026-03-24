@@ -8,7 +8,7 @@ sidebar_position: 100
 
 ### to the latest development version
 
-1. Enter the machine's terminal.
+1. [Enter the machine's terminal](../day-1/access.md#the-machines-terminal).
 2. Run the following command:
    ```bash
    forklift pallet upgrade @main
