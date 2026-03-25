@@ -10,8 +10,9 @@ If you're setting up a FRAME machine for the first time, you're in the right pla
 3. [determine](./operational-readiness/README.md) whether your FRAME hardware is fully operational, with no damage during shipping and delivery
 4. [acquire data](./first-sample/README.md) using your FRAME for the first time
 5. [set up remote assistance](./remote-assistance/README.md) so that you can receive direct help with your FRAME from openUC2 customer support
+6. [safely shut down](./shutdown/README.md) your FRAME for the first time, and then turn it back on
 
-Along the way, we will encounter some of your FRAME's web browser apps.
+Along the way, we will encounter some of web browser apps provided by your FRAME.
 
 :::info
 
