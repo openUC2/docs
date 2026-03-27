@@ -91,6 +91,14 @@ If you would normally [access the landing page](./connectivity.md#how-to-access-
 
 For security reasons, by default the machine is configured to block access [over all LANs (LANs)](./connectivity.md#via-a-lan) to browser apps (such as the Machine Administration app, Dozzle, and the system file manager) which can perform administrative operations without user authentication. You can override this default behavior.
 
+:::warning
+
+Currently, we have already overridden this default behavior for the convenience of openUC2 software developers.
+This means that currently by default the machine is configured to allow access over all LANs to all browser apps.
+If you would like to use the more secure configuration
+
+:::
+
 #### only over an Ethernet connection to a LAN
 
 You can override the default behavior and allow access to all of unauthenticated administrative apps over a LAN connected by Ethernet:
@@ -147,7 +155,7 @@ To undo this change:
 
 #### over all LAN connections
 
-You can override the default behavior and allow access to all of unauthenticated administrative apps over aall LANs connected by any method:
+You can override the default behavior and allow access to all of unauthenticated administrative apps over all LANs connected by any method:
 
 1. [Enter the machine's terminal](#the-machines-terminal).
 2. Run the commands:
