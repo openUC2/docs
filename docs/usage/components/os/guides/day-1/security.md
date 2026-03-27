@@ -14,11 +14,19 @@ Because openUC2 OS comes with some default settings which make it less secure an
 
 ### How to change the Wi-Fi hotspot's password
 
+#### via Machine Administration
+
+1. [Open the browser app](./access.md#browser-apps) for Machine Administration.
+2. Open the Internet Access page.
+3. In the "Wi-Fi hotspot" section, enter a new password (at least 8 characters long, and up to 63 characters long) and press the "Update and restart" button.
+
+#### via the terminal
+
 By default, the password used for [connecting to the machine's Wi-Fi hotspot](./connectivity.md#via-the-machines-wi-fi-hotspot) is `youseetoo`.
 You should change this password to something more secure:
 
 1. [Enter the machine's terminal](./access.md#the-machines-terminal).
-2. Run the following command and follow the displayed instructions:
+2. Run the following command and follow the displayed instructions in order to enter a new password (at least 8 characters long, and up to 63 characters long):
    ```bash
    read -sp "Enter a new password: " password && echo "psk=$password" | sudo tee >/dev/null \
       /etc/NetworkManager/system-connections.d/wlan0-hotspot/51-wifi-security-password.nmconnection
