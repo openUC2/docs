@@ -117,7 +117,7 @@ jobs:
           flavor: |
             suffix=${{ env.VARIANT_SUFFIX }}
           tags: |
-            type=match,pattern=${{ env.TAG_PREFIX }}(.*),group=1 # this implicitly updates latest
+            type=match,pattern=${{ env.TAG_PREFIX }}(.*),group=1
             type=raw,value=stable,enable=${{ env.IS_STABLE_BRANCH }},priority=702
             type=raw,value=beta,enable=${{ env.IS_BETA_BRANCH }},priority=701
             type=raw,value=alpha,enable=${{ env.IS_ALPHA_BRANCH }},priority=701
