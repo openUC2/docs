@@ -31,7 +31,7 @@ jobs:
           echo "${{ secrets.SSH_DEPLOY_KEY }}" > "$HOME/.ssh/deploy_key"
           chmod 600 "$HOME/.ssh/deploy_key"
 
-          export GIT_SSH_COMMAND="ssh -i $$HOME/.ssh/deploy_key"
+          export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/deploy_key"
           git remote add prod git@github.com:${{ vars.REPOSITORY_OWNER }}/${{ vars.REPOSITORY_NAME }}.git
           git fetch --all
 
