@@ -37,7 +37,7 @@ jobs:
 
       - name: Fast-forward deployment branch
         run: |
-          git checkout -b deploy --track staging-repo/deploy
+          git checkout -b deploy
           git merge --ff-only staging
 
       - name: Push to remote repo
