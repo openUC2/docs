@@ -18,7 +18,7 @@ defaults:
 jobs:
   deploy:
     environment:
-      name: repo-${{ env.RELEASE_CHANNEL }}
+      name: repo-prod
       url: https://github.com/${{ env.REPO }}
     runs-on: ubuntu-latest
     steps:
