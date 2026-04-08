@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPOSITORY_OWNER: ${{ github.repository_owner }}
+  REPO: ${{ vars.REPO }}
 
 defaults:
   run:
@@ -18,21 +18,21 @@ jobs:
   deploy:
     environment:
       name: repo-staging
-      url: https://github.com/${{ env.REPOSITORY_OWNER }}/${{ vars.REPOSITORY_NAME }}
+      url: https://github.com/${{ env.REPO }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
         with:
           ref: staging
 
-      - name: Add remote branch ${{ env.REPOSITORY_OWNER }}/${{ vars.REPOSITORY_NAME }}/deploy
+      - name: Add remote branch ${{ env.REPO }}:deploy
         run: |
           mkdir -p "$HOME/.ssh"
           echo "${{ secrets.SSH_DEPLOY_KEY }}" > "$HOME/.ssh/deploy_key"
           chmod 600 "$HOME/.ssh/deploy_key"
 
           export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/deploy_key"
-          git remote add staging git@github.com:${{ vars.REPOSITORY_OWNER }}/${{ vars.REPOSITORY_NAME }}.git
+          git remote add staging git@github.com:${{ env.REPO }}.git
           git fetch --all
 
       - name: Fast-forward deployment branch
