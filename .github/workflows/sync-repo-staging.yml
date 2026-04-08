@@ -34,12 +34,14 @@ jobs:
 
           export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/deploy_key"
           git remote add sync-repo git@github.com:${{ env.REPO }}.git
-          git fetch --all
+          git fetch sync-repo deploy
 
       - name: Fast-forward deployment branch
         run: |
           git config push.default upstream
-          git checkout -b deploy sync-repo/deploy
+          git switch -c deploy sync-repo/deploy
+          git status
+          git log
           git merge --ff-only ${{ env.RELEASE_CHANNEL }}
 
       - name: Push to remote repo
