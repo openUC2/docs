@@ -38,7 +38,8 @@ jobs:
 
       - name: Fast-forward deployment branch
         run: |
-          git checkout -b deploy --track sync-repo/deploy
+          git config push.default upstream
+          git checkout -b deploy sync-repo/deploy
           git merge --ff-only ${{ env.RELEASE_CHANNEL }}
 
       - name: Push to remote repo
