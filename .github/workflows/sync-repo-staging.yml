@@ -25,19 +25,19 @@ jobs:
         with:
           ref: staging
 
-      - name: Add remote branch ${{ env.REPO }}:deploy
+      - name: Add remote repo ${{ env.REPO }}
         run: |
           mkdir -p "$HOME/.ssh"
           echo "${{ secrets.SSH_DEPLOY_KEY }}" > "$HOME/.ssh/deploy_key"
           chmod 600 "$HOME/.ssh/deploy_key"
 
           export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/deploy_key"
-          git remote add staging git@github.com:${{ env.REPO }}.git
+          git remote add staging-repo git@github.com:${{ env.REPO }}.git
           git fetch --all
 
       - name: Fast-forward deployment branch
         run: |
-          git checkout -b deploy/staging --track staging/deploy
+          git checkout -b deploy --track staging-repo/deploy
           git merge --ff-only staging
 
       - name: Push to remote repo
