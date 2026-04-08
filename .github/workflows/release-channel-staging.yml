@@ -17,7 +17,14 @@ jobs:
       - uses: lewagon/wait-on-check-action@v1.3.4
         with:
           ref: ${{ github.ref }}
-          check-name: 'build'
+          check-name: 'build (full)'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
+
+      - uses: lewagon/wait-on-check-action@v1.3.4
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'deploy'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 10
 
