@@ -40,8 +40,6 @@ jobs:
         run: |
           git config push.default upstream
           git switch -c deploy sync-repo/deploy
-          git status
-          git log
           git merge --ff-only ${{ env.RELEASE_CHANNEL }}
 
       - name: Push to remote repo
