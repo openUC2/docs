@@ -1,0 +1,80 @@
+# Note(ethanjli): This CI workflow is a temporary measure to automatically synchronize the
+# docs-staging & docs-prod repos with the master branch of the docs repo, so that @beniroquai can
+# deploy all changes directly to staging & production. Once we stabilize our staging & prod
+# deployments, we should delete this CI workflow!
+---
+name: release channel (dev)
+on:
+  push:
+    branches:
+      - 'master'
+      - 'main'
+      - 'edge'
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+-dev.*'
+      - 'v[0-9]+.[0-9]+.[0-9]+-beta.*'
+      # We want to advance the dev branch to the latest stable release, too:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  ff-branch-staging:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: lewagon/wait-on-check-action@v1.3.4
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'build'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - run: |
+          git checkout staging
+          git merge --ff-only ${{ github.ref_name }}
+
+      - uses: ad-m/github-push-action@v0.8.0
+        with:
+          branch: staging
+
+  sync-repo-staging:
+    # We call this workflow manually because it doesn't appear to be triggered automatically by a
+    # push of the dev branch from the ff-branch job:
+    uses: ./.github/workflows/sync-repo-staging.yml
+    needs: ff-branch-staging
+    secrets: inherit
+
+  ff-branch-prod:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: lewagon/wait-on-check-action@v1.3.4
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'build'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - run: |
+          git checkout prod
+          git merge --ff-only ${{ github.ref_name }}
+
+      - uses: ad-m/github-push-action@v0.8.0
+        with:
+          branch: prod
+
+  sync-repo-prod:
+    # We call this workflow manually because it doesn't appear to be triggered automatically by a
+    # push of the dev branch from the ff-branch job:
+    uses: ./.github/workflows/sync-repo-prod.yml
+    needs: ff-branch-prod
+    secrets: inherit

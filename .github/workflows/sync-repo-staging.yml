@@ -1,0 +1,46 @@
+name: sync repo (staging)
+
+on:
+  push:
+    branches:
+      - 'staging'
+  workflow_call:
+  workflow_dispatch:
+
+env:
+  REPOSITORY_OWNER: ${{ github.repository_owner }}
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  deploy:
+    environment:
+      name: repo-staging
+      url: https://github.com/${{ env.REPOSITORY_OWNER }}/${{ vars.REPOSITORY_NAME }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: staging
+
+      - name: Add remote branch ${{ env.REPOSITORY_OWNER }}/${{ vars.REPOSITORY_NAME }}/deploy
+        run: |
+          mkdir -p "$HOME/.ssh"
+          echo "${{ secrets.SSH_DEPLOY_KEY }}" > "$HOME/.ssh/deploy_key"
+          chmod 600 "$HOME/.ssh/deploy_key"
+
+          export GIT_SSH_COMMAND="ssh -i $$HOME/.ssh/deploy_key"
+          git remote add staging git@github.com:${{ vars.REPOSITORY_OWNER }}/${{ vars.REPOSITORY_NAME }}.git
+          git fetch --all
+
+      - name: Fast-forward deployment branch
+        run: |
+          git checkout -b deploy/staging --track staging/deploy
+          git merge --ff-only staging
+
+      - name: Push to remote repo
+        run: |
+          export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/deploy_key"
+          git push

@@ -1,0 +1,46 @@
+name: sync repo (prod)
+
+on:
+  push:
+    branches:
+      - 'prod'
+  workflow_call:
+  workflow_dispatch:
+
+env:
+  REPOSITORY_OWNER: ${{ github.repository_owner }}
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  deploy:
+    environment:
+      name: repo-prod
+      url: https://github.com/${{ env.REPOSITORY_OWNER }}/${{ vars.REPOSITORY_NAME }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: prod
+
+      - name: Add remote branch ${{ env.REPOSITORY_OWNER }}/${{ vars.REPOSITORY_NAME }}/deploy
+        run: |
+          mkdir -p "$HOME/.ssh"
+          echo "${{ secrets.SSH_DEPLOY_KEY }}" > "$HOME/.ssh/deploy_key"
+          chmod 600 "$HOME/.ssh/deploy_key"
+
+          export GIT_SSH_COMMAND="ssh -i $$HOME/.ssh/deploy_key"
+          git remote add prod git@github.com:${{ vars.REPOSITORY_OWNER }}/${{ vars.REPOSITORY_NAME }}.git
+          git fetch --all
+
+      - name: Fast-forward deployment branch
+        run: |
+          git checkout -b deploy/prod --track prod/deploy
+          git merge --ff-only prod
+
+      - name: Push to remote repo
+        run: |
+          export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/deploy_key"
+          git push
