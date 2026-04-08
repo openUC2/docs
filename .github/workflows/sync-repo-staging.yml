@@ -8,6 +8,7 @@ on:
   workflow_dispatch:
 
 env:
+  RELEASE_CHANNEL: prod
   REPO: ${{ vars.REPO }}
 
 defaults:
@@ -17,13 +18,13 @@ defaults:
 jobs:
   deploy:
     environment:
-      name: repo-staging
+      name: repo-${{ env.RELEASE_CHANNEL }}
       url: https://github.com/${{ env.REPO }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: staging
+          ref: ${{ env.RELEASE_CHANNEL }}
 
       - name: Add remote repo ${{ env.REPO }}
         run: |
@@ -32,13 +33,13 @@ jobs:
           chmod 600 "$HOME/.ssh/deploy_key"
 
           export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/deploy_key"
-          git remote add staging-repo git@github.com:${{ env.REPO }}.git
+          git remote add sync-repo git@github.com:${{ env.REPO }}.git
           git fetch --all
 
       - name: Fast-forward deployment branch
         run: |
-          git checkout -b deploy
-          git merge --ff-only staging
+          git checkout -b deploy --track sync-repo/deploy
+          git merge --ff-only ${{ env.RELEASE_CHANNEL }}
 
       - name: Push to remote repo
         run: |
