@@ -35,5 +35,4 @@ jobs:
           export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/deploy_key"
 
           git remote add sync-repo "git@github.com:${{ env.TARGET_REPO }}.git"
-          git branch -u "sync-repo/${{ env.TARGET_BRANCH }}"
-          git push --force
+          git push --force -u sync-repo ${{ env.RELEASE_CHANNEL }}:${{ env.TARGET_BRANCH }}
