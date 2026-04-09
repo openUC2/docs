@@ -20,7 +20,7 @@ jobs:
   deploy:
     environment:
       name: repo-prod
-      url: https://github.com/${{ env.REPO }}
+      url: https://github.com/${{ env.TARGET_REPO }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
