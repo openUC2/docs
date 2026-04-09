@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  RELEASE_CHANNEL: prod
+  RELEASE_CHANNEL: staging
   REPO: ${{ vars.REPO }}
 
 defaults:
@@ -28,6 +28,7 @@ jobs:
 
       - name: Add remote repo ${{ env.REPO }}
         run: |
+          set -eux
           mkdir -p "$HOME/.ssh"
           echo "${{ secrets.SSH_DEPLOY_KEY }}" > "$HOME/.ssh/deploy_key"
           chmod 600 "$HOME/.ssh/deploy_key"
@@ -38,8 +39,10 @@ jobs:
 
       - name: Fast-forward deployment branch
         run: |
+          set -eux
           git config push.default upstream
           git switch -c deploy sync-repo/deploy
+          git branch -v
           git merge --ff-only ${{ env.RELEASE_CHANNEL }}
 
       - name: Push to remote repo

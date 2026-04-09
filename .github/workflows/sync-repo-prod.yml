@@ -28,21 +28,24 @@ jobs:
 
       - name: Add remote repo ${{ env.REPO }}
         run: |
+          set -eux
           mkdir -p "$HOME/.ssh"
           echo "${{ secrets.SSH_DEPLOY_KEY }}" > "$HOME/.ssh/deploy_key"
           chmod 600 "$HOME/.ssh/deploy_key"
 
           export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/deploy_key"
           git remote add sync-repo git@github.com:${{ env.REPO }}.git
-          git fetch --all
+          git fetch sync-repo deploy
 
       - name: Fast-forward deployment branch
         run: |
-          git checkout -b deploy --track sync-repo/deploy
+          set -eux
+          git config push.default upstream
+          git switch -c deploy sync-repo/deploy
+          git branch -v
           git merge --ff-only ${{ env.RELEASE_CHANNEL }}
 
       - name: Push to remote repo
         run: |
           export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/deploy_key"
-          git config push.default upstream
           git push
