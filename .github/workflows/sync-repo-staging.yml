@@ -42,6 +42,7 @@ jobs:
           set -eux
           git config push.default upstream
           git switch -c deploy sync-repo/deploy
+          git pull
           git branch -v
           git merge --ff-only ${{ env.RELEASE_CHANNEL }}
 
