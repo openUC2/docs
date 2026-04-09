@@ -40,10 +40,12 @@ jobs:
       - name: Fast-forward deployment branch
         run: |
           set -eux
+          export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/deploy_key"
           git config push.default upstream
           git switch -c deploy sync-repo/deploy
           git pull
           git branch -v
+
           git merge --ff-only ${{ env.RELEASE_CHANNEL }}
 
       - name: Push to remote repo
