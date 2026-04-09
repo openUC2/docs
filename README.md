@@ -32,26 +32,13 @@ Then open: <http://localhost:3000>
 The openUC2 docs site has three GitHub Pages deployments, each with its own repository:
 
 - development/edge release channel: the `master` branch of [openUC2/docs](https://github.com/openUC2/docs); deploys to [docs-dev.openuc2.com](https://docs-dev.openuc2.com).
-- staging/beta release channel: the `deploy` branch of [openUC2/docs-staging](https://github.com/openUC2/docs-staging); deploys to [docs-staging.openuc2.com](https://docs-staging.openuc2.com)
-- prod/stable release channel: the `deploy` branch of [openUC2/docs-prod](https://github.com/openUC2/docs-prod); deploys to [docs.openuc2.com](https://docs.openuc2.com).
+- staging/beta release channel: the `staging` branch of openUC2/docs; automatically mirrored to the `deploy` branch of [openUC2/docs-staging](https://github.com/openUC2/docs-staging), which deploys to [docs-staging.openuc2.com](https://docs-staging.openuc2.com)
+- prod/stable release channel: the `prod` branch of openUC2/docs; automatically mirrored to the `deploy` branch of [openUC2/docs-prod](https://github.com/openUC2/docs-prod), which deploys to [docs.openuc2.com](https://docs.openuc2.com).
 
-To set up a local development environment which can deploy to all three channels, run:
-
-```bash
-git clone git@github.com:openUC2/docs.git
-cd docs
-git config push.default upstream
-git remote add staging git@github.com:openUC2/docs-staging.git
-git remote add prod git@github.com:openUC2/docs-prod.git
-git fetch --all
-git checkout -b deploy/staging staging/deploy
-git checkout -b deploy/prod prod/deploy
-git checkout master
-```
-
-Then you can fast-forward your local `deploy/staging` and `deploy/prod` branches to the desired commits on your local `master` branch, and you can deploy changes to the staging and prod release channels by pushing your updated local `deploy/staging` and `deploy/prod` branches, respectively, up to GitHub.
+After cloning the openUC2/docs repo, then you can fast-forward your local `staging` and `prod` branches to the desired commits on your local `master` branch.
+Then you can deploy changes to the staging and prod release channels by pushing your updated local `staging` and `prod` branches, respectively, up to the openUC2/docs repository.
 The deployment process should usually be done as follows:
 
-1. Fast-forward the `deploy` branch of the `docs-staging` repo to whichever commit of the `docs` repo that we want to publish.
-2. Look at `docs-staging.openuc2.com` and fix any problems.
-3. Once the version in the `docs-staging` repo is stable and mature enough for publication, fast-forward the `deploy` branch of the `docs-prod` repo to the publication-ready commit of the `docs-staging` repo.
+1. Fast-forward the `staging` branch of the openUC2/docs repo to whichever commit of the `master` branch that we want to publish.
+2. Wait for it to build and deploy, then look at `docs-staging.openuc2.com` and fix any problems.
+3. Once the version in the `docs-staging` repo is stable and mature enough for publication, fast-forward the `prod` branch of the openUC2/docs repo to the publication-ready commit of the `staging` branch.

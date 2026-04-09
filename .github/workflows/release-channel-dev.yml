@@ -34,10 +34,10 @@ jobs:
         with:
           branch: staging
 
-  sync-repo-staging:
+  deploy-repo-staging:
     # We call this workflow manually because it doesn't appear to be triggered automatically by a
     # push of the dev branch from the ff-branch job:
-    uses: ./.github/workflows/sync-repo-staging.yml
+    uses: ./.github/workflows/deploy-staging.yml
     needs: ff-branch-staging
     secrets: inherit
 
@@ -58,9 +58,9 @@ jobs:
         with:
           branch: prod
 
-  sync-repo-prod:
+  deploy-repo-prod:
     # We call this workflow manually because it doesn't appear to be triggered automatically by a
     # push of the dev branch from the ff-branch job:
-    uses: ./.github/workflows/sync-repo-prod.yml
+    uses: ./.github/workflows/deploy-prod.yml
     needs: ff-branch-prod
     secrets: inherit

@@ -37,9 +37,9 @@ jobs:
         with:
           branch: prod
 
-  sync-repo:
+  deploy-repo:
     # We call this workflow manually because it doesn't appear to be triggered automatically by a
     # push of the prod branch from the ff-branch job:
-    uses: ./.github/workflows/sync-repo-prod.yml
+    uses: ./.github/workflows/deploy-prod.yml
     needs: ff-branch
     secrets: inherit

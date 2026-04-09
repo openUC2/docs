@@ -40,9 +40,9 @@ jobs:
         with:
           branch: staging
 
-  sync-repo:
+  deploy-repo:
     # We call this workflow manually because it doesn't appear to be triggered automatically by a
     # push of the staging branch from the ff-branch job:
-    uses: ./.github/workflows/sync-repo-staging.yml
+    uses: ./.github/workflows/deploy-staging.yml
     needs: ff-branch
     secrets: inherit

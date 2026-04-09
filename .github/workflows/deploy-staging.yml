@@ -1,0 +1,39 @@
+name: deploy (staging)
+
+on:
+  push:
+    branches:
+      - 'staging'
+  workflow_call:
+  workflow_dispatch:
+
+env:
+  RELEASE_CHANNEL: staging
+  TARGET_REPO: ${{ vars.REPO }}
+  TARGET_BRANCH: deploy
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  deploy:
+    environment:
+      name: repo-staging
+      url: https://github.com/${{ env.TARGET_REPO }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ env.RELEASE_CHANNEL }}
+
+      - name: Force-push to target repo
+        run: |
+          mkdir -p "$HOME/.ssh"
+          echo "${{ secrets.SSH_DEPLOY_KEY }}" > "$HOME/.ssh/deploy_key"
+          chmod 600 "$HOME/.ssh/deploy_key"
+          export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/deploy_key"
+
+          git remote add sync-repo "git@github.com:${{ env.TARGET_REPO }}.git"
+          git branch -u "sync-repo/${{ env.TARGET_BRANCH }}"
+          git push --force
