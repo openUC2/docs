@@ -11,7 +11,7 @@ sidebar_position: 100
 1. [Enter the machine's terminal](../day-1/access.md#the-machines-terminal).
 2. Run the following command:
    ```bash
-   forklift pallet upgrade @main
+   forklift pallet upgrade @edge
    ```
 3. Reboot or soft-reboot the machine, e.g. by running:
    ```bash
@@ -34,7 +34,7 @@ If the above command fails with an error message that you have changes which are
 
 4. Run the following command:
    ```bash
-   forklift pallet upgrade --force @main
+   forklift pallet upgrade --force @edge
    ```
 
    :::warning
