@@ -35,6 +35,7 @@ With the UC2 cubes you can physically insert apertures or blockers into the BFP 
 You can access this model through the [openuc2 configurator](https://youseetoo.github.io/configurator?data=eyJtIjpbeyJpIjoibGVkLTQ3MG5tIiwicCI6WzEsMywwXSwiciI6MTgwfSx7ImkiOiJsZW5zLXBvcy0xeDEiLCJwIjpbNCwzLDBdLCJyIjowfSx7ImkiOiJsZW5zLXBvcy0xeDEiLCJwIjpbNiwzLDBdLCJyIjowfSx7ImkiOiJpcmlzLTF4MSIsInAiOls3LDMsMF0sInIiOjB9LHsiaSI6ImJlYW1zcGxpdHRlci0xeDEiLCJwIjpbOCwzLDBdLCJyIjoxODB9LHsiaSI6ImlyaXMtMXgxIiwicCI6WzMsMywwXSwiciI6MH0seyJpIjoiY3ViZS1yYXNwaWNhbS0yeDEiLCJwIjpbMTEsMywwXSwiciI6MH0seyJpIjoiY3ViZS1yYXNwaWNhbS0yeDEiLCJwIjpbOCw1LDBdLCJyIjowfSx7ImkiOiJsZW5zLXBvcy0xeDEiLCJwIjpbOCw0LDBdLCJyIjo5MH0seyJpIjoibGVucy1wb3MtMXgxIiwicCI6WzksMywwXSwiciI6MH0seyJpIjoiY3ViZS0xeDEiLCJwIjpbMTAsMywwXSwiciI6MH0seyJpIjoibGVucy1wb3MtMXgxIiwicCI6WzIsMywwXSwiciI6MTgwfSx7ImkiOiJzYW1wbGVob2xkZXItMXgxIiwicCI6WzUsMywwXSwiciI6MH1dLCJhIjpbXSwibWV0YSI6eyJuYW1lIjoiQWJiZSBFeHBlcmltZW50IiwiYXV0aG9yIjoiQmVuZWRpY3QiLCJnaXRodWJBY2NvdW50IjoiYmVuaXJvcXVhaSIsImRlc2NyaXB0aW9uIjoiVGhpcyBpcyBhIHNpbXBsZSBkZW1vbnN0cmF0aW9uIG9mIGhvdyBvdXIgZ2Fsdm8tYmFzZWQgaW1hZ2luZyBzeXN0ZW0gbG9va3MgbGlrZSIsImNhdGVnb3J5IjoiTWljcm9zY29weSIsInNjcmVlbnNob3QiOiIiLCJ1YzJfdmVyaWZpZWQiOmZhbHNlLCJ2ZXJzaW9uIjoiMS4wLjAiLCJjcmVhdGVkQXQiOiIyMDI1LTA5LTI0VDExOjQxOjQwLjI3MloiLCJjb2xsZWN0aW9uIjpbIkdlbmVyYWwiXSwibm90aWZpY2F0aW9uIjoiIn19) (ensure you activate the raytracing)
 ![](./IMAGES/abbe_experiment.png)
 
+
 ### Optical principle in a compact form
 
 #### 1) Infinity-corrected imaging
@@ -95,10 +96,29 @@ This is why the illumination model matters: the same optics can behave as if the
 
 More on that over at the resources from [Zeiss](https://micro.magnet.fsu.edu/primer/anatomy/image.html)
 
+## Video Walk-through to build the Abbe experiment
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cRt8Eo5lehQ?si=8_e-Dwd9MqzoYaWt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### 
+
+[](./IMAGES/abbesetup.png)
+
+[](./IMAGES/ABBE_1.jpeg)
+
+[](./IMAGES/ABBE_3.jpeg)
+
+[](./IMAGES/ABBE_6.jpeg)
+
+[](./IMAGES/ABBE_7.jpeg)
+
+
 
 ### Hardware and cube layout (Abbe experiment)
 
 Prerequisite: the imaging path and the side arm are aligned well enough that you can focus both PIP and BFP on a screen/camera.
+
+
 
 **Illumination (laser, coherent):**
 

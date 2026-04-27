@@ -198,6 +198,45 @@ A clean acquisition sequence is:
    Even if intensity looks similar, lifetime contrast should separate regions.
 
 
+## Assembly
+
+:::warning
+⚠️ Make sure to have laser safety goggles on when working with the system, especially when the lasers are on. Always follow proper laser safety protocols to prevent eye injury.
+:::
+
+In order to assemble the laser scanning microscope, you can follow the following very coarse step-by-step guide. 
+These are the ingredients, including the FLIMLabs card and laser plus the bottom/top plate to sandwhich the inner FRAME module (aluminium):
+![alt text](./IMAGES/FLIMBUILD_2.jpg) 
+
+The goal is to have the exication and emission path jointly aligned and then to insert the galvo scanner in the middle of the excitation path. the two beams have to be concentric and parallel throughout the beampath. For this, we can tune the screws of the kinematic mirror cubes to steer the beam and we can also move the galvo scanner by hand to achieve the best alignment. The easiest is to observe the beam on a piece of paper and to move the galvo until the beam walks towards the scan lens when you move the galvo by hand. Do that very close to the kinematic mirror mount and very far. 
+
+![](./IMAGES/FLIMBUILD_8.gif)
+For this we use the laser from the FLIMLabs card mounted to the laser collimator and we use a second laser on the other port. In our case this is red. 
+Near By:
+![alt text](./IMAGES/FLIMBUILD_4.jpg) 
+Far Away:
+![alt text](./IMAGES/FLIMBUILD_9.gif)
+
+Once this is done, you can insert the galvo mirror and tune them such that the beam is going through the middle of each cube towards the scanning lens and the tube lens and the dichroic mirror:
+![alt text](./IMAGES/FLIMBUILD_1.jpg) 
+
+The overall design will look similar to this:
+![alt text](./IMAGES/FLIMBUILD_3.jpg) 
+
+Monitor the beam in the back focal plane. The telescope formed by scan/tube lens is set up such that the galvo pivot is imaged into the BFP. This means that when you change the galvo angle, the beam should not walk across the pupil but rather rotate around the center.
+
+![alt text](./IMAGES/FLIMBUILD_5.jpg) 
+
+Tune the kinematic mirror that bounces off the beam up to the objective such that the beam is centered in the BFP and does not walk when you change the galvo angle.
+![alt text](./IMAGES/FLIMBUILD_6.jpg) 
+
+Use a lens or objective lens to observe the focus of the beam. 
+![alt text](./IMAGES/FLIMBUILD_7.jpg) 
+
+When you move the galvo by hand in the focus of the (objective) lens, the beam should move laterally in the sample plane. If the beam stretches with scan angle, treat it as a conjugation error (galvo not properly relayed to the BFP) or clipping. 
+![](./IMAGES/FLIMBUILD_11.gif)
+
+
 ## Result
 
 This is a result acquired with the current FLIM version at 488nm excitation on an 10x, NA 0.3 objective.
