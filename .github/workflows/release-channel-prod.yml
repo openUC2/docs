@@ -11,21 +11,21 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: lewagon/wait-on-check-action@v1.3.4
+      - uses: lewagon/wait-on-check-action@v1.7.0
         with:
           ref: ${{ github.ref }}
           check-name: 'build (full)'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 10
 
-      - uses: lewagon/wait-on-check-action@v1.3.4
+      - uses: lewagon/wait-on-check-action@v1.7.0
         with:
           ref: ${{ github.ref }}
           check-name: 'deploy'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 10
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -33,7 +33,7 @@ jobs:
           git checkout prod
           git merge --ff-only ${{ github.ref_name }}
 
-      - uses: ad-m/github-push-action@v0.8.0
+      - uses: ad-m/github-push-action@v1.1.0
         with:
           branch: prod
 
