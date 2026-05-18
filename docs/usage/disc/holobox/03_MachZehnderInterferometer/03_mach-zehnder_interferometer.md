@@ -31,6 +31,14 @@ The QBox is a collaboration between openUC2 and OQ3
 
 ### Diagram
 
+<iframe
+  src="https://youseetoo.github.io/configurator/viewer/?json=https://raw.githubusercontent.com/beniroquai/openUC2-OptiKit-Store/refs/heads/m$
+  width="100%"
+  height="500"
+  frameborder="0"
+  style="border-radius: 8px; border: 1px solid #ddd;"
+></iframe>
+
 ![](./IMAGES/MachZhender.png)
 
 *Black and white box diagram showing the Mach-Zehnder Interferometer layout*
