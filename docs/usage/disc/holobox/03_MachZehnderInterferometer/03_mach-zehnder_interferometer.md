@@ -31,13 +31,15 @@ The QBox is a collaboration between openUC2 and OQ3
 
 ### Diagram
 
+<div style={{position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden'}}>
 <iframe
-  src="https://youseetoo.github.io/configurator/viewer/?json=https://raw.githubusercontent.com/beniroquai/openUC2-OptiKit-Store/refs/heads/m$
+  src="https://youseetoo.github.io/configurator/viewer/?json=https://raw.githubusercontent.com/beniroquai/openUC2-OptiKit-Store/refs/heads/main/setups/setup-1753952319649.json"
   width="100%"
   height="500"
   frameborder="0"
   style="border-radius: 8px; border: 1px solid #ddd;"
 ></iframe>
+</div>
 
 ![](./IMAGES/MachZhender.png)
 
