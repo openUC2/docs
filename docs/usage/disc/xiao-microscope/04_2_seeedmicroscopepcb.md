@@ -337,6 +337,20 @@ void loop() {
 
 <iframe width="100%" style={{"aspect-ratio": "16 / 9"}} src="https://docs.openuc2.com/kicad/ibom-led-xiao.html" title="iBOM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+
+
+## Tutorial for the new firmware
+
+
+The firmware is available here https://github.com/youseetoo/openuc2-seeed-xiaos3-microscopy-board
+
+
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/undefined" title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen><br>Powered by <a href="https://youtubeembedcode.com">how to get embed code from youtube</a> and <a href="https://xn--helgln-mua.com/">helglån.com</a></iframe></p>
+
+
+![](./IMAGES/IMG_20260504_092458.jpg)
+
+
 ## Troubleshoot
 
 If you have any questions, please feel free to reach out to us using the Forum: openuc2.discourse.group.

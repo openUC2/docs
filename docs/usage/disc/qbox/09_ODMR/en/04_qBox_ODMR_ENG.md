@@ -35,7 +35,12 @@ The core idea is that when we apply microwaves, we can observe the Zeeman effect
 ![](../IMAGES/odmrdiagramm.png)
 *diagram showing ODMR setup layout with components labeled for easier understanding*
 
+![](../IMAGES/flowchart_xiao_odmr.svg)
+*diagram that shows how the software stack on the ESP32S3 Xiao Seeed Studio works*
 
+## Firmware
+
+The source code for the firmware can be found here: https://github.com/openUC2/TechnicalDocs-openUC2-QBox/tree/main/Production_Files/Software/ODMR_Server
 
 ## Materials Needed
 
