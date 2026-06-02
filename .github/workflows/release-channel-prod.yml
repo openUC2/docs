@@ -33,7 +33,7 @@ jobs:
           git checkout prod
           git merge --ff-only ${{ github.ref_name }}
 
-      - uses: ad-m/github-push-action@v1.1.0
+      - uses: ad-m/github-push-action@v1.3.0
         with:
           branch: prod
 
