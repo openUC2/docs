@@ -17,7 +17,7 @@ const navbarItems = [
 		position: "right",
 	},
 	{
-		href: "https://openuc2-gmbh.odoo.com",
+		href: "https://shop.openuc2.com",
 		label: "Shop",
 		position: "right",
 	},
