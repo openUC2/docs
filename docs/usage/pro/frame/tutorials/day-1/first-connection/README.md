@@ -86,11 +86,11 @@ Open your computer's web browser and try navigating to each of address in the fo
 
    :::
 
-2. [http://home.uc2](http://home.uc2)
+2. [http://open.uc2](http://open.uc2)
 
    :::info
 
-   The first time you enter `http://home.uc2` in your web browser, you must include the `http://`!
+   The first time you enter `http://open.uc2` in your web browser, you must include the `http://`!
    Otherwise, your web browser might try to search for the URL in a search engine, instead of opening it as a web page.
 
    :::
