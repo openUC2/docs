@@ -2,7 +2,7 @@
 
 
 
-![alt text](./IMAGES/IMG_20260430_103804.jpg) 
+![](./IMAGES/IMG_20260430_103804.jpg) 
 
 ![](./IMAGES/IMG_20260430_104047.jpg)
 
