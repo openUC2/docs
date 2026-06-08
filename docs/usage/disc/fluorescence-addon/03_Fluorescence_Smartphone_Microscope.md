@@ -34,7 +34,6 @@ n)  smartphone/camera
   width="100%"
   height="500"
   frameborder="0"
-  style="border-radius: 8px; border: 1px solid #ddd;"
 ></iframe>
 
 
