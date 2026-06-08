@@ -30,7 +30,7 @@ n)  smartphone/camera
 ## Diagram:
 
 <iframe
-  src="https://youseetoo.github.io/configurator/viewer/?json=https://github.com/beniroquai/openUC2-OptiKit-Store/raw/7f2a476366afaeb70b4769c8aa5aa9388228cfe6/setups/setup-1758601890024.json"
+  src="https://youseetoo.github.io/configurator/viewer/?json=https://raw.githubusercontent.com/beniroquai/openUC2-OptiKit-Store/refs/heads/main/setups/setup-1758601890024.json"
   width="100%"
   height="500"
   frameborder="0"
