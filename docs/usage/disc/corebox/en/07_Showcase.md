@@ -8,12 +8,12 @@ title: Showcasing Smartphone Microscope Images
 
 
 <video controls width="90%">
-  <source src="../IMAGES/showcase/Sample_4x.mp4"/>
+  <source src={require("../IMAGES/showcase/Sample_4x.mp4").default}/>
 </video>
 
 
 <video controls width="90%">
-  <source src="../IMAGES/showcase/Sample_10x.mp4"/>
+  <source src={require("../IMAGES/showcase/Sample_10x.mp4").default}/>
 </video>
 
 
