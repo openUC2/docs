@@ -82,7 +82,7 @@ Open your computer's web browser and try navigating to each of address in the fo
 
    :::info
 
-   `http://openuc2.local` might not work on Windows; it depends on how Windows is configured.
+   `http://openuc2.local` might not work some web browsers on some computers; it depends on how the web browser and computer are configured.
 
    :::
 
