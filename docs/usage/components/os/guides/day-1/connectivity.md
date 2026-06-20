@@ -117,12 +117,6 @@ This method may result in surprising behaviors if your computer is [connected to
 
    2. In your computer's web browser, try opening the machine's landing page at [http://openuc2.local](http://openuc2.local).
 
-   :::info
-
-   On Windows, you may need to first [install Apple's Bonjour](https://support.apple.com/en-us/106380) in order to use `openuc2.local`.
-
-   :::
-
    If that doesn't work, try opening [http://openuc2.local](http://openuc2.local) instead.
 
    :::info
