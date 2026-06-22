@@ -78,7 +78,7 @@ everything sits in a single straight line: light source → sample → camera.
 Because there are no lenses, the magnification comes purely from geometry: the closer the
 sample sits to the sensor (and the further the light source), the more the pattern spreads
 out and the bigger the reconstructed image appears. This is why the
-[build tutorial](../tutorials/your-first-hologram.md) tells you to glue the sample almost
+[build tutorial](your-first-hologram.md) tells you to glue the sample almost
 onto the sensor.
 
 :::note 🖼️ Image placeholder — `inline-geometry.svg`

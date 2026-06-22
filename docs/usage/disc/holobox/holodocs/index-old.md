@@ -32,45 +32,45 @@ want **right now**:
 
 Step-by-step, can't-fail walkthroughs. Start here if you have the box in front of you.
 
-- [**Your first interference pattern (Michelson)**](./tutorials/first-michelson-fringes.md) — the friendliest first success. ~30 min.
-- [**Your first hologram (inline holography)**](./tutorials/your-first-hologram.md) — record a hologram and bring a hidden image into focus on the computer. ~45 min.
+- [**Your first interference pattern (Michelson)**](first-michelson-fringes.md) — the friendliest first success. ~30 min.
+- [**Your first hologram (inline holography)**](your-first-hologram.md) — record a hologram and bring a hidden image into focus on the computer. ~45 min.
 
 ### 🛠️ I know the basics and have a specific goal → **How-to guides**
 
 Short, practical recipes for one task each.
 
-- [Align an interferometer](./how-to/align-an-interferometer.md)
-- [Build a Mach–Zehnder interferometer](./how-to/build-a-mach-zehnder.md)
-- [Troubleshoot a bad hologram](./how-to/troubleshoot-holograms.md)
+- [Align an interferometer](align-an-interferometer.md)
+- [Build a Mach–Zehnder interferometer](build-a-mach-zehnder.md)
+- [Troubleshoot a bad hologram](troubleshoot-holograms.md)
 
 ### 💡 I want to understand *why* it works → **Explanation**
 
 Read these on the sofa. No equipment needed.
 
-- [Light as a wave](./explanation/light-as-a-wave.md)
-- [Interference and diffraction](./explanation/interference-and-diffraction.md)
-- [**What *is* a hologram?**](./explanation/what-is-a-hologram.md) — the one idea most people get wrong.
-- [How the computer reconstruction works](./explanation/how-reconstruction-works.md)
+- [Light as a wave](light-as-a-wave.md)
+- [Interference and diffraction](interference-and-diffraction.md)
+- [**What *is* a hologram?**](what-is-a-hologram.md) — the one idea most people get wrong.
+- [How the computer reconstruction works](how-reconstruction-works.md)
 
 ### 📋 I just need a number or a definition → **Reference**
 
-- [Parts and parameters](./reference/parts-and-parameters.md)
-- [Glossary](./reference/glossary.md) (English + German terms)
+- [Parts and parameters](parts-and-parameters.md)
+- [Glossary](glossary.md) (English + German terms)
 
 ## A suggested classroom journey
 
 If you're a teacher planning a unit, this order matches the physics build-up used in the
 Münster teaching materials:
 
-1. **Read** [Light as a wave](./explanation/light-as-a-wave.md) and
-   [Interference and diffraction](./explanation/interference-and-diffraction.md).
-2. **Build** the [Michelson interferometer](./tutorials/first-michelson-fringes.md) —
+1. **Read** [Light as a wave](light-as-a-wave.md) and
+   [Interference and diffraction](interference-and-diffraction.md).
+2. **Build** the [Michelson interferometer](first-michelson-fringes.md) —
    students *see* interference with their own eyes.
-3. **Discuss** [What is a hologram?](./explanation/what-is-a-hologram.md) — connect what
+3. **Discuss** [What is a hologram?](what-is-a-hologram.md) — connect what
    they saw to the idea of recording a wave.
-4. **Build** the [inline holographic microscope](./tutorials/your-first-hologram.md) and
+4. **Build** the [inline holographic microscope](your-first-hologram.md) and
    reconstruct a real sample.
-5. **Go deeper** with [how reconstruction works](./explanation/how-reconstruction-works.md).
+5. **Go deeper** with [how reconstruction works](how-reconstruction-works.md).
 
 ## What can you actually observe?
 

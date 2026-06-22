@@ -7,7 +7,7 @@ description: Build the two-path interferometer that lets you slide a sample into
 # How to build a Mach–Zehnder interferometer
 
 *Task-oriented. Best attempted after you've succeeded with the
-[Michelson](../tutorials/first-michelson-fringes.md), since the alignment skills carry
+[Michelson](first-michelson-fringes.md), since the alignment skills carry
 over.*
 
 The **Mach–Zehnder** interferometer does the same fundamental thing as the Michelson —
@@ -104,5 +104,5 @@ changes the light — it has a clean, accessible path the Michelson lacks.
 ## Related
 
 - [Align an interferometer](./align-an-interferometer.md) — the alignment recipe in detail.
-- [What is a hologram?](../explanation/what-is-a-hologram.md) — where the two-beam idea
+- [What is a hologram?](what-is-a-hologram.md) — where the two-beam idea
   leads.

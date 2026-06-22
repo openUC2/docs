@@ -14,7 +14,7 @@ combine into a pattern of bright and dark rings. You'll even see light **cancel 
 darkness** — the clearest proof there is that light travels as a wave.
 
 You don't need to understand the theory first. Just build it and look. (If you get curious
-afterwards, [Interference and diffraction](../explanation/interference-and-diffraction.md)
+afterwards, [Interference and diffraction](interference-and-diffraction.md)
 explains what you saw.)
 
 :::note 🖼️ Image placeholder — `michelson-finished.jpg`
@@ -117,8 +117,8 @@ distance far finer than any ruler.
 
 ## What's next?
 
-- **It wouldn't align?** → [Align an interferometer](../how-to/align-an-interferometer.md)
+- **It wouldn't align?** → [Align an interferometer](align-an-interferometer.md)
   has a dedicated, patient walkthrough.
 - **Understand what you saw** →
-  [Interference and diffraction](../explanation/interference-and-diffraction.md).
+  [Interference and diffraction](interference-and-diffraction.md).
 - **Ready for holograms?** → [Your first hologram](./your-first-hologram.md).

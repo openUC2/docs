@@ -103,8 +103,8 @@ filtered LED" and which is "ordinary light bulb."
 |---|---|
 | Light is a wave | every experiment |
 | Phase | [What is a hologram?](./what-is-a-hologram.md) |
-| Coherence (laser) | [First Michelson fringes](../tutorials/first-michelson-fringes.md) |
-| Coherence (LED + pinhole) | [Your first hologram](../tutorials/your-first-hologram.md) |
+| Coherence (laser) | [First Michelson fringes](first-michelson-fringes.md) |
+| Coherence (LED + pinhole) | [Your first hologram](your-first-hologram.md) |
 
 ---
 
