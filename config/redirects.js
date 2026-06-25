@@ -64,50 +64,6 @@ const redirectsMinimal = [
 		to: "/usage/disc/holobox/",
 	},
 	{
-		from: "/docs/Toolboxes/HoloBox/MichelsonInterferometer/MichelsonInterferometer",
-		to: "/usage/disc/holobox/MichelsonInterferometer/MichelsonInterferometer",
-	},
-	{
-		from: "/docs/Toolboxes/HoloBox/MachZehnderInterferometer/MachZenderInterferometer2",
-		to: "/usage/disc/holobox/MachZehnderInterferometer/mach-zehnder_interferometer",
-	},
-	{
-		from: "/docs/Toolboxes/HoloBox/MachZehnderInterferometer/MachZenderInterferometer",
-		to: "/usage/disc/holobox/MachZehnderInterferometer/OffAxisHolography",
-	},
-	{
-		from: "/docs/Toolboxes/HoloBox/Inline_holography/InlineHolography",
-		to: "/usage/disc/holobox/Inline_holography/InlineHolography",
-	},
-	{
-		from: "/docs/Toolboxes/HoloBox/DiscoveryPolarization/",
-		to: "/usage/disc/holobox/DiscoveryPolarization/",
-	},
-	{
-		from: "/docs/Toolboxes/HoloBox/DiscoveryPolarization/APP_POL_Crossed_Polarizers/",
-		to: "/usage/disc/holobox/DiscoveryPolarization/APP_POL_Crossed_Polarizers/",
-	},
-	{
-		from: "/docs/Toolboxes/HoloBox/DiscoveryPolarization/APP_POL_Stress_Birefringence/",
-		to: "/usage/disc/holobox/DiscoveryPolarization/APP_POL_Stress_Birefringence/",
-	},
-	{
-		from: "/docs/Toolboxes/HoloBox/DiscoveryPolarization/APP_POL_Three_Polarizers/",
-		to: "/usage/disc/holobox/DiscoveryPolarization/APP_POL_Three_Polarizers/",
-	},
-	{
-		from: "/docs/Toolboxes/HoloBox/HoloBox_plus_Calliope/MichelsonInterferometer_calliopeDE",
-		to: "/usage/disc/holobox/HoloBox_plus_Calliope/MichelsonInterferometer_calliopeDE",
-	},
-	{
-		from: "/docs/Toolboxes/HoloBox/HoloBox_plus_Calliope/MichelsonInterferometer_calliopeEN",
-		to: "/usage/disc/holobox/HoloBox_plus_Calliope/MichelsonInterferometer_calliopeEN",
-	},
-	{
-		from: "/docs/Toolboxes/HoloBox/HoloBox_OffAxis_Tomographic_Microscope/chromatix_offaxis_tomography",
-		to: "/usage/disc/holobox/HoloBox_OffAxis_Tomographic_Microscope/chromatix_offaxis_tomography",
-	},
-	{
 		from: "/docs/Toolboxes/LightsheetBox/",
 		to: "/usage/disc/lightsheet-addon/",
 	},
