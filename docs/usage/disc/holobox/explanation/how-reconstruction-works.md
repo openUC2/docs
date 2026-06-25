@@ -16,7 +16,7 @@ picture. How?
 The "proper" version of this involves Fourier transforms, complex numbers, and double
 integrals — first-year university material. We're going to skip all of that and build the
 right **mental picture** instead. If you want the real formulas, they're in the Münster
-thesis and in [Parts and parameters](parts-and-parameters.md).
+thesis and in [Parts and parameters](../reference/parts-and-parameters.md).
 :::
 
 ## Step 1: light waves keep travelling — so we can "rewind" them
@@ -73,7 +73,7 @@ sorting your laundry by colour first makes the whole job faster.
 
 Here's the part that feels like magic. **You** tell the computer how far to rewind. In the
 software this is the **`dz`** distance slider (the propagation distance — see
-[Parts and parameters](parts-and-parameters.md)).
+[Parts and parameters](../reference/parts-and-parameters.md)).
 
 - Set `dz` too small or too large → the sample looks blurry.
 - Land on the right `dz` → the sample snaps into sharp focus.
@@ -107,4 +107,4 @@ That's reconstruction. No calculus required.
 
 ---
 
-**Ready to do it for real?** → [Your first hologram](your-first-hologram.md)
+**Ready to do it for real?** → [Your first hologram](../tutorials/your-first-hologram.md)

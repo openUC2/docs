@@ -7,7 +7,7 @@ description: A focused recipe for getting clean interference fringes when alignm
 # How to align an interferometer
 
 *Task-oriented. Assumes the interferometer is already built — see
-[Your first interference pattern](first-michelson-fringes.md) if not.*
+[Your first interference pattern](../tutorials/first-michelson-fringes.md) if not.*
 
 Alignment is the step that defeats most first-timers. The fringes are real and waiting;
 they only appear once the two beams overlap **almost perfectly**. This guide is a tight
@@ -86,7 +86,7 @@ centred.
 
 ## Related
 
-- [Your first interference pattern](first-michelson-fringes.md) — the full build.
+- [Your first interference pattern](../tutorials/first-michelson-fringes.md) — the full build.
 - [Build a Mach–Zehnder](./build-a-mach-zehnder.md) — a second interferometer geometry.
-- [Interference and diffraction](interference-and-diffraction.md) — what the
+- [Interference and diffraction](../explanation/interference-and-diffraction.md) — what the
   fringes mean.

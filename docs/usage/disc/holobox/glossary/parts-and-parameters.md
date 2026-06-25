@@ -84,7 +84,7 @@ The widget reconstructs by **Fresnel free-space propagation**. In plain steps:
 
 Dragging `dz` changes that phase factor, which is what brings different planes into focus.
 The conceptual version of this is in
-[How reconstruction works](how-reconstruction-works.md).
+[How reconstruction works](../explanation/how-reconstruction-works.md).
 
 :::note For advanced readers
 A more general method is **angular-spectrum** propagation, which uses the factor
@@ -102,7 +102,6 @@ capture at full resolution, save as PNG, then in a Jupyter notebook:
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 def reconstruct_inline_hologram(hologram, wavelength, pixel_size, distance):
     """Reconstruct an inline hologram by Fresnel propagation.
 
@@ -114,12 +113,10 @@ def reconstruct_inline_hologram(hologram, wavelength, pixel_size, distance):
     ny, nx = hologram.shape
 
     # spatial-frequency grids
-    fx = np.linspace(
-        -(nx - 1) / 2 / (nx * pixel_size), (nx - 1) / 2 / (nx * pixel_size), nx
-    )
-    fy = np.linspace(
-        -(ny - 1) / 2 / (ny * pixel_size), (ny - 1) / 2 / (ny * pixel_size), ny
-    )
+    fx = np.linspace(-(nx - 1) / 2 / (nx * pixel_size),
+                      (nx - 1) / 2 / (nx * pixel_size), nx)
+    fy = np.linspace(-(ny - 1) / 2 / (ny * pixel_size),
+                      (ny - 1) / 2 / (ny * pixel_size), ny)
     FX, FY = np.meshgrid(fx, fy)
 
     # intensity -> field (assume flat phase at the sensor)
@@ -129,19 +126,17 @@ def reconstruct_inline_hologram(hologram, wavelength, pixel_size, distance):
     kernel = np.exp(1j * np.pi * wavelength * distance * (FX**2 + FY**2))
 
     spectrum = np.fft.fftshift(np.fft.fft2(E0))
-    field = np.fft.ifft2(np.fft.ifftshift(kernel * spectrum))
-    return np.abs(field)  # reconstructed amplitude image
-
+    field    = np.fft.ifft2(np.fft.ifftshift(kernel * spectrum))
+    return np.abs(field)          # reconstructed amplitude image
 
 # --- usage ---
-img = plt.imread("hologram.png")  # load your capture
-channel = img[:, :, 0]  # red channel (match your filter)
-recon = reconstruct_inline_hologram(
-    channel, wavelength=532e-9, pixel_size=3.45e-6, distance=0.007
-)  # 7 mm — tune this
-plt.imshow(recon, cmap="gray")
-plt.title("Reconstruction")
-plt.show()
+img = plt.imread("hologram.png")          # load your capture
+channel = img[:, :, 0]                     # red channel (match your filter)
+recon = reconstruct_inline_hologram(channel,
+                                    wavelength=532e-9,
+                                    pixel_size=3.45e-6,
+                                    distance=0.007)   # 7 mm — tune this
+plt.imshow(recon, cmap="gray"); plt.title("Reconstruction"); plt.show()
 ```
 
 Re-run with different `distance` values (a few mm up to ~30 mm) to refocus — that loop is
@@ -156,6 +151,6 @@ the offline equivalent of dragging the `dz` slider.
 
 ## Related
 
-- [Your first hologram](your-first-hologram.md)
-- [Troubleshoot holograms](troubleshoot-holograms.md)
+- [Your first hologram](../tutorials/your-first-hologram.md)
+- [Troubleshoot holograms](../how-to/troubleshoot-holograms.md)
 - [Glossary](./glossary.md)

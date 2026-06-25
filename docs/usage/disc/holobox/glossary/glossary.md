@@ -80,5 +80,5 @@ can see the contrast directly.
 ## Related
 
 - [Parts and parameters](./parts-and-parameters.md)
-- [Light as a wave](light-as-a-wave.md)
-- [What is a hologram?](what-is-a-hologram.md)
+- [Light as a wave](../explanation/light-as-a-wave.md)
+- [What is a hologram?](../explanation/what-is-a-hologram.md)

@@ -41,7 +41,7 @@ You see rings, but dragging `dz` never produces a sharp image.
   ≈ 650 nm. A wrong wavelength shifts where focus lands and degrades it.
 - **Pixel size is wrong.** For the Raspberry Pi camera the default is **3.45 µm**. If you
   changed cameras or binning, update it. (See
-  [Parts and parameters](parts-and-parameters.md).)
+  [Parts and parameters](../reference/parts-and-parameters.md).)
 - **You're not scanning `dz` far enough.** Sweep slowly across the **whole** range; the
   focus distance can be larger than you expect. Then fine-tune around the best spot.
 - **Wrong colour channel.** Read the channel that matches your filter (red filter → red
@@ -51,7 +51,7 @@ You see rings, but dragging `dz` never produces a sharp image.
 
 That's the **twin image**, and it is **normal** for simple inline holography — not a fault.
 It happens because the camera records only brightness and loses the wave's phase, so the
-real image and its mirror twin both focus at once. ([Full explanation.](what-is-a-hologram.md#the-catch-the-twin-image))
+real image and its mirror twin both focus at once. ([Full explanation.](../explanation/what-is-a-hologram.md#the-catch-the-twin-image))
 
 For a first hologram, just recognise it and move on. To reduce it you'd need advanced
 phase-retrieval algorithms or an **off-axis** setup (the
@@ -88,8 +88,8 @@ Mechanical instability.
 
 ## Related
 
-- [Your first hologram](your-first-hologram.md) — the full build.
-- [Parts and parameters](parts-and-parameters.md) — every setting and its
+- [Your first hologram](../tutorials/your-first-hologram.md) — the full build.
+- [Parts and parameters](../reference/parts-and-parameters.md) — every setting and its
   default.
-- [How reconstruction works](how-reconstruction-works.md) — why these
+- [How reconstruction works](../explanation/how-reconstruction-works.md) — why these
   settings matter.

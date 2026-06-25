@@ -47,7 +47,7 @@ enough that giant versions (LIGO) detect ripples in spacetime from colliding bla
 In a Michelson interferometer, each time you slide the mirror by **half a wavelength**,
 one full bright-to-bright cycle (one "fringe") passes by. Counting fringes literally
 measures distance in steps of a few hundred nanometres. See
-[Your first Michelson fringes](first-michelson-fringes.md).
+[Your first Michelson fringes](../tutorials/first-michelson-fringes.md).
 :::
 
 ## Diffraction: light bends around edges
