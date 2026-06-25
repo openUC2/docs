@@ -23,7 +23,7 @@ as of September 29, 2025 you need the QBox or HoloBox + the Electronics Add on +
 - Probe
 
 **Detection and Imaging:**
-- HIKrobot Camera (MV-CE060-10UC) with USB cable ([Hikrobot Camera Software installation](../../../components/hik-camera/Camera_Software_tutorial.md))
+- HIKrobot Camera (MV-CE060-10UC) with USB cable ([Hikrobot Camera Software installation](../../../../components/hik-camera/Camera_Software_tutorial.md))
 - Computer with MVS camera software and data analysis capabilities
 - Screen for initial alignment and pattern visualization
 

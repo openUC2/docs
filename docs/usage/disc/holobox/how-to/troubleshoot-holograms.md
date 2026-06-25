@@ -41,7 +41,7 @@ You see rings, but dragging `dz` never produces a sharp image.
   ≈ 650 nm. A wrong wavelength shifts where focus lands and degrades it.
 - **Pixel size is wrong.** For the Raspberry Pi camera the default is **3.45 µm**. If you
   changed cameras or binning, update it. (See
-  [Parts and parameters](../reference/parts-and-parameters.md).)
+  [Parts and parameters](../glossary/parts-and-parameters.md).)
 - **You're not scanning `dz` far enough.** Sweep slowly across the **whole** range; the
   focus distance can be larger than you expect. Then fine-tune around the best spot.
 - **Wrong colour channel.** Read the channel that matches your filter (red filter → red
@@ -89,7 +89,7 @@ Mechanical instability.
 ## Related
 
 - [Your first hologram](../tutorials/your-first-hologram.md) — the full build.
-- [Parts and parameters](../reference/parts-and-parameters.md) — every setting and its
+- [Parts and parameters](../glossary/parts-and-parameters.md) — every setting and its
   default.
 - [How reconstruction works](../explanation/how-reconstruction-works.md) — why these
   settings matter.

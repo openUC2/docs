@@ -50,8 +50,8 @@ Read these on the sofa. No equipment needed.
 
 ### I just need a number or a definition => **Reference**
 
-- [Parts and parameters](./reference/parts-and-parameters.md)
-- [Glossary](./reference/glossary.md) (English + German terms)
+- [Parts and parameters](./glossary/parts-and-parameters.md)
+- [Glossary](./glossary/glossary.md) (English + German terms)
 
 ## A suggested classroom journey
 

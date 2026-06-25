@@ -122,7 +122,7 @@ Set the basic parameters to match your hardware:
 | **Colour channel** | the colour of your filter (e.g. red filter → red channel) | which channel to read |
 | **Distance `dz`** | start at `0`, then drag | how far to "rewind" the wave |
 
-Full details and ranges are in [Parts and parameters](../reference/parts-and-parameters.md).
+Full details and ranges are in [Parts and parameters](../glossary/parts-and-parameters.md).
 
 ## Step 6 — Find focus with the distance dial
 
@@ -159,5 +159,5 @@ lensless microscope.
 
 If you'd rather capture a still and reconstruct it yourself in a Jupyter notebook (no live
 widget), there's a short reconstruction script and walkthrough in
-[Parts and parameters → Offline reconstruction](../reference/parts-and-parameters.md#offline-reconstruction-in-python).
+[Parts and parameters → Offline reconstruction](../glossary/parts-and-parameters.md#offline-reconstruction-in-python).
 It's a nice bridge into a coding lesson.
