@@ -31,7 +31,7 @@ Step-by-step, can't-fail walkthroughs. Start here if you have the box in front o
 - [**Your first interference pattern (Michelson)**](./tutorials/first-michelson-fringes.md) — the friendliest first success. ~30 min.
 - [**Your first hologram (inline holography)**](./tutorials/your-first-hologram.md) — record a hologram and bring a hidden image into focus on the computer. ~45 min.
 
-### 🛠️ I know the basics and have a specific goal => **How-to guides**
+### I know the basics and have a specific goal => **How-to guides**
 
 Short, practical recipes for one task each.
 
