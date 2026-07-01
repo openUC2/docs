@@ -32,7 +32,7 @@ about the hologram being the *ringy pattern*, not the final image.
 
 ## Step 1 — Make a coherent point source
 
-The microscope needs clean, coherent light (here's [why](../explanation/light-as-a-wave..md#coherence-why-we-need-a-laser-or-a-pinhole)). The Holobox gives you two options to play with: 
+The microscope needs clean, coherent light (here's [why](../explanation/light-as-a-wave.md)). The Holobox gives you two options to play with: 
 1. A spatially and temporally coherent light-source in the form of a fiber-coupled laser
 2. A spatially and temporally partially coherent light-source in the form of a small quasi-monochrome LED
 
