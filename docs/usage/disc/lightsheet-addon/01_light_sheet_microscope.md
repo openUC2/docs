@@ -438,3 +438,12 @@ This is an SLA-printed chamber for Ethyl cinnemate with dentist glue to seal the
 The stripe artifacts come from the fact that we do not (yet) wiggle the single mode fiber or destroy coherence otherwise. On our Todo-List :)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/myeRIJ9bIFM?si=DjdAretNErPeKUl3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+### Walk-through Light-sheet imaging using ImSwitch
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/W7HQ2r_jyn0?si=sQZ_DaPhPD1Ucn9Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xjfJWYbQFIY?si=_jron7ZX2TIFEmxp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

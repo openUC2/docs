@@ -16,7 +16,7 @@ The entire project is open-source: hardware, firmware, software, and teaching ma
 
 ## What You Can Do With the HoloBox
 
-The HoloBox enables a wide spectrum of optical experiments:
+The HoloBox enables a wide spectrum of optical experiments
 
 ### **Classical Optics & Interference**
 
