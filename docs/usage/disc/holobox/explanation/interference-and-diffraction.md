@@ -82,7 +82,7 @@ the subject of the next page.
 
 Low-cost lasers often haben multiple wavelengths e.g. a major peak at one wavelength and then (multiple) sideband(s) next to it. In an interferemeter that means that you have two concurrent interference pattern with a contrast envelop that changes over the optical path difference periodically 
 
-![](./iMAGES/coherence-beating.gif) 
+![](./IMAGES/coherence-beating.gif) 
 
 You can also see that in the below chart with the resulting contrast function: 
 

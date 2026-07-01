@@ -34,7 +34,7 @@ shot.
 
 From the HoloBox Base Set:
 
-![](IMG_20260625_083337.jpg)
+![](./IMAGES/OFFAXIS/IMG_20260625_083337.jpg)
 *The fully assembled Michelson Interferometer*
 
 - red laser module (650 nm) in the form of a fiber tester 
@@ -60,15 +60,15 @@ From the HoloBox Base Set:
 
 Click the fiber adapter cube and the beam-splitter cube onto base plates so the laser fires straight into the beam splitter. Don't turn the laser on yet. We insert the fiber into the lsaer-based fiber tester. 
 
-![](IMG_20260625_082729.jpg)
+![](./IMAGES/OFFAXIS/IMG_20260625_082729.jpg)
 *Plate with puzzle pieces to mount cubes*
 
-![](IMG_20260625_082733.jpg)
+![](./IMAGES/OFFAXIS/IMG_20260625_082733.jpg)
 *Add the fiber + fiber holder cube to the plate*
 
 The beam splitter does exactly what its name says: it splits the incoming beam into **two** beams that head off at 90° to each other. Later, those two beams will come back and meet again — that meeting is where interference happens.
 
-![](IMG_20260625_082739-EDIT.jpg)
+![](./IMAGES/OFFAXIS/IMG_20260625_082739-EDIT.jpg)
 *The beam splitter cube will .. well .. split the beam in to two*
 
 
@@ -78,19 +78,19 @@ The beam splitter does exactly what its name says: it splits the incoming beam i
 
 Place a mirror cube on each of the two beam-splitter outputs — one "straight ahead," one "off to the side." Make sure the **adjustable (kinematic) mirror** is one of them; its screws are how you'll fine-tune the pattern later.
 
-![](IMG_20260625_082752-EDIT.jpg)
+![](./IMAGES/OFFAXIS/IMG_20260625_082752-EDIT.jpg)
 *Two mirrors - maybe they are oriented at 90° or 45°*
 
-![](IMG_20260625_082801-EDIT.jpg)
+![](./IMAGES/OFFAXIS/IMG_20260625_082801-EDIT.jpg)
 *In case it's not 90° - open the cube*
 
-![](IMG_20260625_082807-EDIT-EDIT.jpg)
+![](./IMAGES/OFFAXIS/IMG_20260625_082807-EDIT-EDIT.jpg)
 *Unmount the inner mirror bit*
 
-![](IMG_20260625_082820-EDIT.jpg)
+![](./IMAGES/OFFAXIS/IMG_20260625_082820-EDIT.jpg)
 *PUt it back in so that it arrives at 90°*
 
-![](IMG_20260625_082840-EDIT.jpg)
+![](./IMAGES/OFFAXIS/IMG_20260625_082840-EDIT.jpg)
 *Add both mirrors to the plate*
 
 
@@ -101,17 +101,17 @@ Each mirror bounces its beam straight back into the beam splitter, where the two
 
 Put the screen on the fourth side of the beam splitter (opposite the laser). Now turn the laser on.
 
-![](IMG_20260625_082859-EDIT.jpg)
+![](./IMAGES/OFFAXIS/IMG_20260625_082859-EDIT.jpg)
 *add the screen*
 
-![](IMG_20260625_082915-EDIT.jpg)
+![](./IMAGES/OFFAXIS/IMG_20260625_082915-EDIT.jpg)
 *Add the laser to the fiber*
 
 
 
 You'll probably see **two separate red dots or red circles** on the screen — one from each mirror. Two dots means the beams aren't lined up yet. That's expected.
 
-![](IMG_20260625_082932-EDIT.jpg)
+![](./IMAGES/OFFAXIS/IMG_20260625_082932-EDIT.jpg)
 
 ## Step 4 — Overlap the two dots
 
@@ -124,9 +124,9 @@ Go slowly — a small turn moves the dot a long way. Patience here is the whole 
 Now click the converging **lens** into the beam path between the laser and the beam splitter. This spreads each dot into a broad disc of light. Where the two discs overlap, you'll start to see **fringes** — and as you fine-tune the screws, they curl into a set of
 **concentric rings** (called Newton's rings).
 
-![](IMG_20260625_083036.jpg)
+![](./IMAGES/OFFAXIS/IMG_20260625_083036.jpg)
 
-![](IMG_20260625_083320.jpg)
+![](./IMAGES/OFFAXIS/IMG_20260625_083320.jpg)
 
 
 **That ring pattern is interference.** The dark rings are places where the two light waves arrived exactly out of step and cancelled out — light plus light making darkness.

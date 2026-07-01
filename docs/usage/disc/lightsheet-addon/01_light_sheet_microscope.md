@@ -417,3 +417,24 @@ The Video below will show you how to run Imswitch and genereate data stacks.
     allowFullScreen
   />
 </div>
+
+
+## Brain imaging using dedicated Sample Adapter 
+
+This is an SLA-printed chamber for Ethyl cinnemate with dentist glue to seal the chamber with the coverslips. 
+
+![](./IMAGES/BRAIN/image.jpg)
+*We use a magnetic plate on our xyz stage to mount the sample adapter to coarsly move it in xyz*
+
+![](./IMAGES/BRAIN/image3.jpg)
+*This sla-printed adapter mounts to the xyz stage magnetically*
+
+![](./IMAGES/BRAIN/image2.jpg)
+*This is a volume of (mostly autofluorescent) blood vessels and GFP-labelled neurons (I guess)*
+
+
+### Stack of mouse brain images at 488nm 
+
+The stripe artifacts come from the fact that we do not (yet) wiggle the single mode fiber or destroy coherence otherwise. On our Todo-List :)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/myeRIJ9bIFM?si=DjdAretNErPeKUl3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

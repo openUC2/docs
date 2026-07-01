@@ -5,7 +5,7 @@ This tutorial gives an idea how easy it can be to build a fluorescence microscop
 
 ## Tutorial
 
-The is written by Lara Pötsch from the Friedrich Schiller University! Thanks! :) 
+The is written by Lara Poetzsch from the Friedrich Schiller University! Thanks! :) 
 
 
 ### Necessary Materials:
