@@ -2,7 +2,7 @@
 # Note: the above syntax parser directive is only needed so that we can use the COPY directive with
 # the `--exclude` option.
 
-FROM caddy:2.11.3
+FROM caddy:2.11.4
 
 COPY build/POLARISATION /srv/POLARISATION
 COPY build/assets/images /srv/assets/images
