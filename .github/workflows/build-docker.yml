@@ -39,7 +39,7 @@ jobs:
           - minimal
           - full
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           # Only fetch files we actually need:
           fetch-depth: 0
@@ -51,7 +51,7 @@ jobs:
           node-version: "20" # FIXME: this is very old and out-of-date. Bump the version!
 
       - name: Use cached ~/.npm
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -65,7 +65,7 @@ jobs:
         run: npm run preprocess-${{ matrix.variant }}
 
       - name: Cache Docusaurus build
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: |
             ${{ github.workspace }}/.docusaurus
