@@ -14,21 +14,21 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: lewagon/wait-on-check-action@v1.7.0
+      - uses: lewagon/wait-on-check-action@v1.8.0
         with:
           ref: ${{ github.ref }}
           check-name: 'build (full)'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 10
 
-      - uses: lewagon/wait-on-check-action@v1.7.0
+      - uses: lewagon/wait-on-check-action@v1.8.0
         with:
           ref: ${{ github.ref }}
           check-name: 'deploy'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 10
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
