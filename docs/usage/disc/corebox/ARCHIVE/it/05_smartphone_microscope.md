@@ -7,7 +7,7 @@ title: openUC2 Microscopio per Smartphone con obiettivo corretto finito
 
 Costruisci il microscopio per smartphone come mostrato. Usa qualsiasi due cubi qui per posizionare in sicurezza lo smartphone.
 
-![](../IMAGES/MINIBOXNEW/46.png)
+![](../../IMAGES/MINIBOXNEW/46.png)
 
 
 <div class="alert info">
@@ -23,8 +23,8 @@ Sostituisci l'oculare Ramsden con la lente da 40mm. Cosa è meglio per l'occhio 
 
 ## Tutorial: Microscopio per Smartphone
 
-![](../IMAGES/MINIBOXTUTORIAL/image1.png)
-![](../IMAGES/MINIBOXTUTORIAL/image28.gif)
+![](../../IMAGES/MINIBOXTUTORIAL/image1.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image28.gif)
 
 ### Materiali necessari:
 
@@ -39,11 +39,11 @@ Sostituisci l'oculare Ramsden con la lente da 40mm. Cosa è meglio per l'occhio 
 - Lampada torcia
 - Lente da 50 mm (nel cubo)
 
-![](../IMAGES/MINIBOXTUTORIAL/image38.jpg)
+![](../../IMAGES/MINIBOXTUTORIAL/image38.jpg)
 
 ### Diagramma (Vista laterale):
 
-![](../IMAGES/MINIBOXTUTORIAL/image98.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image98.png)
 
 ## Istruzioni per assemblare il Microscopio per Smartphone:
 
@@ -63,51 +63,51 @@ Questo video ti mostra come costruire il microscopio per smartphone UC2 come ind
 
 **Passo 1: Costruisci una linea di quattro piastre di base**
 
-![](../IMAGES/MINIBOXTUTORIAL/image49.jpg)
+![](../../IMAGES/MINIBOXTUTORIAL/image49.jpg)
 
 **Passo 2: Assembla i componenti**
 
 Posiziona il montaggio dell'obiettivo del microscopio su un estremo seguito dai due specchi uno di fronte all'altro e un cubo vuoto nell'altro estremo. Fissali con piastre di base.
 
-![](../IMAGES/MINIBOXTUTORIAL/image103.jpg)
+![](../../IMAGES/MINIBOXTUTORIAL/image103.jpg)
 
 **Passo 3: Regola l'obiettivo**
 
 Costruisci un cubo con l'obiettivo del microscopio dentro. Regola l'altezza dell'obiettivo se necessario usando l'ingranaggio.
 
-![](../IMAGES/MINIBOXTUTORIAL/image68.jpg)
-![](../IMAGES/MINIBOXTUTORIAL/image100.jpg)
-![](../IMAGES/MINIBOXTUTORIAL/image34.jpg)
+![](../../IMAGES/MINIBOXTUTORIAL/image68.jpg)
+![](../../IMAGES/MINIBOXTUTORIAL/image100.jpg)
+![](../../IMAGES/MINIBOXTUTORIAL/image34.jpg)
 
 **Passo 4: Posiziona l'oculare**
 
 Posiziona l'oculare accanto all'obiettivo del microscopio e un cubo vuoto accanto ad esso. Fai attenzione all'orientamento giusto dell'oculare.
 
-![](../IMAGES/MINIBOXTUTORIAL/image90.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image90.png)
 
 **Passo 5: Allinea la base dello smartphone**
 
 Posiziona la base dello smartphone con il foro allineato con l'oculare. Nota: Puoi regolare l'orientamento della base dello smartphone per adattare la dimensione del tuo smartphone.
 
-![](../IMAGES/MINIBOXTUTORIAL/image95.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image95.png)
 
 **Passo 6: Imposta il portacampioni**
 
 Posiziona il cubo portacampioni sopra l'obiettivo del microscopio. Fai attenzione alla distanza tra loro. Puoi regolare la distanza grossolana facendo scorrere il portacampioni dentro il cubo e la distanza più fine usando l'ingranaggio.
 
-![](../IMAGES/MINIBOXTUTORIAL/image46.jpg)
+![](../../IMAGES/MINIBOXTUTORIAL/image46.jpg)
 
 **Passo 7: Aggiungi la lente convergente e la lampada**
 
 Posiziona un cubo lente convergente sopra il cubo portacampioni e posiziona la lampada torcia sopra. Posiziona lo smartphone allineato all'oculare.
 
-![](../IMAGES/MINIBOXTUTORIAL/image1.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image1.png)
 
 **Passo 8: Regola per la chiarezza**
 
 Prova a muovere lo smartphone in modo che l'intero cerchio dell'oculare appaia illuminato. Poi, gira l'ingranaggio per mettere a fuoco e ottenere un'immagine nitida del campione.
 
-![](../IMAGES/MINIBOXTUTORIAL/image83.gif)
+![](../../IMAGES/MINIBOXTUTORIAL/image83.gif)
 
 
 
@@ -118,12 +118,12 @@ La fotocamera dello smartphone ha una lente con una lunghezza focale molto corta
 
 L'occhio può vedere oggetti sia da lontano che da vicino. Questa proprietà è chiamata accomodazione.
 
-![](../IMAGES/MINIBOXNEW/47.png)
+![](../../IMAGES/MINIBOXNEW/47.png)
 
 
 La fotocamera dello smartphone può fare questo anche, ma si chiama autofocus. Descrive l'abilità di immaginare nitidamente oggetti a distanze diverse sul sensore.
 
-![](../IMAGES/MINIBOXNEW/48.png)
+![](../../IMAGES/MINIBOXNEW/48.png)
 
 L'immagine dall'oculare arriva in raggi paralleli, come se venisse dall'infinito. Hai osservato con un occhio rilassato (guardando in lontananza) o con una fotocamera focalizzata all'infinito.
 
@@ -135,4 +135,4 @@ L'immagine dall'oculare arriva in raggi paralleli, come se venisse dall'infinito
 
 ## Risultati del calcolo
 
-![](../IMAGES/MINIBOX/UC2_minibox_55.png)
+![](../../IMAGES/MINIBOX/UC2_minibox_55.png)

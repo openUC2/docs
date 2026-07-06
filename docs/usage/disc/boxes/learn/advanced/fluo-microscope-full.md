@@ -102,7 +102,7 @@ Lichtquelle (LED/Laser)
 
 ### Wie stelle ich Köhler-Beleuchtung ein?
 
-→ Verweis auf [fluorescence/experiments/04_koehler.md](../fluorescence/experiments/04_koehler.md)
+→ Verweis auf `fluorescence/experiments/04_koehler.md` *(noch anzulegen)*
 
 ### Wie vergleiche ich LED- vs. Laser-Edition?
 
@@ -135,4 +135,4 @@ Lichtquelle (LED/Laser)
 
 - [fluorescence/index.md](../fluorescence/index.md)
 - [infinity/index.md](../infinity/index.md)
-- [electronics/experiments/06_autofokus.md](../electronics/experiments/06_autofokus.md) – motorisierter Autofokus für dieses Setup
+- `electronics/experiments/06_autofokus.md` *(noch anzulegen)* – motorisierter Autofokus für dieses Setup

@@ -1,16 +1,37 @@
 const redirectsMinimal = [
 	{
 		from: "/docs/Toolboxes/DiscoveryCore/ENGLISH/",
-		to: "/usage/disc/corebox/en/",
+		to: "/usage/disc/corebox/ARCHIVE/en/",
 	},
 	{
 		from: "/docs/Toolboxes/DiscoveryCore/ENGLISH/coreBOXen",
-		to: "/usage/disc/corebox/en/core_intro",
+		to: "/usage/disc/corebox/ARCHIVE/en/core_intro",
 	},
 	{
 		from: "/docs/Toolboxes/DiscoveryCore/ITALIAN/coreBOXit",
-		to: "/usage/disc/corebox/it/core_intro",
+		to: "/usage/disc/corebox/ARCHIVE/it/core_intro",
 	},
+	// 2026-07 CoreBox Diataxis migration: old en/it pages moved to ARCHIVE/
+	{
+		from: "/usage/disc/corebox/en/",
+		to: "/usage/disc/corebox/ARCHIVE/en/",
+	},
+	{
+		from: "/usage/disc/corebox/it/",
+		to: "/usage/disc/corebox/ARCHIVE/it/core_intro",
+	},
+	...["core_intro", "CoreLens", "CoreTelescope", "coreMicroscope",
+		"Smartphone Microscope", "coreTroubleshoot",
+		"Showcasing Smartphone Microscope Images"].map((id) => ({
+		from: `/usage/disc/corebox/en/${id}`,
+		to: `/usage/disc/corebox/ARCHIVE/en/${id}`,
+	})),
+	...["core_intro", "CoreLensIT", "CoreTelescopeIT", "coreMicroscopeIT",
+		"Smartphone MicroscopeIT", "coreTroubleshootIT",
+		"Showcasing Smartphone Microscope ImagesIT"].map((id) => ({
+		from: `/usage/disc/corebox/it/${id}`,
+		to: `/usage/disc/corebox/ARCHIVE/it/${id}`,
+	})),
 	{
 		from: "/docs/Toolboxes/ElectronicsBox/",
 		to: "/usage/disc/electronics-addon/",

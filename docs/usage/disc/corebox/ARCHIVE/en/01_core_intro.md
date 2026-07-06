@@ -3,7 +3,7 @@ title: UC2 coreBOX (english)
 ---
 
 :::tip
-We have compiled this document into a ***PDF*** which can be downloaded [here](../Manual_Corebox_EN.pdf)
+We have compiled this document into a ***PDF*** which can be downloaded [here](../../Manual_Corebox_EN.pdf)
 :::
 
 # CoreBOX
@@ -12,7 +12,7 @@ We have compiled this document into a ***PDF*** which can be downloaded [here](.
 
 **2. Experiment Deepdive**
 
-![](../IMAGES/coreBOX.jpg)
+![](../../IMAGES/coreBOX.jpg)
 
 
 ## Introduction 
@@ -48,7 +48,7 @@ This is very simple and does not have a real setup at all. Students take out one
 #### GOAL:
 In this experiment students see, how a lens magnifies what they look at.
 
-![](../IMAGES/lens.jpg)
+![](../../IMAGES/lens.jpg)
 
 
 More details can be found here: [Lens-Wiki](https://docs.openuc2.com/docs/Toolboxes/DiscoveryCore/ENGLISH/CoreLens/)
@@ -75,7 +75,7 @@ Now we need two more lenses, but still there is no assembly needed.The student c
 Students should realise how the different focal lengths impact what they see through the lens. This understanding is the base to understand how the distance between different lenses affects the setups we will build later.
 
 
-![](../IMAGES/lens2.jpg)
+![](../../IMAGES/lens2.jpg)
 
 
 More details can be found here: [Lens-Wiki](https://docs.openuc2.com/docs/Toolboxes/DiscoveryCore/ENGLISH/CoreLens/)

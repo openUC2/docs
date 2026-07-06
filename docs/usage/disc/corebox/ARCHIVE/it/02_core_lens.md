@@ -10,7 +10,7 @@ La **lunghezza focale** di una lente corrisponde alla distanza dalla lente al pi
 
 ### Lenti convergenti (positive) e divergenti (negative)
 
-![](../IMAGES/MINIBOXNEW/12.png)
+![](../../IMAGES/MINIBOXNEW/12.png)
 
 
 Le lenti convergenti rifrangono i raggi di luce che viaggiano paralleli all'asse ottico in un punto chiamato punto focale.
@@ -45,7 +45,7 @@ Le risposte hanno sollevato altre domande? Allora indaga per scoprire esattament
 
 Ora prendi i cubi delle lenti. Con la lente giusta, prova a decifrare le informazioni della lunghezza focale nei cubi mostrati. Muovi la lente sulla scrittura finché non è della stessa dimensione del testo "UC2".
 
-![](../IMAGES/MINIBOXNEW/13.png)
+![](../../IMAGES/MINIBOXNEW/13.png)
 
 
 <div class="alert info">
@@ -61,7 +61,7 @@ Cosa succede se usi una lente con la lunghezza focale sbagliata?
 
 ## Immagine di un oggetto attraverso una lente positiva
 
-![](../IMAGES/MINIBOXNEW/14.png)
+![](../../IMAGES/MINIBOXNEW/14.png)
 
 Prendiamo la lente convergente come esempio. Iniziamo con un oggetto (freccia verde) e vediamo cosa succede ai raggi che partono dalla cima. Ci sono infiniti raggi in tutte le direzioni, ma per disegnare la figura i seguenti tre raggi saranno sufficienti:
 
@@ -79,7 +79,7 @@ L'immagine si forma dove tutti i raggi si intersecano. Il principio è usato per
 Nel caso della lente negativa, usiamo lo stesso metodo per immaginare il percorso del raggio. A differenza del caso della lente convergente, l'immagine è sempre ridotta e virtuale. L'ingrandimento dipende dalla posizione dell'oggetto davanti alla lente. A differenza della lente convergente, l'immagine viene creata sul lato oggetto ed è quindi chiamata immagine virtuale. Puoi vederla direttamente con i tuoi occhi ma non proiettarla su uno schermo.
 
 
-![](../IMAGES/MINIBOXNEW/15.png)
+![](../../IMAGES/MINIBOXNEW/15.png)
 
 <div class="alert-success">
 Il modo in cui una lente crea un'immagine è prevedibile conoscendo la lunghezza focale di quella lente. Pertanto, una certa distanza deve essere mantenuta in modo che tu possa vedere la scrittura con la lente specificata nel foglio precedente.
@@ -101,7 +101,7 @@ Con la lente divergente (f = -50 mm) vedi sempre un'immagine virtuale ridotta. U
 
 Prendi il cubo lente UC2 con lunghezza focale f=40mm e usalo come lente d'ingrandimento.
 
-![](../IMAGES/MINIBOXNEW/16.png)
+![](../../IMAGES/MINIBOXNEW/16.png)
 
 <div class="alert info">
 Riesci a leggere le piccole lettere attraverso la lente convergente? Cosa c'è scritto?
@@ -127,7 +127,7 @@ Una lente in azione può essere trovata qui:
 
 Con le lenti convergenti, l'immagine e l'ingrandimento dipendono dalla posizione dell'oggetto.
 
-![](../IMAGES/MINIBOXNEW/17.png)
+![](../../IMAGES/MINIBOXNEW/17.png)
 
 Se la distanza tra l'oggetto e la lente è più di due volte la lunghezza focale della lente, allora l'immagine è...
 - Invertita
@@ -171,7 +171,7 @@ Se la distanza tra l'oggetto e la lente è inferiore alla lunghezza focale della
 - Ingrandita
 - Virtuale
 
-![](../IMAGES/MINIBOXNEW/18.png)
+![](../../IMAGES/MINIBOXNEW/18.png)
 
 <div class="alert-success">
 La lente d'ingrandimento è la più semplice di tutti i dispositivi ottici, poiché consiste solo di una semplice lente convergente con una lunghezza focale adatta. Perché il cubo con i 50 𝑚𝑚 ingrandisce il piccolo testo? Se l'oggetto è davanti alla lunghezza focale della lente - cioè meno di 50 𝑚𝑚 davanti alla lente - la lente crea un'immagine virtuale che è dietro l'oggetto reale. L'occhio la percepisce ingrandita. Guarda il diagramma sopra.
@@ -181,7 +181,7 @@ Calcola l'ingrandimento della lente d'ingrandimento usando la seguente formula:
 
 
 
-![](../IMAGES/MINIBOX/UC2_minibox_7.png)
+![](../../IMAGES/MINIBOX/UC2_minibox_7.png)
 
 
 
@@ -196,7 +196,7 @@ Calcola l'ingrandimento della lente d'ingrandimento usando la seguente formula:
 
 Prendi il cubo lente UC2 con lunghezza focale 𝑒 =40 𝑚𝑚 e posizionalo dietro il cubo portacampioni. La distanza tra l'oggetto e la lente (cioè la distanza dell'oggetto g) dovrebbe essere di circa 50 mm. Se ora illumini l'oggetto con la torcia, lo vedrai nitidamente a una distanza di circa 200 mm sul muro. Un proiettore cinematografico ha una pellicola invece dell'oggetto e ovviamente una sorgente luminosa molto più forte.
 
-![](../IMAGES/MINIBOXNEW/19.png)
+![](../../IMAGES/MINIBOXNEW/19.png)
 
 <div class="alert-success">
 Usa una torcia (ad es. dal tuo cellulare) come sorgente luminosa e tienila davanti all'oggetto
@@ -216,30 +216,30 @@ Fai scorrere la lente avanti e indietro nel cubo e vedi quando l'immagine è a f
 ## Come funziona un proiettore cinematografico?
 
 
-![](../IMAGES/MINIBOXNEW/20.png)
+![](../../IMAGES/MINIBOXNEW/20.png)
 
 ### Dov'è l'immagine?
 Quando un oggetto viene immaginato attraverso una lente convergente, la posizione e la dimensione dell'immagine dipendono dalla distanza (g) dell'oggetto dalla lente e dalla sua lunghezza focale (f).
 L'equazione della lente descrive la relazione tra distanza dell'immagine (b) e distanza dell'oggetto (g):
-![](../IMAGES/MINIBOX/UC2_minibox_10.png)
+![](../../IMAGES/MINIBOX/UC2_minibox_10.png)
 
 ### Quanto è grande l'immagine?
 L'ingrandimento dell'oggetto sullo schermo può essere facilmente calcolato usando la seguente formula:
 
-![](../IMAGES/MINIBOX/UC2_minibox_11.png)
+![](../../IMAGES/MINIBOX/UC2_minibox_11.png)
 
 ## Come funziona il proiettore
 
-![](../IMAGES/MINIBOX/UC2_minibox_9.png)
+![](../../IMAGES/MINIBOX/UC2_minibox_9.png)
 
 Controlla se la tua osservazione è d'accordo con il calcolo
 
-![](../IMAGES/MINIBOX/UC2_minibox_12.png)
+![](../../IMAGES/MINIBOX/UC2_minibox_12.png)
 
 Calcola l'ingrandimento del proiettore per i diversi valori di g e b.
 
 
-![](../IMAGES/MINIBOX/UC2_minibox_13.png)
+![](../../IMAGES/MINIBOX/UC2_minibox_13.png)
 
 
 <div class="alert-success">
@@ -270,4 +270,4 @@ La posizione dell'immagine e il suo ingrandimento dipendono dalla posizione e di
 2. Modifica la distanza tra la lente e lo schermo.
 3. Osserva attentamente e registra la posizione alla quale la sorgente luminosa forma un'immagine chiara sulla superficie dello schermo.
 
-![](../IMAGES/MINIBOXTUTORIAL/image3.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image3.png)

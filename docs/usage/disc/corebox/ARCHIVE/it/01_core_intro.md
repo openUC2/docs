@@ -3,7 +3,7 @@ title: UC2 coreBOX (italiano)
 ---
 
 :::tip
-Abbiamo compilato questo documento in un ***PDF*** che può essere scaricato [qui](../Manual_Corebox_EN.pdf)
+Abbiamo compilato questo documento in un ***PDF*** che può essere scaricato [qui](../../Manual_Corebox_EN.pdf)
 :::
 
 # CoreBOX
@@ -12,7 +12,7 @@ Abbiamo compilato questo documento in un ***PDF*** che può essere scaricato [qu
 
 **2. Approfondimento degli Esperimenti**
 
-![](../IMAGES/coreBOX.jpg)
+![](../../IMAGES/coreBOX.jpg)
 
 
 ## Introduzione 
@@ -48,7 +48,7 @@ Questo è molto semplice e non ha una vera configurazione. Gli studenti prendono
 #### OBIETTIVO:
 In questo esperimento gli studenti vedono come una lente ingrandisce quello che guardano.
 
-![](../IMAGES/lens.jpg)
+![](../../IMAGES/lens.jpg)
 
 
 Maggiori dettagli possono essere trovati qui: [Lens-Wiki](https://docs.openuc2.com/docs/Toolboxes/DiscoveryCore/ENGLISH/CoreLens/)
@@ -75,7 +75,7 @@ Ora abbiamo bisogno di altre due lenti, ma ancora non è necessario alcun assemb
 Gli studenti dovrebbero rendersi conto di come le diverse lunghezze focali influiscono su quello che vedono attraverso la lente. Questa comprensione è la base per capire come la distanza tra diverse lenti influisce sulle configurazioni che costruiremo più tardi.
 
 
-![](../IMAGES/lens2.jpg)
+![](../../IMAGES/lens2.jpg)
 
 
 Maggiori dettagli possono essere trovati qui: [Lens-Wiki](https://docs.openuc2.com/docs/Toolboxes/DiscoveryCore/ENGLISH/CoreLens/)

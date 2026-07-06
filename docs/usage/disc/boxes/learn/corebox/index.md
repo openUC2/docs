@@ -1,6 +1,10 @@
 # CoreBox – Lernpfad
 
-> **Status:** Skeleton. Quelle für Komponenten: [corebox.md](../../corebox.md). Quelle für Didaktik: [Didaktikkonzept CoreBox - Version 1 (1).md](../../Didaktikkonzept%20CoreBox%20-%20Version%201%20%281%29.md).
+> **Status:** Umgesetzt. Diese Skizze wurde als Diátaxis-Dokumentation unter
+> [`usage/disc/corebox`](../../../corebox/index.md) ausgerollt (Tutorials, How-tos,
+> Explanation mit generierten Strahlengang-Figuren, Reference, For-Teachers-Seite).
+> Diese Seite bleibt als Planungsnotiz erhalten.
+> Quelle für Komponenten: [corebox.md](../../corebox.md). Quelle für Didaktik: [Didaktikkonzept CoreBox - Version 1 (1).md](../../Didaktikkonzept%20CoreBox%20-%20Version%201%20%281%29.md).
 
 Die CoreBox ist der Einstieg in alle Discovery-Boxen. Sie deckt die geometrische Optik vollständig ab – von der Lupe bis zum Smartphone-Mikroskop – und ist Voraussetzung für Electronics, Infinity, Fluorescence und LightSheet.
 

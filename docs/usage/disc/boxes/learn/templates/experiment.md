@@ -4,7 +4,7 @@
 
 ---
 
-# Experiment <Nummer>: <Titel>
+# Experiment `<Nummer>: <Titel>`
 
 ## Steckbrief (Reference – auf einen Blick)
 

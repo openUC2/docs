@@ -4,7 +4,7 @@
 
 ---
 
-# Didaktikkonzept – <Box-Name> openUC2
+# Didaktikkonzept – `<Box-Name>` openUC2
 
 ## 0. Kurzprofil
 

@@ -57,7 +57,7 @@ Das ist keine Geräteschranke, sondern eine **physikalische Fundamentalgrenze** 
 
 ### Aufbau-Schritte
 
-1. Vollständiges Infinity-Mikroskop aufbauen (→ [infinity/experiments/01_endlich_vs_unendlich.md](../infinity/experiments/01_endlich_vs_unendlich.md)).
+1. Vollständiges Infinity-Mikroskop aufbauen (→ `infinity/experiments/01_endlich_vs_unendlich.md` *(noch anzulegen)*).
 2. USAF-Target als Probe einlegen.
 3. Grobe Fokussierung per Z-Stage.
 4. Bild auf Kamera aufnehmen: Welche Liniengruppe ist noch aufgelöst?
@@ -86,6 +86,6 @@ Das ist keine Geräteschranke, sondern eine **physikalische Fundamentalgrenze** 
 
 ## 5. Weiterführende Links
 
-- Infinity Add-On → [infinity/experiments/05_blende_aufloesung.md](../infinity/experiments/05_blende_aufloesung.md)
+- Infinity Add-On → `infinity/experiments/05_blende_aufloesung.md` *(noch anzulegen)*
 - Theorie: Abbe (1873), Born & Wolf „Principles of Optics"
 - Nanoskopie als Ausblick: Nobel­preis 2014 (Betzig, Hell, Moerner)

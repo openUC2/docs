@@ -10,7 +10,7 @@ The **focal length** of a lens corresponds to the distance from the lens to the 
 
 ### Converging (positive) and diverging (negative) lenses
 
-![](../IMAGES/MINIBOXNEW/12.png)
+![](../../IMAGES/MINIBOXNEW/12.png)
 
 
 Converging lenses refract the rays of light traveling parallel to the optical axis at a point called the focal point.
@@ -45,7 +45,7 @@ Did the answers raise any more questions? Then drive to find out exactly how len
 
 Now take the lentil cubes. With the right lens, try to decipher the focal length information in the cubes shown. Move the lens over the writing until it is the same size as the "UC2" text.
 
-![](../IMAGES/MINIBOXNEW/13.png)
+![](../../IMAGES/MINIBOXNEW/13.png)
 
 
 <div class="alert info">
@@ -61,7 +61,7 @@ What happens if you use a lens with the wrong focal length?
 
 ## Image of an object through a positive lens
 
-![](../IMAGES/MINIBOXNEW/14.png)
+![](../../IMAGES/MINIBOXNEW/14.png)
 
 Let's take the converging lens as an example. We start with an object (green arrow) and see what happens to the rays that start from the top. There are infinitely many rays in all directions, but for drawing the figure the following three rays will suffice:
 
@@ -79,7 +79,7 @@ The image is formed where all the rays intersect. The principle is used for all 
 In the case of the negative lens, we use the same method to image the ray path. Unlike the case of the converging lens, the image is always reduced and virtual. Magnification depends on the position of the object in front of the lens. Unlike the converging lens, the image is created on the object side and is therefore called a virtual image. You can see it directly with your eyes but not project it onto a screen.
 
 
-![](../IMAGES/MINIBOXNEW/15.png)
+![](../../IMAGES/MINIBOXNEW/15.png)
 
 <div class="alert-success">
 The way a lens creates an image is predictable by knowing the focal length of that lens. Therefore, a certain distance must be maintained so that you can see the writing with the specified lens on the previous sheet.
@@ -102,7 +102,7 @@ seen pictures.
 
 Take the UC2 lens cube with focal length f=40mm and use it as a magnifying glass.
 
-![](../IMAGES/MINIBOXNEW/16.png)
+![](../../IMAGES/MINIBOXNEW/16.png)
 
 <div class="alert info">
 Can you read the small letters through the converging lens? What is written there?
@@ -128,7 +128,7 @@ A lens in action can be found here:
 
 With the converging lenses, the image and the magnification depend on the position of the object.
 
-![](../IMAGES/MINIBOXNEW/17.png)
+![](../../IMAGES/MINIBOXNEW/17.png)
 
 If the distance between the object and the lens is more than twice the focal length of the lens, then the image is...
 - Vice versa
@@ -172,7 +172,7 @@ If the distance between the object and the lens is less than the focal length of
 - Magnified
 - Virtual
 
-![](../IMAGES/MINIBOXNEW/18.png)
+![](../../IMAGES/MINIBOXNEW/18.png)
 
 <div class="alert-success">
 The magnifying glass is the simplest of all optical devices, since it consists only of a simple converging lens with a suitable focal length. Why does the cube with the 50 𝑚𝑚 enlarge the small text? If the object is in front of the focal length of the lens - i.e. less than 50 𝑚𝑚 in front of the lens - the lens creates a virtual image which is behind the actual object. The eye perceives it enlarged. Check out the diagram above.
@@ -182,7 +182,7 @@ Calculate the magnification of the magnifying glass using the following formula:
 
 
 
-![](../IMAGES/MINIBOX/UC2_minibox_7.png)
+![](../../IMAGES/MINIBOX/UC2_minibox_7.png)
 
 
 
@@ -197,7 +197,7 @@ Calculate the magnification of the magnifying glass using the following formula:
 
 Take the UC2 lens cube with focal length 𝑓 =40 𝑚𝑚 and place it behind the sample holder cube. The distance between the object and the lens (i.e. the object distance g) should be approx. 50 mm. If you now illuminate the object with the flashlight, you will see it sharply at a distance of approx. 200 mm on the wall. A cinema projector has a film strip instead of the object and of course a much stronger light source.
 
-![](../IMAGES/MINIBOXNEW/19.png)
+![](../../IMAGES/MINIBOXNEW/19.png)
 
 <div class="alert-success">
 Use a flashlight (e.g. from your cell phone) as a light source and hold it in front of the object
@@ -217,30 +217,30 @@ Slide the lens back and forth in the cube and see when the image is in focus. Fi
 ## How does a cinema projector work?
 
 
-![](../IMAGES/MINIBOXNEW/20.png)
+![](../../IMAGES/MINIBOXNEW/20.png)
 
 ### Where is the picture?
 When an object is imaged through a converging lens, the position and size of the image depend on the distance (g) of the object to the lens and its focal length (f).
 The lens equation describes the relationship between image distance (b) and object distance (g):
-![](../IMAGES/MINIBOX/UC2_minibox_10.png)
+![](../../IMAGES/MINIBOX/UC2_minibox_10.png)
 
 ### How big is the picture?
 The magnification of the object on the screen can easily be calculated using the following formula:
 
-![](../IMAGES/MINIBOX/UC2_minibox_11.png)
+![](../../IMAGES/MINIBOX/UC2_minibox_11.png)
 
 ## How the projector works
 
-![](../IMAGES/MINIBOX/UC2_minibox_9.png)
+![](../../IMAGES/MINIBOX/UC2_minibox_9.png)
 
 Check if your observation agrees with the calculation
 
-![](../IMAGES/MINIBOX/UC2_minibox_12.png)
+![](../../IMAGES/MINIBOX/UC2_minibox_12.png)
 
 Calculate the magnification of the projector for the different values of g and b.
 
 
-![](../IMAGES/MINIBOX/UC2_minibox_13.png)
+![](../../IMAGES/MINIBOX/UC2_minibox_13.png)
 
 
 <div class="alert-success">
@@ -271,4 +271,4 @@ The position of the image and its magnification depend on the position and size 
 2. Modify the distance between the lens and the screen.
 3. Carefully observe and record the position at which the light source forms a clear image on the surface of the screen.
 
-![](../IMAGES/MINIBOXTUTORIAL/image3.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image3.png)

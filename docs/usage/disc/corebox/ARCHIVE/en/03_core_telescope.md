@@ -13,7 +13,7 @@ How is the image oriented?
 </div><br/>
 
 
-![](../IMAGES/MINIBOXNEW/22.png)
+![](../../IMAGES/MINIBOXNEW/22.png)
 
 
 <div class="alert-success">
@@ -29,7 +29,7 @@ A telescope is an optical instrument that makes distant objects appear many time
 
 The lens on the object side is called the objective lens.
 
-![](../IMAGES/MINIBOXNEW/23.png)
+![](../../IMAGES/MINIBOXNEW/23.png)
 
 The lens facing the eye is called the eyepiece.
 The Galileo telescope is also used in opera glasses.
@@ -41,11 +41,11 @@ The Galileo telescope is also used in opera glasses.
 
 What is the magnification of this Galileo telescope?
 
-![](../IMAGES/MINIBOXNEW/24.png)
+![](../../IMAGES/MINIBOXNEW/24.png)
 
 Formula for calculating magnification
 
-![](../IMAGES/MINIBOX/UC2_minibox_19.png)
+![](../../IMAGES/MINIBOX/UC2_minibox_19.png)
 
 
 
@@ -64,39 +64,39 @@ The field of view is small.
 
 ## Tutorial: Galileo's telescope
 
-![](../IMAGES/MINIBOXTUTORIAL/image5.gif)
+![](../../IMAGES/MINIBOXTUTORIAL/image5.gif)
 
 ### Materials needed:
 - Four base plates
 - 100 mm positive lens (in cube)
 - -50 mm negative lens (in cube)
 
-![](../IMAGES/MINIBOXTUTORIAL/image125.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image125.png)
 
 ### Diagram (side view):
-![](../IMAGES/MINIBOXTUTORIAL/image4.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image4.png)
 
 ### Instructions for assembling Galileo's telescope:
 
 **Step 1: Place the base plates on top**
 
-![](../IMAGES/MINIBOXTUTORIAL/image19.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image19.png)
 Place one base plate on top of each lens cube.
 
 **Step 2: Place the base plates on the bottom**
-![](../IMAGES/MINIBOXTUTORIAL/image52.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image52.png)
 Place one base plate on the bottom of each lens cube.
 
 **Step 3: Assemble the cubes**
-![](../IMAGES/MINIBOXTUTORIAL/image18.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image18.png)
 Assemble the two cubes in such a way that the distance between the lenses' surfaces is the longest.
 
 **Step 4: Adjust the lenses' distance**
-![](../IMAGES/MINIBOXTUTORIAL/image93.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image93.png)
 Adjust distance between negative and positive lens to the maximum possible.
 
 **Step 5: Use the telescope!**
-![](../IMAGES/MINIBOXTUTORIAL/image117.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image117.png)
 Search for an object to the distance and use Galileo's telescope to look at it.
 
 
@@ -105,7 +105,7 @@ Search for an object to the distance and use Galileo's telescope to look at it.
 
 Set the lenses in the correct positions as shown in the diagram. Then look through the telescope into the distance.
 
-![](../IMAGES/MINIBOXNEW/25.png)
+![](../../IMAGES/MINIBOXNEW/25.png)
 
 <div class="alert info">
 What does the picture look like?
@@ -116,11 +116,11 @@ How is the image oriented?
 As you look through the telescope, vary the distances between the components to see such a sharp image!
 </div><br/>
 
-![](../IMAGES/MINIBOXNEW/26.png)
+![](../../IMAGES/MINIBOXNEW/26.png)
 
 ## This is a Kepler telescope
 
-![](../IMAGES/MINIBOXNEW/27.png)
+![](../../IMAGES/MINIBOXNEW/27.png)
 
 This type of telescope is often used in astronomy.
 
@@ -128,11 +128,11 @@ This type of telescope is often used in astronomy.
 
 What is the magnification of this Kepler telescope?
 
-![](../IMAGES/MINIBOXNEW/28.png)
+![](../../IMAGES/MINIBOXNEW/28.png)
 
 Formula for calculating magnification
 
-![](../IMAGES/MINIBOX/UC2_minibox_23.png)
+![](../../IMAGES/MINIBOX/UC2_minibox_23.png)
 
 This telescope can achieve a higher magnification than the Galilean telescope. But it creates the opposite picture. However, this is not a problem for observing the stars.
 
@@ -150,7 +150,7 @@ larger than with the Galileo telescope.
 
 ## Tutorial: Kepler's Telescope
 
-![](../IMAGES/MINIBOXTUTORIAL/image75.gif)
+![](../../IMAGES/MINIBOXTUTORIAL/image75.gif)
 
 ### Materials needed:
 - Eight base plates
@@ -158,10 +158,10 @@ larger than with the Galileo telescope.
 - 50 mm positive lens (in cube)
 - Two empty cubes
 
-![](../IMAGES/MINIBOXTUTORIAL/image127.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image127.png)
 ### Diagram (side view):
 
-![](../IMAGES/MINIBOXTUTORIAL/image22.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image22.png)
 
 ### Instructions for assembling Kepler's telescope:
 
@@ -169,25 +169,25 @@ larger than with the Galileo telescope.
 
 Align the cubes such that the two lenses lay at the extremes and the two empty cubes in the middle.
 
-![](../IMAGES/MINIBOXTUTORIAL/image13.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image13.png)
 
 **Step 2: Fix the cubes with base plates**
 
 Fix the cubes with the base plates placing them on top and on the bottom.
 
-![](../IMAGES/MINIBOXTUTORIAL/image76.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image76.png)
 
 **Step 3: Adjust the distance**
 
 Adjust the distance between the lenses as shown in the image.
 
-![](../IMAGES/MINIBOXTUTORIAL/image59.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image59.png)
 
 **Step 4: Use Kepler's telescope**
 
 Look for an object to the distance and use Kepler's telescope to look at it.
 
-![](../IMAGES/MINIBOXTUTORIAL/image110.png)
+![](../../IMAGES/MINIBOXTUTORIAL/image110.png)
 
 
 ## What is a spotting scope?
@@ -196,11 +196,11 @@ Look for an object to the distance and use Kepler's telescope to look at it.
 The spotting scope is long, so the scheme is not the same size.
 Set the lenses in the correct positions as shown in the diagram and look into the distance through the telescope.
 
-![](../IMAGES/MINIBOXNEW/29.png)
+![](../../IMAGES/MINIBOXNEW/29.png)
 
 which results into
 
-![](../IMAGES/MINIBOXNEW/30.png)
+![](../../IMAGES/MINIBOXNEW/30.png)
 
 
 <div class="alert info">
@@ -219,7 +219,7 @@ As you look through the telescope, adjust the distances between the components t
 
 The magnification is like that of the Kepler telescope. The erecting lens only changes the orientation (the image is reversed), not the magnification.
 
-![](../IMAGES/MINIBOX/UC2_minibox_27.png)
+![](../../IMAGES/MINIBOX/UC2_minibox_27.png)
 
 
 An upright image is necessary for terrestrial observations. True terrestrial telescopes use prism systems to rotate the image and keep it compact.

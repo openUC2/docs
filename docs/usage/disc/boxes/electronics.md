@@ -19,7 +19,7 @@ The openUC2 Electronics Add-On is a modular and open-source toolkit designed to 
 Included Components
 Cube Modules
 
-Electronic Z-Stage (NEMA 11 motor, RMS Thread, 25mm travel range, <1µm step size)
+Electronic Z-Stage (NEMA 11 motor, RMS Thread, 25mm travel range, &lt;1µm step size)
 LED Array (for advanced illumination techniques)
 Additional Accessories
 

@@ -4,7 +4,7 @@
 
 ---
 
-# Modul: <Name des Cubes>
+# Modul: `<Name des Cubes>`
 
 ## Steckbrief (Reference)
 
