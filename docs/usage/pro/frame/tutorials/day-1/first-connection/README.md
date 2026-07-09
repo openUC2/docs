@@ -15,32 +15,28 @@ To do this, you will use the power adapter included with your FRAME:
 
 ![power adapter](./power-adapter.png)
 
-Plug the wall plug of this power adapter into a wall outlet.
-
-Next, we will insert the DC barrel plug of the power adapter into the DC barrel jack of your FRAME.
-This jack is located in a box at the rear of your FRAME:
+First, we will insert the DC barrel plug of the power adapter into the DC barrel jack of your FRAME. This jack is located in a box at the rear of your FRAME (the FRAME shown is an older model, yours might look slightly different):
 
 ![rear](rear.jpeg)
 
 The DC barrel jack is the round jack in the upper-right of the rear panel of the box.
 Now insert the power adapter's plug into that jack:
 
-| Before | After |
-| ------ | ----- |
+| Before                       | After                    |
+| ---------------------------- | ------------------------ |
 | ![unplugged](unplugged.jpeg) | ![plugged](plugged.jpeg) |
 
-The FRAME includes a small embedded Raspberry Pi computer, which we'll refer to as the FRAME's *RPi*.
-It has a statistically-unique *machine name*, which is also written on a sticker on the FRAME:
+Plug the wall plug of the power adapter into a wall outlet.
 
-![machine name sticker](./machine-name-sticker.jpeg)
+The FRAME includes a small embedded Raspberry Pi computer, which we'll refer to as the FRAME's *RPi*. It has a statistically-unique *machine name*, which is also written on a sticker on the FRAME:
+
+![machine name sticker](C:/Users/ArminGrundmann/Documents/GitHub/docs/docs/usage/pro/frame/tutorials/day-1/first-connection/machine-name-sticker.jpeg)
 
 In the image above, the machine name is `separate-bath-30666`.
 As you can see, the machine name is written in the format `{word}-{word}-{number}`.
 
-## Check LED status
-
 Now that you've plugged in power to your FRAME, the RPi will begin booting up.
-Throughout this process, the FRAME's indicator LEDs will report what it's doing and whether any problems have occurred.
+Throughout this process, the indicator LEDs on the RPi will report what it's doing and whether any problems have occurred (documentation in progress).
 
 ## Connect to the FRAME's Wi-Fi hotspot
 
@@ -79,30 +75,35 @@ Now that your computer has a network connection to the FRAME, we're ready to acc
 Open your computer's web browser and try navigating to each of address in the following list, and in the following order, until you find the first one which works for you (which will depend on your computer's operating system and how your web browser is installed):
 
 1. [http://openuc2.local](http://openuc2.local)
-
+   
    :::info
-
+   
    `http://openuc2.local` might not work some web browsers on some computers; it depends on how the web browser and computer are configured.
-
+   
    :::
 
 2. [http://open.uc2](http://open.uc2)
-
+   
    :::info
-
+   
    The first time you enter `http://open.uc2` in your web browser, you must include the `http://`!
    Otherwise, your web browser might try to search for the URL in a search engine, instead of opening it as a web page.
-
+   
    :::
 
 3. [http://192.168.4.1](http://192.168.4.1)
 
-The resulting web page is your FRAME's *landing page*, and it will look something like this:
+The resulting web page is your FRAME's *landing page*, and it will look something like this (in this case Machine name: long-comfort-3229):
 
-![landing page (top)](./landing-page-1.png)
-![landing page (continued)](./landing-page-2.png)
+![](C:\Users\ArminGrundmann\Documents\GitHub\docs\docs\usage\pro\frame\tutorials\day-1\first-connection\Landing%20page%20260709.png)
 
 The landing page provides some information about your FRAME machine, and it's an easy way to access the apps running on your FRAME.
+
+You have 2 main options to go from here: to the *Microscope Control* (ImSwitch GUI) to start working with the microscope or to *Machine Adiministration* to access advanced settings. 
+
+If you want to shortly checkout the *Machine Adiministration* page, it will look something like below.
+
+![](C:\Users\ArminGrundmann\Documents\GitHub\docs\docs\usage\pro\frame\tutorials\day-1\first-connection\Machine%20Administration%20page.png)
 
 :::tip
 
@@ -110,16 +111,25 @@ You can bookmark this page in your web browser for easy access, so that you don'
 
 :::
 
-## Open ImSwitch
+## ImSwitch (Microscope Control) - first steps
 
 Now that you have the landing page open in your web browser, we're ready to open *ImSwitch*, which is the app for operating the microscopy-related functions of your FRAME machine.
 
-On the landing page, click on the "ImSwitch dashboard" link; it can be seen under the "Browser applications" section of the screenshot above (in the previous section).
-The link will open ImSwitch in a new tab, and you will see something like this:
+On the landing page, click on the *Microscope Control* link. ImSwitch will open in a new tab. If you access ImSwitch an the FRAMEs RPi for the first time with your device you will be guided through the main features in a quick tour.
 
-![ImSwitch Live View](./imswitch-live-view.png)
+![](C:\Users\ArminGrundmann\Documents\GitHub\docs\docs\usage\pro\frame\tutorials\day-1\first-connection\quick%20tour%20260709.png) 
 
-This screenshot shows ImSwitch's "Live View" page, which is a general-purpose interface for previewing the FRAME's camera, adjusting its camera settings, and moving the FRAME's sample stage.
+IMPORTANT: ImSwitch allows for many user specific settings AND stores most of them in your Browser's cache. When you switch browsers or devices these settings will not be available on your other device or in your other browser. 
+
+Once you are through with the quick tour you will be recommended to follow the homing procedure.  If you click *OPEN FRAME HOMING* and the *START HOMING* X/Y/Z-Axes and Objective-Axis (A) will home in a predefined order. 
+
+![](C:\Users\ArminGrundmann\Documents\GitHub\docs\docs\usage\pro\frame\tutorials\day-1\first-connection\homing%20on%20boot%20new%20260709.png)
+
+![](C:\Users\ArminGrundmann\Documents\GitHub\docs\docs\usage\pro\frame\tutorials\day-1\first-connection\homing%20on%20boot%20new%202%20260709.png)
+
+We are finally there, ImSwitch will open on defualt with the *Live View* app. 
+
+ADD PICTURE
 
 ## What's next
 
