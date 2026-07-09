@@ -82,6 +82,17 @@ module.exports = async function createConfigAsync() {
             sidebarPath: require.resolve(`./config/sidebars.${variant}.ts`),
             remarkPlugins: [math],
             rehypePlugins: [katex],
+            // Keep raw, unpublished source material out of the built site while
+            // leaving it on disk for reuse (e.g. Notion exports of internal notes).
+            // The first four globs are Docusaurus's defaults, repeated so overriding
+            // `exclude` does not drop them.
+            exclude: [
+              '**/_*.{js,jsx,ts,tsx,md,mdx}',
+              '**/_*/**',
+              '**/*.test.{js,jsx,ts,tsx}',
+              '**/__tests__/**',
+              '**/FRAME_DOKU_FROM_NOTION/**',
+            ],
             // Please change this to your repo.
             // Remove this to remove the "edit this page" links.
             //editUrl:

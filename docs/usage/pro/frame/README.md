@@ -1,6 +1,18 @@
 # FRAME
 
-Welcome to the usage documentation for the openUC2 FRAME robotic microscope! Our documentation is organized into:
+Welcome to the documentation for the openUC2 **FRAME** — a fast, automated microscope
+with fixed optics and a moving sample, built on open hardware, firmware, and software.
+
+:::note Draft — audience router
+TODO: turn this into three visual cards. For now, pick your path:
+
+- **I'm setting one up** → [Day-1 tutorials](./tutorials/day-1/README.md)
+- **I operate one (routine imaging)** → [Day-2 tutorials](./tutorials/day-2/README.md)
+- **I'm building on it (hardware / apps / software)** → [Developers](./developers/README.md)
+- **I'm deciding whether FRAME fits me** → [Explanations](./explanations/README.md)
+:::
+
+Our documentation is organized into:
 
 - [Hands-on tutorials](./tutorials/README.md) to help you learn how to use the FRAME in an effective way.
 
@@ -21,3 +33,9 @@ Welcome to the usage documentation for the openUC2 FRAME robotic microscope! Our
   If you don't have a FRAME yet and you're not sure whether a FRAME is the right solution for you, please continue to our [explanations](./explanations/README.md) of the FRAME's design and what problems it solves.
 
   :::
+
+- [Developer documentation](./developers/README.md) for building on the FRAME: hardware
+  add-ons, application/workflow integration (REST API, Python), and extending the
+  ImSwitch control software.
+
+- [Add-ons](./addons/README.md): optional hardware modules for the FRAME.

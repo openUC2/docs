@@ -196,7 +196,7 @@ Then you can view the image (and its associated metadata) in other programs on y
 You can configure ImSwitch to save the image directly to a removable USB storage device, instead of saving the image to the FRAME's internal SD card.
 When you are acquiring large amounts of data, you should save your data to a removable storage device so that you can transfer it to other computers more easily and more quickly.
 
-To learn how to do this, please refer to our [day-2 tutorial](../../day-2/acquire-data/README.md#to-a-removable-usb-storage-device).
+To learn how to do this, please refer to our [day-2 tutorial](../../day-2/acquire-data/README.md#copy-data-to-a-usb-storage-device).
 
 :::
 
