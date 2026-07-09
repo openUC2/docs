@@ -15,36 +15,36 @@ To do this, you will use the power adapter included with your FRAME:
 
 ![power adapter](./power-adapter.png)
 
-Plug the wall plug of this power adapter into a wall outlet.
-
-Next, we will insert the DC barrel plug of the power adapter into the DC barrel jack of your FRAME.
-This jack is located in a box at the rear of your FRAME:
+First, we will insert the DC barrel plug of the power adapter into the DC barrel jack of your FRAME. This jack is located in a box at the rear of your FRAME (the FRAME shown is an older model, yours might look slightly different):
 
 ![rear](rear.jpeg)
 
 The DC barrel jack is the round jack in the upper-right of the rear panel of the box.
 Now insert the power adapter's plug into that jack:
 
-| Before | After |
-| ------ | ----- |
+| Before                       | After                    |
+| ---------------------------- | ------------------------ |
 | ![unplugged](unplugged.jpeg) | ![plugged](plugged.jpeg) |
 
-The FRAME includes a small embedded Raspberry Pi computer, which we'll refer to as the FRAME's *RPi*.
-It has a statistically-unique *machine name*, which is also written on a sticker on the FRAME:
 
-![machine name sticker](./machine-name-sticker.jpeg)
+
+Plug the wall plug of the power adapter into a wall outlet.
+
+The FRAME includes a small embedded Raspberry Pi computer, which we'll refer to as the FRAME's *RPi*. It has a statistically-unique *machine name*, which is also written on a sticker on the FRAME:
+
+![machine name sticker](C:/Users/ArminGrundmann/Documents/GitHub/docs/docs/usage/pro/frame/tutorials/day-1/first-connection/machine-name-sticker.jpeg)
 
 In the image above, the machine name is `separate-bath-30666`.
 As you can see, the machine name is written in the format `{word}-{word}-{number}`.
 
-## Check LED status
-
 Now that you've plugged in power to your FRAME, the RPi will begin booting up.
-Throughout this process, the FRAME's indicator LEDs will report what it's doing and whether any problems have occurred.
+Throughout this process, the indicator LEDs on the RPi will report what it's doing and whether any problems have occurred (documentation in progress).
 
 ## Connect to the FRAME's Wi-Fi hotspot
 
 Now that the FRAME has finished booting up, we're ready to connect your computer to the FRAME in order to access the FRAME's software.
+
+
 
 The RPi makes a Wi-Fi network from its internal Wi-Fi module; we call this network the FRAME's *Wi-Fi hotspot*.
 The name of the Wi-Fi hotspot has the format `openuc2-{machine name}`, where `{machine name}` should be replaced with the RPi's machine name.
@@ -79,20 +79,20 @@ Now that your computer has a network connection to the FRAME, we're ready to acc
 Open your computer's web browser and try navigating to each of address in the following list, and in the following order, until you find the first one which works for you (which will depend on your computer's operating system and how your web browser is installed):
 
 1. [http://openuc2.local](http://openuc2.local)
-
+   
    :::info
-
+   
    `http://openuc2.local` might not work some web browsers on some computers; it depends on how the web browser and computer are configured.
-
+   
    :::
 
 2. [http://open.uc2](http://open.uc2)
-
+   
    :::info
-
+   
    The first time you enter `http://open.uc2` in your web browser, you must include the `http://`!
    Otherwise, your web browser might try to search for the URL in a search engine, instead of opening it as a web page.
-
+   
    :::
 
 3. [http://192.168.4.1](http://192.168.4.1)
