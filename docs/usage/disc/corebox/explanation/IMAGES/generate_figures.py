@@ -448,7 +448,7 @@ def fig_kepler():
     ax.text(d, 1.4, "eyepiece  f₂ = +50 mm", ha="center", fontsize=9)
     ys = np.array([0.9, 0.3, -0.3, -0.9])
     x0 = -5.2
-    y_focus = -f1 * np.tan(theta)
+    y_focus = f1 * np.tan(theta)
     for y in ys:
         y_lens = y + np.tan(theta) * (0 - x0)
         ax.plot([x0, 0], [y, y_lens], color=TEAL, lw=2)
@@ -494,11 +494,17 @@ def fig_finite_microscope():
     draw_object(ax, b, y_img, color=PURPLE, label="")
     ax.text(b, y_img - 0.25, "real intermediate image\n(160 mm behind the "
             "objective)", ha="center", va="top", fontsize=8.5, color=PURPLE)
+    
     draw_lens(ax, b + f_eye, 0.95)
     ax.text(b + f_eye, 1.2, "eyepiece\n(acts as magnifier)", ha="center",
             fontsize=9)
+    # from intermediate image to lens we need a diverging bundle, so the rays are drawn as if they came from a virtual object
+    ax.plot([b, b + f_eye], [y_img, y_img * 0.17], color=TEAL, lw=2)
+    ax.plot([b, b + f_eye], [y_img, y_img * 0.37], color=AMBER, lw=2)
+    ax.plot([b, b + f_eye], [y_img, y_img * 0.5], color=CORAL, lw=2)
+    ax.plot([b, b + f_eye], [y_img, y_img * 0.], color=PURPLE, lw=2)
     # eyepiece output: parallel bundle
-    for dy in (-0.15, 0.0, 0.15):
+    for dy in (0.35,-0.15, 0.0, 0.15):
         ax.plot([b + f_eye, b + f_eye + 2.6],
                 [y_img * 0.35 + dy, y_img * 0.35 + dy + 0.75], color=CORAL,
                 lw=1.8)
@@ -536,6 +542,7 @@ def fig_infinity_microscope():
             "(filters etc. can go here, distance doesn't matter)",
             ha="center", fontsize=9, color=TEAL)
     draw_lens(ax, x_tube, 1.2)
+    
     ax.text(x_tube, 1.45, "tube lens\nf = 100 mm", ha="center", fontsize=9)
     # tube lens focuses the tilted parallel bundle into its focal plane,
     # at height slope * f_tube
@@ -543,6 +550,14 @@ def fig_infinity_microscope():
     for y_hit in ys:
         y_at_tube = y_hit + slope * x_tube
         ax.plot([x_tube, x_tube + f_tube], [y_at_tube, y_img], color=TEAL, lw=2)
+
+    # from intermediate image to lens we need a diverging bundle, so the rays are drawn as if they came from a virtual object
+    b = x_tube + f_tube
+    ax.plot([b, b + f_eye], [y_img, y_img * 0.4], color=TEAL, lw=2)
+    ax.plot([b, b + f_eye], [y_img, y_img * 0.8], color=AMBER, lw=2)
+    ax.plot([b, b + f_eye], [y_img, - y_img * 0.4], color=CORAL, lw=2)
+    ax.plot([b, b + f_eye], [y_img, y_img * 0.], color=PURPLE, lw=2)
+    
     draw_object(ax, x_tube + f_tube, slope * f_tube, color=PURPLE, label="")
     ax.text(x_tube + f_tube, slope * f_tube - 0.25,
             "intermediate image", ha="center", va="top", fontsize=8.5,
@@ -605,6 +620,7 @@ def gif_infinity_space():
 # ============================================================================
 if __name__ == "__main__":
     print(f"Writing figures to {OUT}\n")
+    '''
     fig_converging_diverging()
     fig_focal_length_method()
     gif_ray_construction()
@@ -612,10 +628,11 @@ if __name__ == "__main__":
     fig_projector()
     fig_lens_equation()
     fig_galilean()
-    fig_kepler()
-    fig_finite_microscope()
-    fig_infinity_microscope()
     gif_infinity_space()
     print("\nMANIFEST")
+    fig_finite_microscope()
+    fig_infinity_microscope()
+    '''
+    fig_kepler()
     for p in sorted(OUT.glob("*.png")) + sorted(OUT.glob("*.gif")):
         print(f"  {p.name}")

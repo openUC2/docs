@@ -159,6 +159,14 @@ lensless microscope.
   [How reconstruction works](../explanation/how-reconstruction-works.md).
 - **Improve Hologram:** Remove the background using the remove background tab or the refine tab that estimates the sample mask. 
 
+
+
+![](./IMAGES/INLINE/holo_screenshot_1.png)
+![](./IMAGES/INLINE/holo_screenshot_2.png)
+![](./IMAGES/INLINE/holo_screenshot_3.png)
+![](./IMAGES/INLINE/holo_screenshot_4.png)
+
+
 ## Want to do it offline in Python?
 
 If you'd rather capture a still and reconstruct it yourself in a Jupyter notebook (no live
