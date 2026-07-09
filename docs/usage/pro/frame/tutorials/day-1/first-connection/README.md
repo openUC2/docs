@@ -26,8 +26,6 @@ Now insert the power adapter's plug into that jack:
 | ---------------------------- | ------------------------ |
 | ![unplugged](unplugged.jpeg) | ![plugged](plugged.jpeg) |
 
-
-
 Plug the wall plug of the power adapter into a wall outlet.
 
 The FRAME includes a small embedded Raspberry Pi computer, which we'll refer to as the FRAME's *RPi*. It has a statistically-unique *machine name*, which is also written on a sticker on the FRAME:
@@ -43,8 +41,6 @@ Throughout this process, the indicator LEDs on the RPi will report what it's doi
 ## Connect to the FRAME's Wi-Fi hotspot
 
 Now that the FRAME has finished booting up, we're ready to connect your computer to the FRAME in order to access the FRAME's software.
-
-
 
 The RPi makes a Wi-Fi network from its internal Wi-Fi module; we call this network the FRAME's *Wi-Fi hotspot*.
 The name of the Wi-Fi hotspot has the format `openuc2-{machine name}`, where `{machine name}` should be replaced with the RPi's machine name.
@@ -97,12 +93,18 @@ Open your computer's web browser and try navigating to each of address in the fo
 
 3. [http://192.168.4.1](http://192.168.4.1)
 
-The resulting web page is your FRAME's *landing page*, and it will look something like this:
+The resulting web page is your FRAME's *landing page*, and it will look something like this (in this case Machine name: long-comfort-3229):
 
-![landing page (top)](./landing-page-1.png)
-![landing page (continued)](./landing-page-2.png)
+
+![](C:\Users\ArminGrundmann\Documents\GitHub\docs\docs\usage\pro\frame\tutorials\day-1\first-connection\Landing%20page%20260709.png)
 
 The landing page provides some information about your FRAME machine, and it's an easy way to access the apps running on your FRAME.
+
+You have 2 main options to go from here: to the *Microscope Control* (ImSwitch GUI) to start working with the microscope or to *Machine Adiministration* to access advanced settings. 
+
+If you want to shortly checkout the *Machine Adiministration* page, it will look something like below.
+
+![](C:\Users\ArminGrundmann\Documents\GitHub\docs\docs\usage\pro\frame\tutorials\day-1\first-connection\Machine%20Administration%20page.png)
 
 :::tip
 
@@ -110,16 +112,11 @@ You can bookmark this page in your web browser for easy access, so that you don'
 
 :::
 
-## Open ImSwitch
+## Open ImSwitch (Microscope Control)
 
 Now that you have the landing page open in your web browser, we're ready to open *ImSwitch*, which is the app for operating the microscopy-related functions of your FRAME machine.
 
-On the landing page, click on the "ImSwitch dashboard" link; it can be seen under the "Browser applications" section of the screenshot above (in the previous section).
-The link will open ImSwitch in a new tab, and you will see something like this:
-
-![ImSwitch Live View](./imswitch-live-view.png)
-
-This screenshot shows ImSwitch's "Live View" page, which is a general-purpose interface for previewing the FRAME's camera, adjusting its camera settings, and moving the FRAME's sample stage.
+On the landing page, click on the *Microscope Control* link. ImSwitch will open in a new tab.
 
 ## What's next
 
