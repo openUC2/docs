@@ -95,7 +95,6 @@ Open your computer's web browser and try navigating to each of address in the fo
 
 The resulting web page is your FRAME's *landing page*, and it will look something like this (in this case Machine name: long-comfort-3229):
 
-
 ![](C:\Users\ArminGrundmann\Documents\GitHub\docs\docs\usage\pro\frame\tutorials\day-1\first-connection\Landing%20page%20260709.png)
 
 The landing page provides some information about your FRAME machine, and it's an easy way to access the apps running on your FRAME.
@@ -112,11 +111,25 @@ You can bookmark this page in your web browser for easy access, so that you don'
 
 :::
 
-## Open ImSwitch (Microscope Control)
+## ImSwitch (Microscope Control) - first steps
 
 Now that you have the landing page open in your web browser, we're ready to open *ImSwitch*, which is the app for operating the microscopy-related functions of your FRAME machine.
 
-On the landing page, click on the *Microscope Control* link. ImSwitch will open in a new tab.
+On the landing page, click on the *Microscope Control* link. ImSwitch will open in a new tab. If you access ImSwitch an the FRAMEs RPi for the first time with your device you will be guided through the main features in a quick tour.
+
+![](C:\Users\ArminGrundmann\Documents\GitHub\docs\docs\usage\pro\frame\tutorials\day-1\first-connection\quick%20tour%20260709.png) 
+
+IMPORTANT: ImSwitch allows for many user specific settings AND stores most of them in your Browser's cache. When you switch browsers or devices these settings will not be available on your other device or in your other browser. 
+
+Once you are through with the quick tour you will be recommended to follow the homing procedure.  If you click *OPEN FRAME HOMING* and the *START HOMING* X/Y/Z-Axes and Objective-Axis (A) will home in a predefined order. 
+
+![](C:\Users\ArminGrundmann\Documents\GitHub\docs\docs\usage\pro\frame\tutorials\day-1\first-connection\homing%20on%20boot%20new%20260709.png)
+
+![](C:\Users\ArminGrundmann\Documents\GitHub\docs\docs\usage\pro\frame\tutorials\day-1\first-connection\homing%20on%20boot%20new%202%20260709.png)
+
+We are finally there, ImSwitch will open on defualt with the *Live View* app. 
+
+ADD PICTURE
 
 ## What's next
 
