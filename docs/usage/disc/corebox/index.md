@@ -6,29 +6,18 @@ description: Hands-on geometrical optics for the classroom — build magnifiers,
 
 # CoreBox for Schools
 
-*Build real optical instruments — magnifier, projector, telescope, microscope — and understand them, because you built every part yourself.*
+*With the coreBOX youc an build real optical instruments like magnifier, projector, telescope, microscope and understand them from ground up in a Do-It-Yourself-Fashion*
 
-The **CoreBox** is a box of openUC2 cubes with lenses, mirrors, a real microscope
-objective and a smartphone holder. It covers **geometrical optics** from the first
-"why does a lens magnify?" all the way to a working **smartphone microscope**. It is
-also the foundation for every other openUC2 Discovery box (Electronics, Infinity,
-Fluorescence, LightSheet, HoloBox).
+The **CoreBox** is a box of openUC2 cubes with lenses, mirrors, a real microscope objective and a smartphone holder. It covers **geometrical optics** from the first "why does a lens magnify?" all the way to a working **smartphone microscope**. It is also the foundation for every other openUC2 Discovery box (Electronics, Infinity, Fluorescence, LightSheet, HoloBox). Curious? Continue reading! :)
 
 The guiding idea, straight from the teaching concept:
 
 > **"Understand optics by building it."**
 
-These pages are written for **students and their teachers**. No university maths
-required — the only thing you need is curiosity.
+These pages are written for **students and their teachers**. No university maths required; the only thing you need is curiosity.
 
 ![](./IMAGES/coreBOX.jpg)
-**Show:** The CoreBox — cubes, lenses, puzzle base plates and the torch.
-
-:::note 🖼️ Image placeholder — `box-contents-labelled.jpg`
-**TODO (Benedict):** replace the photo above with a bright, evenly lit flat-lay of the
-full box contents with each part **numbered** to match the parts table below. Make sure
-the embossed labels on the 3D-printed parts face the camera.
-:::
+*The CoreBox: some cubes, lenses, puzzle base plates and the torch.*
 
 ## What's in the box?
 
@@ -51,12 +40,7 @@ the embossed labels on the 3D-printed parts face the camera.
 | 15 | M3 screwdriver, lens cloth | Assembly and lens care |
 | 16 | QR code card | Links straight back to these pages |
 
-:::note ✏️ TODO — Benedict
-Please double-check this list against the current production box (source:
-[shop page](https://shop.openuc2.com/shop/discovery-corebox-1556) + Didaktikkonzept V2):
-exact sample types, ruler divisions, torch battery type (3× AAA?), and whether the
-sample-prep kit contents (tweezers/pipette/blank slides) are complete.
-:::
+(Always up-to-date list: on our [shop page](https://shop.openuc2.com/shop/discovery-corebox-1556))
 
 Full details on every part: [Parts and parameters](./reference/parts-and-parameters.md).
 
@@ -77,15 +61,15 @@ At least **eight experiments**, in two groups:
 This documentation follows [Diátaxis](https://diataxis.fr/) and is split into four
 kinds of page. Pick the one that matches what you want **right now**:
 
-### I want to build something today → **Tutorials**
+### I want to build something today => **Tutorials**
 
 Step-by-step, can't-fail walkthroughs. Start here if you have the box in front of you.
 
-- [**From lens to projector**](./tutorials/from-lens-to-projector.md) — hold a lens, find its focal length, throw an image on the wall. ~30 min.
-- [**Build a telescope**](./tutorials/build-a-telescope.md) — Galilean and Kepler, and why one image is upside-down. ~30 min.
-- [**Your first microscope**](./tutorials/your-first-microscope.md) — the smartphone microscope, your "wow" moment. ~45 min.
+- [**From lens to projector**](./tutorials/from-lens-to-projector.md): hold a lens, find its focal length, project an image on the wall. ~30 min.
+- [**Build a telescope**](./tutorials/build-a-telescope.md): Galilean and Kepler, and why one image is upside-down. ~30 min.
+- [**Your first microscope**](./tutorials/your-first-microscope.md): the smartphone microscope, yup, build your own microscope in  ~45 min.
 
-### I know the basics and have a specific goal → **How-to guides**
+### I know the basics and have a specific goal => **How-to guides**
 
 Short, practical recipes for one task each.
 
@@ -97,23 +81,23 @@ Short, practical recipes for one task each.
 - [Calibrate the magnification](./how-to/calibrate-magnification.md)
 - [Troubleshoot the smartphone microscope](./how-to/troubleshoot-the-smartphone-microscope.md)
 
-### I want to understand *why* it works → **Explanation**
+### I want to understand *why* it works => **Explanation**
 
-Read these on the sofa. No equipment needed.
+Read these on the couch. No equipment needed. We'll provide you with images and text. 
 
-- [Light rays and lenses](./explanation/light-rays-and-lenses.md) — focal length, converging vs. diverging.
-- [How images form](./explanation/how-images-form.md) — real vs. virtual, the lens equation, why the magnifier magnifies.
-- [How telescopes work](./explanation/how-telescopes-work.md) — Galilei vs. Kepler.
-- [How a microscope works](./explanation/how-a-microscope-works.md) — finite vs. infinity optics, and what "4× / NA 0.1" means.
+- [Light rays and lenses](./explanation/light-rays-and-lenses.md): focal length, converging vs. diverging.
+- [How images form](./explanation/how-images-form.md): real vs. virtual, the lens equation, why the magnifier magnifies.
+- [How telescopes work](./explanation/how-telescopes-work.md): Galilei vs. Kepler.
+- [How a microscope works](./explanation/how-a-microscope-works.md): finite vs. infinity optics, and what "4× / NA 0.1" means.
 
-### I just need a number or a definition → **Reference**
+### I just need a number or a definition => **Reference**
 
 - [Parts and parameters](./reference/parts-and-parameters.md)
 - [Glossary](./reference/glossary.md) (English + German terms)
 
-### I'm a teacher planning a unit → **For teachers**
+### I'm a teacher planning a unit => **For teachers**
 
-- [Teaching with the CoreBox](./for-teachers.md) — lesson plans (8 lessons), KMK
+- [Teaching with the CoreBox](./for-teachers.md): lesson plans (8 lessons), KMK
   competencies, classroom organisation, preparation checklists.
 
 ## A suggested classroom journey
@@ -122,34 +106,31 @@ If you're planning a unit, this order matches the physics build-up used in the
 CoreBox teaching concept ("Didaktikkonzept"):
 
 1. **Read** [Light rays and lenses](./explanation/light-rays-and-lenses.md).
-2. **Build** [From lens to projector](./tutorials/from-lens-to-projector.md) — students *see* a real image appear on the wall.
-3. **Discuss** [How images form](./explanation/how-images-form.md) — connect what they saw to the lens equation.
+2. **Build** [From lens to projector](./tutorials/from-lens-to-projector.md): students *see* a real image appear on the wall.
+3. **Discuss** [How images form](./explanation/how-images-form.md): connect what they saw to the lens equation.
 4. **Build** [a telescope](./tutorials/build-a-telescope.md) and let students discover the upside-down Kepler image themselves.
 5. **Build** [your first microscope](./tutorials/your-first-microscope.md) and let everyone photograph a sample with their own phone.
 6. **Go deeper** with [How a microscope works](./explanation/how-a-microscope-works.md) and the [infinity](./how-to/build-the-infinity-microscope.md) / [finite](./how-to/build-the-finite-microscope.md) builds.
 
 ## What can you actually observe?
 
-- A letter **magnified** through a single lens — and the exact distance where the effect flips.
+- A letter **magnified** through a single lens and the exact distance where the effect flips.
 - A **real image** on the wall: enlarged, upside-down, and predictable with one small formula.
 - A distant object pulled closer by a telescope **you assembled from two lenses**.
 - Cells and structures in a prepared sample, photographed with **your own smartphone**.
 
 ## Safety
 
-The CoreBox contains **no laser and no heat source** — it is designed for
-unsupervised student group work. Two common-sense rules:
+The CoreBox contains **no laser and no heat source** it is designed for unsupervised student group work (age 14+). Two common-sense rules:
 
 - **Never look at the sun** through any lens or telescope. Ever.
 - The torch is bright: don't shine it directly into anyone's eyes.
+- And also: If glass ever breaks, don't cut yourself.
 
 ## Open source
 
-Everything about the CoreBox is open: the hardware (CAD files), the 3D-printing
-files, and these teaching materials. You may copy, remix, and reprint them for your
-class. See the [openUC2 docs home](https://docs.openuc2.com/) for licences.
+Everything about the CoreBox is open: the hardware (CAD files), the 3D-printing files, and these teaching materials. You may copy, remix, and reprint them for your class. See the [openUC2 docs home](https://docs.openuc2.com/) for licences.
 
 :::info Looking for the old pages?
-The previous CoreBox documentation (English + Italiano, incl. the PDF manual) is
-preserved under [Archive](./ARCHIVE/README.md).
+The previous CoreBox documentation (English + Italiano, incl. the PDF manual) is preserved under [Archive](./ARCHIVE/README.md).
 :::
