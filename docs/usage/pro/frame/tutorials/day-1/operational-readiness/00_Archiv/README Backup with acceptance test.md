@@ -23,9 +23,9 @@ Click on the settings icon in the upper-right corner of the page in order to ope
 
 This will open a settings page which shows the name of the currently-selected hardware configuration file:
 
-![imswitch-settings-backend-JSON-config](./imswitch-settings-backend-JSON-config.png)
+![imswitch-settings-backend-configuration-JSON](./imswitch-settings-backend-configuration-JSON.png)
 
-In the screenshot above, you can see that the current configuration is called `FRAME0007-long-comfort-3229`. The syntax of the machine specific hardware configuration file consists the serial number `FRAME0007` and the the RPI machine name `long-comfort-3229`.
+In the screenshot above, you can see that the current configuration is called `FRAME2b.json`.
 
 The name of the current hardware configuration file should match what openUC2 customer support communicated to you when the FRAME machine was delivered to you, so you shouldn't need to change anything here.
 
@@ -35,34 +35,34 @@ If you need to change the hardware configuration file, please refer to our [day-
 
 :::
 
-## Homing
+## Perform acceptance test procedure
 
+In order to ensure that the FRAME's hardware wasn't damaged in the process of being shipped to you, we can perform an acceptance test procedure in ImSwitch to check for certain kinds of hardware problems.
 
-## View Pixel Calibration
+To open ImSwitch's Acceptance Testing page, click on the "App Manager" entry in ImSwitch's navigation sidebar:
 
-The specific hardware configuration of your machine consists of cameras (e.g. a WideField camera in the Brightfield optical module) and 1-2 objectives. For each given optical configuration (e.g. WideField Camera + Objective in Position 1) a Pixel Size calibration was performed as part of openUC2 testing procedures.
+![ImSwitch app: navigation menu: App Manager](./imswitch-nav-menu-app-manager.png)
 
-To see the current calibration you have two options.
-*Option 1:* In the live view app on the right handside scroll down to where objectives can be switched. For the active objective all parameters including pixel calibration are displayed. See an example for 2 objectives below.
+On the App Manager page, click on the search box:
 
-![Objective-Pos1-Live-View](./Objective-Pos1-Live-View.png)
+![ImSwitch app: App Manager page: search box](./imswitch-app-manager-search.png)
 
-![Objective-Pos2-Live-View](./Objective-Pos2-Live-View.png)
+Type "test" to filter the apps, and then click the play button on the Acceptance Test app:
 
-*Option 2:* In the app sidebar menu on the right go to the App *FRAME Settings* (how to enable this app see ). Choose the tab *Objective Controller*. The settings for both objectives including Pixel Size are displayed at the top.
+![ImSwitch app: App Manager page: Acceptance Test entry: play button](./imswitch-app-manager-acceptance-test-play.png)
 
-![Im-Switch-App-Sidebar](./Im-Switch-App-Sidebar.png)
+This will open the Acceptance Test page:
 
-![Objective-Controller-App-settings](./Objective-Controller-App-settings.png)
+![ImSwitch app: Acceptance Test page](./imswitch-acceptance-test.png)
 
-For information on how to perform pixel size calibration on your machine, please, go to [Pixel Calibration](../../../guides/day-2/calibrate-pixel-size/README.md)!
+For each action (e.g. "Home X Axis") listed in the Acceptance Test page, press the button to perform that action and then answer the question about the result of that action (e.g. "Did the stage successfully home?") by pressing the corresponding button (e.g. "Yes" or "No").
 
-## Objective Calibration
+At the end of the test sequence, a test report will be generated summarizing the results of the acceptance test procedure.
+If any test failed on a FRAME which you purchased from openUC2, please download the test report and send it to openUC2 customer support at [support@openuc2.com](mailto:support@openuc2.com) so that we can identify and fix any damage to your machine which occurred while it was in the process of being shipped to you.
 
-## Stage Calibration
+![ImSwitch app: Acceptance Test page: test report](./imswitch-acceptance-test-report.png)
 
-
-
+If all tests passed (like in the screenshot above), then your FRAME is ready for you to use it as a microscope.
 
 ## What's next
 

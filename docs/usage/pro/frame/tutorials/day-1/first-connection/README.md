@@ -130,9 +130,9 @@ Once you are through with the quick tour you will be recommended to follow the h
 
 ![homing-on-boot-new2-260709](./homing-on-boot-new2-260709.png)
 
-We are finally there, ImSwitch will open on default with the *Live View* app. 
+We are finally there, ImSwitch will open on default with the *Live View* app. This will look something similar to this.
 
-ADD PICTURE
+![Live-view-imswitch](./Live-view-imswitch.png)
 
 ## What's next
 

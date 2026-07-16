@@ -3,16 +3,28 @@ sidebar_label: Calibrate pixel size
 sidebar_position: 20
 ---
 
-# Calibrate pixel size
+# Pixel Size Calibration
 
-:::note Draft outline
-Scaffold. Replace the bullet prompts with your own text and delete this banner when done.
-:::
+Pixel Size calibration defines micrometres-per-pixel for each objective/camera combination, so that scale bars in images, stitching of images and measurements within images work properly.
 
-*How-to, for operators.* Establish micrometres-per-pixel for each objective/camera so
-scale bars, stitching and measurements are correct.
+## Steps (per objective/camera)
 
-## Steps (per objective)
+Choose a sample slide for calibration - minimum requirement: a clearly identifiable structure. Insert into one of the sample holder positions for slides. In the live view app choose your camera and your objective, move to structure of your choice and obtain a proper image of the structure.
+
+
+
+
+In the app sidebar menu on the right go to the App *FRAME Settings*. Choose the tab *Manual Pixel Calibration*.
+
+
+
+
+
+
+
+
+
+The settings for both objectives including Pixel Size are displayed at the top.
 
 - Image a calibration target / known feature; measure; enter the pixel size.
 - Repeat for each objective (4x, 20x, ...) and the overview camera.
