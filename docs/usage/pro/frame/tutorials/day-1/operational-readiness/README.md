@@ -57,9 +57,9 @@ To see the current calibration you have two options.
 
 For information on how to perform pixel size calibration on your machine, please, go to [Pixel Calibration](../../../guides/day-2/calibrate-pixel-size/README.md)!
 
-## Objective Calibration
+## View Objective Calibration
 
-## Stage Calibration
+## View Stage Calibration
 
 
 
