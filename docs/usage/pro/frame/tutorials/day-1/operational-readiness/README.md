@@ -55,9 +55,18 @@ To see the current calibration you have two options.
 
 ![Objective-Controller-App-settings](./Objective-Controller-App-settings.png)
 
-For information on how to perform pixel size calibration on your machine, please, go to [Pixel Calibration](../../../guides/day-2/calibrate-pixel-size/README.md)!
+For information on how to perform and verify pixel size calibration on your machine, please, go to [Pixel Calibration](../../../guides/day-2/calibrate-pixel-size/README.md)!
 
-## View Objective Calibration
+## View stored Objective Information and Calibration
+
+In the app sidebar menu on the left go to the App *FRAME Settings*. Choose the tab *Objective Controller*.
+At the very top you will see information for both objectives and also which is the *current objective*.
+
+![Objective-controller-Pos1](./Objective-controller-Pos1.png)
+
+Now scroll to the bottom (ignore the rest). You will see stored calibration values for A-Axis and Z-Axis for both objective positions. Z determines the focus. The A-Axis value moves the objective holder and thus both objectives into correct position.
+
+ ![objective-calibration-values](./objective-calibration-values.png)
 
 ## View Stage Calibration
 
