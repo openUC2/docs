@@ -5,33 +5,25 @@ sidebar_position: 50
 
 # Homing
 
-:::note Draft outline
-Scaffold. Replace the bullet prompts with your own text and delete this banner when done.
-:::
+Homing reestablishes the stage's reference position, when needed.
 
-*How-to, for operators.* Re-establish the stage's reference position.
+## When to do this
 
-## When homing is needed
-
-- After power-up, after hitting an endstop, when coordinates look wrong.
+Homing is typically performed after power-up and recommended after hitting an endstop or any mechanical collision.  
 
 ## How to home
 
-- Manual homing per axis; full homing; what to expect (motion, sounds, duration).
+Use one of the following options to home:
 
-![](./IMAGES/homing-placeholder.png)
-:::note TODO image
-Homing control + the "machine has not been homed" prompt. Notion source:
-`FAT FRAME #0007 Korea - Part 1` and `Part 4` (homing after power cycle).
-:::
+- In the *live view* app use the button *home all* to home all axes at once (X/Y/Z/A). This will be done in a predefined flow to mitigate the risk of objective/stage collision.
 
-## Known issues and recovery
+![Live-view-home-all](./Live-view-home-all.png)
 
-- Axis stuck at an endstop; coordinates wrong after Y homing.
+- In the *live view* app use the button *home* for each axes to home only this axis.  
+`IMPORTANT`: Move stage in Z high enough to make sure objective does not collide with stage.
 
-:::note TODO
-Notion sources: `TASK-FR004 no homing during boot`, `TASK-FR005 manual Z homing`,
-`TASK-FR008 Homing Y makes coordinates wrong`, `TASK-FR010 axis stuck at endstop`,
-`TASK-FR006 stage motion must not damage`. Decide which are fixed vs. user-facing.
-Cross-link: [troubleshooting / motion](../../troubleshooting/motion-homing/README.md).
-:::
+![Live-view-home-individual](./Live-view-home-individual.png)
+
+- Go to the *Frame settings* App and the tab *FRAME Homing & Transport*. Press *Start homing*.
+
+![Imswitch-homing](./Imswitch-homing.png)

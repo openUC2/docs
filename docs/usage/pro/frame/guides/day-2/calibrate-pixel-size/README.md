@@ -16,27 +16,28 @@ Choose a sample slide for calibration - minimum requirement: a clearly identifia
 In the app sidebar menu on the left go to the App *FRAME Settings*. Choose the tab *Manual pixel calibration*.
 
 Follow the instructions of the manual calibration procedure.
-Here is an example of the manual calibration procedure.
-Camera: WideField
-Objetive: 20x
+
+Here is an example of a manual calibration procedure.  
+Camera: WideField  
+Objective: 20x  
 Sample: Calibration target  
 
-In the picture below you see a properly focused and positioned structure of a calibration sample in the *live view* app the. The actual structure used for the procedure will be the upper right hand corner of the 4x4 square (marked with a red arrow).
+In the picture below you see a properly focused and positioned structure of a calibration sample in the *live view* app. The actual structure used for the procedure will be the upper right hand corner of the 4x4 square (marked with a red arrow).
 
-`Note`   This structure is positioned in the lower left hand corner of the live view image due to the range of movements later performed in the calibration process.
+`Note`   This structure is positioned in the lower left hand corner of the live view image due to the range of movements performed later in the calibration process.
 
 ![20x-Pixel-Calibration-start-arrow](./20x-Pixel-Calibration-start-arrow.png)
 
-After switching to the *FRAME settings* app and the tab *Manual pixel calibration* please follow the *Four-point calibration Workflow*. Click on *Backlash compensation X*. This moves the sample in X by the depicted amount (e.g. 50µm) in the same direction, as it will be moved in the following calibration step. This ensures that any backlash from the X-axes is eliminated prior to the following calibration step.
+After switching to the *FRAME settings* app and the tab *Manual pixel calibration*, please, follow the *Four-point calibration Workflow*. Click on *Backlash compensation X*. This moves the sample in X by the depicted amount in the same direction, as it will be moved in the following calibration step (e.g. 50µm). This ensures that any backlash from the X-axis is eliminated prior to the following calibration step.
 
 The next step is *Mark feature (P1 before X move)*. Click on the structure of your choice (here the corner) and a green cross-hair A1 will appear. Then click *Move stage in X* and the stage will be moved by the depicted amount in X (e.g. 100µm). Make sure travel range does not exceed the live view window (structure not visible anymore). Then click *Mark same feature (P2 after X move)*. A second green cross-hair A2 and a line will appear. At the bottom of the image you will also see Pixel information for point A1 and A2 including the delta and the subsampling rate.
 
 
 ![20x-Pixel-Calibration-X](./20x-Pixel-Calibration-X.png)
 
-Now the workflow starts the same procedure for the Y-Axis. First click on *backlash compensation in Y*.This moves the sample in Y by the depicted amount (e.g. 50µm) in the same direction, as it will be moved in the following calibration step.
+Now the workflow starts the same procedure for the Y-Axis. First click on *backlash compensation in Y*. This moves the sample in Y by the depicted amount in the same direction, as it will be moved in the following calibration step (e.g. 50µm).
 
-The next step is *Mark feature (P3 before Y move)*. Click on the structure of your choice (here the corner) and a blue cross-hair B1 will appear. Then click *Move stage in Y* and the stage will be moved by the depicted amount in Y (e.g. 100µm). Make sure travel range does not exceed the live view window (structure not visible anymore). Then click *Mark same feature (P4 after Y move)*. A second blue cross-hair B2 and a line will appear. At the bottom of the image you will also now also see Pixel information for point B1 and B2 including the delta and the subsampling rate.
+The next step is *Mark feature (P3 before Y move)*. Click on the structure of your choice (here the corner) and a blue cross-hair B1 will appear. Then click *Move stage in Y* and the stage will be moved by the depicted amount in Y (e.g. 100µm). Make sure travel range does not exceed the live view window (structure not visible anymore). Then click *Mark same feature (P4 after Y move)*. A second blue cross-hair B2 and a line will appear. At the bottom of the image you will now also see Pixel information for point B1 and B2 including the delta and the subsampling rate.
 
 ![20x-Pixel-Calibration-Y](./20x-Pixel-Calibration-Y.png)
 

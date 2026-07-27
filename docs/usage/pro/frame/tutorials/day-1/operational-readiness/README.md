@@ -37,6 +37,7 @@ If you need to change the hardware configuration file, please refer to our [day-
 
 ## Homing
 
+To home, please, go to the instructions [Homing](../../../guides/day-2/homing/README.md).
 
 ## View Pixel Calibration
 
@@ -68,10 +69,20 @@ Now scroll to the bottom (ignore the rest). You will see stored calibration valu
 
  ![objective-calibration-values](./objective-calibration-values.png)
 
+ For information on how to perform objective calibration on your machine, please, go to [Objective Calibration](../../../guides/day-2/calibrate-objective/README.md)!
+
+## Axis Backlash - good to know
+
+When you move e.g. 100µm in the positive direction of the axis and then move 100µm back in the negative direction there will be a small offset (a few µm), which is called backlash. It is a result of the tolerances of all the mechanical parts of this axis.
+
+The Backlash should be well below 10µm for each axis.
+
+For information on how to (re)check axis backlash on your machine, please, go to [Axis Backlash](../../../guides/day-2/axis-backlash/README.md).
+
+
 ## View Stage Calibration
 
-
-
+To view and verify stage calibration, please, go to [Calibrate stage](../../../guides/day-2/calibrate-stage/README.md).
 
 ## What's next
 
