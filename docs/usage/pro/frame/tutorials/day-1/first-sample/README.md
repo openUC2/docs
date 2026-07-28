@@ -22,7 +22,7 @@ In our day-2 tutorials we'll learn how to [change the sample holders](../../day-
 - if your FRAME has a slide holder, continue to the tutorial section for [inserting a microscope slide](#on-a-microscope-slide)
 - if your FRAME has a well-plate holder, continue to the tutorial section for [inserting a well plate](#on-a-well-plate)
 
-### on a microscope slide
+### Inserting a microscope slide
 
 Take a microscope slide with a sample and place it on one of the slots of the slide holder like in the below sequence of images:
 
@@ -36,7 +36,7 @@ Now you can let go of the spring-loaded edge:
 
 Now that we've inserted your first sample on a microscope slide, we can continue to the tutorial section to [position your sample for imaging](#position-your-first-sample).
 
-### on a well plate
+### Inserting a well plate
 
 Take a well plate with a sample and place its A1 corner into the corner with the spring-loaded button, and then push the opposite corner of the well plate into the well-plate holder:
 
@@ -46,18 +46,22 @@ Take a well plate with a sample and place its A1 corner into the corner with the
 
 Now that we've inserted your first sample on a well plate, we can continue to the tutorial section to [position your sample for imaging](#position-your-first-sample).
 
-## Open the live viewer
+## Open the ImSwitch Live View App
 
-The basic interface for exploring microscopy samples and adjusting imaging settings is ImSwitch's Live View page.
-The Live View page is ImSwitch's home page, so it's what we see when we [initially open ImSwitch](../first-connection/README.md#open-imswitch).
-We can also open the Live View page from other pages in ImSwitch by clicking on the "Live View" entry in ImSwitch's navigation sidebar.
+The basic interface for exploring microscopy samples and adjusting imaging settings is ImSwitch's *Live View* App.
+The *Live View* App  is ImSwitch's home page, so it's what we see when we [initially open ImSwitch](../first-connection/README.md#ImSwitch-first-steps).
+We can also open the *Live View* App from other pages in ImSwitch by clicking on the *Live View* entry in ImSwitch's navigation sidebar.
 
 Once you open the Live View page, it will look something like this:
 
-![ImSwitch app: Live View page](./imswitch-live-view.png)
+![Live-view-imswitch-1](./Live-view-imswitch-1.png)
 
-In the center of the above screenshot, under the "WIDEFIELDCAMERA" tab, we can see a camera preview stream from your FRAME's main camera.
-This preview stream has red indicator (which says "LIVE - 16.0 FPS" in the above screenshot) in its upper-right corner which indicates whether the preview is a live preview, as well as the framerate of the preview stream.
+This preview stream was not yet started, so the indicator in the upper right corner is grey and says "Paused)". To start the stream click on the green *Start* button below the image.
+An image will appear and the  indicator changes to red saying "LIVE - 8.0 FPS" which indicates that the preview is a live preview with a frame rate of 8 FPS (Please note, that in below image illumination is already turned on and the sample is in focus).
+
+![Live-view-imswitch-2](./Live-view-imswitch-2.png)
+
+In the upper left corner you can see that the tab "WIDEFIELDCAMERA" is active, which is typically the main camera in your FRAME.
 
 ## Position your first sample
 
@@ -66,9 +70,13 @@ Now we'll adjust the FRAME stage's position to bring your sample into the view o
 ### Turn on illumination
 
 First, we'll need to illuminate the sample.
-In the right column of the Live View page, which has the "Stage Control" and "Autofocus" sections, scroll down to the "Illumination" section:
+In the right column of the *Live View* App, which has the "Stage Control" and "Autofocus" sections, scroll down to the "Illumination" section. Depending on your customer specific configuration you will see all illumination sources available to you - "LED" is always available. On default all illumination sources are switched off - to switch the LED on toggle the button on the right ton *On*. Then set the LED Power by either sliding the scale or type in a value between 0 and 1023 to the right of the sliding scale.
 
-![ImSwitch app: Live View page: Illumination section](./imswitch-live-view-illumination.png)
+![Live-View-ImSwitch-3-illumination](./Live-View-ImSwitch-3-illumination.png)
+
+If more illumination sources are available the section will look something like this.
+
+![Live-View-ImSwitch-4-LEDonly](./Live-View-ImSwitch-4-LEDonly.png)
 
 Now uncheck the checkbox for 488 nm fluorescence illumination, and check the checkbox for LED illumination, and adjust the slider for LED illumination to 1023 for maximum illumination intensity:
 

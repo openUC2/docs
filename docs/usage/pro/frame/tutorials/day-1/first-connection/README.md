@@ -114,9 +114,9 @@ You can bookmark this page in your web browser for easy access, so that you don'
 
 :::
 
-## ImSwitch (Microscope Control) - first steps
+## ImSwitch first steps
 
-Now that you have the landing page open in your web browser, we're ready to open *ImSwitch*, which is the app for operating the microscopy-related functions of your FRAME machine.
+Now that you have the landing page open in your web browser, we're ready to open *ImSwitch*, which is the App for operating the microscopy-related functions of your FRAME machine.
 
 On the landing page, click on the *Microscope Control* link. ImSwitch will open in a new tab. If you access ImSwitch an the FRAMEs RPi for the first time with your device you will be guided through the main features in a quick tour.
 
@@ -130,7 +130,7 @@ Once you are through with the quick tour you will be recommended to follow the h
 
 ![homing-on-boot-new2-260709](./homing-on-boot-new2-260709.png)
 
-We are finally there, ImSwitch will open on default with the *Live View* app. This will look something similar to this.
+We are finally there, ImSwitch will open on default with the *Live View* App. This will look something similar to this.
 
 ![Live-view-imswitch](./Live-view-imswitch.png)
 
