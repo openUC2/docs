@@ -3,7 +3,7 @@ sidebar_label: Game controller
 sidebar_position: 60
 ---
 
-# Use the game controller
+# Using the game controller to move the stage
 
 :::note Draft outline
 Scaffold. Replace the bullet prompts with your own text and delete this banner when done.

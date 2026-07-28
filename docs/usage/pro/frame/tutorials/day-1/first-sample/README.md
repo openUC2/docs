@@ -54,56 +54,63 @@ We can also open the *Live View* App from other pages in ImSwitch by clicking on
 
 Once you open the Live View page, it will look something like this:
 
-![Live-view-imswitch-1](./Live-view-imswitch-1.png)
+![Live-view-ImSwitch-1-Streamoff](./Live-view-ImSwitch-1-Streamoff.png)
 
 This preview stream was not yet started, so the indicator in the upper right corner is grey and says "Paused)". To start the stream click on the green *Start* button below the image.
-An image will appear and the  indicator changes to red saying "LIVE - 8.0 FPS" which indicates that the preview is a live preview with a frame rate of 8 FPS (Please note, that in below image illumination is already turned on and the sample is in focus).
+An image will appear and the  indicator changes to red saying "LIVE - 8.0 FPS" which indicates that the preview is a live preview with a frame rate of 8 FPS (Please, note, that in the picture below illumination is already turned on and the sample is in focus).
 
-![Live-view-imswitch-2](./Live-view-imswitch-2.png)
+![Live-view-ImSwitch-2-streamon](./Live-view-ImSwitch-2-streamon.png)
 
 In the upper left corner you can see that the tab "WIDEFIELDCAMERA" is active, which is typically the main camera in your FRAME.
 
-## Position your first sample
+## Position and properly view your first sample
 
-Now we'll adjust the FRAME stage's position to bring your sample into the view of the camera preview stream.
+Now we'll adjust all necessary parameters to position and properly view your sample in the preview stream.
 
 ### Turn on illumination
 
 First, we'll need to illuminate the sample.
 In the right column of the *Live View* App, which has the "Stage Control" and "Autofocus" sections, scroll down to the "Illumination" section. Depending on your customer specific configuration you will see all illumination sources available to you - "LED" is always available. On default all illumination sources are switched off - to switch the LED on toggle the button on the right ton *On*. Then set the LED Power by either sliding the scale or type in a value between 0 and 1023 to the right of the sliding scale.
 
-![Live-View-ImSwitch-3-illumination](./Live-View-ImSwitch-3-illumination.png)
+![Live-View-ImSwitch-4-LEDonly](./Live-View-ImSwitch-4-LEDonly.png)
 
 If more illumination sources are available the section will look something like this.
 
-![Live-View-ImSwitch-4-LEDonly](./Live-View-ImSwitch-4-LEDonly.png)
+![Live-View-ImSwitch-3-illumination](./Live-View-ImSwitch-3-illumination.png)
 
-Now uncheck the checkbox for 488 nm fluorescence illumination, and check the checkbox for LED illumination, and adjust the slider for LED illumination to 1023 for maximum illumination intensity:
-
-![ImSwitch app: Live View page: Illumination section: LED illumination](./imswitch-live-view-illumination-led.png)
-
-Now you should see light shining on your objective lens:
-
-![slide holder: illuminated objective lens ](./slide-holder-objective-illuminated.jpg)
+Now you should see light shining onto your sample.
 
 ### Adjust exposure
 
 Next, we'll need to adjust the camera's exposure time setting.
-In the main column of the Live View page, which has the camera preview stream, scroll down to the "Detector Parameters" section:
+In the main column of the *Live View* App, which has the camera preview stream, scroll down to the "Detector Parameters" section:
 
-![ImSwitch app: Live View page: Detector Parameters section](./imswitch-live-view-detector-parameters.png)
+![Live-view-ImSwitch-5-Detector-parameters](./Live-view-ImSwitch-5-Detector-parameters.png)
 
-Then adjust the exposure time as needed to get an image in the camera preview stream which is neither too bright nor too dark:
+As a rule of thumb:
+- In most cases it is sufficient to change the *Exposure* time and leave *Gain* and *Black Level* unchanged.
+- Finding your desired exposure time can be done in 3 ways:
+  - (Recommended) Pressing the *Auto Once* button will set exposure time automatically and lock this exposure time in since *Mode* is *Manual* or
+  - manually entering the desired exposure time or  
+  - switch the mode from *Manual* to *Auto* which will then continuously adjust exposure time whenever changes in light level occur.
 
-![ImSwitch app: Live View page: Detector Parameters section: exposure](./imswitch-live-view-detector-parameters-exposure.png)
-
-In the above screenshot, the exposure time has been set to 0.5 milliseconds.
-The optimal exposure setting will depend on the specific camera in your FRAME, but it should probably be below 10 milliseconds.
 Try to adjust the exposure so that the image in the camera preview stream is a moderate gray color:
 
-![ImSwitch app: Live View page: good exposure](./imswitch-live-view-good-exposure.png)
-
 ### Adjust stage x-y position
+
+Use one of the following 4-options to move the sample into the camera view.
+- the game *controller*
+- the *double-click function* of the preview window of the *Live View* App
+- the *Axis View* tab in the stage control section of ImSwitch
+- the *Joystick* tab in the stage control section of ImSwitch
+
+To get familiar with each of these options, please, refer to [Principles of sample movement](../../../guides/day-2/Principles-of-sample-movement/README.md).
+
+
+
+
+
+
 
 Now let's move the sample into the view of the camera.
 In the right column of the Live View page, scroll back up to the Stage Control section:
