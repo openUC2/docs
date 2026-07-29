@@ -63,6 +63,12 @@ An image will appear and the  indicator changes to red saying "LIVE - 8.0 FPS" w
 
 In the upper left corner you can see that the tab "WIDEFIELDCAMERA" is active, which is typically the main camera in your FRAME.
 
+## Choose an objective
+
+In the right column of the *Live View* App, which has the *Stage Control* and *Autofocus* sections, scroll down to the *Objective* section. Your current objective will be displayed along with its parameters. For your first image we recommend starting with the objective with the lowest magnification, e.g. 4x.
+
+![switch-objective](./switch-objective.png)
+
 ## Position and properly view your first sample
 
 Now we'll adjust all necessary parameters to position and properly view your sample in the preview stream.
@@ -140,72 +146,44 @@ By now the sample in your camera preview window should look something like this.
 
 ![Live-view-ImSwitch-2-streamon](./Live-view-ImSwitch-2-streamon.png)
 
-## Check and adjust preview image settings
+## Check and adjust settings of the preview window
 
+You can access and edit the preview image settings by the *settings* button, which you will find in the main column of the *Live View* App underneath the preview window. For your first sample the default settings should work.   
 
+![preview-image-settings-button](./preview-image-settings-button.png)
 
+For more information, please refer to the [Preview Image Settings](../../../guides/day-2/preview-image-settings/README.md) guide.
 
-## Save your first image
+## Save Streaming Presets
+
+Now that you have done all the work to find the best parameters for an optimum *live view image* with the active camera and objective, we recommend saving all these parameters as a *Stream Preset*. This allows you to (re)load these settings at any point in time, e.g. after switching cameras or objectives which typically need other settings.
+
+You can find the *Stream Presets* section in the main column of the *Live View* App underneath the preview window. If you have not yet saved any preset it will look like the picture below.    
+
+![Stream-Presets](./Stream-Presets.png)  
+
+Press *Save Current* and a pop-up window opens. It will show you all current parameters saved in this particular *Stream Preset*, asks you to enter a *Preset name* and gives you some Checkbox options on what or what not to include in saved parameter set (on default all boxes are ticked).
+
+![Stream-presets-popup](./Stream-presets-popup.png)
+
+Press *Save* and the *Stream Preset* section will now show that there is 1 saved preset available. To apply a saved *Stream preset*, select the preset in the dropdown menu and click *Apply*. You can also edit and delete it here.
+
+![Stream-Presets-saved](./Stream-Presets-saved.png)
+
+`Important`These settings are stored in your browser´s cache. If you switch browsers or computers they will not be available anymore (redo).  
+
+## Save and view your first image
 
 To save your first image of your sample, go to the "Capture" panel below the camera stream:
 
-![ImSwitch app: Live View page: Capture panel](./imswitch-live-view-capture.png)
+![Capture-Section](./Capture-Section.png)
 
-Enter a brief name for the image in the "Description" textbox:
+Enter a brief name for the image in the *Description* textbox, select your preferred file format (default TIFF) and press
+- *Snap*: this stores the image on the SD card of the machines RPI. You can access it by either clicking *Go to folder* or switch to the *File Manager* App located in the ImSwitch Navigation bar on the left. Either way you will see something like in the picture below. To see the recorded image go to the folder *Recordings* and the subfolder with the current date and you will find your image. Double click on the image file and you will get a preview within ImSwitch.
 
-![ImSwitch app: Live View page: Capture panel: Description](./imswitch-live-view-capture-description.png)
+![File-manager](./File-manager.png)
 
-Then press the "Snap" button to save the image to the FRAME's internal storage.
-
-## View your first image
-
-To view the image you just saved, press the "Go to Folder" button:
-
-![ImSwitch app: Live View page: Capture panel: Go to Folder button](./imswitch-live-view-capture-go-to-folder.png)
-
-This will display the image file in ImSwitch's File Manager page:
-
-![ImSwitch app: File Manager page](./imswitch-file-manager.png)
-
-We can see in the above screenshot that the image filename begins with the timestamp `2026-03-17T12-39-33-019192` (i.e. March 17, 2026 at 12:39), while the "Modified" timestamp is `3/17/2026 1:39 PM` (i.e. March 17, 2026 at 13:39).
-The reason for this one-hour difference is that the timestamp in the image filename is always specified in the [UTC timezone](https://en.wikipedia.org/wiki/Coordinated_Universal_Time), while the "Modified" timestamp is always displayed in the local timezone of your web browser (which for the above screenshot is Central European Time, which is UTC+1).
-
-Now we can right-click on the image to open a menu with entries to download the image or to preview it in ImSwitch:
-
-![ImSwitch app: File Manager page: context menu: preview with ImJoy](./imswitch-file-manager-imjoy.png)
-
-This will open ImSwitch's ImJoy page.
-After several moments, ImJoy will finish loading and open a window with a preview of the image we had saved:
-
-![ImSwitch app: ImJoy page](./imswitch-imjoy.png)
-
-## Download your first image
-
-Now that we've previewed your first image, let's return to the File Manager to download the image to your computer.
-
-Click on the "File Manager" entry in the navbar.
-This will return us to the file we had previously selected:
-
-![ImSwitch app: File Manager page: context menu: nav](./imswitch-file-manager-nav.png)
-
-Now right-click on the image again, and click on the context menu's entry to download the image:
-
-![ImSwitch app: File Manager page: context menu: download](./imswitch-file-manager-download.png)
-
-This will open your web browser's dialogue choose a location on your computer for downloading the image.
-
-Then you can view the image (and its associated metadata) in other programs on your computer, such as Napari or Fiji:
-
-![Fiji](./fiji.png)
-
-:::tip
-
-You can configure ImSwitch to save the image directly to a removable USB storage device, instead of saving the image to the FRAME's internal SD card.
-When you are acquiring large amounts of data, you should save your data to a removable storage device so that you can transfer it to other computers more easily and more quickly.
-
-To learn how to do this, please refer to our [day-2 tutorial](../../day-2/acquire-data/README.md#copy-data-to-a-usb-storage-device).
-
-:::
+- (Recommended) *Snap & download*: this stores the image on the SD card of the machines RPI `AND`locally on your computer at the same time. You can access it there by using the file manager on your computer and view it using your favorite image viewer.
 
 ## What's next
 
