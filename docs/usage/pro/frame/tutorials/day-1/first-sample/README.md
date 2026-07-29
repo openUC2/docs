@@ -134,13 +134,14 @@ As a rule of thumb:
 - in a first step select a wider *Range Z*, e.g. 200-300um and leave the *Resolution Z* at 10.
 - in a second step select a more narrow *Range Z*, e.g. 50-100um and change the *Resolution Z* to a smaller value, e.g. 2-5um.
 
-For a more detailed guide, please, refer to [Autofocus](../../../guides/day-2/autofocus/README.md).
+For a more detailed guide, please, refer to the [Autofocus](../../../guides/day-2/autofocus/README.md) guide.
 
 By now the sample in your camera preview window should look something like this.
 
 ![Live-view-ImSwitch-2-streamon](./Live-view-ImSwitch-2-streamon.png)
 
 ## Check and adjust preview image settings
+
 
 
 
