@@ -19,8 +19,8 @@ In the above image, we can see a well plate holder on the left and a microscope 
 
 In our day-2 tutorials we'll learn how to [change the sample holders](../../day-2/reconfigure/sample-holder.md), but for now you should insert a sample matching the sample holder which has been preinstalled in your FRAME:
 
-- if your FRAME has a slide holder, continue to the tutorial section for [inserting a microscope slide](#Inserting-a-microscope-slide)
-- if your FRAME has a well-plate holder, continue to the tutorial section for [inserting a well plate](#Inserting-a-well-plate)
+- if your FRAME has a slide holder, continue to the tutorial section for [inserting a microscope slide](#inserting-a-microscope-slide)
+- if your FRAME has a well-plate holder, continue to the tutorial section for [inserting a well plate](#inserting-a-well-plate)
 
 ### Inserting a microscope slide
 
