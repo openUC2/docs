@@ -70,7 +70,7 @@ Now we'll adjust all necessary parameters to position and properly view your sam
 ### Turn on illumination
 
 First, we'll need to illuminate the sample.
-In the right column of the *Live View* App, which has the "Stage Control" and "Autofocus" sections, scroll down to the "Illumination" section. Depending on your customer specific configuration you will see all illumination sources available to you - "LED" is always available. On default all illumination sources are switched off - to switch the LED on toggle the button on the right ton *On*. Then set the LED Power by either sliding the scale or type in a value between 0 and 1023 to the right of the sliding scale.
+In the right column of the *Live View* App, which has the *Stage Control* and *Autofocus* sections, scroll down to the "Illumination" section. Depending on your customer specific configuration you will see all illumination sources available to you - *LED* is always available. On default all illumination sources are switched off - to switch the *LED* on toggle the button on the right to *On*. Then set the LED Power by either sliding the scale or type in a value between 0 and 1023 to the right of the sliding scale.
 
 ![Live-View-ImSwitch-4-LEDonly](./Live-View-ImSwitch-4-LEDonly.png)
 
@@ -80,29 +80,29 @@ If more illumination sources are available the section will look something like 
 
 Now you should see light shining onto your sample.
 
-### Adjust exposure
+### Adjust exposure settings
 
-Next, we'll need to adjust the camera's exposure time setting.
-In the main column of the *Live View* App, which has the camera preview stream, scroll down to the "Detector Parameters" section:
+Next, we'll need to adjust the camera's *exposure time* setting.
+In the main column of the *Live View* App, which has the camera preview stream, scroll down to the *Detector Parameters* section:
 
 ![Live-view-ImSwitch-5-Detector-parameters](./Live-view-ImSwitch-5-Detector-parameters.png)
 
 As a rule of thumb:
-- In most cases it is sufficient to change the *Exposure* time and leave *Gain* and *Black Level* unchanged.
-- Finding your desired exposure time can be done in 3 ways:
-  - (Recommended) Pressing the *Auto Once* button will set exposure time automatically and lock this exposure time in since *Mode* is *Manual* or
+- In most cases it is sufficient to change the *Exposure time* and leave *Gain* and *Black Level* as is.
+- Finding a suitable exposure time can be done in 3 ways:
+  - (Recommended) Pressing the *Auto Once* button will set the exposure time automatically and lock this exposure time in since *Mode* is *Manual* or
   - manually entering the desired exposure time or  
-  - switch the mode from *Manual* to *Auto* which will then continuously adjust exposure time whenever changes in light level occur.
+  - switch the mode from *Manual* to *Auto*, which will then continuously adjust exposure time whenever changes in light level occur.
 
-Try to adjust the exposure so that the image in the camera preview stream is a moderate gray color:
+Try to adjust the exposure so that the image in the camera preview stream is a moderate gray color.
 
 ### Adjust stage x-y position
 
 Use one of the following 4-options to move the sample into the camera view.
 - the game *controller*
-- the *double-click function* of the preview window of the *Live View* App
-- the *Axis View* tab in the stage control section of ImSwitch
-- the *Joystick* tab in the stage control section of ImSwitch
+- the *double-click function* of the preview window in the *Live View* App
+- the *Axis View* tab in the *stage control* section of ImSwitch
+- the *Joystick* tab in the *stage control* section of ImSwitch
 
 To get familiar with each of these options, please, refer to [Principles of sample movement](../../../guides/day-2/Principles-of-sample-movement/README.md).
 

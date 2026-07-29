@@ -28,16 +28,16 @@ In the picture below you see a properly focused and positioned structure of a ca
 
 ![20x-Pixel-Calibration-start-arrow](./20x-Pixel-Calibration-start-arrow.png)
 
-After switching to the *FRAME settings* app and the tab *Manual pixel calibration*, please, follow the *Four-point calibration Workflow*. Click on *Backlash compensation X*. This moves the sample in X by the depicted amount in the same direction, as it will be moved in the following calibration step (e.g. 50µm). This ensures that any backlash from the X-axis is eliminated prior to the following calibration step.
+After switching to the *FRAME settings* app and the tab *Manual pixel calibration*, please, follow the *Four-point calibration Workflow*. Click on *Backlash compensation X*. This moves the sample in X by the depicted amount in the same direction, as it will be moved in the following calibration step (e.g. 50um). This ensures that any backlash from the X-axis is eliminated prior to the following calibration step.
 
-The next step is *Mark feature (P1 before X move)*. Click on the structure of your choice (here the corner) and a green cross-hair A1 will appear. Then click *Move stage in X* and the stage will be moved by the depicted amount in X (e.g. 100µm). Make sure travel range does not exceed the live view window (structure not visible anymore). Then click *Mark same feature (P2 after X move)*. A second green cross-hair A2 and a line will appear. At the bottom of the image you will also see Pixel information for point A1 and A2 including the delta and the subsampling rate.
+The next step is *Mark feature (P1 before X move)*. Click on the structure of your choice (here the corner) and a green cross-hair A1 will appear. Then click *Move stage in X* and the stage will be moved by the depicted amount in X (e.g. 100um). Make sure travel range does not exceed the live view window (structure not visible anymore). Then click *Mark same feature (P2 after X move)*. A second green cross-hair A2 and a line will appear. At the bottom of the image you will also see Pixel information for point A1 and A2 including the delta and the subsampling rate.
 
 
 ![20x-Pixel-Calibration-X](./20x-Pixel-Calibration-X.png)
 
-Now the workflow starts the same procedure for the Y-Axis. First click on *backlash compensation in Y*. This moves the sample in Y by the depicted amount in the same direction, as it will be moved in the following calibration step (e.g. 50µm).
+Now the workflow starts the same procedure for the Y-Axis. First click on *backlash compensation in Y*. This moves the sample in Y by the depicted amount in the same direction, as it will be moved in the following calibration step (e.g. 50um).
 
-The next step is *Mark feature (P3 before Y move)*. Click on the structure of your choice (here the corner) and a blue cross-hair B1 will appear. Then click *Move stage in Y* and the stage will be moved by the depicted amount in Y (e.g. 100µm). Make sure travel range does not exceed the live view window (structure not visible anymore). Then click *Mark same feature (P4 after Y move)*. A second blue cross-hair B2 and a line will appear. At the bottom of the image you will now also see Pixel information for point B1 and B2 including the delta and the subsampling rate.
+The next step is *Mark feature (P3 before Y move)*. Click on the structure of your choice (here the corner) and a blue cross-hair B1 will appear. Then click *Move stage in Y* and the stage will be moved by the depicted amount in Y (e.g. 100um). Make sure travel range does not exceed the live view window (structure not visible anymore). Then click *Mark same feature (P4 after Y move)*. A second blue cross-hair B2 and a line will appear. At the bottom of the image you will now also see Pixel information for point B1 and B2 including the delta and the subsampling rate.
 
 ![20x-Pixel-Calibration-Y](./20x-Pixel-Calibration-Y.png)
 
@@ -50,11 +50,11 @@ Then click on *compute affine calibration* and your Pixel Calibration data will 
 In the *live view* app choose your camera and your objective. Then move to the structure of your choice and obtain a proper image of the structure.
 
 In the app *FRAME Settings* choose the tab *Verify calibration*.
-Make sure the correct camera and objective is selected under *detector* and *objective*. Choose a movement distance (in the image below 100µm).
+Make sure the correct camera and objective is selected under *detector* and *objective*. Choose a movement distance (in the image below 100um).
 
 `Note` Please, account manually for backlash of the axis by moving to the structure of your choice in the same direction as you will move it later in the verification step.
 
-Click on the structure of your choice. A light blue cross hair appears. In the below example the middle of the 4x4 square was chosen. Choose the movement direction by clicking on one of the 4x arrows (in the image below a red marked arrow indicates the chosen movement direction - here X). After clicking the stage will move by the depicted amount in that direction. A yellow circle with a radius of in this case 100µm will be drawn based on the stored pixel calibration value. If calibration is correct, the structure of your choice will come to lay exactly on the yellow circle.
+Click on the structure of your choice. A light blue cross hair appears. In the below example the middle of the 4x4 square was chosen. Choose the movement direction by clicking on one of the 4x arrows (in the image below a red marked arrow indicates the chosen movement direction - here X). After clicking the stage will move by the depicted amount in that direction. A yellow circle with a radius of in this case 100um will be drawn based on the stored pixel calibration value. If calibration is correct, the structure of your choice will come to lay exactly on the yellow circle.
 
 
 ![20x-Pixel-verification-X-red-arrow](./20x-Pixel-verification-X-red-arrow.png)

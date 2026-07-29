@@ -31,7 +31,7 @@ Below you will see the live view image and the current parameters for all axes.
 
 ![4x-Objective-controller-set-A](./4x-Objective-controller-set-A.png)
 
-Now go to *Focus 1* and press *Set current as focus 1*. This will set the Current Z-Axis value of 4533µm for the 4x objective as focus value. A popup window will ask you for confirmation.
+Now go to *Focus 1* and press *Set current as focus 1*. This will set the Current Z-Axis value of 4533um for the 4x objective as focus value. A popup window will ask you for confirmation.
 
 ![4x-Objective-controller-set-Z](./4x-Objective-controller-set-Z.png)
 
@@ -47,12 +47,12 @@ You will see information of the *current objective* displayed as well as the liv
 
 ![20x-Objective-controller-live-view-and-parameters](./20x-Objective-controller-live-view-and-parameters.png)
 
-Now scroll again to the bottom. Continue with *Position 2* and press *Set current as position 2*. This will set the Current A-Axis value of in this case 27920µm for the 20x objective in position 2. A popup window will ask you for confirmation.  
+Now scroll again to the bottom. Continue with *Position 2* and press *Set current as position 2*. This will set the Current A-Axis value of in this case 27920um for the 20x objective in position 2. A popup window will ask you for confirmation.  
 `note` The popup says *Set Position 2 (X1) to 29720*. But it will set the A-Axis.
 
 ![20x-Objective-controller-set-A](./20x-Objective-controller-set-A.png)
 
-Now go to *Focus 2* and press *Set current as focus 2*. This will set the Current Z-Axis value of 12636µm for the 20x objective as focus value. A popup window will ask you for confirmation.
+Now go to *Focus 2* and press *Set current as focus 2*. This will set the Current Z-Axis value of 12636um for the 20x objective as focus value. A popup window will ask you for confirmation.
 
 ![20x-Objective-controller-set-Z](./20x-Objective-controller-set-Z.png)
 
