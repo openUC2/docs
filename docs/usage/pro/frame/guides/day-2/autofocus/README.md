@@ -5,38 +5,37 @@ sidebar_position: 40
 
 # Autofocus
 
-:::note Draft outline
-Scaffold. Replace the bullet prompts with your own text and delete this banner when done.
-:::
+This guide explains the Image-based and Hardware-based autofocus.
 
-*How-to, for operators.* Choose and configure autofocus.
+## Image-based Autofocus
 
-## Image-based vs. hardware-based
+In the right column of the *Live View* App in ImSwitch, which has the *Stage Control* section, scroll down to the *Autofocus* section. The default parameters are shown in below picture. *Range Z = 100* will make a sweep of +/-50um with respect to the *Current Z: 4501.56*-position displayed above the *Start Autofocus* button. *Resolution Z = 10* will make the algorithm take an image in steps of 10um, which would equal 11 images with the settings displayed and find the one with the best focus.    
 
-- The two modes; when to use each (link to the [explanation](../../../explanations/autofocus-explained/README.md)).
+![Live-view-ImSwitch-autofocus](./Live-view-ImSwitch-autofocus.png)
 
-## Basic settings
+Click the button *Start Autofocus* and the algorithm will start running.
+When it is done it will display a new *Current Z* value and *State finished*.
+In addition, the *Show Plot* button will become available. Click on it and it will display a plot of the *(image) Contrast value* vs *focus position*.
 
-- Z-range and number of steps; automatic stop at stage limits.
-- Advanced settings hidden by default.
+As a rule of thumb:
+- in a first step select a wider *Range Z*, e.g. 200-300um and leave the *Resolution Z* at 10.
+- in a second step select a more narrow *Range Z*, e.g. 50-100um and change the *Resolution Z* to a smaller value, e.g. 2-5um.
 
-![Autofocus settings panel](./IMAGES/autofocus-settings-1.png)
-![Autofocus advanced settings](./IMAGES/autofocus-settings-2.png)
-*Basic vs. Advanced autofocus settings (from TASK-FR025, v1.6.3).*
+`Important` The plot allows you to see whether your *Range Z* is properly centered. In the below picture you can see that the *Range Z* is not yet properly centered, so that another run with a more centered *Range Z* is required to find the optimum focal position.
 
-:::note TODO
-Reused from Notion `TASK-FR025`. Confirm these still match the current UI; consider a
-clean re-shot pair for publication.
-:::
+![Autofocus-Range-Z-not-centered](./Autofocus-Range-Z-not-centered.png)
 
-## Troubleshooting stability
+A well-centered *Range Z* looks similar to the below picture.
 
-- Symptoms of unstable autofocus and what to change.
+![Autofocus-Range-Z-centered](./Autofocus-Range-Z-centered.png)
 
-:::note TODO
-Notion source: `TASK-FR027 Software Autofocus not stable`. Hardware focus lock:
-[focus-lock add-on](../../../addons/focus-lock/README.md).
-:::
+To access more advanced autofocus parameters click on the dropdown menu *Advanced parameters*.
+
+![autofocus-advanced-parameters](./autofocus-advanced-parameters.png)
+
+## Hardware-based Autofocus
+
+Available soon.
 
 ## Related
 

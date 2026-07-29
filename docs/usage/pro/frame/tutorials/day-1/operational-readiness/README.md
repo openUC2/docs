@@ -16,7 +16,7 @@ This is done by selecting one of the preinstalled hardware configuration files i
 If you purchased and received a machine directly from openUC2, then the correct hardware configuration file was already been set for you as part of openUC2's procedures for testing that your machine works.
 Here, we will find the name of the correct hardware configuration file for your machine.
 
-First, [open ImSwitch](../first-connection/README.md#open-imswitch).
+First, [open ImSwitch](../first-connection/README.md#ImSwitch-first-steps).
 Click on the settings icon in the upper-right corner of the page in order to open the settings menu, and click on the "ImSwitch Backend Settings" menu item:
 
 ![ImSwitch app: settings menu: ImSwitch Backend Settings](./ImSwitch-Backend-Settings.png)

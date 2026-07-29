@@ -19,8 +19,8 @@ In the above image, we can see a well plate holder on the left and a microscope 
 
 In our day-2 tutorials we'll learn how to [change the sample holders](../../day-2/reconfigure/sample-holder.md), but for now you should insert a sample matching the sample holder which has been preinstalled in your FRAME:
 
-- if your FRAME has a slide holder, continue to the tutorial section for [inserting a microscope slide](#on-a-microscope-slide)
-- if your FRAME has a well-plate holder, continue to the tutorial section for [inserting a well plate](#on-a-well-plate)
+- if your FRAME has a slide holder, continue to the tutorial section for [inserting a microscope slide](#Inserting-a-microscope-slide)
+- if your FRAME has a well-plate holder, continue to the tutorial section for [inserting a well plate](#Inserting-a-well-plate)
 
 ### Inserting a microscope slide
 
@@ -34,7 +34,7 @@ As we can see above, first one shorter edge of the microscope slide is placed ag
 Now you can let go of the spring-loaded edge:
 ![slide holder: let go of spring-loaded edge](./slide-holder-insert-let-go.jpg)
 
-Now that we've inserted your first sample on a microscope slide, we can continue to the tutorial section to [position your sample for imaging](#position-your-first-sample).
+Now that we've inserted your first sample on a microscope slide, we can continue to the tutorial section to [position your sample for imaging](#position-and-properly-view-your-first-sample).
 
 ### Inserting a well plate
 
@@ -44,12 +44,12 @@ Take a well plate with a sample and place its A1 corner into the corner with the
 | ------------------------------ | --------------------------- |
 | ![well-plate holder: insert into corner with button](./well-plate-holder-insert-button.jpg) | ![well-plate holder: insert into opposite corner](./well-plate-holder-insert-opposite-corner.jpg) |
 
-Now that we've inserted your first sample on a well plate, we can continue to the tutorial section to [position your sample for imaging](#position-your-first-sample).
+Now that we've inserted your first sample on a well plate, we can continue to the tutorial section to [position your sample for imaging](#position-and-properly-view-your-first-sample).
 
 ## Open the ImSwitch Live View App
 
 The basic interface for exploring microscopy samples and adjusting imaging settings is ImSwitch's *Live View* App.
-The *Live View* App  is ImSwitch's home page, so it's what we see when we [initially open ImSwitch](../first-connection/README.md#ImSwitch-first-steps).
+The *Live View* App  is ImSwitch's home page.
 We can also open the *Live View* App from other pages in ImSwitch by clicking on the *Live View* entry in ImSwitch's navigation sidebar.
 
 Once you open the Live View page, it will look something like this:
@@ -99,59 +99,50 @@ Try to adjust the exposure so that the image in the camera preview stream is a m
 ### Adjust stage x-y position
 
 Use one of the following 4-options to move the sample into the camera view.
-- the game *controller*
+- the *game controller*
 - the *double-click function* of the preview window in the *Live View* App
 - the *Axis View* tab in the *stage control* section of ImSwitch
 - the *Joystick* tab in the *stage control* section of ImSwitch
 
 To get familiar with each of these options, please, refer to [Principles of sample movement](../../../guides/day-2/Principles-of-sample-movement/README.md).
 
-
-
-
-
-
-
-Now let's move the sample into the view of the camera.
-In the right column of the Live View page, scroll back up to the Stage Control section:
-
-![ImSwitch app: Live View page: Stage Control section](./imswitch-live-view-stage-control.png)
-
-Now repeatedly press the "+" and "-" buttons for the X Axis and the Y Axis to move the stage until the sample is over the objective lens:
-
-![ImSwitch app: Live View page: Stage Control section: position adjustment](./imswitch-live-view-stage-control-positioning.png)
-
-In the above screenshot, pressing the "+" button will move the X Axis by an increment of 100 micrometers.
-Do move the X Axis by larger increments, we can select a different step size to use for the "+" and "-" buttons:
-
-![ImSwiwtch app: Live View page: Stage Control section: position increment selection](./imswitch-live-view-stage-control-step-size.png)
-
 After enough adjustment of the positions of the X and Y axes, your sample should be located directly over the objective lens:
 
 ![slide holder: sample over objective lens](./slide-holder-sample-over-objective.jpg)
 
-![ImSwitch app: Live View page: Stage Control section: positioned](./imswitch-live-view-stage-control-positioned.png)
-
-Your sample is probably still out-of-focus, so (like in the above screenshot) you probably still won't see anything meaningful in the camera preview stream.
+Your sample is probably still out-of-focus, so you probably still won't see anything meaningful in the *camera preview stream*.
 
 ### Adjust stage focus
 
-Now let's bring your sample into focus, so that we can actually see something in the camera preview stream.
+Now let's bring your sample into focus, so that we can actually see something in the *camera preview stream*.
 
-First, we'll move the sample as far away from the objective lens as possible, by moving the Z Axis to its zero position.
-Click on the "Home" button:
-
-![ImSwitch app: Live View page: Stage Control section: Z-axis homing](./imswitch-live-view-stage-control-z-homing.png)
+First, as a precaution, we'll move the sample as far away from the objective lens as possible, by moving the Z Axis to its zero position.
+Click on the "Home" button. See [Principles of sample movement](../../../guides/day-2/Principles-of-sample-movement/README.md) for instructions on how to home the Z-Axis individually.
 
 If the Z Axis isn't already at its zero position, it will move until it reaches its zero position.
 
-Now we'll perform coarse focusing of our sample: select a Z-axis step size of 1000 micrometers, and repeatedly press the "+" button until you start to see something blurry in the camera preview:
+Now we'll perform coarse focusing of our sample by using either the *game controller* or the *Axis View* tab in the *Stage control* section. See [Principles of sample movement](../../../guides/day-2/Principles-of-sample-movement/README.md) for instructions on how to do this.
 
-![ImSwitch app: Live View page: Stage Control section: coarse focusing](./imswitch-live-view-stage-control-coarse-focusing.png)
+Now we'll perform fine focusing of our sample using the digital *Autofocus* function available in ImSwitch. In the right column of the *Live View* App, which has the *Stage Control* section, scroll down to the and *Autofocus* section. The default parameters are shown in below picture. *Range Z = 100* will make a sweep of +/-50um with respect to the *Current Z: 4501.56*-position displayed above the *Start Autofocus* button. *Resolution Z = 10* will make the algorithm take an image in steps of 10um, which would equal 11 images with the settings displayed and find the one with the best focus.    
 
-Now we'll perform fine focusing of our sample: using Z-axis step sizes of 100 micrometers and then 10 micrometers, repeatedly press the "+" and "-" buttons until you see a sharp image in the camera preview:
+![Live-view-ImSwitch-6-autofocus](./Live-view-ImSwitch-6-autofocus.png)
 
-![ImSwitch app: Live View page: Stage Control section: focused](./imswitch-live-view-stage-control-focused.png)
+Click the button *Start Autofocus* and the algorithm will start running.
+When it is done it will display a new *Current Z* value and *State finished*.
+
+As a rule of thumb:
+- in a first step select a wider *Range Z*, e.g. 200-300um and leave the *Resolution Z* at 10.
+- in a second step select a more narrow *Range Z*, e.g. 50-100um and change the *Resolution Z* to a smaller value, e.g. 2-5um.
+
+For a more detailed guide, please, refer to [Autofocus](../../../guides/day-2/autofocus/README.md).
+
+By now the sample in your camera preview window should look something like this.
+
+![Live-view-ImSwitch-2-streamon](./Live-view-ImSwitch-2-streamon.png)
+
+## Check and adjust preview image settings
+
+
 
 ## Save your first image
 
