@@ -1,40 +1,27 @@
 ---
-sidebar_label: Stitched Scan
+sidebar_label: Stitched Scan on a slide
 sidebar_position: 20
 ---
 
-# Run a large-area (stitched) scan
+# Run a large-area (stitched) scan on a slide
 
-:::note Draft outline
-Scaffold. Replace the bullet prompts with your own text and delete this banner when done.
-:::
+A single camera frame only sees a tiny part of your sample. In this tutorial you'll define a region on one (or more) slides, let the FRAME image them *tile* by *tile*, and view the *tiles* stitched into one large overview image. One *Tile* equals one image captured at a specific position with predefined *image capture settings*.
 
-*Learning-oriented, for users.* A single camera frame only sees a tiny part of your
-sample. In this tutorial you'll define a region, let the FRAME image it tile by tile,
-and view the tiles stitched into one large overview image.
-
-## What stitching is (30-second version)
+## What stitching is
 
 - The stage moves the sample under the fixed objective in a grid of positions.
-- One frame is captured at each position; overlapping tiles are stitched together.
-- Link to the concept page: [How scanning works](../../../explanations/how-scanning-works/README.md).
+- One image or *tile* is captured at each position with the predefined *image capture settings*. Positions are partly overlapping to ensure proper stitching.
+- Overlapping *tiles* are stitched together.
 
 ## Before you start
 
-- Sample inserted and roughly in focus ([first sample](../../day-1/first-sample/README.md)).
-- Objective chosen (4x is the easiest first scan — large field, forgiving focus).
-- Illumination set.
+- On your Heidstar sample holder insert at least one sample in one of the 4 positions available.
+- Select the camera and objective you want to run your experiment with and obtain a properly illuminated and focused image in the *preview* window of the *Live view* App (see [Insert your first sample](../first-sample/README.md#insert-your-first-sample)).
+- (Recommended) Move roughly to the center of your large-area scan.
 
-## Step 1 — Define the scan region
+## Step 1 — Go to the *Wellplate* App
 
-- How to set the scan area (corners / centre + size / well selection).
-- How to set tile overlap.
 
-![](./IMAGES/scan-region-placeholder.png)
-:::note TODO image
-Screenshot of the scan/region setup panel. Notion source:
-`FRAME_DOKU_FROM_NOTION/FAT FRAME #0007 Korea - Part 5` ("First Stitching Test").
-:::
 
 ## Step 2 — Choose single-Z (fixed focus) for now
 
