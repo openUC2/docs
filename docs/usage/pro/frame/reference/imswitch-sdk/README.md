@@ -15,7 +15,7 @@ There are four supported ways to work with the system, in increasing order of in
 | 3 | **Socket.IO / streaming channels** | You need live images, position updates, or state change notifications. |
 | 4 | **Plugin SDK / own controller** | You want to add new functionality *inside* the server and have it appear automatically in the API and UI. (testing phase) |
 
-Below that sits the firmware layer ([UC2-ESP32](http://github.com/youseetoo/uc2-esp32) -> http://onlinelibrary.wiley.com/doi/full/10.1111/jmi.70147 over [USB-serial](http://github.com/openUC2/UC2-REST) or CAN ), which you normally should *not* address directly — ImSwitch owns the hardware connection.
+Below that sits the firmware layer ([UC2-ESP32](https://github.com/youseetoo/uc2-esp32) -> [onlinelibrary.wiley.com/doi/full/10.1111/jmi.70147](http://onlinelibrary.wiley.com/doi/full/10.1111/jmi.70147) over [USB-serial](https://github.com/openUC2/UC2-REST) or CAN ), which you normally should *not* address directly — ImSwitch owns the hardware connection.
 
 Nothing needs to be recompiled or patched to control the microscope from outside. If you only want to *drive* the instrument, option 1 or 2 is the recommended path. If you want to *extend* it, option 4 is the recommended path — it survives ImSwitch updates, whereas forking the core does not (this is not yet mature enough to really recommend this path). In any case, you can also get in touch with us and we can try to help you out! :)
 
@@ -59,7 +59,7 @@ The key design point: **the REST API is generated, not hand-written.** A control
  
 **Start here:** open the Swagger UI in a browser against a running microscope. It lists every endpoint available on *that* specific instrument, with parameters, types and a "Try it out" button. This is the authoritative, always-current API reference — more complete than any static document we could ship, because the endpoint set depends on which controllers the setup configuration activates.
 
-![](./IMAGES/swagger.png)
+![](./swagger.png)
 
 Two useful discovery endpoints:
 
@@ -141,7 +141,7 @@ This is the recommended route for non-Python environments — we do not maintain
 
 A thin, dependency-light wrapper around the REST API, published on PyPI.
 
-* Source: <http://github.com/openUC2/imswitchclient>
+* Source: [github.com/openUC2/imswitchclient](https://github.com/openUC2/imswitchclient)
 * Install: `pip install imswitchclient`
 
 ```python
@@ -151,16 +151,18 @@ import matplotlib.pyplot as plt
 client = imc.ImSwitchClient(host="192.168.1.50", port=8001, ishttp=True)
 
 stage = client.positionersManager.getAllDeviceNames()[0]
-pos   = client.positionersManager.getPositionerPositions()[stage]
+pos = client.positionersManager.getPositionerPositions()[stage]
 
 client.lasersManager.setLaserActive("LED", True)
 client.lasersManager.setLaserValue("LED", 512)
 
-client.positionersManager.movePositioner(stage, "X", pos["X"] + 50,
-                                         is_absolute=True, is_blocking=True)
+client.positionersManager.movePositioner(
+    stage, "X", pos["X"] + 50, is_absolute=True, is_blocking=True
+)
 
-frame = client.recordingManager.snapNumpyToFastAPI()   # returns a NumPy array
-plt.imshow(frame); plt.show()
+frame = client.recordingManager.snapNumpyToFastAPI()  # returns a NumPy array
+plt.imshow(frame)
+plt.show()
 ```
 
 The client is organised into managers (`positionersManager`, `lasersManager`,
@@ -211,19 +213,17 @@ Any method decorated with `@APIExport` in a controller becomes an HTTP endpoint 
 ```python
 from imswitch.imcommon.model import APIExport
 
-class MyController(ImConWidgetController):
 
-    @APIExport()                                   # → GET
+class MyController(ImConWidgetController):
+    @APIExport()  # → GET
     def getSomething(self, name: str = "default") -> dict:
         return {"value": 42}
 
-    @APIExport(requestType="POST")                 # → POST, JSON body
-    def doSomething(self, body: MyRequestModel):
-        ...
+    @APIExport(requestType="POST")  # → POST, JSON body
+    def doSomething(self, body: MyRequestModel): ...
 
-    @APIExport(asyncExecution=True)                # for `async def` methods
-    async def doSomethingSlow(self):
-        ...
+    @APIExport(asyncExecution=True)  # for `async def` methods
+    async def doSomethingSlow(self): ...
 ```
 
 Decorator options: `requestType` (`"GET"`/`"POST"`), `asyncExecution`, `runOnUIThread`.
@@ -242,12 +242,13 @@ A plugin SDK is in development on the `feature/pluginsystemV2` branch. It define
 ```python
 from imswitch.plugin_sdk import PluginController, APIExport, Event
 
+
 class MyPlugin(PluginController):
     sig_measurement = Event("measurement", schema={"value": "float"})
 
     @APIExport(method="POST", path="/measure")
     def measure(self):
-        cam  = self.ctx.hardware.detector("main")     # role-based, not device names
+        cam = self.ctx.hardware.detector("main")  # role-based, not device names
         stage = self.ctx.hardware.positioner("xy")
         ...
         self.sig_measurement.emit({"value": 42.0})
@@ -306,11 +307,11 @@ We pin ImSwitch versions in the Docker image, so a deployed instrument does not 
 
 | Resource | URL |
 |----------|-----|
-| ImSwitch (openUC2 fork), main branch | <http://github.com/openUC2/ImSwitch/tree/master/imswitch> |
-| Plugin system v2 branch | <http://github.com/openUC2/ImSwitch/tree/feature/pluginsystemV2> |
-| Python client SDK | <http://github.com/openUC2/imswitchclient> |
-| Client on PyPI | <http://pypi.org/project/imswitchclient/> |
+| ImSwitch (openUC2 fork), main branch | [github.com/openUC2/ImSwitch/tree/master/imswitch](https://github.com/openUC2/ImSwitch/tree/master/imswitch) |
+| Plugin system v2 branch | [github.com/openUC2/ImSwitch/tree/feature/pluginsystemV2](https://github.com/openUC2/ImSwitch/tree/feature/pluginsystemV2) |
+| Python client SDK | [github.com/openUC2/imswitchclient](https://github.com/openUC2/imswitchclient) |
+| Client on PyPI | [pypi.org/project/imswitchclient](https://pypi.org/project/imswitchclient/) |
 | Additional developer docs | `docs/` folder in the ImSwitch repository |
 | Live API reference | `http://<your-microscope>:8001/imswitch/api/docs` |
-| openUC2 project | <http://openuc2.com> |
+| openUC2 project | [openuc2.com](https://openuc2.com) |
 

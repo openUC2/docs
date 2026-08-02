@@ -37,7 +37,7 @@ To choose which of the following methods you will use for connecting to the mach
 
 1. Plug one end of an Ethernet cable into the machine's built-in Ethernet port.
    You can find it on the backside built into the RPi.
-   <img src="file:///C:/Users/ArminGrundmann/Documents/GitHub/docs/docs/usage/components/os/guides/day-1/RPi%20LAN%20Plug%20260709.jpeg" title="" alt="" width="406">
+   <img src="file:///C:/Users/ArminGrundmann/Documents/GitHub/docs/docs/usage/components/os/guides/day-1/RPi%20LAN%20Plug%20260709.jpeg" title="" alt="" width="406" />
 
 2. Plug the other end of the Ethernet cable into your computer's Ethernet port.
    
