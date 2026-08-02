@@ -111,7 +111,7 @@ You can bookmark this page in your web browser for easy access, so that you don'
 
 :::
 
-## ImSwitch (Microscope Control) - first steps
+## Open ImSwitch
 
 Now that you have the landing page open in your web browser, we're ready to open *ImSwitch*, which is the app for operating the microscopy-related functions of your FRAME machine.
 
