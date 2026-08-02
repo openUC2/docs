@@ -30,10 +30,13 @@ Plug the wall plug of the power adapter into a wall outlet.
 
 The FRAME includes a small embedded Raspberry Pi computer, which we'll refer to as the FRAME's *RPi*. It has a statistically-unique *machine name*, which is also written on a sticker on the FRAME:
 
-![machine name sticker](C:/Users/ArminGrundmann/Documents/GitHub/docs/docs/usage/pro/frame/tutorials/day-1/first-connection/machine-name-sticker.jpeg)
+![Machine-name-and-serial-number](./Machine-name-and-serial-number.jpg)
 
-In the image above, the machine name is `separate-bath-30666`.
-As you can see, the machine name is written in the format `{word}-{word}-{number}`.
+In the image above, the machine name is `long-comfort-3229` and the serial number is  `FRAME #0007` As you can see, the machine name is written in the format `{word}-{word}-{number}`.
+
+You can also see the IP address of the FRAME's *RPi* labeled on the FRAME.
+
+![IP-Address](./IP-Address.jpg)
 
 Now that you've plugged in power to your FRAME, the RPi will begin booting up.
 Throughout this process, the indicator LEDs on the RPi will report what it's doing and whether any problems have occurred (documentation in progress).
@@ -75,35 +78,35 @@ Now that your computer has a network connection to the FRAME, we're ready to acc
 Open your computer's web browser and try navigating to each of address in the following list, and in the following order, until you find the first one which works for you (which will depend on your computer's operating system and how your web browser is installed):
 
 1. [http://openuc2.local](http://openuc2.local)
-   
+
    :::info
-   
+
    `http://openuc2.local` might not work some web browsers on some computers; it depends on how the web browser and computer are configured.
-   
+
    :::
 
 2. [http://open.uc2](http://open.uc2)
-   
+
    :::info
-   
+
    The first time you enter `http://open.uc2` in your web browser, you must include the `http://`!
    Otherwise, your web browser might try to search for the URL in a search engine, instead of opening it as a web page.
-   
+
    :::
 
 3. [http://192.168.4.1](http://192.168.4.1)
 
 The resulting web page is your FRAME's *landing page*, and it will look something like this (in this case Machine name: long-comfort-3229):
 
-![](C:\Users\ArminGrundmann\Documents\GitHub\docs\docs\usage\pro\frame\tutorials\day-1\first-connection\Landing%20page%20260709.png)
+![Landing-page-260709](./Landing-page-260709.png)
 
 The landing page provides some information about your FRAME machine, and it's an easy way to access the apps running on your FRAME.
 
-You have 2 main options to go from here: to the *Microscope Control* (ImSwitch GUI) to start working with the microscope or to *Machine Adiministration* to access advanced settings. 
+You have 2 main options to go from here: to the *Microscope Control* (ImSwitch GUI) to start working with the microscope or to *Machine Adiministration* to access advanced settings.
 
 If you want to shortly checkout the *Machine Adiministration* page, it will look something like below.
 
-![](C:\Users\ArminGrundmann\Documents\GitHub\docs\docs\usage\pro\frame\tutorials\day-1\first-connection\Machine%20Administration%20page.png)
+![Machine-Administration-page](./Machine-Administration-page.png)
 
 :::tip
 
@@ -113,23 +116,23 @@ You can bookmark this page in your web browser for easy access, so that you don'
 
 ## Open ImSwitch
 
-Now that you have the landing page open in your web browser, we're ready to open *ImSwitch*, which is the app for operating the microscopy-related functions of your FRAME machine.
+Now that you have the landing page open in your web browser, we're ready to open *ImSwitch*, which is the App for operating the microscopy-related functions of your FRAME machine.
 
 On the landing page, click on the *Microscope Control* link. ImSwitch will open in a new tab. If you access ImSwitch an the FRAMEs RPi for the first time with your device you will be guided through the main features in a quick tour.
 
-![](C:\Users\ArminGrundmann\Documents\GitHub\docs\docs\usage\pro\frame\tutorials\day-1\first-connection\quick%20tour%20260709.png) 
+![quick-tour-260709](./quick-tour-260709.png)
 
-IMPORTANT: ImSwitch allows for many user specific settings AND stores most of them in your Browser's cache. When you switch browsers or devices these settings will not be available on your other device or in your other browser. 
+`IMPORTANT:` ImSwitch allows for many user specific settings AND stores most of them in your Browser's cache. When you switch browsers or devices these settings will not be available on your other device or in your other browser.
 
-Once you are through with the quick tour you will be recommended to follow the homing procedure.  If you click *OPEN FRAME HOMING* and the *START HOMING* X/Y/Z-Axes and Objective-Axis (A) will home in a predefined order. 
+Once you are through with the quick tour you will be recommended to follow the homing procedure.  If you click *OPEN FRAME HOMING* and the *START HOMING* X/Y/Z-Axes and Objective-Axis (A) will home in a predefined order.
 
-![](C:\Users\ArminGrundmann\Documents\GitHub\docs\docs\usage\pro\frame\tutorials\day-1\first-connection\homing%20on%20boot%20new%20260709.png)
+![homing-on-boot-new-260709](./homing-on-boot-new-260709.png)
 
-![](C:\Users\ArminGrundmann\Documents\GitHub\docs\docs\usage\pro\frame\tutorials\day-1\first-connection\homing%20on%20boot%20new%202%20260709.png)
+![homing-on-boot-new2-260709](./homing-on-boot-new2-260709.png)
 
-We are finally there, ImSwitch will open on defualt with the *Live View* app. 
+We are finally there, ImSwitch will open on default with the *Live View* App. This will look something similar to this.
 
-ADD PICTURE
+![Live-view-imswitch](./Live-view-imswitch.png)
 
 ## What's next
 

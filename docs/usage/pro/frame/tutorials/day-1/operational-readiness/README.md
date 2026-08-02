@@ -19,13 +19,13 @@ Here, we will find the name of the correct hardware configuration file for your 
 First, [open ImSwitch](../first-connection/README.md#open-imswitch).
 Click on the settings icon in the upper-right corner of the page in order to open the settings menu, and click on the "ImSwitch Backend Settings" menu item:
 
-![ImSwitch app: settings menu: ImSwitch Backend Settings](./imswitch-settings-menu.png)
+![ImSwitch app: settings menu: ImSwitch Backend Settings](./ImSwitch-Backend-Settings.png)
 
 This will open a settings page which shows the name of the currently-selected hardware configuration file:
 
-![ImSwitch app: Backend Settings page: current configuration](./imswitch-settings-backend-configuration.png)
+![imswitch-settings-backend-JSON-config](./imswitch-settings-backend-JSON-config.png)
 
-In the screenshot above, you can see that the current configuration is called `FRAME2b.json`.
+In the screenshot above, you can see that the current configuration is called `FRAME0007-long-comfort-3229`. The syntax of the machine specific hardware configuration file consists the serial number `FRAME0007` and the the RPI machine name `long-comfort-3229`.
 
 The name of the current hardware configuration file should match what openUC2 customer support communicated to you when the FRAME machine was delivered to you, so you shouldn't need to change anything here.
 
@@ -35,34 +35,54 @@ If you need to change the hardware configuration file, please refer to our [day-
 
 :::
 
-## Perform acceptance test procedure
+## Homing
 
-In order to ensure that the FRAME's hardware wasn't damaged in the process of being shipped to you, we can perform an acceptance test procedure in ImSwitch to check for certain kinds of hardware problems.
+To home, please, refer to the following instructions on [Homing](../../../guides/day-2/homing/README.md).
 
-To open ImSwitch's Acceptance Testing page, click on the "App Manager" entry in ImSwitch's navigation sidebar:
+## View Pixel Calibration
 
-![ImSwitch app: navigation menu: App Manager](./imswitch-nav-menu-app-manager.png)
+The specific hardware configuration of your machine consists of cameras (e.g. a WideField camera in the Brightfield optical module) and 1-2 objectives. For each given optical configuration (e.g. WideField Camera + Objective in Position 1) a Pixel Size calibration was performed as part of openUC2 factory tests.
 
-On the App Manager page, click on the search box:
+To see the current calibration you have two options.
+*Option 1:* In the *live view* App on the right handside scroll down to where objectives can be switched. For the active objective all parameters including pixel calibration are displayed. See an example for 2 objectives below.
 
-![ImSwitch app: App Manager page: search box](./imswitch-app-manager-search.png)
+![Objective-Pos1-Live-View](./Objective-Pos1-Live-View.png)
 
-Type "test" to filter the apps, and then click the play button on the Acceptance Test app:
+![Objective-Pos2-Live-View](./Objective-Pos2-Live-View.png)
 
-![ImSwitch app: App Manager page: Acceptance Test entry: play button](./imswitch-app-manager-acceptance-test-play.png)
+*Option 2:* In the App sidebar menu on the right go to the App *FRAME Settings* (how to enable this app see ). Choose the tab *Objective Controller*. The settings for both objectives including Pixel Size are displayed at the top.
 
-This will open the Acceptance Test page:
+![Im-Switch-App-Sidebar](./Im-Switch-App-Sidebar.png)
 
-![ImSwitch app: Acceptance Test page](./imswitch-acceptance-test.png)
+![Objective-Controller-App-settings](./Objective-Controller-App-settings.png)
 
-For each action (e.g. "Home X Axis") listed in the Acceptance Test page, press the button to perform that action and then answer the question about the result of that action (e.g. "Did the stage successfully home?") by pressing the corresponding button (e.g. "Yes" or "No").
+For information on how to perform and verify pixel size calibration on your machine, please, go to [Pixel Calibration](../../../guides/day-2/calibrate-pixel-size/README.md)!
 
-At the end of the test sequence, a test report will be generated summarizing the results of the acceptance test procedure.
-If any test failed on a FRAME which you purchased from openUC2, please download the test report and send it to openUC2 customer support at [support@openuc2.com](mailto:support@openuc2.com) so that we can identify and fix any damage to your machine which occurred while it was in the process of being shipped to you.
+## View stored Objective Information and Calibration
 
-![ImSwitch app: Acceptance Test page: test report](./imswitch-acceptance-test-report.png)
+In the App sidebar menu on the left go to the App *FRAME Settings*. Choose the tab *Objective Controller*.
+At the very top you will see information for both objectives and also which is the *current objective*.
 
-If all tests passed (like in the screenshot above), then your FRAME is ready for you to use it as a microscope.
+![Objective-controller-Pos1](./Objective-controller-Pos1.png)
+
+Now scroll to the bottom (ignore the rest). You will see stored calibration values for A-Axis and Z-Axis for both objective positions. Z determines the focus. The A-Axis value moves the objective holder and thus both objectives into correct position.
+
+ ![objective-calibration-values](./objective-calibration-values.png)
+
+ For information on how to perform objective calibration on your machine, please, refer to [Objective Calibration](../../../guides/day-2/calibrate-objective/README.md)!
+
+## Axis Backlash - good to know
+
+When you move e.g. 100µm in the positive direction of the axis and then move 100µm back in the negative direction there will be a small offset (a few µm), which is called backlash. It is a result of the tolerances of all the mechanical parts of this axis.
+
+The Backlash should be well below 10µm for each axis.
+
+For information on how to (re)check axis backlash on your machine, please, go to [Axis Backlash](../../../guides/day-2/axis-backlash/README.md).
+
+
+## View Stage Calibration
+
+To view and verify stage calibration, please, refer to [Calibrate stage](../../../guides/day-2/calibrate-stage/README.md).
 
 ## What's next
 
