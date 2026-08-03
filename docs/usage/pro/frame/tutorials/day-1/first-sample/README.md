@@ -34,7 +34,7 @@ As we can see above, first one shorter edge of the microscope slide is placed ag
 Now you can let go of the spring-loaded edge:
 ![slide holder: let go of spring-loaded edge](./slide-holder-insert-let-go.jpg)
 
-Now that we've inserted your first sample on a microscope slide, we can continue to the tutorial section to [position your sample for imaging](#position-and-properly-view-your-first-sample).
+Now that we've inserted your first sample on a microscope slide, we can continue to the tutorial section to [Open the ImSwitch Live View App](#open-the-imswitch-live-view-app).
 
 ### Inserting a well plate
 
@@ -44,7 +44,7 @@ Take a well plate with a sample and place its A1 corner into the corner with the
 | ------------------------------ | --------------------------- |
 | ![well-plate holder: insert into corner with button](./well-plate-holder-insert-button.jpg) | ![well-plate holder: insert into opposite corner](./well-plate-holder-insert-opposite-corner.jpg) |
 
-Now that we've inserted your first sample on a well plate, we can continue to the tutorial section to [position your sample for imaging](#position-and-properly-view-your-first-sample).
+Now that we've inserted your first sample on a well plate, we can continue to the tutorial section to [Open the ImSwitch Live View App](#open-the-imswitch-live-view-app).
 
 ## Open the ImSwitch Live View App
 
@@ -56,7 +56,7 @@ Once you open the Live View page, it will look something like this:
 
 ![Live-view-ImSwitch-1-Streamoff](./Live-view-ImSwitch-1-Streamoff.png)
 
-This preview stream was not yet started, so the indicator in the upper right corner is grey and says "Paused". To start the stream click on the green *Start* button below the image.
+The preview stream was not yet started, so the indicator in the upper right corner is grey and says "Paused". To start the stream click on the green *Start* button below the image.
 An image will appear and the  indicator changes to red saying "LIVE - 8.0 FPS" which indicates that the preview is a live preview with a frame rate of 8 FPS (Please, note, that in the picture below illumination is already turned on and the sample is in focus).
 
 ![Live-view-ImSwitch-2-streamon](./Live-view-ImSwitch-2-streamon.png)

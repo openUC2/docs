@@ -50,7 +50,7 @@ To see the current calibration you have two options.
 
 ![Objective-Pos2-Live-View](./Objective-Pos2-Live-View.png)
 
-*Option 2:* In the App sidebar menu on the right go to the App *FRAME Settings* (how to enable this app see ). Choose the tab *Objective Controller*. The settings for both objectives including Pixel Size are displayed at the top.
+*Option 2:* In the App navigation sidebar on the left go to the App *FRAME Settings* (how to enable this app see ). Choose the tab *Objective Controller*. The settings for both objectives including Pixel Size are displayed at the top.
 
 ![Im-Switch-App-Sidebar](./Im-Switch-App-Sidebar.png)
 

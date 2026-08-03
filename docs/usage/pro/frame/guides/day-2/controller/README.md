@@ -1,5 +1,5 @@
 ---
-sidebar_label: Game controller
+sidebar_label: Controller
 sidebar_position: 60
 ---
 
