@@ -5,7 +5,7 @@ sidebar_position: 20
 
 # Run a large-area (stitched) scan on a slide
 
-A single camera frame only sees a tiny part of your sample. In this tutorial you'll define a region on one slide, let the FRAME image them *tile* by *tile*, and view the *tiles* stitched into one large overview image. One *tile* equals one image captured at a specific position with predefined *image capture settings*.
+A single camera frame only sees a tiny part of your sample. In this tutorial you'll define a region on one slide, let the FRAME image them *tile* by *tile*, and view the *tiles* stitched into one large overview image. One *tile* equals one image captured at a specific position with predefined *image capture settings*. You can use  what we call the *Experiment Controller* of the *Wellplate App* to define, save and run your experiment with all those predefined settings.
 
 ## What stitching is
 
@@ -35,7 +35,7 @@ In the left column
 `Note` If no layout is selected the outline will just be blank (white).
 - You see some further option at the bottom in this column such as *Reset View* or *Single* or *Well* and many more, which we will come to explain later.
 
-In the right column
+In the right column - the *Experiment Controller* -
 - there is a small symbol in the upper right hand corner which allows you to open a popup window with a *camera live view*. When you hover over it, this is what you will see.
 
   ![Wellplate-App-preview-button](./Wellplate-App-preview-button.png)
@@ -45,7 +45,7 @@ In the right column
   ![Wellplate-App-preview-window](./Wellplate-App-preview-window.png)
 
 - Below is a row with a green *Start* button. We will come back to this row at the very end, when everything is ready to start the scan.
-- Below that are a number of tabs, which all contain settings for your scan. We will go step by step through them in a minute.
+- Below that are a number of tabs in a given order, which all contain settings for your scan. We will go step by step through them in a minute.
 - At the very bottom indicates a summary of your settings. Since we have not done any settings yet, it will fill up soon.
   -  *Positions*: indicates how the number of positions selected on which an image will be taken.
   - *Channels*: indicates the number of available channels.
@@ -53,7 +53,7 @@ In the right column
   - *Timepoints*: is either one or a number larger than one, if you have selected to (re)capture at certain time intervals.
   - *Est. Duration* and *Est. Size*  give a first order approximation of the time your scan will need on this machine and the total storage needed for all files (currently all Zero). "0 images" shows that currently zero images will be taken, here the total number of images in your experiment will be calculated.   
 
-Now, let us start!
+Now, let us start! We recommend to go through the tabs of the *experiment controller* in the given order from left to right.
 
 ## Step 2 — Choose your area or positions
 
@@ -74,19 +74,19 @@ You can also use the *live view* popup window in the *wellplate* app to move to 
 
 You can add as many points to the list as you like.
 
-To review your selection you can either Zoom in into the slide and you will see the point(s) selected indicated (in this case red square). If you click on it, the stage will move you there. You can also delete single entries by pressing the *recycle bin* symbol.
+To review your selection you can either Zoom in into the slide view and you will see the point(s) selected indicated (in this case red square). If you click on it, the stage will move to this position.
 
 ![Wellplate-App-add-current3](./Wellplate-App-add-current3.png)
 
-Or use the up-and-down arrow to the right of the coordinates from the point.
+You can also use the up-and-down arrow to the right of the displayed coordinates to move to the position. YOu can delete the entry by pressing the *Recycle Bin* symbol.
 
 ![Wellplate-App-movetopoint](./Wellplate-App-movetopoint.png)
 
 ### Add an area
 
-If you want to add an area make sure the button *Area* in the bottom row of the right column is selected. It is helpful to add a single point roughly at the center of your area first. This point will be displayed in the *Plate Map* (see [Add Single Points](#add-single-points))
+If you want to add an area make sure the button *Area* in the bottom row of the left column is selected. It is helpful to add a single point roughly at the center of your area first. This point will be displayed in the *Plate Map* (see [Add Single Points](#add-single-points)). You can delete it later.
 
-Now Zoom in the *Plate Map* and use the cursor to span an area of interest. Click with the cursor in the upper left corner of your area of interest and draw a rectangle of the size of your desired area. The software will automatically display a grid of positions.
+Now zoom in the *Plate Map* and use the cursor to span an area of interest around the single point you have marked before. Click with the cursor in the upper left corner of your area of interest and draw a rectangle of the size of your desired area. The software will automatically display a grid of positions.
 
 ![Wellplate-App-area-select1](./Wellplate-App-area-select1.png)
 
@@ -102,17 +102,31 @@ For the purpose of testing here is an example with just a 3x3 array of positions
 
 ![Wellplate-App-area-select4](./Wellplate-App-area-select4.png)
 
-## Step 3 — Run the scan
+## Step 3 — Add Channels
 
-- Start the scan; what the progress display shows; roughly how long 4x takes.
+The *experiment controller* allows you to add one ore more *channels* to your experiment. A channel equals one of your available illumination sources - LED, laser and others. What sources are available to you depends on your specific hardware configuration. *LED* for brightfield imaging is in most cases at minimum available.
 
-![](./IMAGES/scan-running-placeholder.png)
-:::note TODO image
-Scan-in-progress + resulting stitched overview. Notion source:
-`FAT FRAME #0007 Korea - Part 6` ("Stitching Tests 1-5") and `Part 7`/`Part 8`.
-:::
+Move to the second tab *channels*. In the below picture 5 *channels* = illumination sources are available for this specific machine. None of them is activated, which you can see in the summary in the tab itself (0/5 channels).
 
-## Step 4 — View and save the stitched result
+![Wellplate-App-channels1](./Wellplate-App-channels1.png)
+
+On default all *channels* are *off*. To activate a channel toggle the greyed toggle bar on the right to *on*. It will turn green. You can also see specific illumination settings for this channel in the dropdown menu.
+
+![Wellplate-App-channels2](./Wellplate-App-channels2.png)
+
+To adjust the illumination settings you have 2 options:
+- (recommended): if you have not already done so adjust all relevant settings in the *Live view* app. Then press the purple *read and apply current exp(gain/LED settings* and all current settings will be saved for this channel and used in your experiment.
+- Adjust the settings manually.
+
+If you select more than one channel the *experiment controller* will run a sequence of all activated *channels* on all positions with the settings defined.
+
+## Step 4 — Choose or verify your objective
+
+If you move on to the next tab *objectives* your active objective will be displayed and usually that is the one you work with.
+`Important` If you switch objectives here, please, verify again, that the illumination settings under *channels* match your choosen objective. 
+
+![Wellplate-App-objective](./Wellplate-App-objective.png)
+
 
 - Where the stitched image appears; how to save/export it (OME-TIFF).
 
