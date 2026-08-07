@@ -39,7 +39,7 @@ jobs:
 
       # Node is required for npm
       - name: Set up Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: "20" # FIXME: this is very old and out-of-date. Bump the version!
 

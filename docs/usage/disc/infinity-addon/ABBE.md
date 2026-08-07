@@ -36,6 +36,8 @@ You can access this model through the [openuc2 configurator](https://youseetoo.g
 ![](./IMAGES/abbe_experiment.png)
 
 
+![](./IMAGES/abbesetup_new.png)
+
 ### Optical principle in a compact form
 
 #### 1) Infinity-corrected imaging

@@ -20,6 +20,23 @@ These pages are written for **high-school students and their teachers**. You don
 ![](./IMAGES/heroholo.jpg)
 **Show:** As part of the holobox you can build a Mach Zehnder Interferometer, where the camera acquires fringes.
 
+
+
+
+```
+Universität Münster
+Mathematisch-Naturwissenschaftliche Fakultät
+Institut der Didaktik für Physik
+Masterarbeit zum Thema:
+Entwicklung von Unterrichtsmaterialien für
+Experimente zur digitalen Inline-Holografie.
+Development of Teaching Materials for Experiments in Digital Inline Holography.
+Vorgelegt von:
+Clara Hofmann
+Hermannstraße 41, 48151 Münster
+clara.hofmann@uni-muenster.de
+```
+
 ## Where do I start?
 
 This documentation is following Diataxis (https://diataxis.fr/) and is  split into four kinds of page. Pick the one that matches what you want **right now**:
