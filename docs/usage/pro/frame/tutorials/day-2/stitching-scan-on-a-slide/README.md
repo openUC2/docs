@@ -57,7 +57,7 @@ Now, let us start! We recommend to go through the tabs of the *experiment contro
 
 ## Step 2 — Choose your area or positions
 
-The first tab in the right column is the *Positions* tab.
+The first tab in the *experiment controller* (right column) is the *Positions* tab.
 Here are some of the main options to add positions:
 
 ### Add single points
@@ -104,9 +104,9 @@ For the purpose of testing here is an example with just a 3x3 array of positions
 
 ## Step 3 — Add Channels
 
-The *experiment controller* allows you to add one ore more *channels* to your experiment. A channel equals one of your available illumination sources - LED, laser and others. What sources are available to you depends on your specific hardware configuration. *LED* for brightfield imaging is in most cases at minimum available.
+The *experiment controller* allows you to add one ore more *channels* to your experiment. A channel equals one of your available illumination sources - LED, laser and others. What sources are available to you depends on your specific hardware configuration. *LED* for brightfield imaging is in most cases available.
 
-Move to the second tab *channels*. In the below picture 5 *channels* = illumination sources are available for this specific machine. None of them is activated, which you can see in the summary in the tab itself (0/5 channels).
+Move to the second tab *channels*. In the below picture 5 *channels* = illumination sources are available for this specific machine. None of them is active, which you can see in the summary in the tab itself (0/5 channels).
 
 ![Wellplate-App-channels1](./Wellplate-App-channels1.png)
 
@@ -115,7 +115,7 @@ On default all *channels* are *off*. To activate a channel toggle the greyed tog
 ![Wellplate-App-channels2](./Wellplate-App-channels2.png)
 
 To adjust the illumination settings you have 2 options:
-- (recommended): if you have not already done so adjust all relevant settings in the *Live view* app. Then press the purple *read and apply current exp(gain/LED settings* and all current settings will be saved for this channel and used in your experiment.
+- (recommended): if you have not already done so adjust all relevant settings in the *Live view* app. Then press the purple button *read and apply current exp(gain/LED settings* and all current settings will be saved for this channel and used in your experiment.
 - Adjust the settings manually.
 
 If you select more than one channel the *experiment controller* will run a sequence of all activated *channels* on all positions with the settings defined.
@@ -123,23 +123,82 @@ If you select more than one channel the *experiment controller* will run a seque
 ## Step 4 — Choose or verify your objective
 
 If you move on to the next tab *objectives* your active objective will be displayed and usually that is the one you work with.
-`Important` If you switch objectives here, please, verify again, that the illumination settings under *channels* match your choosen objective. 
+`Important` If you switch objectives here, please, verify again, that the illumination settings under *channels* match your chosen objective.
 
 ![Wellplate-App-objective](./Wellplate-App-objective.png)
 
+## Step 5 — Choose focus and Z-Stack parameters
 
-- Where the stitched image appears; how to save/export it (OME-TIFF).
+The next tab *Z/Focus* allows you to choose focus options and how many different Z-planes you want to image at each position of your experiment. These are your options:
 
-## What "good" looks like vs. artefacts
+![Wellplate-App-Z-Focus-Single](./Wellplate-App-Z-Focus-Single.png)
 
-- Seams / brightness steps between tiles → illumination flatness (diffusor), overlap.
-- Notion source for the shadow/diffusor investigation: `FAT FRAME #0007 Korea - part 7`
-  ("Imaging test to find bug with shadow", "w/o diffusor").
+Let us go through them one by one:
+- *Single Z* takes images only in one Z-plane at each position defined in the positions list and at the Z-value defined in the position list.
+`Important` No autofocus will be performed. It is assumed that your sample is well focussed at the Z-value defined in the position list.
 
-## Try this
+- *Autofocus* takes images only in one Z-plane at each position defined in the positions list and runs the Autofocus with the parameters defined at EACH position.
+You can choose between software and hardware autofocus (if the latter is available in your hardware configuration). `Recommended` For software autofocus choose software method *Z-sweep (Scan)* and Illumination channel *LED*.
+`Important` This increases experiment time significantly.
 
-- Increase tile count / area and compare time and file size.
-- Switch to 20x and notice the smaller field and tighter focus tolerance.
+![Wellplate-App-Z-Focus-Autofocus](./Wellplate-App-Z-Focus-Autofocus.png)
+
+
+- *Z-Stack* takes images in several Z-plane at each position defined in the positions list. Use the settings menu to define the Z-planes.
+`Important` No autofocus will be performed. It is assumed that your sample is well focussed at the Z-value defined in the position list.
+
+- *Z-Stack + Autofocus* takes images in several Z-plane at each position defined in the positions list AND runs the Autofocus with the parameters defined once at the start of each Z-stack.
+`Important` This increases experiment time significantly.
+
+For more advanced settings go to the dropdown menu *Advanced Settings* at the bottom.
+
+## Step 5 — Define a focal plane
+
+The next tab *Focus map* allows you to define a focal plane. This is helfpul if you want to perform a larger area scan and your sample  is tilted. The algorithm will let you define the best focal plane for your scan area and apply this during the scan.
+
+pictures and settings tbd
+
+## Step 6 — Repeat your experiment in certain time intervals
+
+The next tab *Time* allows you to repeat your experiment in certain time intervals.
+
+pictures and settings tbd
+
+## Step 6 — Parameters for stitching your scan
+
+The next tab *Tile* allows you to define settings on how your scan shall be performed, so that stitching the individual images of your scan gives optimum results.
+
+First you can define the overlap of the images - 20% is recommended for good stitching results.
+
+Next you can choose your scan pattern.
+
+![Wellplate-App-Tiling](./Wellplate-App-Tiling.png)
+
+In the dropdown menu *Stitching* you can choose between
+- *None*: This will only save your individual files and you can perform stitching with the software of your choice.
+- *Full Stitch*: will generate a stitched TIFF.
+- *Ashlar Stitch*: will generate a stitched TIFF using Ashlar. The dropdown menu shows you teh default Ashlar Stitching parameters, which you can modify.
+`Important` This will significantly increase your experiment time.
+
+![Wellplate-App-Tiling2](./Wellplate-App-Tiling2.png)
+
+![Wellplate-App-Tiling-Ashlar-Stitch](./Wellplate-App-Tiling-Ashlar-Stitch.png)
+
+## Step 7 — Output File Parameters
+
+The last  tab *Output* allows you to define the type(s) of output file formats generated and saved. If active (toggle slide bar to the right so that it turns from grey to blue) a file with the described format will be saved. All selected file formats will be generated.
+
+![Wellplate-App-Output](./Wellplate-App-Output.png)
+
+At the bottom you will find the *Ashlar Stitching* toggled on or off depending on your choice in the tab *Tile*.  
+
+![Wellplate-App-Output2](./Wellplate-App-Output2.png)
+
+## Step 8 — Run your scan
+
+You are all set now and you can start your scan/experiment/run by pressing the green *Start* button in top row of your experiment controller.
+
+![Wellplate-App-Run-Stitch](./Wellplate-App-Run-Stitch.png)
 
 ## Related
 
