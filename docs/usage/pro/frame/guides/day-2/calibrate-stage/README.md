@@ -15,7 +15,6 @@ Stage calibration is recommended if you notice, that when navigating to specific
 
 ## Calibration Workflow
 
-Choose a sample slide for calibr
 Put the *openUC2 Pinhole Slide* in Slot 1 of the 4x sample holder. For stage calibration the pinhole *0.6/0.3mm* in the center of the slide will be used. It is designwise in the center of the slide, so it does not matter whether the sample is rotated or flipped. The distance from this middle pinhole to the edges of the probe is known and stored as reference value in *Imswitch*.
 
 ![openuc2-pinhole-slide](./openuc2-pinhole-slide.jpeg)

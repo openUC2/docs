@@ -1,35 +1,42 @@
 ---
-sidebar_label: Game controller
+sidebar_label: Controller
 sidebar_position: 60
 ---
 
 # Using the game controller to move the stage
 
-:::note Draft outline
-Scaffold. Replace the bullet prompts with your own text and delete this banner when done.
-:::
+This documentation guides you through specifics on "How to pair your controller with your FRAME?" and "How to use the controller?".
 
-*How-to, for operators.* Pair and use a PS4/Bluetooth controller to jog the stage.
+## Gamepad Concept
+
+For a description of all buttons and joysticks see the picture below.
+
+![controller-gamepad-description](./controller-gamepad-description.jpeg)  
 
 ## Pair the controller
 
-- Put the controller in pairing mode; connect via Bluetooth.
+First, make sure that the controller is sufficiently charged. To charge it use the USB3 input and the included cable.
 
-![Bluetooth controller pairing](./IMAGES/bluetooth-pairing.png)
-*Pairing via ImSwitch → Hardware Settings → System Update → "Bluetooth pairing"
-(from FAT #0007 Part 2).*
+![Controller-charging](./Controller-charging.jpeg)  
 
-:::note TODO
-Reused from Notion `FAT FRAME #0007 Korea - Part 2`. More pairing screenshots
-(`grafik 1..25.png`) are in that folder if you want a step sequence.
-:::
+Put the controller in pairing mode by first pressing and holding the *Share/Turbo* button and then pressing the *home* button until the light bar starts blinking.
 
-## Control mapping
+![Bluetooth controller pairing](./controller-bluetooth-pairing.png)
 
-- Which sticks/buttons move X/Y/Z, change speed, trigger capture.
-- Note the axis-direction convention.
+In ImSwitch go to *settings* and select *Updates* from the dropdown menu. This brings you to the *ImSwitch UI - SystemUpate* page.
 
-:::note TODO
-Notion source: `FAT FRAME #0007 Korea - part 7`/`Part 8` ("PS4 Controller direction").
-Reference: [coordinates and axes](../../../reference/coordinates-and-axes/README.md).
-:::
+![ImSwitch-settings-bluetooth-pairing](./ImSwitch-settings-bluetooth-pairing.png)
+
+Toggle the button *Enable UC2 hardware control* to on. The button *Bluetooth Pairing* becomes now available (blue). Click the button and pairing starts.
+
+![ImSwitch-settings-bluetooth-pairing2](./ImSwitch-settings-bluetooth-pairing2.png)
+
+After succesful pairing the light bar of the *game controller* stops blinking and looks like in the below picture.
+
+![controller-paired](./controller-paired.jpeg)
+
+## Use the controller
+
+Use the joystick R3 to move X and Y axis.
+Use the joystick R4 to move coarse Z.
+Use the L2 and R2 button to move fine Z.

@@ -34,7 +34,7 @@ As we can see above, first one shorter edge of the microscope slide is placed ag
 Now you can let go of the spring-loaded edge:
 ![slide holder: let go of spring-loaded edge](./slide-holder-insert-let-go.jpg)
 
-Now that we've inserted your first sample on a microscope slide, we can continue to the tutorial section to [position your sample for imaging](#position-and-properly-view-your-first-sample).
+Now that we've inserted your first sample on a microscope slide, we can continue to the tutorial section to [Open the ImSwitch Live View App](#open-the-imswitch-live-view-app).
 
 ### Inserting a well plate
 
@@ -44,7 +44,7 @@ Take a well plate with a sample and place its A1 corner into the corner with the
 | ------------------------------ | --------------------------- |
 | ![well-plate holder: insert into corner with button](./well-plate-holder-insert-button.jpg) | ![well-plate holder: insert into opposite corner](./well-plate-holder-insert-opposite-corner.jpg) |
 
-Now that we've inserted your first sample on a well plate, we can continue to the tutorial section to [position your sample for imaging](#position-and-properly-view-your-first-sample).
+Now that we've inserted your first sample on a well plate, we can continue to the tutorial section to [Open the ImSwitch Live View App](#open-the-imswitch-live-view-app).
 
 ## Open the ImSwitch Live View App
 
@@ -56,7 +56,7 @@ Once you open the Live View page, it will look something like this:
 
 ![Live-view-ImSwitch-1-Streamoff](./Live-view-ImSwitch-1-Streamoff.png)
 
-This preview stream was not yet started, so the indicator in the upper right corner is grey and says "Paused)". To start the stream click on the green *Start* button below the image.
+The preview stream was not yet started, so the indicator in the upper right corner is grey and says "Paused". To start the stream click on the green *Start* button below the image.
 An image will appear and the  indicator changes to red saying "LIVE - 8.0 FPS" which indicates that the preview is a live preview with a frame rate of 8 FPS (Please, note, that in the picture below illumination is already turned on and the sample is in focus).
 
 ![Live-view-ImSwitch-2-streamon](./Live-view-ImSwitch-2-streamon.png)
@@ -76,7 +76,7 @@ Now we'll adjust all necessary parameters to position and properly view your sam
 ### Turn on illumination
 
 First, we'll need to illuminate the sample.
-In the right column of the *Live View* App, which has the *Stage Control* and *Autofocus* sections, scroll down to the "Illumination" section. Depending on your customer specific configuration you will see all illumination sources available to you - *LED* is always available. On default all illumination sources are switched off - to switch the *LED* on toggle the button on the right to *On*. Then set the LED Power by either sliding the scale or type in a value between 0 and 1023 to the right of the sliding scale.
+In the right column of the *Live View* App, which has the *Stage Control* and *Autofocus* sections, scroll down to the "Illumination" section. Depending on your customer specific configuration you will see all illumination sources available to you - *LED* is always available. On default all illumination sources are switched off - to switch the *LED* on toggle the button on the right to *On*. Then set the LED Power by either sliding the scale bar or type in a value between 0 and 1023 to the right of the sliding scale.
 
 ![Live-View-ImSwitch-4-LEDonly](./Live-View-ImSwitch-4-LEDonly.png)
 
@@ -156,13 +156,13 @@ For more information, please refer to the [Preview Image Settings](../../../guid
 
 ## Save Streaming Presets
 
-Now that you have done all the work to find the best parameters for an optimum *live view image* with the active camera and objective, we recommend saving all these parameters as a *Stream Preset*. This allows you to (re)load these settings at any point in time, e.g. after switching cameras or objectives which typically need other settings.
+Now that you have done all the work to find the best parameters for an optimum *live view image* with the active camera and objective, we recommend saving all these parameters as a *Stream Preset*. This allows you to (re)load these settings at any point in time, e.g. after switching cameras or objectives which typically needs other settings.
 
 You can find the *Stream Presets* section in the main column of the *Live View* App underneath the preview window. If you have not yet saved any preset it will look like the picture below.    
 
 ![Stream-Presets](./Stream-Presets.png)  
 
-Press *Save Current* and a pop-up window opens. It will show you all current parameters saved in this particular *Stream Preset*, asks you to enter a *Preset name* and gives you some Checkbox options on what or what not to include in saved parameter set (on default all boxes are ticked).
+Press *Save Current* and a pop-up window opens. It will show you all current parameters saved in this particular *Stream Preset*, asks you to enter a *Preset name* and gives you some Checkbox options on what or what not to include in the saved parameter set (on default all boxes are ticked).
 
 ![Stream-presets-popup](./Stream-presets-popup.png)
 
@@ -170,7 +170,7 @@ Press *Save* and the *Stream Preset* section will now show that there is 1 saved
 
 ![Stream-Presets-saved](./Stream-Presets-saved.png)
 
-`Important`These settings are stored in your browser´s cache. If you switch browsers or computers they will not be available anymore (redo).  
+`Important`These settings are stored in your browser´s cache. If you switch browsers or computers they will not be available anymore (You will then need to redo the procedure).  
 
 ## Save and view your first image
 
@@ -178,8 +178,8 @@ To save your first image of your sample, go to the "Capture" panel below the cam
 
 ![Capture-Section](./Capture-Section.png)
 
-Enter a brief name for the image in the *Description* textbox, select your preferred file format (default TIFF) and press
-- *Snap*: this stores the image on the SD card of the machines RPI. You can access it by either clicking *Go to folder* or switch to the *File Manager* App located in the ImSwitch Navigation bar on the left. Either way you will see something like in the picture below. To see the recorded image go to the folder *Recordings* and the subfolder with the current date and you will find your image. Double click on the image file and you will get a preview within ImSwitch.
+Enter a brief name for the image in the *Description* textbox, select your preferred file format (default TIFF) and press either:
+- *Snap*: this stores the image on the SD card of the machines RPI. You can access it by either clicking *Go to folder* or switch to the *File Manager* App located in the ImSwitch Navigation sidebar. Either way you will see something like in the picture below. To see the recorded image go to the folder *Recordings* and the subfolder with the current date and you will find your image. Double click on the image file and you will get a preview within ImSwitch.
 
 ![File-manager](./File-manager.png)
 
