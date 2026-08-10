@@ -16,7 +16,7 @@ A single camera frame only sees a tiny part of your sample. In this tutorial you
 ## Before you start
 
 - On your Heidstar sample holder insert at least one sample in one of the 4 positions available.
-- Select the camera and objective you want to run your experiment with and obtain a properly illuminated and focused image in the *preview* window of the *Live view* App (see [Insert your first sample](../first-sample/README.md#insert-your-first-sample)).
+- Select the camera and objective you want to run your experiment with and obtain a properly illuminated and focused image in the *preview* window of the *Live view* App (see [Insert your first sample](../../day-1/first-sample/README.md#insert-your-first-sample)).
 - (Recommended) Move roughly to the center of your large-area scan.
 
 ## Step 1 — Go to the *Wellplate* App

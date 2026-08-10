@@ -21,7 +21,7 @@ First, make sure that the controller is sufficiently charged. To charge it use t
 
 Put the controller in pairing mode by first pressing and holding the *Share/Turbo* button and then pressing the *home* button until the light bar starts blinking.
 
-![Bluetooth controller pairing](./bluetooth-pairing.png)
+![Bluetooth controller pairing](./controller-bluetooth-pairing.png)
 
 In ImSwitch go to *settings* and select *Updates* from the dropdown menu. This brings you to the *ImSwitch UI - SystemUpate* page.
 
