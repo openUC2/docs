@@ -1,9 +1,8 @@
 # From an optical design to openUC2 cubes: a short tutorial
 
-This is an example how you can go from an arbitrary optical sketch/design/layout into something cube-based. We have decided to use the open-source OpenRAMAN spectrometer since this is not strictly 50mm/rectangular design to demonstrate that the cubes can also deal with this. 
+This is an example how you can go from an arbitrary optical sketch/design/layout into something cube-based. We have decided to use the open-source OpenRAMAN spectrometer since this is not strictly 50mm/rectangular design to demonstrate that the cubes can also deal with this.
 
-How to take an optical design that exists as a Zemax or Optiland file and build it in the openUC2 cube system. The worked example is the OpenRAMAN spectrometer (<https://docs.open-raman.org>,
-Luc Boussemaere, CC BY‑SA 4.0) on the quantum‑kit base plate. Every number below is produced by the scripts in this repository (https://github.com/openUC2/openuc2-openraman).
+How to take an optical design that exists as a Zemax or Optiland file and build it in the openUC2 cube system. The worked example is the OpenRAMAN spectrometer (https://docs.open-raman.org, Luc Boussemaere, CC BY-SA 4.0) on the quantum‑kit base plate. Every number below is produced by the scripts in this repository (https://github.com/openUC2/openuc2-openraman).
 
 In general, you have to follow the following steps (instead of Zemax, you can also use an optiland file of course since we convert it into optiland):
 ![The seven steps](img/pipeline.svg)
