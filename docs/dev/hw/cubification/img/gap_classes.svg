@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" width="1000" height="430" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" role="img">
+<title>Which distances may change</title>
+<desc>The OpenRAMAN path unfolded, with its nine air gaps coloured by class: three locked, six free.</desc>
+<defs>
+  <marker id="ah-k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2328"/></marker>
+  <marker id="ah-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/></marker>
+  <marker id="ah-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker>
+  <marker id="ah-f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1e8e4a"/></marker>
+  <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#d9dde2"/><line x1="0" y1="0" x2="0" y2="6" stroke="#9aa3ad" stroke-width="1.6"/></pattern>
+</defs>
+<rect width="1000" height="430" fill="#ffffff"/>
+<text x="24.0" y="30.0" font-size="17" fill="#1f2328" text-anchor="start" font-weight="600">Which distances may change</text>
+<text x="24.0" y="52.0" font-size="12.5" fill="#6b7280" text-anchor="start">The OpenRAMAN path drawn straight (to scale along the beam; beam at NA 0.17, radius 4 x enlarged). Each gap was changed by ± 1 mm and the spot traced.</text>
+<polygon points="46.0,168.0 89.8,155.1 379.4,155.1 423.3,168.0 538.8,134.0 825.2,134.0 943.2,168.0 943.2,168.0 825.2,202.0 538.8,202.0 423.3,168.0 379.4,180.9 89.8,180.9 46.0,168.0" fill="#bfe8c9" stroke="#7cc391" stroke-width="0.8" stroke-linejoin="round"/>
+<line x1="31.8" y1="168.0" x2="957.3" y2="168.0" stroke="#6b7280" stroke-width="0.8" stroke-dasharray="8 3 2 3"/>
+<path d="M83.8,144.0 Q81.8,168.0 83.8,192.0 L93.9,192.0 Q101.9,168.0 93.9,144.0 Z" fill="#8fd5ec" stroke="#0d6f8c" stroke-width="1.1"/>
+<polygon points="188.9,138.0 196.5,138.0 154.1,198.0 146.5,198.0" fill="#8fd5ec" stroke="#0d6f8c" stroke-width="1.0" stroke-linejoin="round"/>
+<polygon points="272.7,134.0 280.9,134.0 298.5,202.0 290.3,202.0" fill="#8fd5ec" stroke="#0d6f8c" stroke-width="1.0" stroke-linejoin="round"/>
+<polygon points="312.4,134.0 324.2,134.0 349.7,202.0 337.9,202.0" fill="#8fd5ec" stroke="#0d6f8c" stroke-width="1.0" stroke-linejoin="round"/>
+<path d="M375.3,144.0 Q367.3,168.0 375.3,192.0 L385.5,192.0 Q387.5,168.0 385.5,144.0 Z" fill="#8fd5ec" stroke="#0d6f8c" stroke-width="1.1"/>
+<rect x="421.8" y="171.0" width="3.0" height="30.0" rx="0.0" fill="#1f2328" stroke="none" stroke-width="1.0"/>
+<rect x="421.8" y="135.0" width="3.0" height="30.0" rx="0.0" fill="#1f2328" stroke="none" stroke-width="1.0"/>
+<path d="M526.3,124.0 Q525.1,168.0 526.3,212.0 L547.4,212.0 Q559.4,168.0 547.4,124.0 Z" fill="#8fd5ec" stroke="#0d6f8c" stroke-width="1.1"/>
+<polygon points="681.4,124.0 686.4,124.0 659.4,212.0 654.4,212.0" fill="#d6c7ee" stroke="#5b3f99" stroke-width="1.0" stroke-linejoin="round"/>
+<line x1="825.2" y1="126.0" x2="825.2" y2="210.0" stroke="#0d6f8c" stroke-width="2.2"/>
+<polygon points="820.2,128.0 825.2,120.0 830.2,128.0" fill="#0d6f8c" stroke="none" stroke-width="1.0" stroke-linejoin="round"/>
+<polygon points="820.2,208.0 825.2,216.0 830.2,208.0" fill="#0d6f8c" stroke="none" stroke-width="1.0" stroke-linejoin="round"/>
+<rect x="941.2" y="142.0" width="5.0" height="52.0" rx="0.0" fill="#1f2328" stroke="none" stroke-width="1.0"/>
+<circle cx="46.0" cy="168.0" r="3.2" fill="#1f2328" stroke="none" stroke-width="1.0"/>
+<text x="38.0" y="92.0" font-size="11.5" fill="#1f2328" text-anchor="start">sample</text>
+<line x1="46.0" y1="96.0" x2="46.0" y2="134.0" stroke="#9aa3ad" stroke-width="0.8"/>
+<text x="89.8" y="74.0" font-size="11.5" fill="#1f2328" text-anchor="middle">objective</text>
+<line x1="89.8" y1="78.0" x2="89.8" y2="118.0" stroke="#9aa3ad" stroke-width="0.8"/>
+<text x="167.7" y="92.0" font-size="11.5" fill="#1f2328" text-anchor="middle">dichroic 45°</text>
+<line x1="167.7" y1="96.0" x2="167.7" y2="118.0" stroke="#9aa3ad" stroke-width="0.8"/>
+<text x="281.5" y="74.0" font-size="11.5" fill="#1f2328" text-anchor="middle">edge filter −15°</text>
+<line x1="281.5" y1="78.0" x2="281.5" y2="118.0" stroke="#9aa3ad" stroke-width="0.8"/>
+<text x="325.1" y="92.0" font-size="11.5" fill="#1f2328" text-anchor="middle">window −22°</text>
+<line x1="325.1" y1="96.0" x2="325.1" y2="118.0" stroke="#9aa3ad" stroke-width="0.8"/>
+<text x="379.4" y="74.0" font-size="11.5" fill="#1f2328" text-anchor="middle">focusing lens</text>
+<line x1="379.4" y1="78.0" x2="379.4" y2="118.0" stroke="#9aa3ad" stroke-width="0.8"/>
+<text x="423.3" y="92.0" font-size="11.5" fill="#1f2328" text-anchor="middle">slit 50 µm</text>
+<line x1="423.3" y1="96.0" x2="423.3" y2="134.0" stroke="#9aa3ad" stroke-width="0.8"/>
+<text x="538.8" y="74.0" font-size="11.5" fill="#1f2328" text-anchor="middle">collimator</text>
+<line x1="538.8" y1="78.0" x2="538.8" y2="118.0" stroke="#9aa3ad" stroke-width="0.8"/>
+<text x="670.4" y="92.0" font-size="11.5" fill="#1f2328" text-anchor="middle">grating 47.5°</text>
+<line x1="670.4" y1="96.0" x2="670.4" y2="118.0" stroke="#9aa3ad" stroke-width="0.8"/>
+<text x="825.2" y="74.0" font-size="11.5" fill="#1f2328" text-anchor="middle">camera lens</text>
+<line x1="825.2" y1="78.0" x2="825.2" y2="118.0" stroke="#9aa3ad" stroke-width="0.8"/>
+<text x="951.2" y="92.0" font-size="11.5" fill="#1f2328" text-anchor="end">sensor</text>
+<line x1="943.2" y1="96.0" x2="943.2" y2="134.0" stroke="#9aa3ad" stroke-width="0.8"/>
+<text x="674.4" y="230.0" font-size="10.5" fill="#6b7280" text-anchor="start" font-style="italic">arm drawn straight</text>
+<line x1="47.0" y1="260.0" x2="81.8" y2="260.0" stroke="#c0392b" stroke-width="3.2"/>
+<line x1="47.0" y1="253.0" x2="47.0" y2="267.0" stroke="#c0392b" stroke-width="1.4"/>
+<line x1="81.8" y1="253.0" x2="81.8" y2="267.0" stroke="#c0392b" stroke-width="1.4"/>
+<text x="64.4" y="284.0" font-size="11.5" fill="#c0392b" text-anchor="middle" font-weight="600">15.6</text>
+<line x1="97.9" y1="260.0" x2="166.7" y2="260.0" stroke="#1e8e4a" stroke-width="3.2"/>
+<line x1="97.9" y1="253.0" x2="97.9" y2="267.0" stroke="#1e8e4a" stroke-width="1.4"/>
+<line x1="166.7" y1="253.0" x2="166.7" y2="267.0" stroke="#1e8e4a" stroke-width="1.4"/>
+<text x="132.3" y="301.0" font-size="11.5" fill="#1e8e4a" text-anchor="middle" font-weight="600">30.0 → 34.1</text>
+<line x1="132.3" y1="265.0" x2="132.3" y2="289.0" stroke="#1e8e4a" stroke-width="0.7"/>
+<line x1="168.7" y1="260.0" x2="280.5" y2="260.0" stroke="#1e8e4a" stroke-width="3.2"/>
+<line x1="168.7" y1="253.0" x2="168.7" y2="267.0" stroke="#1e8e4a" stroke-width="1.4"/>
+<line x1="280.5" y1="253.0" x2="280.5" y2="267.0" stroke="#1e8e4a" stroke-width="1.4"/>
+<text x="224.6" y="284.0" font-size="11.5" fill="#1e8e4a" text-anchor="middle" font-weight="600">48.2 → 41.4</text>
+<line x1="282.5" y1="260.0" x2="324.1" y2="260.0" stroke="#1e8e4a" stroke-width="3.2"/>
+<line x1="282.5" y1="253.0" x2="282.5" y2="267.0" stroke="#1e8e4a" stroke-width="1.4"/>
+<line x1="324.1" y1="253.0" x2="324.1" y2="267.0" stroke="#1e8e4a" stroke-width="1.4"/>
+<text x="303.3" y="301.0" font-size="11.5" fill="#1e8e4a" text-anchor="middle" font-weight="600">18.5 → 14.4</text>
+<line x1="303.3" y1="265.0" x2="303.3" y2="289.0" stroke="#1e8e4a" stroke-width="0.7"/>
+<line x1="326.1" y1="260.0" x2="371.3" y2="260.0" stroke="#1e8e4a" stroke-width="3.2"/>
+<line x1="326.1" y1="253.0" x2="326.1" y2="267.0" stroke="#1e8e4a" stroke-width="1.4"/>
+<line x1="371.3" y1="253.0" x2="371.3" y2="267.0" stroke="#1e8e4a" stroke-width="1.4"/>
+<text x="348.7" y="284.0" font-size="11.5" fill="#1e8e4a" text-anchor="middle" font-weight="600">20.0 → 30.9</text>
+<line x1="387.5" y1="260.0" x2="422.3" y2="260.0" stroke="#c0392b" stroke-width="3.2"/>
+<line x1="387.5" y1="253.0" x2="387.5" y2="267.0" stroke="#c0392b" stroke-width="1.4"/>
+<line x1="422.3" y1="253.0" x2="422.3" y2="267.0" stroke="#c0392b" stroke-width="1.4"/>
+<text x="404.9" y="301.0" font-size="11.5" fill="#c0392b" text-anchor="middle" font-weight="600">15.6</text>
+<line x1="404.9" y1="265.0" x2="404.9" y2="289.0" stroke="#c0392b" stroke-width="0.7"/>
+<line x1="424.3" y1="260.0" x2="524.3" y2="260.0" stroke="#c0392b" stroke-width="3.2"/>
+<line x1="424.3" y1="253.0" x2="424.3" y2="267.0" stroke="#c0392b" stroke-width="1.4"/>
+<line x1="524.3" y1="253.0" x2="524.3" y2="267.0" stroke="#c0392b" stroke-width="1.4"/>
+<text x="474.3" y="284.0" font-size="11.5" fill="#c0392b" text-anchor="middle" font-weight="600">43.2</text>
+<line x1="553.4" y1="260.0" x2="669.4" y2="260.0" stroke="#1e8e4a" stroke-width="3.2"/>
+<line x1="553.4" y1="253.0" x2="553.4" y2="267.0" stroke="#1e8e4a" stroke-width="1.4"/>
+<line x1="669.4" y1="253.0" x2="669.4" y2="267.0" stroke="#1e8e4a" stroke-width="1.4"/>
+<text x="611.4" y="301.0" font-size="11.5" fill="#1e8e4a" text-anchor="middle" font-weight="600">50.0 → 55.0</text>
+<line x1="611.4" y1="265.0" x2="611.4" y2="289.0" stroke="#1e8e4a" stroke-width="0.7"/>
+<line x1="671.4" y1="260.0" x2="824.2" y2="260.0" stroke="#1e8e4a" stroke-width="3.2"/>
+<line x1="671.4" y1="253.0" x2="671.4" y2="267.0" stroke="#1e8e4a" stroke-width="1.4"/>
+<line x1="824.2" y1="253.0" x2="824.2" y2="267.0" stroke="#1e8e4a" stroke-width="1.4"/>
+<text x="747.8" y="284.0" font-size="11.5" fill="#1e8e4a" text-anchor="middle" font-weight="600">115.6 → 120.6</text>
+<text x="831.2" y="264.0" font-size="10.5" fill="#6b7280" text-anchor="start">50.0 (focal length)</text>
+<line x1="24.0" y1="348.0" x2="60.0" y2="348.0" stroke="#c0392b" stroke-width="3.2"/>
+<text x="70.0" y="352.0" font-size="12" fill="#1f2328" text-anchor="start">locked (3): ± 1 mm takes the spot on the slit from 17 µm to 41 to 76 µm, on the sensor from 9 µm to 41 to 59 µm. These distances are kept to the file.</text>
+<line x1="24.0" y1="372.0" x2="60.0" y2="372.0" stroke="#1e8e4a" stroke-width="3.2"/>
+<text x="70.0" y="376.0" font-size="12" fill="#1f2328" text-anchor="start">free (6): no change of the spot up to + 60 mm (collimated beam). Numbers: Zemax file → after the fit to the grid (layout A), in mm.</text>
+<text x="24.0" y="402.0" font-size="12" fill="#6b7280" text-anchor="start">Tilted plates keep their angles; only their positions along the beam are free.</text>
+</svg>

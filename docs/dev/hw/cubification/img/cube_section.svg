@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 668" width="990" height="668" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" role="img">
+<title>What a cube leaves free along the beam</title>
+<desc>Section of a cube along the beam with the entrance cube of the Raman layout: focusing lens and slit, each in a cartridge between two master inserts.</desc>
+<defs>
+  <marker id="ah-k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2328"/></marker>
+  <marker id="ah-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/></marker>
+  <marker id="ah-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker>
+  <marker id="ah-f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1e8e4a"/></marker>
+  <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#d9dde2"/><line x1="0" y1="0" x2="0" y2="6" stroke="#9aa3ad" stroke-width="1.6"/></pattern>
+</defs>
+<rect width="990" height="668" fill="#ffffff"/>
+<text x="24.0" y="30.0" font-size="17" fill="#1f2328" text-anchor="start" font-weight="600">What a cube leaves free along the beam</text>
+<text x="24.0" y="52.0" font-size="12.5" fill="#6b7280" text-anchor="start">Section through the entrance cube (focusing lens and slit), to scale. Measured on the cube half PRT-1003.</text>
+<rect x="92.8" y="122.8" width="398.4" height="398.4" rx="0.0" fill="url(#hatch)" stroke="#4b5057" stroke-width="1.2"/>
+<polygon points="92.8,186.0 124.0,186.0 156.0,154.8 160.0,122.8 424.0,122.8 428.0,154.8 460.0,186.0 491.2,186.0 491.2,458.0 460.0,458.0 428.0,489.2 424.0,521.2 160.0,521.2 156.0,489.2 124.0,458.0 92.8,458.0" fill="#ffffff" stroke="none" stroke-width="1.0" stroke-linejoin="round"/>
+<polyline points="92.8,186.0 124.0,186.0 156.0,154.8 160.0,122.8 424.0,122.8 428.0,154.8 460.0,186.0 491.2,186.0" fill="none" stroke="#4b5057" stroke-width="1.0" stroke-linejoin="round"/>
+<polyline points="92.8,458.0 124.0,458.0 156.0,489.2 160.0,521.2 424.0,521.2 428.0,489.2 460.0,458.0 491.2,458.0" fill="none" stroke="#4b5057" stroke-width="1.0" stroke-linejoin="round"/>
+<polygon points="169.0,122.8 175.0,122.8 172.0,129.8" fill="#4b5057" stroke="none" stroke-width="1.0" stroke-linejoin="round"/>
+<polygon points="169.0,521.2 175.0,521.2 172.0,514.2" fill="#4b5057" stroke="none" stroke-width="1.0" stroke-linejoin="round"/>
+<text x="172.0" y="113.8" font-size="10.5" fill="#6b7280" text-anchor="middle">-15</text>
+<polygon points="209.0,122.8 215.0,122.8 212.0,129.8" fill="#4b5057" stroke="none" stroke-width="1.0" stroke-linejoin="round"/>
+<polygon points="209.0,521.2 215.0,521.2 212.0,514.2" fill="#4b5057" stroke="none" stroke-width="1.0" stroke-linejoin="round"/>
+<text x="212.0" y="113.8" font-size="10.5" fill="#6b7280" text-anchor="middle">-10</text>
+<polygon points="249.0,122.8 255.0,122.8 252.0,129.8" fill="#4b5057" stroke="none" stroke-width="1.0" stroke-linejoin="round"/>
+<polygon points="249.0,521.2 255.0,521.2 252.0,514.2" fill="#4b5057" stroke="none" stroke-width="1.0" stroke-linejoin="round"/>
+<text x="252.0" y="113.8" font-size="10.5" fill="#6b7280" text-anchor="middle">-5</text>
+<polygon points="289.0,122.8 295.0,122.8 292.0,129.8" fill="#4b5057" stroke="none" stroke-width="1.0" stroke-linejoin="round"/>
+<polygon points="289.0,521.2 295.0,521.2 292.0,514.2" fill="#4b5057" stroke="none" stroke-width="1.0" stroke-linejoin="round"/>
+<text x="292.0" y="113.8" font-size="10.5" fill="#6b7280" text-anchor="middle">0</text>
+<polygon points="329.0,122.8 335.0,122.8 332.0,129.8" fill="#4b5057" stroke="none" stroke-width="1.0" stroke-linejoin="round"/>
+<polygon points="329.0,521.2 335.0,521.2 332.0,514.2" fill="#4b5057" stroke="none" stroke-width="1.0" stroke-linejoin="round"/>
+<text x="332.0" y="113.8" font-size="10.5" fill="#6b7280" text-anchor="middle">+5</text>
+<polygon points="369.0,122.8 375.0,122.8 372.0,129.8" fill="#4b5057" stroke="none" stroke-width="1.0" stroke-linejoin="round"/>
+<polygon points="369.0,521.2 375.0,521.2 372.0,514.2" fill="#4b5057" stroke="none" stroke-width="1.0" stroke-linejoin="round"/>
+<text x="372.0" y="113.8" font-size="10.5" fill="#6b7280" text-anchor="middle">+10</text>
+<polygon points="409.0,122.8 415.0,122.8 412.0,129.8" fill="#4b5057" stroke="none" stroke-width="1.0" stroke-linejoin="round"/>
+<polygon points="409.0,521.2 415.0,521.2 412.0,514.2" fill="#4b5057" stroke="none" stroke-width="1.0" stroke-linejoin="round"/>
+<text x="412.0" y="113.8" font-size="10.5" fill="#6b7280" text-anchor="middle">+15</text>
+<text x="84.8" y="113.8" font-size="10.5" fill="#6b7280" text-anchor="end">notches (mm)</text>
+<rect x="196.0" y="124.4" width="32.0" height="44.0" rx="0.0" fill="#a9aeb6" stroke="#4b5057" stroke-width="1.0"/>
+<rect x="196.0" y="475.6" width="32.0" height="44.0" rx="0.0" fill="#a9aeb6" stroke="#4b5057" stroke-width="1.0"/>
+<rect x="164.0" y="124.4" width="32.0" height="44.0" rx="0.0" fill="#a9aeb6" stroke="#4b5057" stroke-width="1.0"/>
+<rect x="164.0" y="475.6" width="32.0" height="44.0" rx="0.0" fill="#a9aeb6" stroke="#4b5057" stroke-width="1.0"/>
+<rect x="164.0" y="168.4" width="75.6" height="307.2" rx="0.0" fill="#f6c98a" stroke="#b0791c" stroke-width="1.1"/>
+<line x1="196.0" y1="122.4" x2="196.0" y2="521.6" stroke="#b0791c" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="196.0" y="538.2" font-size="11" fill="#b0791c" text-anchor="middle" font-weight="600">joint -12</text>
+<rect x="356.0" y="124.4" width="32.0" height="44.0" rx="0.0" fill="#a9aeb6" stroke="#4b5057" stroke-width="1.0"/>
+<rect x="356.0" y="475.6" width="32.0" height="44.0" rx="0.0" fill="#a9aeb6" stroke="#4b5057" stroke-width="1.0"/>
+<rect x="324.0" y="124.4" width="32.0" height="44.0" rx="0.0" fill="#a9aeb6" stroke="#4b5057" stroke-width="1.0"/>
+<rect x="324.0" y="475.6" width="32.0" height="44.0" rx="0.0" fill="#a9aeb6" stroke="#4b5057" stroke-width="1.0"/>
+<rect x="324.0" y="168.4" width="64.0" height="307.2" rx="0.0" fill="#f6c98a" stroke="#b0791c" stroke-width="1.1"/>
+<line x1="356.0" y1="122.4" x2="356.0" y2="521.6" stroke="#b0791c" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="356.0" y="538.2" font-size="11" fill="#b0791c" text-anchor="middle" font-weight="600">joint +8</text>
+<polygon points="60.8,296.2 208.0,296.2 356.6,322.0 523.2,293.7 523.2,350.3 356.6,322.0 208.0,347.8 60.8,347.8" fill="#bfe8c9" stroke="#7cc391" stroke-width="0.8" opacity="0.92" stroke-linejoin="round"/>
+<line x1="-3.2" y1="322.0" x2="587.2" y2="322.0" stroke="#6b7280" stroke-width="0.8" stroke-dasharray="8 3 2 3"/>
+<path d="M194.4,271.2 Q184.0,322.0 194.4,372.8 L228.0,372.8 Q230.8,322.0 228.0,271.2 Z" fill="#8fd5ec" stroke="#0d6f8c" stroke-width="1.1"/>
+<rect x="351.4" y="220.4" width="20.3" height="92.0" rx="0.0" fill="#8fd5ec" stroke="#0d6f8c" stroke-width="1.1"/>
+<rect x="351.4" y="331.6" width="20.3" height="92.0" rx="0.0" fill="#8fd5ec" stroke="#0d6f8c" stroke-width="1.1"/>
+<line x1="188.0" y1="81.8" x2="188.0" y2="91.8" stroke="#b0791c" stroke-width="1.6"/>
+<line x1="196.0" y1="81.8" x2="196.0" y2="91.8" stroke="#b0791c" stroke-width="1.6"/>
+<line x1="228.0" y1="81.8" x2="228.0" y2="91.8" stroke="#b0791c" stroke-width="1.6"/>
+<line x1="236.0" y1="81.8" x2="236.0" y2="91.8" stroke="#b0791c" stroke-width="1.6"/>
+<line x1="268.0" y1="81.8" x2="268.0" y2="91.8" stroke="#b0791c" stroke-width="1.6"/>
+<line x1="276.0" y1="81.8" x2="276.0" y2="91.8" stroke="#b0791c" stroke-width="1.6"/>
+<line x1="308.0" y1="81.8" x2="308.0" y2="91.8" stroke="#b0791c" stroke-width="1.6"/>
+<line x1="316.0" y1="81.8" x2="316.0" y2="91.8" stroke="#b0791c" stroke-width="1.6"/>
+<line x1="348.0" y1="81.8" x2="348.0" y2="91.8" stroke="#b0791c" stroke-width="1.6"/>
+<line x1="356.0" y1="81.8" x2="356.0" y2="91.8" stroke="#b0791c" stroke-width="1.6"/>
+<line x1="388.0" y1="81.8" x2="388.0" y2="91.8" stroke="#b0791c" stroke-width="1.6"/>
+<line x1="396.0" y1="81.8" x2="396.0" y2="91.8" stroke="#b0791c" stroke-width="1.6"/>
+<text x="84.8" y="90.8" font-size="10.5" fill="#b0791c" text-anchor="end">joint planes</text>
+<text x="499.2" y="90.8" font-size="10.5" fill="#b0791c" text-anchor="start">notch ± 2 mm: twelve per cube</text>
+<line x1="156.0" y1="571.2" x2="428.0" y2="571.2" stroke="#1f2328" stroke-width="1.1" marker-end="url(#ah-k)" marker-start="url(#ah-k)"/>
+<line x1="156.0" y1="566.2" x2="156.0" y2="576.2" stroke="#1f2328" stroke-width="1.0"/>
+<line x1="428.0" y1="566.2" x2="428.0" y2="576.2" stroke="#1f2328" stroke-width="1.0"/>
+<text x="292.0" y="565.2" font-size="11.5" fill="#1f2328" text-anchor="middle">± 17 mm: inserts with the full outline</text>
+<line x1="143.2" y1="605.2" x2="440.8" y2="605.2" stroke="#1f2328" stroke-width="1.1" marker-end="url(#ah-k)" marker-start="url(#ah-k)"/>
+<line x1="143.2" y1="600.2" x2="143.2" y2="610.2" stroke="#1f2328" stroke-width="1.0"/>
+<line x1="440.8" y1="600.2" x2="440.8" y2="610.2" stroke="#1f2328" stroke-width="1.0"/>
+<text x="292.0" y="599.2" font-size="11.5" fill="#1f2328" text-anchor="middle">± 18.6 mm: round printed part, radius up to 19.2 mm</text>
+<line x1="92.8" y1="639.2" x2="491.2" y2="639.2" stroke="#1f2328" stroke-width="1.1" marker-end="url(#ah-k)" marker-start="url(#ah-k)"/>
+<line x1="92.8" y1="634.2" x2="92.8" y2="644.2" stroke="#1f2328" stroke-width="1.0"/>
+<line x1="491.2" y1="634.2" x2="491.2" y2="644.2" stroke="#1f2328" stroke-width="1.0"/>
+<text x="292.0" y="633.2" font-size="11.5" fill="#1f2328" text-anchor="middle">cube 49.8 mm (pitch 50.1); beyond ± 21 mm only parts thinner than 34 mm</text>
+<rect x="566.0" y="121.0" width="18.0" height="14.0" rx="0.0" fill="url(#hatch)" stroke="#4b5057" stroke-width="1.0"/>
+<text x="592.0" y="132.0" font-size="12" fill="#1f2328" text-anchor="start">cube: end frames</text>
+<rect x="566.0" y="145.0" width="18.0" height="14.0" rx="0.0" fill="#a9aeb6" stroke="#4b5057" stroke-width="1.0"/>
+<text x="592.0" y="156.0" font-size="12" fill="#1f2328" text-anchor="start">master insert, 4 mm, moulded</text>
+<rect x="566.0" y="169.0" width="18.0" height="14.0" rx="0.0" fill="#f6c98a" stroke="#b0791c" stroke-width="1.0"/>
+<text x="592.0" y="180.0" font-size="12" fill="#1f2328" text-anchor="start">printed cartridge, two halves split at the joint</text>
+<rect x="566.0" y="193.0" width="18.0" height="14.0" rx="0.0" fill="#8fd5ec" stroke="#0d6f8c" stroke-width="1.0"/>
+<text x="592.0" y="204.0" font-size="12" fill="#1f2328" text-anchor="start">optic: focusing lens 12.7 mm, slit disc 25.4 mm</text>
+<rect x="566.0" y="217.0" width="18.0" height="14.0" rx="0.0" fill="#bfe8c9" stroke="#7cc391" stroke-width="1.0"/>
+<text x="592.0" y="228.0" font-size="12" fill="#1f2328" text-anchor="start">beam at the aperture limit (NA 0.17)</text>
+<text x="566.0" y="274.0" font-size="13" fill="#1f2328" text-anchor="start" font-weight="600">What follows</text>
+<text x="566.0" y="296.0" font-size="12" fill="#1f2328" text-anchor="start">1  An optic sits between two master inserts. One of</text>
+<text x="566.0" y="314.0" font-size="12" fill="#1f2328" text-anchor="start">    them has its mid-plane on a notch, so the joint</text>
+<text x="566.0" y="332.0" font-size="12" fill="#1f2328" text-anchor="start">    plane is 2 mm beside a notch. With both inserts</text>
+<text x="566.0" y="350.0" font-size="12" fill="#1f2328" text-anchor="start">    inside ± 17 mm the joint lies between −13 and +13.</text>
+<text x="566.0" y="368.0" font-size="12" fill="#1f2328" text-anchor="start">2  The optic's centre may be up to 4 mm from the</text>
+<text x="566.0" y="386.0" font-size="12" fill="#1f2328" text-anchor="start">    joint; the printed halves take up the difference.</text>
+<text x="566.0" y="404.0" font-size="12" fill="#1f2328" text-anchor="start">3  Between 17 mm and the face nothing with the full</text>
+<text x="566.0" y="422.0" font-size="12" fill="#1f2328" text-anchor="start">    outline fits: 16 mm are lost at every cube boundary.</text>
+<text x="566.0" y="440.0" font-size="12" fill="#1f2328" text-anchor="start">4  Two sandwiches share a cube when the printed</text>
+<text x="566.0" y="458.0" font-size="12" fill="#1f2328" text-anchor="start">    parts do not touch (here 10.6 mm apart).</text>
+</svg>

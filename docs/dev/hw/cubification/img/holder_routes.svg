@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660" width="1000" height="660" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" role="img">
+<title>Which holder for which element</title>
+<desc>Six questions asked in order; the first yes decides the holder.</desc>
+<defs>
+  <marker id="ah-k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2328"/></marker>
+  <marker id="ah-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/></marker>
+  <marker id="ah-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker>
+  <marker id="ah-f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1e8e4a"/></marker>
+  <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#d9dde2"/><line x1="0" y1="0" x2="0" y2="6" stroke="#9aa3ad" stroke-width="1.6"/></pattern>
+</defs>
+<rect width="1000" height="660" fill="#ffffff"/>
+<text x="24.0" y="30.0" font-size="17" fill="#1f2328" text-anchor="start" font-weight="600">Which holder for which element</text>
+<text x="24.0" y="52.0" font-size="12.5" fill="#6b7280" text-anchor="start">Six questions in this order; the first yes decides. Right column: what it gave for OpenRAMAN.</text>
+<rect x="24.0" y="78.0" width="290.0" height="62.0" rx="8" fill="#f6f7f9" stroke="#9aa3ad" stroke-width="1.2"/>
+<text x="38.0" y="104.0" font-size="12.5" fill="#1f2328" text-anchor="start">Does a cube module in the library</text>
+<text x="38.0" y="121.0" font-size="12.5" fill="#1f2328" text-anchor="start">already hold it?</text>
+<line x1="314.0" y1="109.0" x2="369.0" y2="109.0" stroke="#1f2328" stroke-width="1.3" marker-end="url(#ah-k)"/>
+<text x="324.0" y="103.0" font-size="11.5" fill="#6b7280" text-anchor="start">yes</text>
+<rect x="372.0" y="78.0" width="340.0" height="62.0" rx="8" fill="#cfead6" stroke="#1e8e4a" stroke-width="1.3"/>
+<text x="384.0" y="97.0" font-size="10.5" fill="#1e8e4a" text-anchor="start" font-weight="700">EXISTING MODULE</text>
+<text x="384.0" y="114.0" font-size="12" fill="#1f2328" text-anchor="start">Use it. Nothing is generated.</text>
+<text x="730.0" y="115.0" font-size="12" fill="#6b7280" text-anchor="start">steering mirror: kinematic mirror cube ASS-2013</text>
+<line x1="64.0" y1="140.0" x2="64.0" y2="169.0" stroke="#1f2328" stroke-width="1.3" marker-end="url(#ah-k)"/>
+<text x="72.0" y="160.0" font-size="11.5" fill="#6b7280" text-anchor="start">no</text>
+<rect x="24.0" y="172.0" width="290.0" height="62.0" rx="8" fill="#f6f7f9" stroke="#9aa3ad" stroke-width="1.2"/>
+<text x="38.0" y="198.0" font-size="12.5" fill="#1f2328" text-anchor="start">Does its beam leave the grid directions,</text>
+<text x="38.0" y="215.0" font-size="12.5" fill="#1f2328" text-anchor="start">or is the part too big for a cube?</text>
+<line x1="314.0" y1="203.0" x2="369.0" y2="203.0" stroke="#1f2328" stroke-width="1.3" marker-end="url(#ah-k)"/>
+<text x="324.0" y="197.0" font-size="11.5" fill="#6b7280" text-anchor="start">yes</text>
+<rect x="372.0" y="172.0" width="340.0" height="62.0" rx="8" fill="#efe0c2" stroke="#a07c3b" stroke-width="1.3"/>
+<text x="384.0" y="191.0" font-size="10.5" fill="#a07c3b" text-anchor="start" font-weight="700">PLATE (NO CUBE)</text>
+<text x="384.0" y="208.0" font-size="12" fill="#1f2328" text-anchor="start">Plate in the puzzle layer with a pedestal,</text>
+<text x="384.0" y="223.5" font-size="12" fill="#1f2328" text-anchor="start">saddle or cradle; screwed on the puzzle pattern.</text>
+<text x="730.0" y="209.0" font-size="12" fill="#6b7280" text-anchor="start">grating, camera lens, camera</text>
+<line x1="64.0" y1="234.0" x2="64.0" y2="263.0" stroke="#1f2328" stroke-width="1.3" marker-end="url(#ah-k)"/>
+<text x="72.0" y="254.0" font-size="11.5" fill="#6b7280" text-anchor="start">no</text>
+<rect x="24.0" y="266.0" width="290.0" height="62.0" rx="8" fill="#f6f7f9" stroke="#9aa3ad" stroke-width="1.2"/>
+<text x="38.0" y="292.0" font-size="12.5" fill="#1f2328" text-anchor="start">Is it a 90° fold</text>
+<text x="38.0" y="309.0" font-size="12.5" fill="#1f2328" text-anchor="start">(mirror, dichroic, beamsplitter)?</text>
+<line x1="314.0" y1="297.0" x2="369.0" y2="297.0" stroke="#1f2328" stroke-width="1.3" marker-end="url(#ah-k)"/>
+<text x="324.0" y="291.0" font-size="11.5" fill="#6b7280" text-anchor="start">yes</text>
+<rect x="372.0" y="266.0" width="340.0" height="62.0" rx="8" fill="#cfdcf5" stroke="#33539e" stroke-width="1.3"/>
+<text x="384.0" y="285.0" font-size="10.5" fill="#33539e" text-anchor="start" font-weight="700">SQUARE INSERT</text>
+<text x="384.0" y="302.0" font-size="12" fill="#1f2328" text-anchor="start">Full insert with side ports, plate at 45°; a kinematic</text>
+<text x="384.0" y="317.5" font-size="12" fill="#1f2328" text-anchor="start">insert plus a printed frame if it must be aligned.</text>
+<text x="730.0" y="303.0" font-size="12" fill="#6b7280" text-anchor="start">dichroic: PRT-2166 + printed frame</text>
+<line x1="64.0" y1="328.0" x2="64.0" y2="357.0" stroke="#1f2328" stroke-width="1.3" marker-end="url(#ah-k)"/>
+<text x="72.0" y="348.0" font-size="11.5" fill="#6b7280" text-anchor="start">no</text>
+<rect x="24.0" y="360.0" width="290.0" height="62.0" rx="8" fill="#f6f7f9" stroke="#9aa3ad" stroke-width="1.2"/>
+<text x="38.0" y="386.0" font-size="12.5" fill="#1f2328" text-anchor="start">Is it round, up to 36 mm, and the</text>
+<text x="38.0" y="403.0" font-size="12.5" fill="#1f2328" text-anchor="start">beam only passes through it?</text>
+<line x1="314.0" y1="391.0" x2="369.0" y2="391.0" stroke="#1f2328" stroke-width="1.3" marker-end="url(#ah-k)"/>
+<text x="324.0" y="385.0" font-size="11.5" fill="#6b7280" text-anchor="start">yes</text>
+<rect x="372.0" y="360.0" width="340.0" height="62.0" rx="8" fill="#f6c98a" stroke="#b0791c" stroke-width="1.3"/>
+<text x="384.0" y="379.0" font-size="10.5" fill="#b0791c" text-anchor="start" font-weight="700">MASTER INSERTS</text>
+<text x="384.0" y="396.0" font-size="12" fill="#1f2328" text-anchor="start">Printed cartridge between two master inserts,</text>
+<text x="384.0" y="411.5" font-size="12" fill="#1f2328" text-anchor="start">on a joint plane. Any tilt; several per cube.</text>
+<text x="730.0" y="390.0" font-size="12" fill="#6b7280" text-anchor="start">both lenses f = 19, collimator, edge filter,</text>
+<text x="730.0" y="406.0" font-size="12" fill="#6b7280" text-anchor="start">window, slit</text>
+<line x1="64.0" y1="422.0" x2="64.0" y2="451.0" stroke="#1f2328" stroke-width="1.3" marker-end="url(#ah-k)"/>
+<text x="72.0" y="442.0" font-size="11.5" fill="#6b7280" text-anchor="start">no</text>
+<rect x="24.0" y="454.0" width="290.0" height="62.0" rx="8" fill="#f6f7f9" stroke="#9aa3ad" stroke-width="1.2"/>
+<text x="38.0" y="480.0" font-size="12.5" fill="#1f2328" text-anchor="start">Is it a cylinder thinner than 34 mm</text>
+<text x="38.0" y="497.0" font-size="12.5" fill="#1f2328" text-anchor="start">(laser module, tube)?</text>
+<line x1="314.0" y1="485.0" x2="369.0" y2="485.0" stroke="#1f2328" stroke-width="1.3" marker-end="url(#ah-k)"/>
+<text x="324.0" y="479.0" font-size="11.5" fill="#6b7280" text-anchor="start">yes</text>
+<rect x="372.0" y="454.0" width="340.0" height="62.0" rx="8" fill="#f6c98a" stroke="#b0791c" stroke-width="1.3"/>
+<text x="384.0" y="473.0" font-size="10.5" fill="#b0791c" text-anchor="start" font-weight="700">MASTER INSERTS</text>
+<text x="384.0" y="490.0" font-size="12" fill="#1f2328" text-anchor="start">Round clamp between two master inserts;</text>
+<text x="384.0" y="505.5" font-size="12" fill="#1f2328" text-anchor="start">the body may reach into the next cube.</text>
+<text x="730.0" y="491.0" font-size="12" fill="#6b7280" text-anchor="start">laser CPS532</text>
+<line x1="64.0" y1="516.0" x2="64.0" y2="545.0" stroke="#1f2328" stroke-width="1.3" marker-end="url(#ah-k)"/>
+<text x="72.0" y="536.0" font-size="11.5" fill="#6b7280" text-anchor="start">no</text>
+<rect x="24.0" y="548.0" width="290.0" height="62.0" rx="8" fill="#f6f7f9" stroke="#9aa3ad" stroke-width="1.2"/>
+<text x="38.0" y="584.0" font-size="12.5" fill="#1f2328" text-anchor="start">None of these</text>
+<line x1="314.0" y1="579.0" x2="369.0" y2="579.0" stroke="#1f2328" stroke-width="1.3" marker-end="url(#ah-k)"/>
+<text x="324.0" y="573.0" font-size="11.5" fill="#6b7280" text-anchor="start">else</text>
+<rect x="372.0" y="548.0" width="340.0" height="62.0" rx="8" fill="#cfdcf5" stroke="#33539e" stroke-width="1.3"/>
+<text x="384.0" y="567.0" font-size="10.5" fill="#33539e" text-anchor="start" font-weight="700">SQUARE INSERT</text>
+<text x="384.0" y="584.0" font-size="12" fill="#1f2328" text-anchor="start">Insert shaped for the part, or the boolean holder</text>
+<text x="384.0" y="599.5" font-size="12" fill="#1f2328" text-anchor="start">cut from its STEP file.</text>
+<text x="730.0" y="585.0" font-size="12" fill="#6b7280" text-anchor="start">sample: vial insert with cap</text>
+<text x="24.0" y="644.0" font-size="11.5" fill="#6b7280" text-anchor="start">Master-insert route: the moulded parts carry the optic on the cube's notch grid, the printed part is small and round. Square-insert route: one printed insert fills the cube section.</text>
+</svg>
