@@ -11,6 +11,10 @@ This page explains how to use the openUC2 logo, colours and typography. Whether 
 ![openUC2 logo, full colour](images/logo-primary.png)
 [PNG FILE](images/logo-primary.png)
 
+![openUC2 logo, full colour](images/opemUC2_Logo.svg)
+[SVG FILE](images/opemUC2_Logo.svg)
+
+
 The logo has two parts: the **cube mark** (a hexagonal cluster of seven cubes) and the **wordmark** "openUC2", set in Stolzl Bold. The two always appear together, in the arrangement shown above.
 
 ### Approved versions
