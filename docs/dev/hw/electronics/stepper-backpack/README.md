@@ -10,21 +10,33 @@ sidebar_position: 100
 ![](./IMG_20241010_175137.jpg)
 
 ## **Overview:**
-This motor controller is designed to control a stepper motor using the TMC2209 driver with optional feedback from a rotational encoder (AS5600). The Xiao microcontroller handles communication and control.
+This motor controller is designed to control a stepper motor using the TMC2209 driver with optional feedback from a rotational encoder (AS5600). The XIAO ESP32-S3 handles communication and control.
+
+| Interface | Current (CAN) revision |
+|---|---|
+| Firmware env | `UC2_canopen_slave_motor` (CAN satellite) |
+| Node ID | default 11; CI builds `_motA` / `_motX` / `_motY` / `_motZ` = 10 / 11 / 12 / 13 |
+| CAN | 500 kbit/s, CANopen; TX = D2 (GPIO3), RX = D1 (GPIO2) |
+| Bus connector | JST-XH 4: 1 GND, 2 +12 V, 3 CAN_H, 4 CAN_L |
+| Termination | JP502, 120 Ω, open by default; close only at a bus end |
+| Serial | native USB-CDC of the XIAO, serial JSON (for testing without a bus) |
+
+Node IDs, routing and the other satellites: [Boards, roles & node IDs](../../../sw/interface/reference/boards-and-node-ids.md). Flashing, setting the node ID and wiring: [Add a CAN satellite](../../../sw/interface/how-to/add-can-satellite.md). Older revisions talked I2C to the master over D1/D2 (SCL/SDA).
 
 ## **Components:**
 - **TMC2209 Stepper Driver:** Manages the stepper motor's power and movement. It offers features like StallGuard for homing without limit switches.
 - **AS5600 Encoder:** A magnetic encoder that tracks the stepper motor’s rotational position. Connected via I2C, it provides high-precision feedback for motor positioning.
 
 ## **Pin Descriptions:**
-- **DIR (Direction):** Controls the rotational direction of the stepper motor (Clockwise/Counter-Clockwise). Controlled via **PA02_A0_D0**.
-- **STEP (Step Pulse):** Sends pulses to the motor for each step. Controlled via **PA10_A2_D2**.
-- **UART (TX/RX):** The Xiao communicates with the TMC2209 driver for advanced functions such as StallGuard and diagnostics via UART on **PB08_A6_TX** and **PB09_D7_RX**.
-- **I2C (SDA/SCL):** Connects the Xiao to the AS5600 encoder for feedback. I2C pins on the Xiao are **PA8_A4_D4_SDA** and **PA9_A5_D5_SCL**.
+- **DIR (Direction):** Controls the rotational direction of the stepper motor (Clockwise/Counter-Clockwise). Controlled via **D8**.
+- **STEP (Step Pulse):** Sends pulses to the motor for each step. Controlled via **D9**.
+- **EN (Enable):** **D10**.
+- **UART (TX/RX):** The XIAO communicates with the TMC2209 driver for advanced functions such as StallGuard and diagnostics via UART on **D6** (send) and **D7** (receive).
+- **I2C (SDA/SCL):** Connects the XIAO to the encoder. I2C pins on the XIAO are **D4** (SDA) and **D5** (SCL).
 
 ## **Power Requirements:**
-- **5V Input:** The Xiao uses its internal buck converter to supply 3.3V to the other components.
-- **12V Input:** Powers the motor and is regulated to 5V and 3.3V via a DC-DC converter for the motor driver and encoder.
+- **12V Input** (JST-XH bus connector, pin 2): Powers the motor and is regulated to 5V and 3.3V via a DC-DC converter for the motor driver and encoder.
+- **5V Input** (old 5V+I2C revision only): The XIAO uses its internal regulator to supply 3.3V to the other components.
 
 ## **Features:**
 - **StallGuard Functionality:** This feature detects motor stall conditions and is useful for homing operations without mechanical limit switches.
@@ -36,29 +48,29 @@ This motor controller is designed to control a stepper motor using the TMC2209 d
    - Windings A (A+, A-) and B (B+, B-) are connected to **OA1**, **OA2**, **OB1**, **OB2** pins.
 
 2. **Encoder Wiring:**
-   - **SDA** (I2C Data) to **PA8_A4_D4_SDA**
-   - **SCL** (I2C Clock) to **PA9_A5_D5_SCL**
+   - **SDA** (I2C Data) to **D4**
+   - **SCL** (I2C Clock) to **D5**
 
-3. **Power:**
-   - 12V Input to **12V Pin** (via JST).
-   - GND to common ground.
-
+3. **Power and bus:**
+   - JST-XH 4: 1 GND, 2 +12 V, 3 CAN_H, 4 CAN_L.
 
 
-## Xiao Pin Connections for Motor Controller with Encoder (TMC2209)
 
-Based on the schematic provided for the stepper motor controller (TMC2209) with Xiao, here are the pin connections between the Xiao board and different elements such as the motor controller and encoder:
+## XIAO pin connections
 
-## **Pinout for Xiao:**
-- **PA02_A0_D0** (Pin 1): **DIR** (Direction for motor control)
-- **PA4_A1_D1** (Pin 2): **MOT_DIR** (Motor direction)
-- **PA10_A2_D2** (Pin 3): **STEP** (Stepper motor step control)
-- **PA11_A3_D3** (Pin 4): **MOT_STEP** (Step control for motor)
-- **PA8_A4_D4_SDA** (Pin 5): **I2C SDA**
-- **PA9_A5_D5_SCL** (Pin 6): **I2C SCL**
-- **PB08_A6_TX** (Pin 7): **TX UART** (for TMC2209 UART communication)
-- **PB09_D7_RX** (Pin 8): **RX UART** (for TMC2209 UART communication)
-- **PA7_A8_D8_SCK** (Pin 9): **I2C SCL (Alternative)**
+Same as the [FRAME electronics](../frame/README.md) stepper-backpack pinout:
+
+| XIAO pin | Function |
+|---|---|
+| D0 | Endstop |
+| D1 | CAN RX (SCL on the old I2C bus) |
+| D2 | CAN TX (SDA on the old I2C bus) |
+| D3 | TMC2209 DIAG |
+| D4 / D5 | I2C SDA / SCL to encoder |
+| D6 / D7 | UART send to / receive from TMC2209 |
+| D8 | DIR |
+| D9 | STEP |
+| D10 | EN |
 
 ## **Connections to Stepper Motor Controller (TMC2209):**
 - **DIR**: Controls the direction of the stepper motor.
@@ -80,10 +92,10 @@ Here’s a basic ESP32S3 code to control the TMC2209 stepper motor driver and AS
 - **EN** -> D10
 - **DIR** (Direction) -> D8
 - **STEP** (Step Pulse) -> D9
-- **I2C SDA** -> PA8_A4_D4_SDA (Pin 5)
-- **I2C SCL** -> PA9_A5_D5_SCL (Pin 6)
-- **UART TX** -> PB08_A6_TX (Pin 7)
-- **UART RX** -> PB09_D7_RX (Pin 8)
+- **I2C SDA** -> D4
+- **I2C SCL** -> D5
+- **UART TX** -> D6
+- **UART RX** -> D7
 
 ## In Action:
 
@@ -92,6 +104,8 @@ Here’s a basic ESP32S3 code to control the TMC2209 stepper motor driver and AS
 
 ## Code:
 
+Standalone test sketch (single-character commands `0`/`1` on the USB serial), not the UC2 firmware. The UC2 firmware for this board is the env `UC2_canopen_slave_motor`.
+
 ```cpp
 #include <FastAccelStepper.h> // Include the FastAccelStepper library
 #include <TMCStepper.h>
@@ -99,22 +113,19 @@ Here’s a basic ESP32S3 code to control the TMC2209 stepper motor driver and AS
 
 // TMC2209 Settings
 #define STALL_VALUE 100     // StallGuard sensitivity [0..255]
-#define EN_PIN D10          // PA4_A1_D1 (Pin 2) Enable pin for motor driver
-#define DIR_PIN D8          // PA02_A0_D0 (Pin 1) Direction pin
-#define STEP_PIN D9         // PA10_A2_D2 (Pin 3) Step pin
-#define SW_RX D7            // PB09_D7_RX (Pin 8) UART RX pin for TMC2209
-#define SW_TX A6            // PB08_A6_TX (Pin 7) UART TX pin for TMC2209
+#define EN_PIN D10          // Enable pin for motor driver
+#define DIR_PIN D8          // Direction pin
+#define STEP_PIN D9         // Step pin
+#define SW_RX D7            // UART RX pin for TMC2209
+#define SW_TX D6            // UART TX pin for TMC2209
 #define SERIAL_PORT Serial1 // UART Serial port for TMC2209
 #define DRIVER_ADDRESS 0b00 // TMC2209 driver address
 #define R_SENSE 0.11f       // Current sense resistor for TMC2209
 #define MOT_DIAG D3
 
-// UC2-ESP I2C Settings
-#define SDA_PIN_UC2 D2
-#define SCL_PIN_UC2 D1
 // AS5311 I2C Settings
-#define SDA_PIN D4       // PA8_A4_D4_SDA (Pin 5) I2C SDA
-#define SCL_PIN D5       // PA9_A5_D5_SCL (Pin 6) I2C SCL
+#define SDA_PIN D4       // I2C SDA
+#define SCL_PIN D5       // I2C SCL
 #define AS5311_ADDR 0x36 // I2C address for AS5311
 
 // Encoder settings
@@ -240,46 +251,10 @@ void loop() {
 
 ## Revision: CAN BUS
 
-The updated version has several improvements:
-
-- CAN BUS with a dedicated transreceiver
-- power safety features
-
-
-### The updated Pinout:
-
-
-```cpp
-// Pin definitions for Xiao ESP32S3
-#define PIN_PA02_A0_D0 0     // Analog/Digital Pin A0/D0
-#define PIN_PA04_A1_D1 1     // Analog/Digital Pin A1/D1
-#define PIN_PA06_A2_D2 2     // Analog/Digital Pin A2/D2
-#define PIN_PA15_A3_D3 3     // Analog/Digital Pin A3/D3
-#define PIN_PA13_A4_D4_SDA 4 // I2C SDA / Analog Pin A4/D4
-#define PIN_PA15_A5_D5_SCL 5 // I2C SCL / Analog Pin A5/D5
-#define PIN_PA6_D6_TX 6      // UART TX Pin
-#define PIN_PB09_D7_RX 7     // UART RX Pin
-
-// Motor Control Pins
-#define PIN_MOT_EN 8     // Motor Enable
-#define PIN_MOT_STEP 9   // Motor Step
-#define PIN_MOT_DIR 10   // Motor Direction
-#define PIN_UART_PICO 11 // UART PICO
-
-// CAN Bus Pins
-#define PIN_CAN_RECV D1 // CAN Receive
-#define PIN_CAN_SEND D2 // CAN Send
-
-// I2C Bus (Alternate definition for clarity)
-#define I2C_SDA_PIN PIN_PA13_A4_D4_SDA
-#define I2C_SCL_PIN PIN_PA15_A5_D5_SCL
-
-// Additional Pins
-#define PIN_ENDSTOP 12  // Endstop for motor
-#define PIN_MOT_DIAG 13 // Motor diagnostics
-```
-
+The CAN revision (Rev C, 2025-01) has a dedicated CAN transceiver on D1/D2 and power safety features. Firmware, node IDs and termination: see the table under Overview; pinout: see [XIAO pin connections](#xiao-pin-connections).
 
 ## Attention:
+
+Rev C can be converted between 12V+CAN and 5V+I2C with the marked jumpers and resistors. JP101 joins the 12 V and 5 V nets: never connect 12 V while it is closed. Details: [FRAME electronics](../frame/README.md).
 
 ![](../IMAGES/ESP32S3CanOverview.jpeg)

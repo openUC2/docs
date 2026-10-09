@@ -163,8 +163,8 @@ Frontend-only:
 
 #### Electronic Components
 - **Microcontrollers**: ESP32, Arduino-compatible (see https://github.com/youseetoo/uc2-esp32/)
-- **Communication**: I2C, SPI, CAN-BUS
-- **Power**: 12V input via CAN Bus, operational voltage 3.3V, 5V
+- **Communication**: USB serial (JSON) to the host, CANopen at 500 kbit/s between modules, I2C, SPI
+- **Power**: 12V input via the CAN bus cable (JST-XH 4: GND, +12 V, CAN_H, CAN_L), operational voltage 3.3V, 5V
 - **Indicators**: LED status lights via Neopixel interface (on board breakout)
 
 #### Optical Specifications

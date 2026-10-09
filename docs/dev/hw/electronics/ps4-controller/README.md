@@ -47,7 +47,11 @@ Using Bluetooth connectivity, the PS4 controller connects to the ESP32-based UC2
 ### Installation Steps
 
 1. **Flash Firmware:** Use the UC2 webserial flashing tool at https://youseetoo.github.io/
-2. **Pair Controller:** Follow Bluetooth pairing instructions in the tutorial
+2. **Pair Controller:** Start the Bluetooth scan on the serial port (115200 baud), then put the controller into pairing mode (details in the tutorial):
+
+   ```json
+   {"task":"/bt_scan"}
+   ```
 3. **Test Functions:** Verify all button mappings work correctly
 4. **Calibrate Movement:** Adjust motor speeds and step sizes as needed
 
@@ -69,4 +73,6 @@ Using Bluetooth connectivity, the PS4 controller connects to the ESP32-based UC2
 
 Perfect for anyone who wants intuitive, wireless control of their automated microscopy system!
 
-For detailed setup instructions, see the PS4 Controller tutorial in this section.
+For detailed setup instructions, see the [PS4 Controller tutorial](./01-PS4-Controller.md).
+
+**CAN systems (FRAME / HAT+):** a DualShock 4 can also be plugged in by USB to a XIAO ESP32-S3 running the env `UC2_canopen_bridge_ps4_usbhost` (CAN bridge, node 5), which sends its commands to the satellites over CAN. See [Boards, roles & node IDs](../../../sw/interface/reference/boards-and-node-ids.md).

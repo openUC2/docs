@@ -4,6 +4,10 @@ sidebar_position: 20
 
 # CAN communication protocol
 
+:::warning Outdated
+This page describes the old ISO-TP CAN layer, which has been replaced by CANopen. Current documentation: [Architecture](./interface/explanation/architecture.md), [CANopen object dictionary](./interface/reference/canopen-object-dictionary.md).
+:::
+
 **Overview of the CAN Communication Implementation (ISO-TP) inside UC2-ESP32**
 
 This library provides an ISO-TP–based CAN interface for communication among various modules (motors, lasers, etc.) connected to the ESP32. At startup, the ESP32 brings all nodes to a known state (e.g., stopping motors), then collects status information (such as motor positions) via CAN. Though CAN itself lacks a strict “master/slave” concept, the ESP32 acts as a central controller by sending commands and processing status updates from any node. Whenever external input arrives (e.g., from a joystick), the library converts these commands into CAN messages that control motor speed or other device behavior.

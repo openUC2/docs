@@ -71,7 +71,13 @@ Go to https://youseetoo.github.io/indexWebSerialTest.html and connect to the ESP
 
 ![](IMAGES/BTpairing.png)
 
-*Alternative:* Go to any serial monitor and paste `{"task":"/bt_scan"}`
+*Alternative:* open any serial monitor (115200 baud on the standalone board) and send:
+
+```json
+{"task":"/bt_scan"}
+```
+
+On CAN systems a DualShock 4 can instead be connected by USB to a XIAO ESP32-S3 running the CAN bridge env `UC2_canopen_bridge_ps4_usbhost` (node 5).
 
 Follow the same steps to put the PS4 controller into pairing mode by pressing and holding the "PS" button and the "Share" button on the controller simultaneously until the light on the controller starts flashing rapidly.
 

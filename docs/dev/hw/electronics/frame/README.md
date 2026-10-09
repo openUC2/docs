@@ -24,18 +24,18 @@ ESP32 CAN controller is not compatible with CAN FD (flexible data-rate), just cl
 
 The ESP32 TWAI controller depends on getting a receiving signal at the same time that it is sending something in order to work, because that is how it can determine if it is allowed to talk (CAN ID arbitration/priorities).
 
-Higher OSI layers, like Network (OSI 3) and up are implemented in higher-layer protocols like CANopen. That implements flow control, multi-frame data segmentation, device addressing.
+UC2 runs CANopen (CANopenNode) on top at 500 kbit/s, with the ESP32 master as node 1 and satellites as slaves: [Architecture](../../../sw/interface/explanation/architecture.md), [Boards, roles & node IDs](../../../sw/interface/reference/boards-and-node-ids.md).
 
 ## hatplus-for-raspberrypi-5
 
-- [v1 HAT Schematic PDF](../hat-plus/v1/schematic.pdf)
+- [HAT schematic PDF (Rev D)](../hat-plus/v1/schematic.pdf)
 - <a href={require("../hat-plus/v2/ibom-hatv2.html")} target="_blank">v2 HAT ibom HTML</a>
 
 This board is effectively the mainboard for the mAIkroscope. It contains DC power input for the whole machine, switched power transmission to all motors, main coordinating microcontroller and interfacing with a Raspberry Pi.
 
 The HAT is put on top of a Raspberry Pi 5 and can supply it with 5.1V 5A through the 40-pin header. The HAT will also fit on a NVIDIA Jetson development board, because its 40-pin header is designed to be compatible with Raspberry Pi's.
 
-There are many comments for design choices, mechanisms, failsafes and links to external ressources in the [schematic PDF for our v1 HAT](../hat-plus/v1/schematic.pdf).
+There are many comments for design choices, mechanisms, failsafes and links to external ressources in the [HAT schematic PDF](../hat-plus/v1/schematic.pdf).
 
 The microcontroller is a ESP32-WROOM-32E-N8 module with integrated PCB antenna, 8 MB flash. The used ESP32-D0WD-V3 chip in the module has 449 KB ROM, 520 KB SRAM and 16 KB SRAM in RTC core.
 
@@ -74,7 +74,7 @@ In the table is the physical/board pin number, not GPIO number. The pin numberin
 | --- | ------------------------------------------------------------------ |
 | 3   | I2C-1_SDA connectable to ESP and XH_5V+I2C via solderjumper JP101  |
 | 5   | I2C-1_SCL connectable to ESP and  XH_5V+I2C via solderjumper JP102 |
-| 8   | UART_TX to ESP (parallel with USB-UART TX)                         |
+| 8   | UART_TX to ESP, 921600 baud (parallel with USB-UART TX)            |
 | 10  | UART_RX from ESP (parallel with USB-UART RX)                       |
 | 11  | ESP Auto-program circuit RTS                                       |
 | 16  | buspower-off when HI                                               |
@@ -82,8 +82,8 @@ In the table is the physical/board pin number, not GPIO number. The pin numberin
 | 21  | CAN-Controller SPI POCI                                            |
 | 23  | CAN-Controller SPI SCK                                             |
 | 24  | CAN-Controller SPI CS                                              |
-| 26  | EEPROM I2C-0 SCL (HAT+ spec)                                       |
-| 27  | EEPROM I2C-0 SDA (HAT+ spec)                                       |
+| 26  | EEPROM I2C SCL (GPIO7; the HAT+ spec puts ID_SC on pin 28)         |
+| 27  | EEPROM I2C SDA (ID_SD, GPIO0)                                      |
 | 32  | CAN-Controller Interrupt                                           |
 | 36  | ESP Auto-program circuit DTR                                       |
 
@@ -91,15 +91,15 @@ In the table is the physical/board pin number, not GPIO number. The pin numberin
 
 Actual chosen model is ESP32-WROOM-32E-N8.
 
-It is programmable via the USB-C port and CP2102 USB-Serial chip, or via Raspberry Pi UART (manual press of BOOT and RST necessary, or programming of the 2 Raspberry Pi GPIO to use the Auto-program circuit).
+It runs the CAN master firmware (env `UC2_canopen_master`, node 1, serial 921600 baud). It is programmable via the USB-C port and CP2102 USB-Serial chip, or via Raspberry Pi UART (manual press of BOOT and RST necessary, or programming of the 2 Raspberry Pi GPIO to use the Auto-program circuit).
 
 In the table are only GPIOs that are used and notable for the HAT. All GPIOs are also available at testpoints.
 
 | GPIO | Function                                                     |
 | ---- | ------------------------------------------------------------ |
 | 4    | Buspower_off when HI                                         |
-| 17   | CAN/TWAI Recieve                                             |
-| 18   | CAN/TWAI Send                                                |
+| 17   | CAN/TWAI TX (send)                                           |
+| 18   | CAN/TWAI RX (receive)                                        |
 | 19   | Neopixel LED data                                            |
 | 21   | I2C-1_SDA to XH_5V+I2C connector and solderjumpable to Raspi |
 | 22   | I2C-1_SCL to XH_5V+I2C connector and solderjumpable to Raspi |
@@ -121,8 +121,8 @@ Close JP jumpers by making a solder bridge between the 2 pads. To open a NO (nor
 
 | Operation    | Effect                                                                                          |
 | ------------ | ----------------------------------------------------------------------------------------------- |
-| Close JP1001 | Terminates CANBUS on the board by connecting CAN_H and CAN_L through 120 Ohm resistor           |
-| Close JP1002 | Red LED D1001 lights when CAN bus is in dominant state (logical 0, lines at different voltages) |
+| Close JP1001 | Terminates CANBUS on the board by connecting CAN_H and CAN_L through 120 Ohm resistor (v2: JP801) |
+| Close JP1002 | Red LED D1001 lights when CAN bus is in dominant state (logical 0, lines at different voltages) (v2: JP802) |
 
 ### Disabling communication or power-switching functions
 
@@ -146,7 +146,8 @@ stepper-backpack is a PCB to fasten to the back of a NEMA 11 stepper motor. It e
 - Glue a circular magnet to the end of the stepper motor's axle
 - Mount the PCB to the back of the motor using 3 pcs of M2.5 screws with cylindrical standoffs between board and motor. The standoffs should be about 2.5mm long. The PCB should fit completely behind the motor.
 - Connect the motor's electrical connections (coils) to the PCB via screw terminal blocks. A and B labels correspond to the 2 coils in the motor.
-- Connect it to a 12V supply and CAN via JST XH 4-pin connector
+- Connect it to a 12V supply and CAN via JST XH 4-pin connector (1 GND, 2 +12 V, 3 CAN_H, 4 CAN_L)
+- Firmware env `UC2_canopen_slave_motor`; default node 11, CI builds `_motA/_motX/_motY/_motZ` = nodes 10/11/12/13 (details: [Stepper backpack](../stepper-backpack/README.md))
 - The PCB controls the motor with a TMC2209 stepper motor driver
 - A magnetometer on the PCB measures axle position and supply feedback for accurate positioning
 - A XIAO ESP32S3 plugged in to the PCB can accept high-level commands (go to a position) and handle autonomous homing and stepping control (low level control of the stepper motor driver)
@@ -207,6 +208,8 @@ Close JP jumpers by making a solder bridge between the 2 pads. Open R 0-resistor
 ## Laser-interface
 
 This board can control a laser or LEDs and has 4 channels. It connects to the XH_12V+CAN backbone, has a XIAO to accept CAN commands and generate PWM signals, and has connectors for interlock sources. The interface to the laser is 4x PWM signal between 0V and 3.3V (LO should mean off), and 12V power.
+
+Firmware env `UC2_canopen_slave_laser`, default node 20; laser channels 0–3 map to OD sub-index 1–4.
 
 ### XIAO pinout
 
@@ -281,7 +284,7 @@ The individual switches of the dipswitch are numbered. All interlock sources are
 | Operation    | Effect                                                                                         |
 | ------------ | ---------------------------------------------------------------------------------------------- |
 | Close JP301  | Terminates CANBUS on the board by connecting CAN_H and CAN_L through 120 Ohm resistor          |
-| Close JP302  | Red LED D501 lights when CAN bus is in dominant state (logical 0, lines at different voltages) |
+| Close JP302  | Red CAN LED lights when CAN bus is in dominant state (logical 0, lines at different voltages) |
 | Close JP1101 | Add 4.7k pullup on D6                                                                          |
 | Close JP1102 | Add 4.7k pullup on D7                                                                          |
 | Close JP1103 | Add 4.7k pullup on D8                                                                          |
@@ -309,6 +312,6 @@ Pogo pins are spring-loaded contacts. They will enable a module to automatically
 - The boards have to be worked on in pairs so that the pins (M) align with the contact pads (F) and have the expected pinout.
 - The boards need to be pressed and held together for the pins to make proper contact. The datasheet of the used pins specifies their optimal/minimum/maximum depress distance and spring force.
 - The pogo pins have a current capibility of 1A per pin. For power transmission 12V is used over the pins and converted down (DC-DC converter) on the board with the device that needs it.
-- I2C is also passed via the pins. The module is a peripheral to the controller on the mainboard.
+- In the original design I2C was passed via the pins, with the module as I2C peripheral of the mainboard. Current satellites use CAN instead, on JST-XH 4: GND, +12 V, CAN_H, CAN_L.
 - The pogo pins can break off easily if the tips experience force to the sides. The pins should therefore be protected.  They can be placed in the part inside the microscope protected from touching. The connector part with the pads can be on the outside of the modules.
-- The connector boards use wire-to-board connectors with the same type (XH) and pinout as the "to-motherboard" connector of the stepper backpack. GND, 12V, SDA, SCL
+- The connector boards use XH wire-to-board connectors of the same type as the stepper backpack's bus connector (I2C-era pinout: GND, 12V, SDA, SCL).

@@ -41,7 +41,7 @@ This section provides comprehensive guides for ImSwitch beyond the basic Quickst
 
 ### 2. [Usage](./02_Usage/README.md)
 Essential usage tutorials:
-- **UC2-REST** - Python interface for hardware control
+- **Connect to UC2 electronics** - serial (UC2-REST) or CANopen setup
 - **Micromanager** - µManager integration and workflows
 - **Updates** - Keeping your system current
 
@@ -56,8 +56,7 @@ System configuration documentation:
 Advanced integration tutorials:
 - **Image Processing** - Napari integration and analysis pipelines
 - **Jupyter Workflows** - Interactive microscopy notebooks
-- **UC2-ESP Getting Started** - ESP32 firmware tutorial
-- **UC2-REST Getting Started** - Python interface deep dive
+- **Hardware integration** - links to the serial and Python tutorials of the [Serial & CANopen interface](../../interface/index.md)
 
 ### 5. [Device-Specific](./05_Device-Specific/README.md)
 Hardware-specific guides:
@@ -85,7 +84,7 @@ Specialized deployments:
 3. [Configuration](./03_Configuration/README.md)
 
 ### Intermediate Users
-2. [UC2-REST Interface](./02_Usage/UC2-REST.md)
+2. [Connect ImSwitch to UC2 electronics](./02_Usage/UC2-REST.md)
 3. [Device Configuration](./05_Device-Specific/README.md)
 
 ### Advanced Users
@@ -95,7 +94,7 @@ Specialized deployments:
 
 ### Developers
 1. [Experimental Features](./06_Experimental/README.md)
-2. [UC2-ESP Development](./04_Tutorials/UC2-ESP-Getting-Started.md)
+2. [First serial command](../../interface/tutorials/first-serial-command.md) and [Python first steps](../../interface/tutorials/python-first-steps.md) (UC2 electronics)
 3. [Custom Device Integration](./05_Device-Specific/README.md)
 
 ## 💡 Tips for Success

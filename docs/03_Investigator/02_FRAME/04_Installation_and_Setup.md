@@ -229,12 +229,12 @@ If you need to install ImSwitch locally on your computer:
 1. **Driver Installation**:
    - Install camera drivers (HikVision or compatible)
    - Install motor controller drivers (ESP32-based)
-   - Install communication interface drivers (CAN-BUS/USB)
+   - Install the USB-serial driver of the ESP32 board (CP2102 or CH340); the CAN bus needs no driver on the PC
    - Verify device manager shows all devices properly
 
 2. **Control Software Installation**:
    - Download latest ImSwitch software from [GitHub](http://github.com/openuc2/imswitch)
-   - Install UC2-REST API components
+   - Install the `UC2-REST` Python package (`pip install UC2-REST`; ImSwitch normally pulls it in)
    - Configure system parameters using provided configuration files
    - Load device configuration files (see [config_examples/](./config_examples/README.md))
 
@@ -387,7 +387,7 @@ For information about using the sample calibration target, see the [Operation Ma
 
 2. **Control Software Installation**:
    - Download latest ImSwitch software
-   - Install UC2-REST API components
+   - Install the `UC2-REST` Python package (`pip install UC2-REST`)
    - Configure system parameters
    - Load device configuration files
 
@@ -582,7 +582,7 @@ In a nutshell: the different layers of the FRAME can be constructed freely upon 
 | Problem | Possible Cause | Solution |
 |---------|----------------|----------|
 | No power to modules | Fuse blown or wiring error | Check fuses and connections of CAN bus cables |
-| Communication errors | CAN-BUS termination | Verify termination resistors (should be activated on HAT) |
+| Communication errors | CAN-BUS termination | 120 Ω termination at both physical bus ends only (HAT+ v2: jumper JP801); see [Boards, roles & node IDs](../../dev/sw/interface/reference/boards-and-node-ids.md) |
 | Motor not responding | Driver configuration | Check driver settings or reflash and reconfigure via youseetoo.github.io |
 
 ### Common Software Issues

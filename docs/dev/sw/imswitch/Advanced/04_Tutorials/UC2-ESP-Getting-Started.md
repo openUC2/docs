@@ -1,5 +1,9 @@
 # UC2-ESP32 Getting Started Tutorial
 
+:::warning Outdated
+Several commands shown here (`/led_act`, flat motor keys, `/wifi_act`) do not exist in the current firmware. Current documentation: [First serial command](../../../interface/tutorials/first-serial-command.md).
+:::
+
 The UC2-ESP32 firmware is the low-level software that runs on ESP32 microcontrollers to control UC2 hardware components. This tutorial guides you through setting up, flashing, and using UC2-ESP32 firmware.
 
 ## Overview

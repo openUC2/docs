@@ -9,10 +9,10 @@ This section covers how to use ImSwitch effectively, from basic operations to ad
    - Basic controls
    - Camera and stage operation
 
-2. **[UC2-REST Integration](./UC2-REST.md)** - Python interface for UC2-ESP32
-   - Setting up UC2-REST
-   - Communication with ESP32 firmware
-   - Hardware control examples
+2. **[Connect ImSwitch to UC2 electronics](./UC2-REST.md)** - serial (`ESP32Manager`, UC2-REST) or CANopen (`UC2CANOpenManager`)
+   - `rs232devices` entry and its properties
+   - Stage, laser and LED-matrix managers
+   - Connection checks and common problems
 
 3. **[Micromanager Integration](./Micromanager.md)** - Using ImSwitch with µManager
    - Device adapter setup
@@ -48,9 +48,9 @@ python -m imswitch
 # With specific configuration
 python -m imswitch --config my_config.json
 
-# UC2-REST communication
-from UC2REST import UC2Client
-client = UC2Client(serialport="/dev/ttyUSB0")
+# UC2-REST communication (Python; pip install UC2-REST)
+import uc2rest
+esp = uc2rest.UC2Client(serialport="/dev/ttyUSB0", baudrate=115200)  # HAT+ master: 921600
 ```
 
 ### Configuration Files

@@ -115,7 +115,7 @@
 ⚠️ CAUTION: Firmware updates should only be performed when necessary.
 ```
 
-The motor controllers may occasionally require firmware updates. Each axis controller can be updated individually:
+The motor controllers may occasionally require firmware updates. Each axis controller can be updated individually, either over the CAN bus through the HAT+ without opening the box ([Update firmware over CAN](../../dev/sw/interface/how-to/update-firmware-over-can.md)) or by USB as shown below:
 
 ![](./IMAGES/06/FRAME_Manual_33.jpeg)
 *The firmware of the motor controllers may change (hopefully not at all), but if needed, individual motor firmware can be updated. The axes are labeled on the outer box (X,Y,Z,A). Connect a USB-C cable to the appropriate controller.*

@@ -26,15 +26,30 @@ Multiple versions of the board are available with different features and layouts
 
 ## Tutorials in this Section
 
-- **Board Schematics V2** - Detailed layout and wiring for version 2
-- **Board Schematics V3** - Beta version documentation
-- **Board Schematics V4** - Latest board version guide
+- [Board Schematics V2](./schematics-v2.md) - Detailed layout and wiring for version 2
+- [Board Schematics V3](./schematics-v3.md) - Beta version documentation
+- [Board Schematics V4](./schematics-v4.md) - Latest board version guide
 
 ## Connectivity Options
 
 - **WiFi:** Remote control and monitoring
 - **Bluetooth:** Wireless PS4 controller connection
 - **USB Serial:** Direct computer connection (most commonly used)
+
+## Interfaces
+
+| | `UC2_3` / `UC2_4` | `UC2_canopen_standalone_v4_release` |
+|---|---|---|
+| Board | v3 / v4 | v4 |
+| Role | standalone, no CAN | CAN master, node 1 (hybrid) |
+| Serial | USB, 115200 baud, serial JSON | USB, 115200 baud, serial JSON |
+| CAN | – | 500 kbit/s, TX GPIO32 / RX GPIO33 |
+| Local | motors A/X/Y/Z, lasers, LED | motors A/X/Y/Z, lasers 1–3, LED |
+| Via CAN | – | illumination board (node 30: LED + laser id 4), galvo (node 40) |
+
+- The USB-serial chip depends on the ESP32 DevKit: CP2102 or CH340. Install the matching driver if no port appears.
+- In the hybrid build, extra CAN motors (stepper id ≥ 4) are not routed by the current firmware. For CAN axes use the [HAT+](../hat-plus/README.md).
+- Protocol and clients: [Serial & CANopen interface](../../../sw/interface/index.md). First test: [First serial command](../../../sw/interface/tutorials/first-serial-command.md).
 
 ## Connected Components
 

@@ -402,7 +402,7 @@ The experiment controller has a built-in sample overview map where you can selec
 
 ##### Web Serial
 
-You can access the functions of the microscope using the serial interface. This works without any installation or the Raspberry Pi.
+You can access the functions of the microscope using the serial interface. This works without any installation or the Raspberry Pi: connect a computer to the HAT+ USB-C port and open the [WebSerial test page](https://youseetoo.github.io/indexWebSerialTest.html) in Chrome or Edge. The HAT+ ESP32 (`UC2_canopen_master`) uses 921600 baud, and the port must not be in use by ImSwitch.
 
 ![](./IMAGES/05/FRAME_Manual_21.jpeg)
 *Web serial interface showing device connection and control options. Use this interface to connect to the ESP32 device and test motion by moving the stage and controlling illumination remotely.*
@@ -442,7 +442,7 @@ For more information: https://docs.openuc2.com/docs/ImSwitch/Quickstart
 3. **Homing**: Return to defined home position
 4. **Limit Setting**: Define software travel limits
 
- For further information please refer to: https://docs.openuc2.com/docs/Electronics/Advanced/UC2-ESP32/Setup_Buildenvironment
+ For the underlying serial commands see [Serial commands](../../dev/sw/interface/reference/serial-commands.md#motor_act).
 
 ### Autofocus System
 

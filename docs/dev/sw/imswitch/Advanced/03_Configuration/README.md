@@ -74,9 +74,8 @@ The `imcontrol_options.json` file defines:
     "ESP32": {
       "managerName": "ESP32Manager",
       "managerProperties": {
-        "host_": "192.168.1.100",
         "serialport": "/dev/ttyUSB0",
-        "serialport_windows": "COM3"
+        "baudrate": 115200
       }
     }
   },
@@ -133,8 +132,8 @@ The `imcontrol_options.json` file defines:
     "ESP32": {
       "managerName": "ESP32Manager",
       "managerProperties": {
-        "host_": "192.168.43.129",
-        "serialport": "/dev/ttyUSB0"
+        "serialport": "/dev/ttyUSB0",
+        "baudrate": 115200
       }
     }
   },
@@ -196,13 +195,13 @@ The `imcontrol_options.json` file defines:
       "forFocusLock": true
     }
   },
-  "ledMatrixes": {
+  "LEDMatrixs": {
     "ESP32 LEDMatrix": {
       "managerName": "ESP32LEDMatrixManager",
       "managerProperties": {
         "rs232device": "ESP32",
-        "dimx": 8,
-        "dimy": 8
+        "Nx": 8,
+        "Ny": 8
       },
       "wavelength": 635,
       "valueRangeMin": 0,
@@ -279,8 +278,7 @@ The `imcontrol_options.json` file defines:
     "stepsizeZ": 0.3125,
     "homeSpeedX": 15000,
     "homeSpeedY": 15000,
-    "homeSpeedZ": 15000,
-    "enabledAxes": ["X", "Y", "Z"]
+    "homeSpeedZ": 15000
   },
   "axes": ["X", "Y", "Z"],
   "forScanning": true,
@@ -306,18 +304,20 @@ The `imcontrol_options.json` file defines:
 
 **LED Matrix Control**:
 ```json
-"ESP32_LEDMatrix": {
+"ESP32 LEDMatrix": {
   "managerName": "ESP32LEDMatrixManager",
   "managerProperties": {
     "rs232device": "ESP32",
-    "dimx": 8,
-    "dimy": 8
+    "Nx": 8,
+    "Ny": 8
   },
   "wavelength": 635,
   "valueRangeMin": 0,
   "valueRangeMax": 255
 }
 ```
+
+The LED-matrix controller looks the device up by the exact name `ESP32 LEDMatrix`.
 
 ## Communication Settings
 
@@ -327,27 +327,24 @@ The `imcontrol_options.json` file defines:
 "ESP32": {
   "managerName": "ESP32Manager",
   "managerProperties": {
-    "serialport": "/dev/ttyUSB0",        # Linux
-    "serialport_windows": "COM3",        # Windows
-    "serialport_mac": "/dev/cu.usbserial-1410", # macOS
+    "serialport": "/dev/ttyUSB0",
     "baudrate": 115200,
-    "timeout": 1.0
+    "debug": false
   }
 }
 ```
+
+| Key | Notes |
+|---|---|
+| `serialport` | Linux `/dev/ttyUSB0`, Windows `COM3`, macOS `/dev/cu.SLAB_USBtoUART` or `/dev/cu.wchusbserial*`. A path that does not exist starts auto-detection. |
+| `baudrate` | 115200 for standalone boards; **921600 for the FRAME HAT+ master** (`UC2_canopen_master`) |
+| `debug`, `override_firmwarecheck`, `deviceID`, `requireMaster` | optional, see [Connect ImSwitch to UC2 electronics](../02_Usage/UC2-REST.md) |
+
+Keep the entry name `ESP32`; other controllers look it up by that name. For CANopen (`UC2CANOpenManager`) see the same page.
 
 ### WiFi/Network Communication
 
-```json
-"ESP32_WiFi": {
-  "managerName": "ESP32Manager", 
-  "managerProperties": {
-    "host_": "192.168.1.100",
-    "port": 31950,
-    "timeout": 5.0
-  }
-}
-```
+Removed. `uc2rest` talks serial only and ignores `host`/`port`; existing `host_` entries are inert and can be deleted.
 
 ## Configuration Templates
 
@@ -506,7 +503,7 @@ def test_hardware(config):
 
 ## Related Resources
 
-- **[UC2-REST Documentation](../02_Usage/UC2-REST.md)** - Communication layer details
+- **[Connect ImSwitch to UC2 electronics](../02_Usage/UC2-REST.md)** - serial and CANopen connection settings
 - **[ImSwitch API Reference](https://imswitch.readthedocs.io/)** - Complete API documentation
 - **[Example Configurations](https://github.com/openUC2/ImSwitchConfig)** - Community configurations
 

@@ -52,93 +52,55 @@ git pull origin master
 pip install -e .
 ```
 
-### 2. Update UC2-REST
+### 2. Update UC2-REST (and uc2canopen)
 
-**Standard Update:**
+Both are ImSwitch dependencies (pip `UC2-REST`, import `uc2rest`; pip/import `uc2canopen`), so reinstalling ImSwitch pulls the minimum versions it needs. To update them on their own:
 
 ```bash
-# Navigate to UC2-REST directory
+pip install -U UC2-REST uc2canopen
+
+# or, from a git checkout of UC2-REST
 cd <DIRECTORY/WHERE/YOU/DOWNLOADED/UC2-REST>
-
-# Pull latest version
 git pull origin master
-
-# Reinstall
 pip install -e .
 ```
 
-**Verify UC2-REST Update:**
+**Verify:**
 
-```python
-# Test in Python
-from UC2REST import UC2Client
-
-print("UC2-REST updated successfully")
-
-# Check version (if available)
-import UC2REST
-
-print(f"UC2-REST version: {getattr(UC2REST, '__version__', 'unknown')}")
+```bash
+pip show UC2-REST uc2canopen      # installed versions
+python -c "import uc2rest; print(uc2rest.__file__)"
 ```
 
 ### 3. Update UC2-ESP32 Firmware
 
-The UC2-ESP32 firmware should be updated periodically for new features and bug fixes.
+**Over USB (all boards):** use the [web flasher](https://youseetoo.github.io/flasher.html) in Chrome or Edge: pick the board (FRAME HAT+: the CANopen master, `UC2_canopen_master`), connect, flash. Close ImSwitch first; it holds the serial port. Board and image names: [Boards, roles & node IDs](../../../interface/reference/boards-and-node-ids.md).
 
-**Web-based Firmware Update (Recommended):**
+**CAN satellites (motor, laser, LED, galvo boards on FRAME):** update them in place over the bus, no USB cable needed: [Update firmware over CAN](../../../interface/how-to/update-firmware-over-can.md).
 
-1. Visit the [UC2 Firmware Page](https://youseetoo.github.io/)
-2. Select your board type (if unsure, check hardware documentation)
-3. Connect your ESP32 via USB
-4. Click "Connect" and select the appropriate COM port
-5. Click "Flash Firmware"
-6. Wait for installation to complete
-7. Test firmware on the [UC2 Web Serial Test Page](https://youseetoo.github.io/indexWebSerialTest.html)
+**Build from source:** [youseetoo/uc2-esp32](https://github.com/youseetoo/uc2-esp32) with PlatformIO, `pio run -e <env> -t upload`, env names as in the board table above.
 
-**Manual Firmware Update:**
-
-```bash
-# Clone latest firmware
-git clone https://github.com/youseetoo/uc2-esp32
-cd uc2-esp32
-
-# Follow build instructions in repository
-# (Requires PlatformIO or Arduino IDE)
-```
-
-## Version Compatibility
-
-### Checking Versions
+## Checking Versions
 
 **ImSwitch Version:**
 ```bash
 python -c "import imswitch; print(imswitch.__version__)"
 ```
 
-**UC2-REST Version:**
-```python
-from UC2REST import UC2Client
-
-client = UC2Client()
-print(f"UC2-REST info: {client.get_version()}")  # If supported
-```
+**UC2-REST Version:** `pip show UC2-REST` (the package does not export `__version__`).
 
 **ESP32 Firmware Version:**
 ```python
-from UC2REST import UC2Client
+import uc2rest
 
-client = UC2Client(serialport="/dev/ttyUSB0")
-version_info = client.state.get_version()
-print(f"ESP32 firmware: {version_info}")
+esp = uc2rest.UC2Client(serialport="/dev/ttyUSB0", baudrate=115200)  # HAT+ master: 921600
+print(esp.state.get_firmware_info())  # name, version, fwVersion, fwImage, date, pindef, isMaster
+esp.close()
 ```
 
-### Compatibility Matrix
+While ImSwitch runs, it reports the same data at `UC2ConfigController/getFirmwareInfo` ([how](./UC2-REST.md)).
 
-| ImSwitch | UC2-REST | ESP32 Firmware | Notes |
-|----------|----------|----------------|-------|
-| 1.5.x    | 1.2.x    | 2.1.x         | Latest stable |
-| 1.4.x    | 1.1.x    | 2.0.x         | Previous stable |
-| dev      | dev      | reworkBD      | Development |
+There is no fixed compatibility matrix. ImSwitch declares the minimum `uc2-rest` and `uc2canopen` versions in its `pyproject.toml`; keep ImSwitch, the Python packages and the firmware on releases from the same period.
 
 ## Automated Update Scripts
 
@@ -214,15 +176,16 @@ chmod +x update_imswitch.sh
    - Test basic device functionality (camera, stage, LEDs)
    - Check for error messages in console
 
-3. **Test UC2-REST:**
+3. **Test UC2-REST** (with ImSwitch stopped; only one process can open the port):
    ```python
-   from UC2REST import UC2Client
-                     client = UC2Client(serialport="/dev/ttyUSB0")
-                     if client.is_connected:
-                         print("UC2-REST connection successful")
-                         # Test basic commands
-                         client.led.set_led(channel=1, intensity=50)
-                         client.led.set_led(channel=1, intensity=0)
+   import uc2rest
+
+   esp = uc2rest.UC2Client(serialport="/dev/ttyUSB0", baudrate=115200)  # HAT+ master: 921600
+   if esp.serial.is_connected:
+       print("UC2-REST connection successful")
+       esp.led.send_LEDMatrix_full(intensity=(0, 50, 0))
+       esp.led.send_LEDMatrix_off()
+   esp.close()
    ```
 
 4. **Test New Features:**
@@ -286,8 +249,8 @@ git checkout master
 
 **UC2-REST Rollback:**
 ```bash
-# Install specific version
-pip install UC2REST==1.1.0  # Example version
+# Install a specific version (list them with: pip index versions UC2-REST)
+pip install "UC2-REST==<version>"
 
 # Or rollback git repository
 cd UC2-REST

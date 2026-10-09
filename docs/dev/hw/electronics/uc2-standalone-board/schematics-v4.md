@@ -28,8 +28,29 @@ We use the ESP32 in order to ensure connectivity via
 ### pinouts
 ![](./IMAGES/standalone-jacks-pinout_V04.jpg)
 
+## Interfaces
+
+| | `UC2_4` | `UC2_canopen_standalone_v4_release` |
+|---|---|---|
+| Role | standalone, CAN unused | CAN master, node 1 (hybrid) |
+| Serial | USB, 115200 baud, serial JSON | USB, 115200 baud, serial JSON |
+| CAN | – | 500 kbit/s, TX GPIO32 / RX GPIO33, on the "XH_12V+CAN" output |
+| Via CAN | – | illumination board (node 30: LED + laser id 4), galvo (node 40) |
+
+USB-serial chip: CP2102 or CH340, depending on the ESP32 DevKit. Both envs drive the on-board devices directly:
+
+| Function | ESP32 GPIO |
+|---|---|
+| STEP A / X / Y / Z | 15 / 16 / 14 / 0 |
+| DIR, enable | TCA9535 I/O expander, I2C 0x27 (SDA 21, SCL 22) |
+| TMC2209 UART, 4 drivers (`UC2_canopen_standalone_v4_*` only) | TX 26 / RX 34 |
+| Laser / PWM 1 / 2 / 3 | 12 / 4 / 2 |
+| LED data (64 px) | 13 |
+
+In the hybrid build, extra CAN motors (stepper id ≥ 4) are not routed by the current firmware. See [Serial & CANopen interface](../../../sw/interface/index.md) and [First serial command](../../../sw/interface/tutorials/first-serial-command.md).
+
 ## connecting devices - max. configuration for Discovery line products
-- connect the LED-Matrix to the Mainboard at `LED1.
+- connect the LED-Matrix to the Mainboard at `LED1`.
 - Connect the Z-stage to the position `Z-Motor` on the main board. Ensure there's a motor driver.
 - Connect the 3 Motors of the XYZ-Stage to the respective positions `A-Motor`, `X-Motor`, `Y-Motor`. Ensure there are motor drivers as well.
 - Connect the single fluorescence LED at `PMW2`.

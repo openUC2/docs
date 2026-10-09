@@ -229,13 +229,13 @@ Contact openUC2 for information about authorized distributors in your region.
 - Documentation: [ImSwitch Docs]
 - Community support
 
-**UC2-REST API**:
-- API documentation
-- Example code
-- Integration guides
+**UC2-REST (Python, USB serial)**:
+- [Serial & CANopen interface](../../dev/sw/interface/index.md)
+- [Serial commands](../../dev/sw/interface/reference/serial-commands.md)
+- [Python first steps](../../dev/sw/interface/tutorials/python-first-steps.md)
 
 **Python Libraries**:
-- UC2-Python package
+- `UC2-REST` (`import uc2rest`, USB serial) and `uc2canopen` (CAN bus)
 - Example scripts
 - Automation tutorials
 

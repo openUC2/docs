@@ -10,7 +10,10 @@ sidebar_label: v2
 
 - Schematics PDF (HAT+ Rev D): https://docs.openuc2.com/kicad/hatplus-for-raspberrypi-5.pdf
 - Schematics PDF (Panel Board): https://docs.openuc2.com/kicad/hat-panelboard.pdf
-- Firmware config reference (ESP32, HAT Master v2): https://github.com/youseetoo/uc2-esp32/blob/main/sdkconfig.UC2_3_CAN_HAT_Master_v2
+- Firmware: env `UC2_canopen_master` (section 11 below)
+- Serial and CANopen usage: [Serial & CANopen interface](../../../../sw/interface/index.md), [Boards, roles & node IDs](../../../../sw/interface/reference/boards-and-node-ids.md)
+
+![HAT+ v2 connections](../../../../sw/interface/img/hat-plus-wiring.svg)
 
 ## 1) Purpose & feature summary
 
@@ -21,7 +24,7 @@ sidebar_label: v2
     - Raspi: MCP2515 SPI controller + SN65HVD230 transceiver
     - ESP32: Built-in CAN (TWAI) controller + SN65HVD230 transceiver
     - Optional 120 ohm termination and CAN activity LED by solder jumpers.
-  - **ESP32-WROOM-32E** co-processor (USB-C + CP2102; also flashable via Pi UART with auto-program DTR/RTS).
+  - **ESP32-WROOM-32E** CAN master (node 1; serial 921600 baud via USB-C + CP2102 or the Pi UART; flashable via Pi UART with auto-program DTR/RTS).
   - **Sensors & I/O**:
     - INA226 current sensor (I2C addr 0x46)
     - two TMP102 temperature sensors (I2C addrs typically 0x4A and 0x4B)
@@ -58,35 +61,35 @@ sidebar_label: v2
 
 - 3 (SDA1) / 5 (SCL1): I2C-1
   - Solder jumpers **JP101/JP102** can bridge Pi I2C to the board's shared I2C net (and to the ESP32 I2C if you close the bridge).
-- 8 (GPIO14 TXD) / 10 (GPIO15 RXD): UART to ESP32 (paralleled with CP2102).
-- 11 / 36: handshake lines used for ESP32 auto-program (via CP2102 wiring, see USB-UART sheet). Open **JP901/JP902** to isolate if needed.
+- 8 (GPIO14 TXD) / 10 (GPIO15 RXD): UART to ESP32, 921600 baud (paralleled with CP2102).
+- 11 (GPIO17) / 36 (GPIO16): RTS / DTR for ESP32 auto-program (same lines as the CP2102). Open **JP901/JP902** to isolate if needed.
 - 16 (GPIO23): **buspower-off when HIGH** (wired into the power gating logic).
 - 19/21/23/24: SPI0 (MOSI/MISO/SCLK/CE0) to **MCP2515**.
 - 32 (GPIO12): **MCP2515 INT**.
-- 27/28 (GPIO0/GPIO1): I2C-0 for **HAT+ EEPROMs** (spec-reserved).
+- 26 (GPIO7) / 27 (GPIO0): SCL / SDA of the **HAT+ EEPROMs**. The HAT+ specification expects ID_SC on pin 28; on this PCB the EEPROM SCL goes to pin 26, which may explain why the EEPROMs are not detected.
 
 ### 3.2 ESP32 pinout (Rev D / v2, used signals)
 
-This is the pinout that matches the `UC2_3_CAN_HAT_Master` v2 definition and the Rev D schematic:
+Matches the Rev D netlist and the firmware env `UC2_canopen_master` (`main/config/UC2_canopen_master/PinConfig.h`):
 
 | ESP32 GPIO | Net / Function | Notes |
 | ---------- | -------------- | ----- |
 | 21 | I2C-1 SDA | Shared sensor bus |
 | 22 | I2C-1 SCL | Shared sensor bus |
-| 17 | CAN RX (TWAI) | To ESP-side SN65HVD230 |
-| 18 | CAN TX (TWAI) | To ESP-side SN65HVD230 |
+| 17 | CAN TX (TWAI, `ESP_CAN-SEND`) | To ESP-side SN65HVD230 |
+| 18 | CAN RX (TWAI, `ESP_CAN-RECV`) | From ESP-side SN65HVD230 |
 | 19 | NeoPixel data | On-board WS2812 + `neopixel-extend` |
-| 32 | Camera trigger out | Drives Panel Board camera trigger interface |
-| 27 | Camera IO0 in | Reserved / optional |
-| 33 | Camera IO2 IO | Reserved / optional |
+| 27 | Camera trigger out (`camera-trigger_esp-gpio`) | To Panel Board; firmware `CAMERA_TRIGGER_PIN` |
+| 33 | Fan tacho in | From Panel Board |
+| 32 | – | Test point only |
+| 25 | Buzzer (active HIGH) | |
+| 35 | ALERT (sensors) | Input-only |
 | 4  | BUSPOWER_OFF (HIGH = off) | Software cut of `+12V_switched` |
 | 34 | E-STOP sense (`sense-emg-stop`) | Input-only pin; HIGH = E-STOP asserted |
 
-> If you saw a PR in the `uc2-esp32` repo that added this v2 pinout, this table is the consolidated version to keep here in the hardware README.
 
 
-
-## 4) I2C pins (answer)
+## 4) I2C pins
 
 ### Raspberry Pi I2C (primary)
 - Pi I2C-1 is on header pins:
@@ -100,7 +103,7 @@ This is the pinout that matches the `UC2_3_CAN_HAT_Master` v2 definition and the
 
 ### Bridging Pi ↔ ESP I2C
 - **JP101 (SDA)** and **JP102 (SCL)** are the solder jumpers that connect the Pi I2C-1 lines into the HAT shared I2C net (and therefore to the ESP32 I2C pins and the I2C header ecosystem).  
-  - Default should be OPEN unless you explicitly want the shared bus.
+  - Open by default. The Pi (`i2cdetect -y 1`) only sees the on-board INA226/TMP102 when JP101 and JP102 are closed.
 
 **Practical note:** the Pi has its own pullups on I2C-1. If the Pi is unpowered, the bus can behave oddly or backpower through pullups, so treat shared I2C with care when mixing power domains.
 
@@ -120,7 +123,7 @@ This is the pinout that matches the `UC2_3_CAN_HAT_Master` v2 definition and the
 ## 6) Buzzer (how it works)
 
 - The buzzer is a 3.3 V driven beeper (BZ1501) switched by an NPN transistor (Q1501 SS8050).
-- Signal is `buzzer-input` into a base resistor network (R1501 5.6k, etc.). The transistor sinks current through the buzzer.
+- Signal is `buzzer-input` (ESP32 GPIO25, active HIGH) into a base resistor network (R1501 5.6k, etc.). The transistor sinks current through the buzzer.
 - Recommended drive for loudest beep:
   - **2.7 kHz, 50% duty cycle** PWM.
   - Arbitrary waveforms also work.
@@ -149,9 +152,9 @@ bool estop_hit = (digitalRead(34) == HIGH);
 
 
 
-## 8) Switching off 12 V from ESP32 or Raspberry Pi (answer)
+## 8) Switching off 12 V from ESP32 or Raspberry Pi
 
-Yes: you can shut off the **switched 12 V rail** (`+12V_switched`) in two ways:
+The **switched 12 V rail** (`+12V_switched`) can be shut off in two ways:
 
 ### 8.1 Software kill (fast, intended)
 
@@ -160,7 +163,7 @@ Yes: you can shut off the **switched 12 V rail** (`+12V_switched`) in two ways:
   * ESP32: `buspower-off_ESP` on **GPIO4** (HIGH = OFF)
   * Raspberry Pi: `buspower-off_raspi` on **GPIO23** (Pi header pin 16; HIGH = OFF)
 
-This is a hard gate: if either line requests OFF, the switched 12 V is disabled.
+This is a hard gate: if either line requests OFF, the switched 12 V is disabled. From the host: `{"task":"/state_act","power":0}` (`1` = on).
 
 ### 8.2 Physical kill (local momentary)
 
@@ -174,7 +177,7 @@ These are the useful field jumpers for CAN diagnostics and bus correctness:
 
 * **JP801**: enable on-board **120 ohm termination**
 
-  * Bridge it only if this node is at one end of the CAN bus (one terminator per end).
+  * Open by default. Bridge it only if this node is at one end of the CAN bus (one terminator per end).
 * **JP802**: enable CAN **dominant-state indicator LED**
 
   * Helpful to visually confirm activity (adds a small load to the bus).
@@ -208,25 +211,23 @@ This is OS-image controllable (automate it in your openUC2 OS build / image pipe
 
 ### 10.2 Intended automated method (HAT+ EEPROM)
 
-The design contains **two HAT+ EEPROMs** on Pi I2C-0 (GPIO0/1) to advertise the HAT class, including a **Power MODE1** class ("5 A capable") so the Pi can lift power limits automatically.
+The design contains **two HAT+ EEPROMs** on the Pi EEPROM I2C lines (pins 26/27, see 3.1) to advertise the HAT class, including a **Power MODE1** class ("5 A capable") so the Pi can lift power limits automatically.
 
 Status: on early bring-up this is "not working currently" in the project notes, so keep the config.txt method in place until EEPROM programming + detection is validated end-to-end.
 
 
 
-## 11) Firmware (ESP32 HAT Master v2)
+## 11) Firmware (ESP32 CAN master)
 
-* Use this firmware config as the canonical reference for the v2 board:
+| | |
+|---|---|
+| Env | `UC2_canopen_master` (`_release` / `_debug` variants) |
+| Role | CAN master, node 1, CANopen at 500 kbit/s |
+| Serial | 921600 baud, USB-C (CP2102) or Pi UART pins 8/10 |
+| Web flasher | [youseetoo.github.io/flasher.html](https://youseetoo.github.io/flasher.html), board **UC2 CAN Master** |
+| Image | `esp32_UC2_canopen_master_release.bin` (`_merged.bin` for a full flash at 0x0) |
 
-  * [https://github.com/youseetoo/uc2-esp32/blob/main/sdkconfig.UC2_3_CAN_HAT_Master_v2](https://github.com/youseetoo/uc2-esp32/blob/main/sdkconfig.UC2_3_CAN_HAT_Master_v2)
-
-Suggested repo structure for releases:
-
-* Provide prebuilt binaries for:
-
-  * `UC2_3_CAN_HAT_Master_v2.bin`
-  * plus `bootloader.bin` and `partitions.bin` if you are not using merged images
-* Link them from GitHub Releases and also from this README.
+Satellites (motors, laser, LED, galvo) are reached through the master's routing table; see [Boards, roles & node IDs](../../../../sw/interface/reference/boards-and-node-ids.md).
 
 
 
@@ -303,21 +304,26 @@ The Panel Board generates its local 5 V and 3.3 V from the 12 V input.
 ### 13.1 MCP2515 overlay (Pi-side CAN on Linux)
 
 * SPI0 CE0 (CS), INT at GPIO12, SCK/MOSI/MISO on pins 23/19/21.
-* Example `/boot/firmware/config.txt`:
+* Crystal Y901 is **12 MHz**. `/boot/firmware/config.txt`:
 
 ```ini
 dtparam=spi=on
-dtoverlay=mcp2515,spi0-0,interrupt=12,oscillator=16000000
+dtoverlay=mcp2515-can0,oscillator=12000000,interrupt=12,spimaxfrequency=10000000
 ```
 
 Then:
 
 ```bash
-sudo ip link set can0 up type can bitrate 500000
+sudo apt install can-utils
+sudo ip link set can0 up type can bitrate 500000 restart-ms 100
 candump can0
 ```
 
+Walk-through with node discovery and a motor move: [CANopen from the Raspberry Pi](../../../../sw/interface/tutorials/canopen-from-raspberry-pi.md).
+
 ### 13.2 Sensors (I2C)
+
+Requires JP101/JP102 closed (open by default; otherwise the sensors are only on the ESP32 I2C bus).
 
 ```bash
 sudo apt install i2c-tools
@@ -350,32 +356,32 @@ Expected addresses:
 ### 15.1 Default Raspberry Pi header map (summary)
 
 |         Pin | Function                                   |
-| -: |  |
+| ----------: | ------------------------------------------ |
 |       3 / 5 | I2C-1 SDA/SCL (bridgeable via JP101/JP102) |
-|      8 / 10 | UART TX/RX to ESP (paralleled with CP2102) |
+|      8 / 10 | UART TX/RX to ESP, 921600 baud (paralleled with CP2102) |
+|     11 / 36 | RTS / DTR auto-program (JP901 / JP902)     |
 |          16 | buspower-off (HIGH = off)                  |
-| 19/21/23/24 | SPI0 MOSI/MISO/SCLK/CS0 -> MCP2515         |
+| 19/21/23/24 | SPI0 MOSI/MISO/SCLK/CE0 -> MCP2515         |
+|     26 / 27 | EEPROM SCL / SDA -> HAT+ EEPROMs (spec: ID_SC is pin 28) |
 |          32 | MCP2515 INT (GPIO12)                       |
-|     27 / 28 | I2C-0 SCL/SDA -> HAT+ EEPROMs              |
 
 ### 15.2 ESP32 used pins (summary)
 
 |    GPIO | Function                       |
-| : |  |
+| ------: | ------------------------------ |
 | 21 / 22 | I2C SDA/SCL                    |
-| 17 / 18 | CAN RX/TX (TWAI)               |
+| 17 / 18 | CAN TX/RX (TWAI)               |
 |      19 | NeoPixel                       |
 |       4 | BUSPOWER_OFF (HIGH = off)      |
 |      34 | E-STOP sense (HIGH = asserted) |
-|      32 | Camera trigger out             |
-| 27 / 33 | Camera IO (reserved)           |
+|      27 | Camera trigger out             |
+|      33 | Fan tacho in                   |
+|      25 | Buzzer                         |
 
 
-### 15.3 Trigger Layout for HIK CAmera 
+### 15.3 Trigger wiring for the HIK camera
 
-The colour code is: camera in opto pin 2 => yellow, camera gnd opto pin 5 => white.
-It's soldered to the SMA connector. Can you please document that in the HATv2
-More info openUC2/TechnicalDocs-openUC2-FRAME#134
+Camera opto input pin 2 = yellow, camera opto GND pin 5 = white, both soldered to the SMA connector. More info: openUC2/TechnicalDocs-openUC2-FRAME#134
 
 ![](./gpioheadertrigger.png)
 

@@ -45,8 +45,8 @@ The FRAME system is built on complete modularization of all components regarding
 The FRAME system integrates with several software platforms:
 
 - **ImSwitch**: Advanced microscopy control software (http://github.com/openuc2/imswitch)
-- **UC2-REST**: RESTful API for system control (https://github.com/openUC2/UC2-REST)
-- **UC2-ESP**: Firmware for microcontroller-based modules (https://github.com/youseetoo/UC2-ESP32)
+- **UC2-REST**: Python client (`pip install UC2-REST`, `import uc2rest`) for the ESP32's JSON-over-USB-serial interface (https://github.com/openUC2/UC2-REST, [reference](../../dev/sw/interface/reference/python-uc2rest.md))
+- **UC2-ESP**: Firmware for microcontroller-based modules (https://github.com/youseetoo/uc2-esp32); the modules talk CANopen at 500 kbit/s ([Serial & CANopen interface](../../dev/sw/interface/index.md))
 - **Python Libraries**: Extensive programming support for automation (e.g. https://github.com/openUC2/ImSwitchClient)
 
 ## Applications and Use Cases

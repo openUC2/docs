@@ -12,6 +12,8 @@ Welcome to the openUC2 development documentation! Here you'll find:
 - **Reference** guides which you can consult for technical descriptions about our products & projects and how to develop with them
 - **In-depth explanations** to help you understand why our products & projects are designed the way they're designed, from the perspective of a developer
 
+**Start here** to control UC2 electronics from your own code: [Serial & CANopen interface](./sw/interface/index.md).
+
 You can find source files (including editable design files) for our products [on GitHub](http://github.com/openUC2).
 
 :::info

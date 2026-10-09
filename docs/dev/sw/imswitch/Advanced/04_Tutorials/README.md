@@ -28,17 +28,16 @@ This section provides comprehensive tutorials for advanced ImSwitch usage, from 
 
 ### 3. Hardware Integration
 
-**[UC2-ESP32 Getting Started](./UC2-ESP-Getting-Started.md)**
-- Setting up UC2-ESP32 firmware
-- Basic hardware control
-- Troubleshooting common issues
-- Advanced configuration
+**[First serial command](../../../interface/tutorials/first-serial-command.md)**
+- Find port and baud rate (115200 standalone, 921600 HAT+ master)
+- Send JSON to the UC2 ESP32 board and read the reply
 
-**[UC2-REST Getting Started](./UC2-REST-Getting-Started.md)**
-- Python interface setup
-- Communication protocols
-- Custom device integration
-- Error handling and debugging
+**[Python first steps](../../../interface/tutorials/python-first-steps.md)**
+- `pip install UC2-REST`, `import uc2rest`
+- Move axes, switch laser and LED, home, receive position updates
+
+**[Connect ImSwitch to UC2 electronics](../02_Usage/UC2-REST.md)**
+- `ESP32Manager` (serial) or `UC2CANOpenManager` (CANopen) setup
 
 ### 4. Advanced Applications
 

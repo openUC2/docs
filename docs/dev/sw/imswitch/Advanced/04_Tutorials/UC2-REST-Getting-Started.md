@@ -1,5 +1,9 @@
 # UC2-REST Getting Started Tutorial
 
+:::warning Outdated
+The API shown here (`from UC2REST import`, `client.stage`, WiFi) does not exist in `uc2rest`. Current documentation: [Python first steps](../../../interface/tutorials/python-first-steps.md).
+:::
+
 UC2-REST is the Python library that provides a high-level interface for communicating with UC2-ESP32 firmware. This tutorial guides you through installation, setup, and basic usage of UC2-REST.
 
 ## Overview

@@ -1,5 +1,9 @@
 # UC2 CAN OTA Firmware Updates (ESP32 Slaves)
 
+:::warning Outdated
+Wi-Fi OTA triggered over CAN is not implemented. Satellites are updated by SDO block transfer over CAN. Current documentation: [Update firmware over CAN](../../dev/sw/interface/how-to/update-firmware-over-can.md).
+:::
+
 User Guide + Expert Technical Documentation (English)
 
 ---
