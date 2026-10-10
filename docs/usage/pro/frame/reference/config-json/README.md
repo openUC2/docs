@@ -304,7 +304,7 @@ before trusting this column**, since "gates" here means "the key must be in
 | `positioners` | `Dict[str, PositionerInfo]` | `{}` | — | n/a | Motorized stage axes. |
 | `galvoScanners` | `Dict[str, GalvoScannerInfo]` | `{}` | `GalvoScanner` (frontend) | n/a | Galvo-mirror laser scanners. |
 | `flimLabs` | `dict?` | `null` | — | n/a | Persisted FLIM LABS bridge settings (browser-side panel state; free-form, written by the controller, not hand-authored). |
-| `rs232devices` | `Dict[str, RS232Info]` | `{}` | — | n/a | Serial connections other managers reference by name (e.g. `"ESP32"`). |
+| `rs232devices` | `Dict[str, RS232Info]` | `{}` | — | n/a | Serial or CANopen connections other managers reference by name (e.g. `"ESP32"`); keys in §4.1. |
 | `mmcoreSettings` | `MMCoreSettingsInfo?` | `null` | — | n/a | Persisted MMCore per-device property overrides (written by the controller, not hand-authored). |
 | `slm` | `SLMInfo?` | `null` | `SLM` |  |  |
 | `sim` | `SIMInfo?` | `null` | `SIM` | Bucket (b): controller shows a Qt-only error, still counts as "available." No `appRegistry.js` entry — legacy-only, not reachable from the React frontend at all. |  |
@@ -481,6 +481,43 @@ at all, because of `Undefined.INCLUDE`/`_catchAll` (`SetupInfo.py:924`):
   there is no "unknown key" warning today. A typo in a section name (e.g. writing
   `"objectve"`) will not error; it will just silently do nothing.
 - `nonAvailableWidgets` (§2.5) is the clearest example of this trap in the wild.
+
+### 4.1 `rs232devices`: the connection to the UC2 electronics
+
+One entry; the stage, laser and LED-matrix managers reference it by name via
+`managerProperties.rs232device`. Full how-to with examples and troubleshooting:
+[Connect ImSwitch to UC2 electronics](../../../../../dev/sw/imswitch/Advanced/02_Usage/UC2-REST.md).
+
+**`ESP32Manager`** (serial JSON via `uc2rest`; device managers `ESP32StageManager`,
+`ESP32LEDLaserManager`, `ESP32LEDMatrixManager`). Name the entry `ESP32`; UC2Config,
+temperature and I2C-sensor controllers look it up by that name.
+
+| Key | Default | Meaning |
+|---|---|---|
+| `serialport` | — | Required. A path that does not exist starts auto-detection. |
+| `baudrate` | 115200 | **921600 on FRAME** (HAT+ master `UC2_canopen_master`) |
+| `debug` | false | log every serial line |
+| `override_firmwarecheck` | false | skip the `/state_get` probe on connect |
+| `deviceID` | — | auto-detect only ports whose USB serial number / hwid contains this string |
+| `requireMaster` | false | skip boards whose `pindef` does not contain `master` |
+| `identity` | `UC2_Feather` | passed through, not checked |
+| `host`, `port`, `host_` | — | ignored; WiFi/HTTP was removed from `uc2rest` |
+
+**`UC2CANOpenManager`** (CANopen via `uc2canopen`; device managers `UC2CANOpenStageManager`,
+`UC2CANOpenLaserManager`, `UC2CANOpenLEDMatrixManager`).
+
+| Key | Default | Meaning |
+|---|---|---|
+| `interface` | auto | `socketcan` (HAT+ `can0`) or `waveshare` (USB-CAN-A; auto when a port is set) |
+| `channel` | `can0` | SocketCAN interface |
+| `port` / `serialport` | auto | Waveshare adapter port |
+| `bitrate` | 500000 | Waveshare only; SocketCAN uses the `ip link` setting |
+| `debug` | false | transport logging |
+| `nodeIdX` / `nodeIdY` / `nodeIdZ` / `nodeIdA` | 11 / 12 / 13 / 14 | **set `nodeIdA` to 10** (firmware default) |
+| `laserNodeId` | 21 | **set to 20** (firmware laser board) |
+| `ledNodeId` | 20 | **set to 30** (firmware LED board) |
+
+Node IDs per board: [Boards, roles & node IDs](../../../../../dev/sw/interface/reference/boards-and-node-ids.md).
 
 ---
 

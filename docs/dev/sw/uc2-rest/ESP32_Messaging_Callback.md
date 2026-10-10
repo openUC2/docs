@@ -1,5 +1,9 @@
 # UC2-REST: Messaging
 
+:::warning Outdated
+The default baud rate is 115200 (921600 for the HAT+ master), not 500000. Current documentation: [uc2rest reference → push callbacks](../interface/reference/python-uc2rest.md#push-callbacks).
+:::
+
 This documentation covers the callback functionality integrated into the firmware, particularly focusing on the `Message` class. The `Message` class is designed to parse incoming messages from the ESP32, facilitating the conversion of hardware inputs and other events into software actions.
 
 ## Message Class

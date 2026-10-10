@@ -9,9 +9,9 @@ The XYZ Micrometer Stage, branded as "openUC2 XYZ Stage," is a highly accurate m
 ## Compatibility and Control:
 The XYZ stage is compatible with the UC2e system and can be conveniently controlled through multiple methods:
 
-1. **Webpage Interface:** Users can control the stage using the web-based interface available at `https://youseetoo.github.io/indexWebSerialTest.html`.
+1. **Webpage Interface:** Users can control the stage using the web-based interface available at [youseetoo.github.io/indexWebSerialTest.html](https://youseetoo.github.io/indexWebSerialTest.html) (Chrome/Edge, USB). It sends JSON commands such as `/motor_act` ([serial commands](../../../../../dev/sw/interface/reference/serial-commands.md#motor_act)).
 
-2. **UC2-REST Python Package:** For Python-savvy users, the UC2-REST Python package, accessible from `https://github.com/openUC2/UC2-REST/`, provides a programmatic way to manipulate the XYZ stage.
+2. **UC2-REST Python Package:** For Python-savvy users, the UC2-REST Python package ([openUC2/UC2-REST](https://github.com/openUC2/UC2-REST/), `pip install UC2-REST`, `import uc2rest`) drives the XYZ stage over USB serial. See [Python first steps](../../../../../dev/sw/interface/tutorials/python-first-steps.md).
 
 3. **ImSwitch Software:** Another option for controlling the XYZ stage is through ImSwitch, a software tool available at `https://github.com/openUC2/ImSwitch/`.
 

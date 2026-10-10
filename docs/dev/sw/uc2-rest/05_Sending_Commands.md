@@ -2,6 +2,11 @@
 title: REST commands
 ---
 
+:::warning Outdated
+`/motor_set`, `/digitalout_set` and `/ledarr_set` do not exist in the current firmware. Current documentation: [First serial command](../interface/tutorials/first-serial-command.md), [Serial commands](../interface/reference/serial-commands.md).
+:::
+
+
 ## Controlling hardware using the WebSerial Standard
 
 The ESP32 works best by receiving commands over serial. We have a python interface that is also explained in a bit more depth in the connect-to-the-hardware section and can be found as a pip package here: https://pypi.org/project/UC2-REST/ and the source-code here: https://github.com/openUC2/UC2-REST/tree/master/uc2rest.

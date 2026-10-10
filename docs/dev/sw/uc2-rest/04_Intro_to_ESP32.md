@@ -2,6 +2,11 @@
 title: REST principle
 ---
 
+:::warning Outdated
+Current documentation: [Serial protocol](../interface/reference/serial-protocol.md).
+:::
+
+
 <!----------------------------------------->
 ## Introduction into the ESP32 microcontroller firmware
 Duration:5

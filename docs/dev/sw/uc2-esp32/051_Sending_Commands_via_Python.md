@@ -3,6 +3,11 @@ id: uc2e5.2
 title: Python commands
 ---
 
+:::warning Outdated
+Current documentation: [Python first steps](../interface/tutorials/python-first-steps.md).
+:::
+
+
 ## Using UC2-REST in Python
 
 The `uc2rest` library communicates with an ESP32 microcontroller via a serial connection and is available here https://github.com/openUC2/UC2-REST/ and via `pip install uc2-rest`.

@@ -90,7 +90,7 @@ The source-code can be found [here](https://github.com/youseetoo/uc2-esp32)
 3. Once connected, test the system by sending a simple command:
 
 ```json
-{"task":"/motor_act", "motor": { "steppers": [ { "stepperid": 3, "position": -1000, "speed": 1000, "isabs": 0, "isaccel": 0} ] } }
+{"task":"/motor_act","motor":{"steppers":[{"stepperid":3,"position":-1000,"speed":1000,"isabs":0}]}}
 ```
 
 This command will move the Z-axis motor by -1000 steps (1 full rotation) at a speed of 1000 steps per second. Each step corresponds to a movement of 300nm when using microstepping. You’ll see the motor rotate, adjusting the focus.
@@ -123,10 +123,11 @@ After completing the test, go back to the first tab to control the other compone
 ### Step 4: Controlling the LED Array (obsolete since March 2025)
 
 1. Use the web interface to turn the LEDs on and off or control brightness.
-2. Try adjusting the LED patterns (e.g., lighting only certain rings) using the available commands. This turns a ll red. Try to turn on individual LEDs. For this checkout the Documentation to the Command set/API [here](https://docs.openuc2.com/docs/Electronics/Advanced/UC2-ESP/APIDescription/INTRO)
+2. Try adjusting the LED patterns (e.g., lighting only certain rings) using the available commands. The first command below fills all LEDs green, the second one switches on a single LED. All LED actions (`fill`, `off`, `single`, `halves`, `rings`, `circles`) are listed in the [serial command reference](../../../dev/sw/interface/reference/serial-commands.md#ledarr_act).
 
 ```json
-{"task":"/ledarr_act", "led":{"LEDArrMode":1, "led_array":[{"id":0, "r":0, "g":50, "b":0}]}}
+{"task":"/ledarr_act","led":{"action":"fill","r":0,"g":50,"b":0}}
+{"task":"/ledarr_act","led":{"action":"single","ledIndex":0,"r":0,"g":50,"b":0}}
 ```
 
 ![text](./IMAGES/EXP_2_LED_PSX/Photo_Control_LED.jpg)
@@ -171,7 +172,7 @@ For more detailed instructions on pairing, refer to the [UC2 PS4 Controller Pair
 3. Enter the command:
 
 ```json
-{"bt_scan":1}
+{"task":"/bt_scan"}
 ```
 This will initiate the Bluetooth scan on the ESP32, which will detect and pair with the controller. Alternatively, you can use the **"Pair Controller"** button in the web interface.
 

@@ -4,6 +4,10 @@ title: Hardware Control API
 
 # UC2-REST Python API
 
+:::warning Outdated
+Most of the API shown here does not exist in `uc2rest`. Current documentation: [uc2rest reference](../interface/reference/python-uc2rest.md).
+:::
+
 Advanced documentation for the UC2-REST Python library, including API reference, integration guides, and custom development.
 
 ## Overview

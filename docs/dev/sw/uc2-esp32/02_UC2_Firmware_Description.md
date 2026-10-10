@@ -1,12 +1,12 @@
 # UC2-ESP32 Firmware Documentation
 
-Welcome to the UC2-ESP32 firmware documentation! This guide provides detailed information on using, configuring, and extending the UC2-ESP32 firmware to control a microscope via USB Serial, Bluetooth, and WiFi using an ESP32 microcontroller. The firmware is modular, allowing easy customization for various hardware setups and requirements.
+Welcome to the UC2-ESP32 firmware documentation! This guide provides detailed information on using, configuring, and extending the UC2-ESP32 firmware to control a microscope via USB serial (JSON) and CANopen using an ESP32 microcontroller. The firmware is modular, allowing easy customization for various hardware setups and requirements.
 
-https://github.com/youseetoo/uc2-esp32/tree/reworkBD
+https://github.com/youseetoo/uc2-esp32 (branch `main`)
 
 ## 1. Overview
 
-The `uc2-esp32` firmware is a versatile control system designed for microscopes. It operates on an ESP32 microcontroller and enables communication via USB Serial, Bluetooth, and WiFi. The firmware is highly modular, supporting various hardware controllers and sensors, which can be enabled or disabled using compiling switches.
+The `uc2-esp32` firmware is a versatile control system designed for microscopes. It operates on an ESP32 microcontroller and is controlled with JSON commands over USB serial. CAN builds also talk CANopen to satellite boards, and Bluetooth builds accept PS4/PS3 game controllers. WiFi is only used as a temporary hotspot for OTA updates; there is no WiFi or HTTP command interface. The firmware is highly modular, supporting various hardware controllers and sensors, which can be enabled or disabled using compiling switches.
 
 ## 2. Firmware Architecture
 
@@ -18,8 +18,8 @@ The firmware is structured into several directories and configuration files:
   - `CMakeLists.txt`: Build configuration for CMake.
 - **Key Documentation Files**:
   - `README.md`: General project information.
-  - `DOC_Firmware.md`: In-depth firmware documentation.
-  - `RestApi.md`: Documentation for the REST API.
+  - `DOCS/DOC_Firmware.md`: In-depth firmware documentation.
+  - Serial commands: [Serial commands reference](../interface/reference/serial-commands.md).
 
 ### Directory Structure
 
@@ -44,13 +44,13 @@ The firmware includes various controllers to manage different hardware component
   - Supports I2C communication for motor control.
   - Includes acceleration and homing functionalities.
 
-### 3.2 WiFi Controller (`src/wifi`)
+### 3.2 CANopen (`src/canopen`)
 
-- **Purpose**: Manages WiFi connectivity.
+- **Purpose**: Connects a CAN master (HAT+, standalone v4) to satellite boards (motor, laser, LED, galvo, GPIO) at 500 kbit/s.
 - **Features**:
-  - Configures and manages WiFi connections.
-  - Supports data transmission over WiFi.
-  - Integration with cloud services or remote control.
+  - Routes each device id locally or to a satellite node; the serial JSON stays the same.
+  - Firmware update of satellites over CAN.
+  - Details: [Boards, roles & node IDs](../interface/reference/boards-and-node-ids.md).
 
 ### 3.3 Bluetooth Controller (`src/bt`)
 
@@ -64,8 +64,8 @@ The firmware includes various controllers to manage different hardware component
 
 - **Purpose**: Handles USB serial communication.
 - **Features**:
-  - Enables direct communication with a computer.
-  - Useful for command input and data logging.
+  - Parses one-line JSON commands and dispatches them by `task` (endpoint list in `Endpoints.h`).
+  - Sends framed replies; see [§10](#serial-interface).
 
 ### 3.5 Laser Controller (`src/laser`)
 
@@ -162,8 +162,8 @@ The firmware is configurable through various compiling switches and settings, al
 
 ### 6.2 Advanced Imaging Setup
 
-- **Controllers**: Motor, WiFi, Bluetooth, Laser, PID.
-- **Features**: Advanced motor control, remote connectivity via WiFi and Bluetooth, laser control for precise illumination, and PID for fine-tuning.
+- **Controllers**: Motor, CANopen, Bluetooth, Laser, PID.
+- **Features**: Advanced motor control, CAN satellites, PS4 controller via Bluetooth, laser control for precise illumination, and PID for fine-tuning.
 
 ## 7. How to Modify and Extend
 
@@ -183,15 +183,16 @@ The firmware is configurable through various compiling switches and settings, al
 
 - Use PlatformIO commands to build and upload the firmware:
   ```bash
-  platformio run --target upload
+  pio run -e <env> -t upload
   ```
+  Env names: [Boards, roles & node IDs](../interface/reference/boards-and-node-ids.md).
 
 ## 8. Troubleshooting and Debugging
 
 ### 8.1 Common Issues
 
 - **Incorrect Board Configuration**: Check `platformio.ini` for correct board and environment settings.
-- **Communication Failures**: Verify WiFi, Bluetooth, and serial configurations.
+- **Communication Failures**: Verify serial port and baud rate (115200; 921600 on `UC2_canopen_master`), and for CAN the bus termination and node IDs.
 - **Motor Control Problems**: Ensure motor drivers are properly connected and configured.
 
 ### 8.2 Debugging Tips
@@ -213,12 +214,12 @@ Each controller in the `uc2-esp32` firmware typically implements a standardized 
 - **Typical Activities**:
   - Initializing GPIO pins or communication protocols (e.g., I2C, SPI).
   - Setting default values for configuration parameters.
-  - Establishing initial connections (e.g., WiFi or Bluetooth pairing).
+  - Establishing initial connections (e.g., CAN bus or Bluetooth pairing).
   - Registering the controller with the main control loop.
 
 - **Example Usage**:
   - In a motor controller, `setup()` might configure the motor driver pins and initialize the stepper motor library.
-  - For a WiFi controller, `setup()` would configure the WiFi settings and start the connection process.
+  - For the CANopen module, `setup()` starts the CAN driver and the CANopen stack.
 
 ### 9.2 **`loop()` Function**
 
@@ -227,7 +228,7 @@ Each controller in the `uc2-esp32` firmware typically implements a standardized 
 - **Typical Activities**:
   - Monitoring sensor inputs or checking the status of external devices.
   - Managing continuous output (e.g., adjusting motor position or updating LED brightness).
-  - Handling asynchronous events (e.g., receiving data from a WiFi connection).
+  - Handling asynchronous events (e.g., receiving data from the CAN bus).
   - Performing regular checks and maintenance tasks.
 
 - **Example Usage**:
@@ -245,7 +246,7 @@ Each controller in the `uc2-esp32` firmware typically implements a standardized 
 
 - **Example Usage**:
   - In a motor controller, `act()` could be used to receive commands for moving to a specific coordinate and then executing the move.
-  - For a WiFi controller, `act()` might handle a command to change the network settings or initiate a data transmission.
+  - For the CANopen module, `act()` handles `/can_act` (scan, node IDs, raw SDO).
 
 ### 9.4 **`get()` Function**
 
@@ -253,7 +254,7 @@ Each controller in the `uc2-esp32` firmware typically implements a standardized 
 
 - **Typical Activities**:
   - Returning sensor values or current positions (e.g., the current position of a motor).
-  - Providing status information (e.g., connection status of a WiFi module).
+  - Providing status information (e.g., CAN bus status).
   - Accessing configuration parameters or operational states.
 
 - **Example Usage**:
@@ -267,157 +268,15 @@ These common functions (`act()`, `get()`, `setup()`, and `loop()`) are registere
 By standardizing these functions across different controllers, the firmware achieves modularity and consistency, enabling easier maintenance and extension. Developers can add new controllers or modify existing ones without disrupting the overall system, as long as they adhere to this standardized function interface.
 
 
-## 10. Serial Interface and Command Syntax
+## 10. Serial Interface {#serial-interface}
 
-The `uc2-esp32` firmware provides a Serial interface that allows users to communicate with the microcontroller using a standard USB connection. This interface is critical for sending commands, receiving data, and debugging the system. Below, we explain how to formulate and send commands over the Serial interface, focusing on motor control as an example.
-
-### 10.1 Connecting via Serial
-
-To connect to the ESP32 via Serial:
-
-1. Connect the ESP32 to your computer using a USB cable.
-2. Open a serial terminal application (e.g., Arduino Serial Monitor, PuTTY, or any other terminal program).
-3. Set the correct COM port associated with the ESP32 device.
-4. Configure the baud rate (typically 115200 baud for `uc2-esp32`).
-5. Set the terminal to use NL (New Line) or CR+LF (Carriage Return + Line Feed) as the line-ending character.
-
-### 10.2 Command Structure
-
-Commands sent over the Serial interface typically follow a JSON format to ensure structured data communication. The JSON format allows
-
- for easy parsing and flexibility in command structure. Each command consists of a key-value pair where the key indicates the action and the value provides parameters.
-
-#### Example JSON Command:
+USB serial at 115200 baud 8N1; **921600** on `UC2_canopen_master` (HAT+). Native USB-CDC boards (XIAO ESP32-S3) ignore the baud rate. Send one compact JSON object per line, without line breaks inside the object:
 
 ```json
-{
-  "command": "motor_move",
-  "axis": "z",
-  "position": 1000,
-  "speed": 500
-}
+{"task":"/motor_act","qid":1,"motor":{"steppers":[{"stepperid":1,"position":1000,"speed":5000,"isabs":0}]}}
 ```
 
-### 10.3 Common Serial Commands
+Each reply is one JSON line between a `++` line and a `--` line; everything outside these markers is log output. Commands that carry a `qid` report completion with `{"qid":1,"state":"done"}`.
 
-Below are some common Serial commands used to control various aspects of the microscope:
-
-#### 10.3.1 Motor Control Commands
-
-- **Move Motor to a Specific Position**:
-  - **Command**: `motor_move`
-  - **Description**: Moves the specified motor to a given position.
-  - **Parameters**:
-    - `axis`: Specifies which motor to move (`"x"`, `"y"`, `"z"`, etc.).
-    - `position`: Target position for the motor in steps or encoder counts.
-    - `speed`: (Optional) Speed at which to move the motor.
-
-  **Example**:
-
-  ```json
-  {
-      "command": "motor_move",
-      "axis": "z",
-      "position": 1000,
-      "speed": 500
-    }
-  ```
-
-- **Set Motor Speed**:
-  - **Command**: `motor_speed`
-  - **Description**: Sets the speed of the specified motor.
-  - **Parameters**:
-    - `axis`: Specifies which motor to control (`"x"`, `"y"`, `"z"`, etc.).
-    - `speed`: Speed value to set.
-
-  **Example**:
-
-  ```json
-  {
-      "command": "motor_speed",
-      "axis": "x",
-      "speed": 300
-    }
-  ```
-
-- **Home Motor**:
-  - **Command**: `motor_home`
-  - **Description**: Homes the specified motor to its reference or starting position.
-  - **Parameters**:
-    - `axis`: Specifies which motor to home (`"x"`, `"y"`, `"z"`, etc.).
-
-  **Example**:
-
-  ```json
-  {
-      "command": "motor_home",
-      "axis": "z"
-    }
-  ```
-
-#### 10.3.2 LED and Laser Control Commands
-
-- **Turn On/Off LED**:
-  - **Command**: `led_control`
-  - **Description**: Controls the LED state (on/off).
-  - **Parameters**:
-    - `state`: `"on"` or `"off"`.
-
-  **Example**:
-
-  ```json
-  {
-      "command": "led_control",
-      "state": "on"
-    }
-  ```
-
-- **Set Laser Power**:
-  - **Command**: `laser_power`
-  - **Description**: Sets the laser power level.
-  - **Parameters**:
-    - `power`: Power level value (e.g., 0-100%).
-
-  **Example**:
-
-  ```json
-  {
-      "command": "laser_power",
-      "power": 75
-    }
-  ```
-
-### 10.4 Sending Commands
-
-To send commands:
-
-1. Formulate the command in the correct JSON format.
-2. Copy the JSON string into the serial terminal input.
-3. Press Enter to send the command to the ESP32.
-4. The ESP32 will parse the command and execute the corresponding action. You can view the response or status output in the serial terminal.
-
-### 10.5 Receiving Responses
-
-The ESP32 may send responses or status updates back over the Serial interface. Responses are usually in JSON format, providing information about the executed command or system state.
-
-**Example Response**:
-
-```json
-{
-  "status": "success",
-  "message": "Motor moved to position 1000 on axis z."
-}
-```
-
-### 10.6 Error Handling
-
-If a command is incorrect or cannot be executed, the firmware will return an error response. It is important to handle such responses gracefully and adjust commands as needed.
-
-**Example Error Response**:
-
-```json
-{
-  "status": "error",
-  "message": "Invalid axis specified in motor_move command."
-}
-```
+- Framing, `qid`, acknowledgements and errors: [Serial protocol](../interface/reference/serial-protocol.md)
+- All endpoints and keys: [Serial commands](../interface/reference/serial-commands.md)

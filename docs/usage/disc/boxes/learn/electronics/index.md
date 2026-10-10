@@ -26,11 +26,11 @@ Inbetriebnahme ESP32 ─► Motor-Z-Stage manuell ─► PS4-Controller / Joysti
 - *Welche Kabel und Stecker brauchst du (USB-C, JST, Netzteil-Buchse)?*
 
 **Firmware flashen**
-- *Wie flashst du die UC2-eSP-Firmware über PlatformIO oder den UC2-Installer?*
+- *Wie flashst du die UC2-ESP-Firmware über den Web-Flasher (youseetoo.github.io) oder PlatformIO?*
 - *Wie überprüfst du die Firmware-Version im seriellen Monitor?*
 
 **Messung / Diagnose**
-- *Welchen HTTP-Endpunkt (z. B. `/motors`) oder seriellen Befehl nutzt du, um den Motor und die LEDs zu testen?*
+- *Welchen seriellen JSON-Befehl (z. B. `/motor_act`, `/ledarr_act`) nutzt du, um den Motor und die LEDs zu testen?*
 - *Wie erkennst du im seriellen Log einen fehlerhaften Treiber vs. falsches Kabel?*
 
 **Fehleranalyse**
@@ -38,7 +38,7 @@ Inbetriebnahme ESP32 ─► Motor-Z-Stage manuell ─► PS4-Controller / Joysti
 - *Wie reagierst du auf einen Motor, der zuckt aber nicht dreht (Strom zu niedrig, Schrittmodus falsch)?*
 
 **Erweiterung**
-- *Wie öffnest du die ImSwitch-Oberfläche und bindest das Board als UC2-REST-Gerät ein?*
+- *Wie öffnest du die ImSwitch-Oberfläche und bindest das Board über den seriellen Port ein (`ESP32Manager`, nutzt intern `uc2rest`)?*
 
 - → `experiments/01_inbetriebnahme.md`
 
@@ -191,26 +191,26 @@ Inbetriebnahme ESP32 ─► Motor-Z-Stage manuell ─► PS4-Controller / Joysti
 ### 7. Programmierung – Python / JavaScript
 
 **Einstieg / Phänomen**
-- *Was passiert, wenn du im Browser `http://<ESP32-IP>/motor?steps=100` aufrufst?*
-- *Was ist der Unterschied zwischen HTTP-REST und seriellem JSON-Protokoll?*
+- *Was passiert, wenn du auf der WebSerial-Testseite `{"task":"/motor_act","motor":{"steppers":[{"stepperid":3,"position":100,"speed":1000}]}}` sendest?*
+- *Woran erkennst du in der Antwort zwischen `++` und `--`, dass der Befehl angekommen ist?*
 
 **Aufbau / Entwicklungsumgebung**
-- *Wie installierst du `pyserial` / `requests` und testest die Verbindung in einem Jupyter-Notebook?*
-- *Wie ist die UC2-REST-API aufgebaut (Endpunkte für Motor, LED, Kamera)?*
+- *Wie installierst du `pyserial` bzw. das Paket `UC2-REST` (`import uc2rest`) und testest die USB-Verbindung in einem Jupyter-Notebook?*
+- *Wie sind die seriellen Endpunkte aufgebaut (`/motor_act`, `/ledarr_act`, `/laser_act`)? Referenz: [Serial commands](../../../../../dev/sw/interface/reference/serial-commands.md), Einstieg: [Python first steps](../../../../../dev/sw/interface/tutorials/python-first-steps.md)*
 
 **Schreibe dein erstes Skript**
 - *Schreibe ein „Hello, Motor"-Skript: Fahre 500 Schritte vor, dann 500 zurück, und messe die Zeit.*
-- *Wie steuerst du die LED-Array-Farbe per RGB-Wert über die REST-API?*
+- *Wie steuerst du die LED-Array-Farbe per RGB-Wert mit `/ledarr_act`?*
 
 **Integration in ImSwitch**
 - *Wie registrierst du das UC2-Board als Hardware-Gerät in der ImSwitch-Konfigurationsdatei?*
 - *Wie schreibst du ein einfaches ImSwitch-Plugin, das einen Z-Scan auslöst?*
 
 **Fehleranalyse**
-- *Was tust du bei HTTP-Timeout-Fehlern – ist das WLAN instabil, oder hat der ESP32 einen Absturz?*
+- *Was tust du, wenn keine Antwort kommt – falscher Port, falsche Baudrate (115200), Port schon von ImSwitch belegt, oder ESP32 abgestürzt?*
 
 **Physikalischer Hintergrund / Informatik**
-- *Was ist REST (Representational State Transfer), und warum ist es für IoT-Hardware gut geeignet?*
+- *Was ist ein serielles Protokoll (UART, Baudrate), und warum schickt man strukturierte JSON-Befehle statt einzelner Bytes?*
 
 **Alltagsbezug / Erweiterung**
 - *Wie automatisierst du einen vollständigen Scan-Workflow: Motor fahren → Bild aufnehmen → Datei speichern?*

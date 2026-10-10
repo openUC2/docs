@@ -5,6 +5,10 @@ title: Laser
 
 # UC2-ESP Laser Control API Documentation
 
+:::warning Outdated
+Current documentation: [Serial commands → Laser](../../interface/reference/serial-commands.md#laser_act).
+:::
+
 The UC2-ESP firmware provides an API for controlling lasers using PWM (Pulse Width Modulation). It allows adjusting laser intensity, setting PWM frequency and resolution, and optionally enabling despeckle mode, which modulates laser output to reduce speckle noise.
 
 ## Endpoint

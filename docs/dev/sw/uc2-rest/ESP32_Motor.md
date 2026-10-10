@@ -1,5 +1,9 @@
 # UC2-REST: Motor
 
+:::warning Outdated
+Signatures changed; the default baud rate is 115200 (921600 for the HAT+ master), not 500000. Current documentation: [uc2rest reference](../interface/reference/python-uc2rest.md).
+:::
+
 
 This section provides detailed documentation on the `Motor` class designed for controlling motors via the firmware. The `Motor` class includes functionality for motor movement, triggering, position tracking, and stage scanning, among other features.
 

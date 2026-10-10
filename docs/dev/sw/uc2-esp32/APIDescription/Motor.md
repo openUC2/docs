@@ -1,5 +1,9 @@
 # Motor
 
+:::warning Outdated
+`accel`/`isaccel` are ignored by the current firmware (use `acceleration`). Current documentation: [Serial commands → Motor](../../interface/reference/serial-commands.md#motor_act).
+:::
+
 This API provides a straightforward way to control and manage motors using the UC2-ESP firmware. The interface operates over USB serial communication and accepts JSON documents to control motor movements. The main endpoint for motor control is `/motor_act`.
 
 ## Endpoint

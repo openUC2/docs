@@ -1,5 +1,9 @@
 # UC2-REST
 
+:::warning Outdated
+Current documentation: [uc2rest reference](../interface/reference/python-uc2rest.md).
+:::
+
 This explains the basic functionality of the UC2-REST Python interface in conjunction with the UC2-ESP32 mainboard. This was mostly designed to interface with ImSwitch.
 
 The main repositories:

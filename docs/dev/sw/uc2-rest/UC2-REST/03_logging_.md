@@ -1,5 +1,9 @@
 # Chapter 3: Logging
 
+:::warning Outdated
+This generated chapter does not match the `uc2rest` library. Current documentation: [uc2rest reference](../../interface/reference/python-uc2rest.md).
+:::
+
 In the previous chapters, we learned about the main `UC2Client` remote control ([Chapter 1: UC2Client](01_uc2client_.md)) and how to manage settings like the IP address using [Chapter 2: Configuration Management](02_configuration_management_.md).
 
 Now, imagine your script tries to connect to the UC2 device, but something goes wrong. Maybe the IP address was typed incorrectly in the configuration, or perhaps the device wasn't turned on. How can your script tell you what happened? Or, even if things work, how can you see the steps the `UC2Client` took behind the scenes?

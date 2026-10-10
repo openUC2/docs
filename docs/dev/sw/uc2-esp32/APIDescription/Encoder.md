@@ -1,5 +1,9 @@
 # AS 5311 linear encoder for real-time feedback loop
 
+:::warning Outdated
+`/linearencoder_act` and `/linearencoder_get` are no longer dispatched by the firmware. Closed-loop axes are configured through `/motor_act`. Current documentation: [Serial commands → Motor](../../interface/reference/serial-commands.md#motor_act).
+:::
+
 The relevant code can be found here:
 https://github.com/youseetoo/uc2-esp32/tree/reworkBD/main/src/encoder
 

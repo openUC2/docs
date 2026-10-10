@@ -121,8 +121,10 @@ The below video explains the assembly of the inner cube stack:
 * **ESP32-based UC2 electronics**
 * Firmware:
 
-  * UC2 v3 (USB-based)
-  * UC2 v4 (CAN-bus capable, recommended for complex systems)
+  * Standalone board v3: firmware `UC2_3` (USB serial only)
+  * Standalone board v4: firmware `UC2_canopen_standalone_v4_release` (CAN master, node 1; motors on the board, LED matrix as CAN node 30; recommended)
+
+Firmware names, node IDs and baud rates: [Boards, roles & node IDs](../../../dev/sw/interface/reference/boards-and-node-ids.md).
 
 More information can be found in the [UC2 Electronics Add-On Documentation](../../disc/electronics-addon/01_Quickstart.md).
 

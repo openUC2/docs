@@ -1,5 +1,9 @@
 # Chapter 1: UC2Client
 
+:::warning Outdated
+This generated chapter does not match the `uc2rest` library. Current documentation: [Python first steps](../../interface/tutorials/python-first-steps.md).
+:::
+
 Welcome to the UC2-REST project! This library helps you control your UC2 (Universal Control Unit 2) setup using code. If you've ever wanted to automate experiments, take pictures remotely, or check the status of your UC2 device from a script, you're in the right place.
 
 Imagine you have a fantastic UC2 microscope setup, but you want to check if it's ready without physically walking over to it. Maybe you want to write a simple script that pings the device and tells you its current status. How can you do that easily?

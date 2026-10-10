@@ -1,3 +1,7 @@
+:::warning Outdated
+`endposrelease` is not a firmware key. Current documentation: [Serial commands → Homing](../../interface/reference/serial-commands.md#home_act).
+:::
+
 **UC2-ESP Motor Homing Interface API Description**
 
 This API provides a means to perform homing procedures for motors in the UC2-ESP firmware using JSON documents transmitted over USB serial communication. The homing process involves finding the endstop for a motor, and the API allows for flexible configuration of this procedure.

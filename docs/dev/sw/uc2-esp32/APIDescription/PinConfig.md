@@ -1,3 +1,7 @@
+:::warning Outdated
+Current documentation: [Boards, roles & node IDs](../../interface/reference/boards-and-node-ids.md).
+:::
+
 **UC2 System Version 2 and 3, and WEMOS Board Pinout Description**
 
 The provided code defines the pinout configuration for different versions of the UC2 system and the WEMOS board when running on an ESP32. Here's a breakdown of the pinout descriptions for each of these configurations:

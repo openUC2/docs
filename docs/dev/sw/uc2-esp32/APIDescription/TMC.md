@@ -4,6 +4,10 @@ title: TMC
 ---
 # UC2-ESP TMC Controller API Documentation
 
+:::warning Outdated
+Current documentation: [Serial commands → TMC2209](../../interface/reference/serial-commands.md#tmc_act).
+:::
+
 The UC2-ESP firmware provides an API to configure and manage Trinamic TMC2209 stepper drivers, allowing fine-tuned control over microstepping, current settings, stall detection, and other driver parameters.
 
 ## Endpoint

@@ -1,5 +1,9 @@
 # Tutorial: UC2-REST
 
+:::warning Outdated
+This generated tutorial does not match the `uc2rest` library (no `ip_address`, no HTTP). Current documentation: [Python first steps](../../interface/tutorials/python-first-steps.md).
+:::
+
 This project provides a **Python client** (`UC2Client`) to interact with a *UC2 REST API*.
 Think of it as a software tool that lets you *programmatically control* or access the UC2 service over the network.
 It uses a **Configuration Management** system to handle settings like the service address and credentials, and includes a basic **Logging** mechanism to record its activities, especially errors.

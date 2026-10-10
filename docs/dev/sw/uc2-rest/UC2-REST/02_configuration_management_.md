@@ -1,5 +1,9 @@
 # Chapter 2: Configuration Management
 
+:::warning Outdated
+This generated chapter does not match the `uc2rest` library. Current documentation: [uc2rest reference](../../interface/reference/python-uc2rest.md).
+:::
+
 In [Chapter 1: UC2Client](01_uc2client_.md), we successfully connected to our UC2 device and checked its status. Remember how we typed the IP address directly into our code?
 
 ```python

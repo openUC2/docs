@@ -4,248 +4,40 @@ title: Firmware
 
 # UC2-ESP32 Firmware
 
-Advanced documentation for UC2-ESP32 firmware development, customization, and optimization.
+One firmware ([youseetoo/uc2-esp32](https://github.com/youseetoo/uc2-esp32), branch `main`) runs on every UC2 ESP32 board. Each board has its own PlatformIO environment that selects pins and modules at compile time. A build runs in one of three roles:
 
-## Overview
+| Role | Example env | What it does |
+|---|---|---|
+| Standalone | `UC2_3`, `UC2_4` | JSON over USB serial, all devices on the board |
+| CAN master | `UC2_canopen_master` (HAT+) | JSON over USB serial, routes each device locally or over CANopen to a satellite |
+| CAN satellite | `UC2_canopen_slave_motor`, `_laser`, `_led`, … | executes commands from the master; still accepts JSON on its own USB port |
 
-The UC2-ESP32 firmware is a modular, real-time control system for UC2 hardware components. It provides:
+All envs, node IDs and baud rates: [Boards, roles & node IDs](../interface/reference/boards-and-node-ids.md).
 
-- **Modular Architecture**: Compile only the modules you need
-- **Real-time Control**: Microsecond-precision hardware control
-- **Multi-Protocol Communication**: Serial, WiFi, Bluetooth, I2C
-- **Extensible Design**: Easy to add new hardware modules
-- **Resource Optimization**: Efficient memory and CPU usage
+## Where the code lives
 
-## Available Documentation
+| Path | Content |
+|---|---|
+| `platformio.ini` | one `[env:…]` per board, with `-D` feature flags |
+| `main/config/<env>/PinConfig.h` | pins and defaults of that board |
+| `main/src/<module>/` | controllers (`motor`, `home`, `laser`, `led`, `scanner`, `tmc`, `bt`, …), `serial/` (JSON parser, `Endpoints.h`), `canopen/` |
 
-### Getting Started
-- **Quick Start Guide** - Flash firmware and basic setup
-- **[Build Environment Setup](./01_Setup_Buildenvironment.md)** - Development environment configuration
-- **[Firmware Flashing](./08_Flashing_the_firmware.md)** - Flash firmware to ESP32
+## Build and flash
 
-### Development
-- **[Firmware Description](./02_UC2_Firmware_Description.md)** - Architecture and module system
-- **Hardware Modules** - Creating custom hardware modules
-- **Communication Protocols** - Protocol implementation details
+- Prebuilt images: web flasher at [youseetoo.github.io/flasher.html](https://youseetoo.github.io/flasher.html) (Chrome or Edge, USB).
+- From source: `pio run -e <env> -t upload`. Details: [Compiling from scratch](./08_Flashing_the_firmware.md).
+- Satellites on a CAN bus can be updated through the master: [Update firmware over CAN](../interface/how-to/update-firmware-over-can.md).
 
-### Control and Integration
-- **[ESP32 Control](./07_Controling_the_ESP32.md)** - Basic control methods
-- **[ESP32 App Control](./07_Controlling_the_ESP32_APP.md)** - Mobile app integration
-- **[Python Commands](./051_Sending_Commands_via_Python.md)** - Python control interface
+## Talk to it
 
-### Advanced Topics
-- **[API Reference](./APIDescription/README.md)** - Complete firmware API
-- **Performance Optimization** - Memory and speed optimization
-- **Custom Module Development** - Advanced module creation
+- [Serial & CANopen interface](../interface/index.md): overview and tutorials
+- [Serial protocol](../interface/reference/serial-protocol.md): framing, `qid`, replies
+- [Serial commands](../interface/reference/serial-commands.md): all endpoints with keys and examples
 
-## Quick Reference
+## Pages in this folder
 
-### Basic Commands
-```json
-// Get system status
-{"task": "/state_get"}
-
-// Control LED
-{"task": "/led_act", "led": 0, "intensity": 100}
-
-// Move motor
-{"task": "/motor_act", "motor": 0, "direction": 1, "steps": 1000}
-
-// Read sensors
-{"task": "/sensor_get"}
-```
-
-### Module Configuration
-```cpp
-// Enable/disable modules in config.h
-#define MODULE_MOTOR 1
-#define MODULE_LED 1
-#define MODULE_LASER 1
-#define MODULE_WIFI 1
-#define MODULE_BLUETOOTH 0
-```
-
-## Supported Hardware
-
-### Motor Control
-- Stepper motors for XYZ stages
-- DC motors with encoder feedback
-- Servo motors for precise positioning
-- Focus control systems
-
-### Illumination
-- Individual LEDs
-- LED arrays and matrices
-- Laser diodes with safety features
-- Structured illumination patterns
-
-### Sensors
-- Temperature and humidity sensors
-- Pressure sensors
-- Optical encoders
-- Custom analog/digital sensors
-
-### Communication
-- USB Serial (default)
-- WiFi/HTTP
-- Bluetooth Classic and BLE
-- I2C for auxiliary devices
-
-## Development Workflow
-
-### 1. Environment Setup
-```bash
-# Install PlatformIO
-pip install platformio
-
-# Clone firmware repository
-git clone https://github.com/youseetoo/uc2-esp32
-cd uc2-esp32
-```
-
-### 2. Configuration
-```bash
-# Copy configuration template
-cp config_template.h config.h
-
-# Edit configuration for your hardware
-nano config.h
-```
-
-### 3. Build and Flash
-```bash
-# Build firmware
-pio run
-
-# Flash to ESP32
-pio run --target upload
-
-# Monitor serial output
-pio device monitor
-```
-
-## Architecture Overview
-
-### Module System
-Each hardware module implements standard functions:
-- `setup()`: Initialize hardware
-- `loop()`: Continuous background tasks
-- `act()`: Execute commands
-- `get()`: Return status/data
-
-### Communication Flow
-1. Receive JSON command via Serial/WiFi
-2. Parse command and route to appropriate module
-3. Execute hardware action
-4. Return JSON response
-
-### Resource Management
-- Modular compilation reduces memory usage
-- Task scheduling optimizes CPU usage
-- Interrupt-driven I/O minimizes latency
-- Power management for battery operation
-
-## Customization Examples
-
-### Adding a Custom Sensor
-```cpp
-// custom_sensor.h
-class CustomSensor {
-private:
-  int sensor_pin;
-  float last_reading;
-
-public:
-  void setup() {
-    sensor_pin = 34; // ADC pin
-    pinMode(sensor_pin, INPUT);
-  }
-
-  void loop() {
-    // Background tasks if needed
-  }
-
-  void act(JsonObject &json_in, JsonObject &json_out) {
-    // Handle action commands
-    if (json_in.containsKey("calibrate")) {
-      // Calibration logic
-      json_out["return"] = 1;
-    }
-  }
-
-  void get(JsonObject &json_in, JsonObject &json_out) {
-    // Return sensor reading
-    float reading = analogRead(sensor_pin) * 3.3 / 4095.0;
-    json_out["return"] = 1;
-    json_out["voltage"] = reading;
-    json_out["last_reading"] = last_reading;
-    last_reading = reading;
-  }
-};
-```
-
-### Custom Communication Protocol
-```cpp
-// Implement custom message format
-void handleCustomProtocol(String message) {
-  // Parse custom message format
-  // Execute corresponding actions
-  // Send response in custom format
-}
-```
-
-## Performance Optimization
-
-### Memory Usage
-- Use `const` for read-only data
-- Minimize global variables
-- Use appropriate data types
-- Free unused resources
-
-### CPU Optimization
-- Minimize blocking operations
-- Use interrupts for time-critical tasks
-- Optimize loop frequencies
-- Balance responsiveness vs. power consumption
-
-### Communication Speed
-- Use binary protocols for high-speed data
-- Implement command queuing
-- Optimize JSON parsing
-- Consider UDP for real-time applications
-
-## Troubleshooting
-
-### Common Issues
-- **Boot loops**: Check power supply and module configuration
-- **Communication failures**: Verify baud rate and connection
-- **Memory errors**: Reduce enabled modules or optimize code
-- **Timing issues**: Adjust task priorities and frequencies
-
-### Debug Tools
-- Serial monitor for runtime debugging
-- Logic analyzer for hardware signals
-- Network analyzer for WiFi communication
-- Memory profiler for optimization
-
-## Contributing
-
-### Development Guidelines
-- Follow existing code style
-- Document all new modules
-- Include unit tests where possible
-- Update API documentation
-
-### Submission Process
-1. Fork the repository
-2. Create feature branch
-3. Implement and test changes
-4. Submit pull request
-5. Participate in code review
-
-## Related Resources
-
-- **[UC2-REST Python Interface](../uc2-rest/README.md)** - Python control layer
-- **[ImSwitch Integration](../imswitch/Advanced/02_Usage/UC2-REST.md)** - Microscopy software integration
-- **[Hardware Interfaces](../../hw/electronics/README.md#available-hardware-interfaces)** - Specialized hardware components
-
+- [Build environment](./01_Setup_Buildenvironment.md)
+- [Firmware description](./02_UC2_Firmware_Description.md): architecture and modules
+- [Controlling the UC2e](./07_Controling_the_ESP32.md): clients (Python, web, PS4, ImSwitch)
+- [UC2Serial Android app](./07_Controlling_the_ESP32_APP.md)
+- [Compiling from scratch](./08_Flashing_the_firmware.md)

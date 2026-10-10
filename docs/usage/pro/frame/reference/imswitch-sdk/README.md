@@ -15,7 +15,7 @@ There are four supported ways to work with the system, in increasing order of in
 | 3 | **Socket.IO / streaming channels** | You need live images, position updates, or state change notifications. |
 | 4 | **Plugin SDK / own controller** | You want to add new functionality *inside* the server and have it appear automatically in the API and UI. (testing phase) |
 
-Below that sits the firmware layer ([UC2-ESP32](https://github.com/youseetoo/uc2-esp32) -> [onlinelibrary.wiley.com/doi/full/10.1111/jmi.70147](http://onlinelibrary.wiley.com/doi/full/10.1111/jmi.70147) over [USB-serial](https://github.com/openUC2/UC2-REST) or CAN ), which you normally should *not* address directly — ImSwitch owns the hardware connection.
+Below that sits the firmware layer ([UC2-ESP32](https://github.com/youseetoo/uc2-esp32), paper: [doi:10.1111/jmi.70147](http://onlinelibrary.wiley.com/doi/full/10.1111/jmi.70147)), reached over USB-serial JSON (Python `uc2rest`, pip `UC2-REST`) or CANopen (Python `uc2canopen`). You normally should *not* address it directly — ImSwitch owns the hardware connection. Details: [Serial & CANopen interface](../../../../../dev/sw/interface/index.md).
 
 Nothing needs to be recompiled or patched to control the microscope from outside. If you only want to *drive* the instrument, option 1 or 2 is the recommended path. If you want to *extend* it, option 4 is the recommended path — it survives ImSwitch updates, whereas forking the core does not (this is not yet mature enough to really recommend this path). In any case, you can also get in touch with us and we can try to help you out! :)
 
@@ -35,7 +35,7 @@ Nothing needs to be recompiled or patched to control the microscope from outside
   │                                                            │
   │   Managers  (detectors, positioners, lasers, LED matrix …) │
   └────────────────────────────────────────────────────────────┘
-        │  UC2-REST (USB-serial / CAN-Open) │  vendor SDKs
+        │  uc2rest (serial) / uc2canopen    │  vendor SDKs
         ▼                                   ▼
   UC2 ESP32 electronics                Cameras (Daheng, HIK,
   (motors, lasers, LEDs, focus)         Basler, picamera2, MMCore …)
@@ -275,7 +275,7 @@ Properties of the plugin system:
 | **Micro-Manager / MMCore** | available | Cameras and devices can be driven through MMCore; `MMCoreController` exposes their properties over REST. Useful if your stack is already Micro-Manager-based. |
 | **Arkitekt / Hypha** | experimental | Controllers exist for integration into these distributed bio-imaging frameworks. |
 | **OME-Zarr / OME-TIFF output** | available | Acquisitions are written in standard formats; downstream analysis needs no ImSwitch dependency. |
-| **UC2-REST (firmware)** | available, not recommended for integrators | Direct USB-serial or CAN-Open access to the ESP32 electronics via the `uc2-rest` / `uc2canopen` Python packages. Only relevant if you build your own control software instead of using ImSwitch; the port is exclusively held by ImSwitch while it runs. |
+| **Firmware interface (serial / CANopen)** | available, not recommended for integrators | Direct access to the ESP32 electronics: serial JSON via `uc2rest` (pip `UC2-REST`), or CANopen via `uc2canopen` on the HAT+ `can0`. Only relevant if you build your own control software instead of using ImSwitch; the serial port is exclusively held by ImSwitch while it runs, and the CAN bus must not be commanded by two clients at once. See [Serial & CANopen interface](../../../../../dev/sw/interface/index.md). |
 
 
 ## 9. Deployment notes

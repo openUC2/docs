@@ -5,30 +5,21 @@ sidebar_position: 20
 
 # Electronics and controllers
 
-:::note Draft outline
-Scaffold. Replace the bullet prompts with your own text and delete this banner when done.
-:::
+FRAME electronics: a Raspberry Pi 5 with the HAT+ v2, plus satellite boards on one CANopen bus (500 kbit/s).
 
-The boards that drive FRAME hardware and how to interface with them.
+| Board | Role | CAN node | Drives |
+|---|---|---|---|
+| Raspberry Pi 5 | runs ImSwitch | — (own MCP2515 on the HAT+ as `can0`) | — |
+| [HAT+ v2](../../../../../../dev/hw/electronics/hat-plus/v2/README.md) ESP32 | CANopen master, serial JSON from the Pi (USB-C, 921600 Bd) | 1 | routes commands to the satellites, switches 12 V bus power |
+| Stepper backpacks | motor satellites | 10/11/12/13 (A/X/Y/Z) | stepper driver, endstop |
+| Laser interface | satellite | 20 | laser channels 0–3 |
+| LED / illumination board | satellite | 30 | LED ring / matrix, laser id 4 |
+| Galvo interface | satellite | 40 | galvo scanner |
+| GPIO satellite | satellite | 60 | E-stop, collision sensor, I2C |
 
-## The HAT and Raspberry Pi
+- **Bus:** JST-XH 4 (GND, +12 V, CAN_H, CAN_L), daisy-chained, 120 Ω termination at both ends only.
+- **Bus power** turns off on E-stop, Pi GPIO23 or `{"task":"/state_act","power":0}`.
+- **Two ways in:** serial through the master (default; ImSwitch `ESP32Manager`), or CANopen directly from the Pi's `can0` (`uc2canopen`, ImSwitch `UC2CANOpenManager`). Use one path per node ([why](../../../../../../dev/sw/interface/explanation/architecture.md#two-paths)).
+- Every satellite also accepts serial JSON on its own USB port, so it can be tested off the bus.
 
-- What the HAT controls (power, cooler, LED status); SD-card/RPi access.
-
-## Motion controller
-
-- Stepper drivers, endstops, homing, `moveForever` / trigger series.
-
-## Illumination controller
-
-- LED matrix / ring; laser control; status LEDs.
-
-## Objective controller
-
-- Position calibration and on-device storage.
-
-:::note TODO
-Notion sources: `TASK-FR018 HAT Megapixel LED status`, `TASK-FR034 LED slider range`,
-`TASK-FR012 SD card / RPi hardware`, objective-slide add-on. Link the firmware page:
-[firmware](../../software/firmware/README.md), and UC2-REST/ESP32 repos.
-:::
+Details: [Serial & CANopen interface](../../../../../../dev/sw/interface/index.md) · [Boards, roles & node IDs](../../../../../../dev/sw/interface/reference/boards-and-node-ids.md) · [Add a CAN satellite](../../../../../../dev/sw/interface/how-to/add-can-satellite.md) · [Firmware](../../software/firmware/README.md).

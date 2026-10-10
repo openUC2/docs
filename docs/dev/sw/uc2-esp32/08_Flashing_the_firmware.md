@@ -12,13 +12,13 @@ Note: We started the firmware in version **V1** in this repository: [UC2-REST](h
 
 This repository provides the latest (`V2`) firmware that controls external hardware like Motors, LEDs, Lasers and other customized elements using an ESP32 and an adapter board. It is inspired by the [UC2-REST](https://github.com/openUC2/UC2-REST/tree/master/ESP32) firmware, but features a much more structured way of the code by dividing modules into separated classes. A `ModuleController` ensures a proper initializiation of individual modules at runtime, which makes the entire code very modular and follows the overall UC2 principle.
 
-Similar to the legacy UC2-REST Firmware, the microcontroller can communicate using the wired serial and the wireless WiFi protocol. Both rely on a more-less similar `REST API` that uses endpoints to address an `act, get, set` command. For example, the information about the state of the ESP can be retrieved by issuing the code:
+The microcontroller is controlled with one-line JSON commands over USB serial (there is no WiFi/HTTP interface). Endpoints follow an `_act` / `_get` pattern. For example, the state of the ESP32 is retrieved with:
 
-```
-{"task":"/state_get"}
+```json
+{"task":"/state_get","qid":1}
 ```
 
-A list of all commands that can be sent via HTTP requests and serial commands (e.g. by using the Arduino IDE-contained Serial monitor at 115200 BAUD) can be found in the [RestApi.md](https://github.com/youseetoo/uc2-esp32/blob/mergeBD/RestApi.md)-file.
+All commands: [Serial commands](../interface/reference/serial-commands.md). Serial monitor baud rate: **115200**, or **921600** for `UC2_canopen_master` (HAT+).
 
 ## Setting up the build/develpment environment
 
@@ -27,16 +27,16 @@ In order to build the code, you have to follow the following steps:
 1. Install Visual Studio Code + the Extension called "Platform.io" => Restart Visual studio code to load PIO
 2. Clone the repository including all the submodules: `git clone --recurse-submodules https://github.com/youseetoo/uc2-esp32`
 3. Open the main folder in the Visual Studio Code
-4. Adjust the settings in the file `platformio.ini`-file (mostly the port)
+4. Pick the environment of your board in `platformio.ini` (e.g. `UC2_4`, `UC2_canopen_master`; list: [Boards, roles & node IDs](../interface/reference/boards-and-node-ids.md)) and adjust the port if needed
 4.1. Go to Platformio Home and navigate to Devices
 4.2 Copy the Device port (if connected) and insert that into the `platformio.ini`, e.g. `upload_port = /dev/cu.SLAB_USBtoUART` or `COM3` for windows
-5. Hit the `PlatformIO upload` button; The following task will be run: `platformio run --target upload`; The code is getting compiled and saved into `./.pio/build/`
-5.1 The code will be uploaded. If everything goes right the terminal says: `Leaving... Hard resetting via RTS pin...``
-6. open the PlatformIO serial monitor (remember to also change the port in the `platform.io` accordingly) and check the ESP32's output (eventually hit the reset button)
+5. Build and upload for that environment: `pio run -e <env> -t upload` (e.g. `pio run -e UC2_4 -t upload`); the build is saved into `./.pio/build/<env>/`
+5.1 The code will be uploaded. If everything goes right the terminal says: `Leaving... Hard resetting via RTS pin...`
+6. Open the serial monitor, e.g. `pio device monitor -b 115200` (`-b 921600` for `UC2_canopen_master`), and check the ESP32's output (eventually hit the reset button)
 7. In case you have any problems: File an issue :-)
 
 
-In order to test several commands, you can find a useful list of `json` files in this file: [json_api_BD.txt](https://github.com/youseetoo/uc2-esp32/blob/mergeBD/main/json_api_BD.txt)
+To test commands, use the examples in [Serial commands](../interface/reference/serial-commands.md) or the [WebSerial test page](https://youseetoo.github.io/indexWebSerialTest.html). Prebuilt binaries can be flashed without PlatformIO from the [web flasher](https://youseetoo.github.io/flasher.html).
 
 
 
@@ -46,7 +46,7 @@ In order to test several commands, you can find a useful list of `json` files in
 
 The current version of the firmware can be found here: https://github.com/openUC2/UC2-REST/tree/master/ESP32
 
-Additional information on how to install and compile the board can be found in the [README](https://github.com/openUC2/UC2-REST/master/README.md)
+Additional information on how to install and compile the board can be found in the [README](https://github.com/openUC2/UC2-REST/blob/master/README.md)
 
 Precompiled binaries that can be installed through ImSwitch (more information coming soon) or the `esptool.py`can be found here https://github.com/openUC2/UC2-REST/tree/master/ESP32/build
 

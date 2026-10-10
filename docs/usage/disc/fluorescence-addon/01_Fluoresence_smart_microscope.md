@@ -230,7 +230,7 @@ Sometimes the ESP32(s3) doesn't enter the bootloader. Then you have to first era
 3. Once connected, test the system by sending a simple command:
 
 ```json
-{"task":"/motor_act", "motor": { "steppers": [ { "stepperid": 3, "position": -1000, "speed": 1000, "isabs": 0, "isaccel": 0} ] } }
+{"task":"/motor_act", "motor": { "steppers": [ { "stepperid": 3, "position": -1000, "speed": 1000, "isabs": 0} ] } }
 ```
 
 ![](./IMAGES/Electronics_Box_1.png)
@@ -262,7 +262,7 @@ The UC2-ESP firmware supports various input devices, including the PS4 controlle
 
 
 ```json
-{"bt_scan":1}
+{"task":"/bt_scan"}
 ```
 
   This will initiate the Bluetooth scan on the ESP32, which will detect and pair with the controller.

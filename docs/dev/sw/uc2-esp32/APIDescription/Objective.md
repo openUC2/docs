@@ -4,6 +4,10 @@ title: Objective
 ---
 # UC2-ESP Objective Controller API Documentation
 
+:::warning Outdated
+`/objective_act` and `/objective_get` do not exist in the current firmware. Current documentation: [Serial commands](../../interface/reference/serial-commands.md).
+:::
+
 The UC2-ESP firmware provides an API to control the objective position, allowing precise switching between predefined objective lens positions (e.g., x1, x2) via a motorized stage. This controller manages calibration (homing), explicit movements, toggling between two positions, and setting of objective positions.
 
 ## Endpoint

@@ -1,5 +1,9 @@
 # LED array
 
+:::warning Outdated
+The current firmware expects `led.action` (`fill`, `single`, `halves`, …). Current documentation: [Serial commands → LED array](../../interface/reference/serial-commands.md#ledarr_act).
+:::
+
 This API provides a convenient method for controlling individual LEDs within a NeoPixel LED array using the UC2-ESP firmware. The interface facilitates the manipulation of LED colors and array display modes. It operates through JSON documents sent over USB serial communication.
 
 ## Endpoint
