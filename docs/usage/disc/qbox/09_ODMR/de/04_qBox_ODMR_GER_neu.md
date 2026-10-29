@@ -229,11 +229,11 @@ Dies ist eine empfohlene Schritt-für-Schritt-Anleitung zum Aufbau des ODMR-Setu
 
 1. Verbinden Sie den ESP32 auf der ODMR-Platine über das USB-C-Kabel mit Ihrem Computer.
 
-2. Stellen Sie sicher, dass Ihr ESP32-Board über die neueste Firmware verfügt. Sie können die Firmware über die offizielle [openUC2-Website](https://youseetoo.github.io/) im **Chrome**-Browser herunterladen und flashen, indem Sie Ihre Version auswählen (höchstwahrscheinlich **ESP32C3 ODMR Quantum Mini Labs)**) und dann auf die Schaltfläche „Verbinden“ klicken.
+2. Stellen Sie sicher, dass Ihr ESP32-Board über die neueste Firmware verfügt. Öffnen Sie den [openUC2-Webflasher](https://youseetoo.github.io/) in **Chrome** oder **Edge** auf einem Computer, wählen Sie die Kategorie **qBOX (ODMR)** und Ihr Board (höchstwahrscheinlich **ODMR server (XIAO ESP32-C3)**) und klicken Sie dann auf die Schaltfläche „Verbinden“.
 
   Den Quellcode finden Sie [hier](https://github.com/openUC2/TechnicalDocs-openUC2-QBox/tree/main/Production_Files/Software/ODMR_Server).
 
-3. In Ihrem Chrome-Browser werden Sie in einem Dialogfeld aufgefordert, den COM-Port für Ihren ESP32 auszuwählen, der als „CP2102 USB to UART Bridge Controller“ oder ähnlich angezeigt werden sollte. Sobald die Verbindung hergestellt ist, können Sie die neueste Firmware installieren, indem Sie einfach auf die Schaltfläche „Installieren“ klicken.
+3. Im Browser werden Sie in einem Dialogfeld aufgefordert, den seriellen Port Ihres ESP32 auszuwählen. Der XIAO nutzt seinen eingebauten USB-Anschluss und erscheint daher als „USB JTAG/serial debug unit“ (Windows: „USB-Serielles Gerät (COMx)“, macOS: „cu.usbmodem…“) – ein Treiber ist nicht nötig. Sobald die Verbindung hergestellt ist, installieren Sie die neueste Firmware mit einem Klick auf „Installieren“. Die Firmware enthält auch die Webseiten des Boards.
 
 4. Warten Sie, bis die Firmware erfolgreich geflasht wurde.
 
@@ -250,9 +250,13 @@ Dies ist eine empfohlene Schritt-für-Schritt-Anleitung zum Aufbau des ODMR-Setu
 
 ### 2.3: Web‑Interface verbinden
 
-Nach dem Flashen der Firmware ziehen Sie den Stecker des ESP ab und stecken Sie ihn wieder ein. Rufen Sie dann https://youseetoo.github.io/odmr auf und verbinden Sie sich über Web Serial mit dem Board (auf der Website gehen Sie zu „Messung (Webserial)”).
+Nach dem Flashen der Firmware ziehen Sie den Stecker des ESP ab und stecken ihn wieder ein. Es gibt drei Wege, das Experiment zu steuern – alle bieten dieselben Messungen:
 
-Alternativ können Sie warten, bis das Gerät sein eigenes WLAN-Netzwerk erstellt.
+**A – USB am Computer (empfohlen):** Öffnen Sie https://youseetoo.github.io/odmr in Chrome oder Edge, klicken Sie auf **Gerät verbinden** und wählen Sie den Port des ESP32 (115200 Baud). Reiter: *Frequenz-Sweep*, *Live-Monitor*, *B-Field Monitor*, *Justage* (mit Schritt-für-Schritt-Anleitung) und *Infos*. Sweeps lassen sich überlagern, als CSV oder PNG speichern und teilen.
+
+**B – USB am Android-Smartphone oder -Tablet:** Installieren Sie die App **UC2 Control** ([APK herunterladen](https://github.com/youseetoo/UC2Control/releases/latest) und die Installation erlauben), verbinden Sie den ESP32 mit einem USB-C-(OTG-)Kabel, erlauben Sie den USB-Zugriff, wenn Android fragt, und öffnen Sie den Reiter **ODMR**. Es ist dieselbe Oberfläche wie in A; CSV- und PNG-Dateien landen in `Download/UC2 ODMR/` und können direkt geteilt werden (E-Mail, Cloud, Messenger). Chrome auf Android unterstützt kein Web Serial, dort also die App verwenden.
+
+**C – WLAN, beliebiges Gerät:** Warten Sie, bis das Gerät sein eigenes WLAN-Netzwerk erstellt.
 Klicken Sie auf das WLAN-/Netzwerksymbol in der unteren rechten Ecke Ihres Bildschirms (wo Sie normalerweise Ihr WLAN auswählen).
 - Nach einigen Sekunden sollte ein neues Netzwerk mit einem Namen wie „ODMR-XXXX“ in der Liste erscheinen.
 - Wählen Sie dieses Netzwerk aus, um eine Verbindung zum Gerät herzustellen.
