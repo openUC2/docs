@@ -19,6 +19,18 @@ ODMR combines optical spectroscopy with magnetic resonance to detect spin transi
 
 - **ODMR Tutorial** - Complete guide to building and operating an ODMR system with UC2
 
+## Software
+
+| What | Where |
+|---|---|
+| Firmware (flash in Chrome/Edge, category **qBOX (ODMR)**) | [openUC2 web flasher](https://youseetoo.github.io/) |
+| Control app, computer (USB, Chrome/Edge) | [youseetoo.github.io/odmr](https://youseetoo.github.io/odmr) |
+| Control app, Android (USB-C OTG, **ODMR** tab) | [UC2 Control APK](https://github.com/youseetoo/UC2Control/releases/latest) |
+| Control without a cable | the board's own WiFi, `http://192.168.4.1` |
+| Source code, serial protocol | [ODMR_Server](https://github.com/openUC2/TechnicalDocs-openUC2-QBox/tree/main/Production_Files/Software/ODMR_Server) |
+
+Step-by-step: section 2.2–2.3 of the ODMR tutorial.
+
 ## Key Components
 
 - **NV Diamond Sample:** Synthetic diamond with nitrogen-vacancy centers
