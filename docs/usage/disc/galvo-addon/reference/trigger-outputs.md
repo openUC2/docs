@@ -1,4 +1,12 @@
+---
+title: Trigger outputs (measured)
+sidebar_position: 5
+description: Oscilloscope measurements of the FRAME, LINE and PIXEL trigger outputs - levels, pulse widths, timing - and where each effect comes from in the firmware.
+---
+
 # Profiling the trigger outputs of the GalvoBox
+
+*Information-oriented: measured behaviour of the trigger outputs.*
 
 Insights into the trigger outputs of the GalvoBox, which are used for synchronization with external devices. The trigger outputs are labeled "FRAME", "LINE", and "PIXEL" on the PCB, and they indicate the timing of frame, line, and pixel events during scanning.
 
@@ -10,17 +18,17 @@ The firmware code for the galvo scanner can be found [here](https://github.com/y
 
 The three trigger outputs are driven from 3.3 V logic through a buffer stage and then pass a 22 Ω series resistor before reaching the SMA center pin.
 
-![](./IMAGES/galvo_trigger/image_1.png)
+![](../IMAGES/galvo_trigger/image_1.png)
 
 Buffer stage detail:
 
-![](./IMAGES/galvo_trigger/image_2.png)
+![](../IMAGES/galvo_trigger/image_2.png)
 
 ### High impedance probing (1 MΩ scope input, no termination)
 
 With a normal probe and a 1 MΩ scope input, you are effectively not loading the output. The measured signal sits close to the CMOS high level, around 3.3 V.
 
-![](./IMAGES/galvo_trigger/image_3.png)
+![](../IMAGES/galvo_trigger/image_3.png)
 
 ### Coax plus termination (50 Ω style load)
 
@@ -28,11 +36,11 @@ If you terminate the line (or approximate 50 Ω at the scope end), the output is
 
 Cable termination setup:
 
-![](./IMAGES/galvo_trigger/image_4.jpg)
+![](../IMAGES/galvo_trigger/image_4.jpg)
 
 Measured amplitude with termination:
 
-![](./IMAGES/galvo_trigger/image_5.png)
+![](../IMAGES/galvo_trigger/image_5.png)
 
 Practical implication:
 
@@ -45,11 +53,11 @@ Practical implication:
 
 Most pulses are very short, around 60 to 63 ns (depending on channel and measurement threshold). This matches how the PIXEL trigger is generated in the raster loop: the firmware toggles the pin using two back to back GPIO register writes (set then clear) with no deliberate delay in between.
 
-![](./IMAGES/galvo_trigger/image_9.png)
+![](../IMAGES/galvo_trigger/image_9.png)
 
 Width statistics:
 
-![](./IMAGES/galvo_trigger/image_10.png)
+![](../IMAGES/galvo_trigger/image_10.png)
 
 ### Rare longer widths (~4.4 to 5.0 µs)
 
@@ -65,11 +73,11 @@ Even if your main raster path currently uses the set-clear mask method for first
 
 Observation of long width cases:
 
-![](./IMAGES/galvo_trigger/image_6.png)
+![](../IMAGES/galvo_trigger/image_6.png)
 
 Example capture around 4.4 µs:
 
-![](./IMAGES/galvo_trigger/image_7.png)
+![](../IMAGES/galvo_trigger/image_7.png)
 
 ## Timing: why the first period is tightly ~22 µs but later pulses spread
 
@@ -77,11 +85,11 @@ You measured the time to the next pulses after a trigger event and found the fir
 
 Distribution example:
 
-![](./IMAGES/galvo_trigger/image_8.png)
+![](../IMAGES/galvo_trigger/image_8.png)
 
 Repeat measurement showing stable first interval:
 
-![](./IMAGES/galvo_trigger/image_12.png)
+![](../IMAGES/galvo_trigger/image_12.png)
 
 This aligns with the raster scheduler model in firmware:
 
@@ -93,7 +101,7 @@ So the nominal pixel period is `config.sample_period_us`. When that value is abo
 
 Zoomed out frequency view and duty cycle context:
 
-![](./IMAGES/galvo_trigger/image_11.png)
+![](../IMAGES/galvo_trigger/image_11.png)
 
 Why the later spread happens:
 
@@ -112,7 +120,7 @@ This is implemented by composing a GPIO bitmask and doing one set write followed
 
 Channel view with all three connected (1 yellow FRAME, 2 cyan LINE, 3 pink PIXEL):
 
-![](./IMAGES/galvo_trigger/image_9.png)
+![](../IMAGES/galvo_trigger/image_9.png)
 
 ## Summary of observations and where they stem from
 

@@ -1,0 +1,35 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 980 300' width='980' height='300'>
+<rect x='0' y='0' width='980' height='300' fill='white'/>
+<defs><marker id='arr' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#1f2328'/></marker><marker id='arrB' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#1e6fd9'/></marker><marker id='arrR' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#e0352b'/></marker><marker id='arrG' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#2e9e44'/></marker></defs>
+<text x='20.0' y='28.0' font-family='Helvetica, Arial, sans-serif' font-size='17' fill='#1f2328' text-anchor='start' font-weight='bold'>Confocal detection: a pinhole in an image plane rejects out-of-focus light</text>
+<line x1='30.0' y1='160.0' x2='920.0' y2='160.0' stroke='#8c959f' stroke-width='1' stroke-opacity='1.0' stroke-dasharray='6 4' stroke-linecap='round'/>
+<path d='M190.0,85.0 Q199.0,160.0 190.0,235.0 Q181.0,160.0 190.0,85.0 z' fill='#c9a227' fill-opacity='0.45' stroke='#2a5d8f' stroke-width='1.2'/>
+<path d='M520.0,80.0 Q529.0,160.0 520.0,240.0 Q511.0,160.0 520.0,80.0 z' fill='#7fb3e6' fill-opacity='0.45' stroke='#2a5d8f' stroke-width='1.2'/>
+<rect x='756.0' y='60.0' width='8.0' height='94.0' rx='0' fill='#1f2328' stroke='#1f2328' stroke-width='1.2'/>
+<rect x='756.0' y='166.0' width='8.0' height='94.0' rx='0' fill='#1f2328' stroke='#1f2328' stroke-width='1.2'/>
+<rect x='860.0' y='130.0' width='60.0' height='60.0' rx='4' fill='#eef1f4' stroke='#1f2328' stroke-width='1.2'/>
+<text x='890.0' y='165.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#1f2328' text-anchor='middle' font-weight='normal'>SPAD</text>
+<line x1='70.0' y1='160.0' x2='190.0' y2='105.0' stroke='#2e9e44' stroke-width='2' stroke-opacity='1.0' stroke-linecap='round'/>
+<line x1='190.0' y1='105.0' x2='520.0' y2='105.0' stroke='#2e9e44' stroke-width='2' stroke-opacity='1.0' stroke-linecap='round'/>
+<line x1='520.0' y1='105.0' x2='760.0' y2='160.0' stroke='#2e9e44' stroke-width='2' stroke-opacity='1.0' stroke-linecap='round'/>
+<line x1='760.0' y1='160.0' x2='860.0' y2='173.8' stroke='#2e9e44' stroke-width='2' stroke-opacity='1.0' stroke-linecap='round'/>
+<line x1='70.0' y1='160.0' x2='190.0' y2='215.0' stroke='#2e9e44' stroke-width='2' stroke-opacity='1.0' stroke-linecap='round'/>
+<line x1='190.0' y1='215.0' x2='520.0' y2='215.0' stroke='#2e9e44' stroke-width='2' stroke-opacity='1.0' stroke-linecap='round'/>
+<line x1='520.0' y1='215.0' x2='760.0' y2='160.0' stroke='#2e9e44' stroke-width='2' stroke-opacity='1.0' stroke-linecap='round'/>
+<line x1='760.0' y1='160.0' x2='860.0' y2='146.2' stroke='#2e9e44' stroke-width='2' stroke-opacity='1.0' stroke-linecap='round'/>
+<line x1='110.0' y1='160.0' x2='190.0' y2='96.0' stroke='#f08c00' stroke-width='1.6' stroke-opacity='1.0' stroke-dasharray='5 3' stroke-linecap='round'/>
+<line x1='190.0' y1='96.0' x2='520.0' y2='108.8' stroke='#f08c00' stroke-width='1.6' stroke-opacity='1.0' stroke-dasharray='5 3' stroke-linecap='round'/>
+<line x1='520.0' y1='108.8' x2='760.0' y2='137.0' stroke='#f08c00' stroke-width='1.6' stroke-opacity='1.0' stroke-dasharray='5 3' stroke-linecap='round'/>
+<line x1='110.0' y1='160.0' x2='190.0' y2='224.0' stroke='#f08c00' stroke-width='1.6' stroke-opacity='1.0' stroke-dasharray='5 3' stroke-linecap='round'/>
+<line x1='190.0' y1='224.0' x2='520.0' y2='211.2' stroke='#f08c00' stroke-width='1.6' stroke-opacity='1.0' stroke-dasharray='5 3' stroke-linecap='round'/>
+<line x1='520.0' y1='211.2' x2='760.0' y2='183.0' stroke='#f08c00' stroke-width='1.6' stroke-opacity='1.0' stroke-dasharray='5 3' stroke-linecap='round'/>
+<circle cx='70.0' cy='160.0' r='4.0' fill='#2e9e44' fill-opacity='1.0' stroke='#2e9e44' stroke-width='1.2'/>
+<circle cx='110.0' cy='160.0' r='4.0' fill='#f08c00' fill-opacity='1.0' stroke='#f08c00' stroke-width='1.2'/>
+<text x='60.0' y='190.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#2e9e44' text-anchor='middle' font-weight='normal'>in focus</text>
+<text x='120.0' y='138.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#d97700' text-anchor='middle' font-weight='normal'>out of focus</text>
+<text x='190.0' y='60.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#1f2328' text-anchor='middle' font-weight='normal'>objective</text>
+<text x='520.0' y='60.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#1f2328' text-anchor='middle' font-weight='normal'>tube lens</text>
+<text x='760.0' y='52.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#1f2328' text-anchor='middle' font-weight='normal'>pinhole = fibre core</text>
+<text x='20.0' y='262.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#1f2328' text-anchor='start' font-weight='normal'>Light from the focus converges to the pinhole and passes; light from other depths is spread over the pinhole plane and mostly blocked.</text>
+<text x='20.0' y='282.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#444' text-anchor='start' font-weight='normal'>In the FLIM add-on the emission returns through the galvo (descanned), so the detection fibre stays fixed while the spot scans.</text>
+</svg>

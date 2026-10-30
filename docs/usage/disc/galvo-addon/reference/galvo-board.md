@@ -1,4 +1,12 @@
-# Technical Reference
+---
+title: Galvo interface board
+sidebar_position: 4
+description: Hardware and firmware reference of the mAIkroscope galvo interface board - signal chain, connectors, power, pin map, raster engine.
+---
+
+# Galvo interface board: technical reference
+
+*Information-oriented. Look things up here.*
 
 mAIkroscope Galvo Interface Board – **Extended Hardware & Firmware Documentation**
 Rev A – 26 May 2025
@@ -16,7 +24,7 @@ Rev A – 26 May 2025
 
 This is a scan using the Flimlabs.com software, their detector and their pulsed lasers. This is a 512x512 pixel^2 area
 
-![](./IMAGES/scan.gif)
+![](../IMAGES/scan.gif)
 
 
 
@@ -32,7 +40,7 @@ ESP32-S3  ↔  SPI  ↔  MCP4822  →  LM324 diff amps  →  SMA L± / R±
 
 * **Two-phase DAC update:** write 12-bit sample into DAC register (CS low), then pulse **LDAC** to latch both channels simultaneously; saves one SPI transaction per point.&#x20;
 
-![](./IMAGES/galvo.png)
+![](../IMAGES/galvo.png)
 
 
 ### 3  Electrical Specifications
@@ -47,7 +55,7 @@ ESP32-S3  ↔  SPI  ↔  MCP4822  →  LM324 diff amps  →  SMA L± / R±
 | Trigger level          | 3.3 V CMOS, 50 Ω back-terminated | SMA J1009-J1011                      |   |
 | CAN bus                | ISO11898-2, 1 Mbit/s default     | 120 Ω terminator selectable (JP2001) |   |
 
-![](./IMAGES/galvo_1.jpg)
+![](../IMAGES/galvo_1.jpg)
 
 
 ### 4  Connectors & Pinouts (summary)

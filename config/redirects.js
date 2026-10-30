@@ -70,15 +70,28 @@ const redirectsMinimal = [
 	},
 	{
 		from: "/docs/Toolboxes/GalvoBox/GalvoIntro",
-		to: "/usage/disc/galvo-addon/reference",
+		to: "/usage/disc/galvo-addon/reference/galvo-board",
 	},
 	{
 		from: "/docs/Toolboxes/GalvoBox/LaserScanner",
-		to: "/usage/disc/galvo-addon/LaserScanner",
+		to: "/usage/disc/galvo-addon/explanation/how-laser-scanning-works",
 	},
 	{
 		from: "/docs/Toolboxes/GalvoBox/Profiling",
-		to: "/usage/disc/galvo-addon/Profiling",
+		to: "/usage/disc/galvo-addon/reference/trigger-outputs",
+	},
+	// 2026-10 galvo add-on Diataxis migration
+	{
+		from: "/usage/disc/galvo-addon/reference",
+		to: "/usage/disc/galvo-addon/reference/galvo-board",
+	},
+	{
+		from: "/usage/disc/galvo-addon/LaserScanner",
+		to: "/usage/disc/galvo-addon/explanation/how-laser-scanning-works",
+	},
+	{
+		from: "/usage/disc/galvo-addon/Profiling",
+		to: "/usage/disc/galvo-addon/reference/trigger-outputs",
 	},
 	{
 		from: "/docs/Toolboxes/HoloBox/",

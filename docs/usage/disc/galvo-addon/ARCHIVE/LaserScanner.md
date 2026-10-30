@@ -1,3 +1,16 @@
+---
+title: Laser scanning FLIM (old page)
+sidebar_position: 1
+description: The previous single-page guide to the FLIM laser scanner, kept for reference. Its content now lives in the tutorial, how-to, explanation and reference pages.
+---
+
+:::note Archived
+This was the single page about the FLIM laser scanner. Its content has moved:
+the build and alignment steps to the [tutorial](../tutorials/align-the-flim-scanner.md),
+the principles to [How laser scanning works](../explanation/how-laser-scanning-works.md),
+the scan command to [Scan parameters](../reference/scan-parameters.md).
+:::
+
 ## UC2 Laser Scanning FLIM Microscope with FlimLabs cards
 
 ### What this setup is for
@@ -11,7 +24,7 @@ A second benefit - that we would really like to explore in the future - is confo
 
 The diagramm shows the current implementation of the triggering in combination with the FLIMLabs card. The openUC2 Galvo Scanner driver board relies on communication from the openUC2 CAN bus. 
 
-![](./IMAGES/laserblockdiagramm.png)
+![](../IMAGES/laserblockdiagramm.png)
 
 
 ### Optics (high level)
@@ -32,7 +45,7 @@ This results into:
 
 How this looks like:
 
-![](./IMAGES/laserscannersetup.png)
+![](../IMAGES/laserscannersetup.png)
 
 This is also available through our [openUC2 Configurator](https://youseetoo.github.io/configurator?data=eyJtIjpbeyJpIjoibWlycm9yLTF4MSIsInAiOls1LDcsMF0sInIiOjkwfSx7ImkiOiJjYW1lcmEtdXNiIiwicCI6WzYsNywwXSwiciI6OTB9LHsiaSI6ImZpbHRlci1kaWNocm9pYyIsInAiOls1LDYsMF0sInIiOjI3MH0seyJpIjoiY3ViZS1yYXNwaWNhbS0yeDEiLCJwIjpbNCwwLDBdLCJyIjowfSx7ImkiOiJjdWJlLWxlZG1hdHJpeC0xeDEiLCJwIjpbNSwwLDBdLCJyIjowfSx7ImkiOiJjdWJlLTF4MSIsInAiOls4LDYsMF0sInIiOjB9LHsiaSI6ImN1YmUtMXgxIiwicCI6WzcsNiwwXSwiciI6MH0seyJpIjoiZ2Fsdm8teHkiLCJwIjpbMTAsNiwwXSwiciI6MH0seyJpIjoibGFzZXItNDA1bm0iLCJwIjpbOSw1LDBdLCJyIjowfSx7ImkiOiJtaXJyb3ItMXgxIiwicCI6WzEwLDYsMF0sInIiOjB9LHsiaSI6Imxhc2VyLTUzMm5tIiwicCI6WzEwLDQsMF0sInIiOjkwfSx7ImkiOiJiZWFtc3BsaXR0ZXItMXgxIiwicCI6WzEwLDUsMF0sInIiOjB9LHsiaSI6ImxlbnMtcG9zLTF4MSIsInAiOls5LDYsMF0sInIiOjB9LHsiaSI6ImxlbnMtcG9zLTF4MSIsInAiOls2LDYsMF0sInIiOjB9LHsiaSI6Im9iamVjdGl2ZS0xMHgtMXgxIiwicCI6WzUsNCwwXSwiciI6MH0seyJpIjoiY3ViZS0xeDEiLCJwIjpbNSw0LDBdLCJyIjowfSx7ImkiOiJjdWJlLTF4MSIsInAiOls1LDYsMF0sInIiOjB9LHsiaSI6ImN1YmUtMXgxIiwicCI6WzUsNSwwXSwiciI6MH1dLCJhIjpbXSwibWV0YSI6eyJuYW1lIjoiVW50aXRsZWQgU2V0dXAiLCJhdXRob3IiOiIiLCJnaXRodWJBY2NvdW50IjoiIiwiZGVzY3JpcHRpb24iOiIiLCJjYXRlZ29yeSI6IkdlbmVyYWwiLCJzY3JlZW5zaG90IjoiIiwidWMyX3ZlcmlmaWVkIjpmYWxzZSwidmVyc2lvbiI6IjEuMC4wIiwiY3JlYXRlZEF0IjoiMjAyNi0wMi0wMlQyMDo0MDo1OC41MDJaIiwiY29sbGVjdGlvbiI6WyJHZW5lcmFsIl0sIm5vdGlmaWNhdGlvbiI6IiJ9fQ==).
 
@@ -70,7 +83,7 @@ For the integration of the system into the FRAME, we have to adjust the "scan" a
 
 This is how it looks like in the FRAME:
 
-![](./IMAGES/FLIMFRAME.gif)
+![](../IMAGES/FLIMFRAME.gif)
 
 ## Build order that saves time
 
@@ -172,7 +185,7 @@ Expose the parameters that directly change sampling and lifetime quality:
 * binning (spatial, temporal) and minimum photons per pixel
 * lifetime method: fit model or phasor (depending on what you use downstream)
 
-![](./IMAGES/ImSwitchScanningController.gif)
+![](../IMAGES/ImSwitchScanningController.gif)
 
 
 A clean acquisition sequence is:
@@ -183,7 +196,7 @@ A clean acquisition sequence is:
 4. compute intensity and lifetime maps
 
 
-![](./IMAGES/laserscanneronwall.gif)
+![](../IMAGES/laserscanneronwall.gif)
 
 
 ## Validation experiments
@@ -206,40 +219,40 @@ A clean acquisition sequence is:
 
 In order to assemble the laser scanning microscope, you can follow the following very coarse step-by-step guide. 
 These are the ingredients, including the FLIMLabs card and laser plus the bottom/top plate to sandwhich the inner FRAME module (aluminium):
-![alt text](./IMAGES/FLIMBUILD_2.jpg) 
+![alt text](../IMAGES/FLIMBUILD_2.jpg) 
 
 The goal is to have the exication and emission path jointly aligned and then to insert the galvo scanner in the middle of the excitation path. the two beams have to be concentric and parallel throughout the beampath. For this, we can tune the screws of the kinematic mirror cubes to steer the beam and we can also move the galvo scanner by hand to achieve the best alignment. The easiest is to observe the beam on a piece of paper and to move the galvo until the beam walks towards the scan lens when you move the galvo by hand. Do that very close to the kinematic mirror mount and very far. 
 
-![](./IMAGES/FLIMBUILD_8.gif)
+![](../IMAGES/FLIMBUILD_8.gif)
 For this we use the laser from the FLIMLabs card mounted to the laser collimator and we use a second laser on the other port. In our case this is red. 
 Near By:
-![alt text](./IMAGES/FLIMBUILD_4.jpg) 
+![alt text](../IMAGES/FLIMBUILD_4.jpg) 
 Far Away:
-![alt text](./IMAGES/FLIMBUILD_9.gif)
+![alt text](../IMAGES/FLIMBUILD_9.gif)
 
 Once this is done, you can insert the galvo mirror and tune them such that the beam is going through the middle of each cube towards the scanning lens and the tube lens and the dichroic mirror:
-![alt text](./IMAGES/FLIMBUILD_1.jpg) 
+![alt text](../IMAGES/FLIMBUILD_1.jpg) 
 
 The overall design will look similar to this:
-![alt text](./IMAGES/FLIMBUILD_3.jpg) 
+![alt text](../IMAGES/FLIMBUILD_3.jpg) 
 
 Monitor the beam in the back focal plane. The telescope formed by scan/tube lens is set up such that the galvo pivot is imaged into the BFP. This means that when you change the galvo angle, the beam should not walk across the pupil but rather rotate around the center.
 
-![alt text](./IMAGES/FLIMBUILD_5.jpg) 
+![alt text](../IMAGES/FLIMBUILD_5.jpg) 
 
 Tune the kinematic mirror that bounces off the beam up to the objective such that the beam is centered in the BFP and does not walk when you change the galvo angle.
-![alt text](./IMAGES/FLIMBUILD_6.jpg) 
+![alt text](../IMAGES/FLIMBUILD_6.jpg) 
 
 Use a lens or objective lens to observe the focus of the beam. 
-![alt text](./IMAGES/FLIMBUILD_7.jpg) 
+![alt text](../IMAGES/FLIMBUILD_7.jpg) 
 
 When you move the galvo by hand in the focus of the (objective) lens, the beam should move laterally in the sample plane. If the beam stretches with scan angle, treat it as a conjugation error (galvo not properly relayed to the BFP) or clipping. 
-![](./IMAGES/FLIMBUILD_11.gif)
+![](../IMAGES/FLIMBUILD_11.gif)
 
 
 ## Result
 
 This is a result acquired with the current FLIM version at 488nm excitation on an 10x, NA 0.3 objective.
 
-![](./IMAGES/flimresult.jpeg)
+![](../IMAGES/flimresult.jpeg)
 

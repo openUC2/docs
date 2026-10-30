@@ -1,0 +1,41 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 980 390' width='980' height='390'>
+<rect x='0' y='0' width='980' height='390' fill='white'/>
+<defs><marker id='arr' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#1f2328'/></marker><marker id='arrB' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#1e6fd9'/></marker><marker id='arrR' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#e0352b'/></marker><marker id='arrG' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#2e9e44'/></marker></defs>
+<text x='20.0' y='28.0' font-family='Helvetica, Arial, sans-serif' font-size='17' fill='#1f2328' text-anchor='start' font-weight='bold'>Why the galvo mirrors are the bottleneck</text>
+<text x='30.0' y='62.0' font-family='Helvetica, Arial, sans-serif' font-size='13' fill='#1f2328' text-anchor='start' font-weight='bold'>1  On a 45° mirror a round beam is 1.41x wider</text>
+<rect x='124.0' y='105.0' width='92.0' height='170.0' rx='2' fill='#e9edf1' stroke='#5b6570' stroke-width='1.5'/>
+<text x='170.0' y='292.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#1f2328' text-anchor='middle' font-weight='normal'>mirror 6 mm wide (left-right), shaft vertical</text>
+<ellipse cx='170.0' cy='190.0' rx='21.2' ry='15.0' fill='#1e6fd9' fill-opacity='0.12' stroke='#1e6fd9' stroke-width='2' transform='rotate(0.0 170.0 190.0)'/>
+<ellipse cx='170.0' cy='190.0' rx='42.4' ry='30.0' fill='#e0352b' fill-opacity='0.12' stroke='#e0352b' stroke-width='2' transform='rotate(0.0 170.0 190.0)'/>
+<text x='228.0' y='140.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#1e6fd9' text-anchor='start' font-weight='normal'>2 mm beam:</text>
+<text x='228.0' y='153.8' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#1e6fd9' text-anchor='start' font-weight='normal'>2.8 mm across</text>
+<text x='228.0' y='210.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#e0352b' text-anchor='start' font-weight='normal'>4 mm beam:</text>
+<text x='228.0' y='223.8' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#e0352b' text-anchor='start' font-weight='normal'>5.7 mm across</text>
+<line x1='124.0' y1='318.0' x2='216.0' y2='318.0' stroke='#1f2328' stroke-width='1' stroke-opacity='1.0' marker-end='url(#arr)' stroke-linecap='round'/>
+<line x1='216.0' y1='318.0' x2='124.0' y2='318.0' stroke='#1f2328' stroke-width='1' stroke-opacity='1.0' marker-end='url(#arr)' stroke-linecap='round'/>
+<text x='170.0' y='335.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#1f2328' text-anchor='middle' font-weight='normal'>6 mm × cos 45° = 4.2 mm usable</text>
+<text x='400.0' y='62.0' font-family='Helvetica, Arial, sans-serif' font-size='13' fill='#1f2328' text-anchor='start' font-weight='bold'>2  Two mirrors, one pupil</text>
+<line x1='453.7' y1='103.7' x2='486.3' y2='136.3' stroke='#5b6570' stroke-width='4' stroke-opacity='1.0' stroke-linecap='round'/>
+<line x1='453.7' y1='216.3' x2='486.3' y2='183.7' stroke='#5b6570' stroke-width='4' stroke-opacity='1.0' stroke-linecap='round'/>
+<text x='500.0' y='116.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#1f2328' text-anchor='start' font-weight='normal'>mirror A (scans x)</text>
+<text x='500.0' y='220.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#1f2328' text-anchor='start' font-weight='normal'>mirror B (scans z)</text>
+<line x1='400.0' y1='120.0' x2='470.0' y2='120.0' stroke='#1e6fd9' stroke-width='2.4' stroke-opacity='1.0' stroke-linecap='round'/>
+<line x1='470.0' y1='120.0' x2='470.0' y2='200.0' stroke='#1e6fd9' stroke-width='2.4' stroke-opacity='1.0' stroke-linecap='round'/>
+<line x1='470.0' y1='200.0' x2='630.0' y2='200.0' stroke='#1e6fd9' stroke-width='2.4' stroke-opacity='1.0' marker-end='url(#arrB)' stroke-linecap='round'/>
+<text x='440.0' y='164.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#1f2328' text-anchor='end' font-weight='normal'>7.4 mm</text>
+<line x1='470.0' y1='245.0' x2='470.0' y2='260.0' stroke='#8c959f' stroke-width='1' stroke-opacity='1.0' stroke-linecap='round'/>
+<text x='470.0' y='276.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#333' text-anchor='middle' font-weight='normal'>scan lens focus at B:</text>
+<text x='470.0' y='289.8' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#333' text-anchor='middle' font-weight='normal'>B is imaged into the BFP,</text>
+<text x='470.0' y='303.5' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#333' text-anchor='middle' font-weight='normal'>A lands 7.4 × 3.2² = 76 mm off</text>
+<text x='700.0' y='62.0' font-family='Helvetica, Arial, sans-serif' font-size='13' fill='#1f2328' text-anchor='start' font-weight='bold'>3  ... so the x scan walks in the pupil</text>
+<circle cx='760.0' cy='175.0' r='70.0' fill='#fbfbf3' fill-opacity='1.0' stroke='#c9a227' stroke-width='2'/>
+<text x='760.0' y='267.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#1f2328' text-anchor='middle' font-weight='normal'>objective pupil (4x: 9 mm)</text>
+<circle cx='760.0' cy='175.0' r='26.0' fill='#1e6fd9' fill-opacity='0.5' stroke='#1e6fd9' stroke-width='1'/>
+<circle cx='726.0' cy='175.0' r='26.0' fill='#1e6fd9' fill-opacity='0.35' stroke='#1e6fd9' stroke-width='1'/>
+<circle cx='794.0' cy='175.0' r='26.0' fill='#1e6fd9' fill-opacity='0.35' stroke='#1e6fd9' stroke-width='1'/>
+<line x1='726.0' y1='93.0' x2='794.0' y2='93.0' stroke='#1f2328' stroke-width='1' stroke-opacity='1.0' marker-end='url(#arr)' stroke-linecap='round'/>
+<line x1='794.0' y1='93.0' x2='726.0' y2='93.0' stroke='#1f2328' stroke-width='1' stroke-opacity='1.0' marker-end='url(#arr)' stroke-linecap='round'/>
+<text x='760.0' y='85.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#1f2328' text-anchor='middle' font-weight='normal'>x scan ±6°: ±2.5 mm</text>
+<text x='760.0' y='287.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#333' text-anchor='middle' font-weight='normal'>z scan (mirror B): the beam stays put</text>
+<text x='20.0' y='376.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#1f2328' text-anchor='start' font-weight='normal'>Keep the beam ≤ 3 mm on these mirrors, centre it on both, and place the scan lens focus between A and B if both axes matter equally.</text>
+</svg>

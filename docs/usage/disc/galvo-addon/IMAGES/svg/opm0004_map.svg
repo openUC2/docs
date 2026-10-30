@@ -1,0 +1,61 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 330' width='1000' height='330'>
+<rect x='0' y='0' width='1000' height='330' fill='white'/>
+<defs><marker id='arr' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#1f2328'/></marker><marker id='arrB' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#1e6fd9'/></marker><marker id='arrR' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#e0352b'/></marker><marker id='arrG' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#2e9e44'/></marker></defs>
+<text x='20.0' y='28.0' font-family='Helvetica, Arial, sans-serif' font-size='16' fill='#1f2328' text-anchor='start' font-weight='bold'>OPM-0004 FLIM 488: the scan layer seen from above (cells on the 50 mm grid, CAD positions)</text>
+<rect x='34.2' y='199.2' width='61.6' height='61.6' rx='4' fill='#f3f5f7' stroke='#9aa3ab' stroke-width='1.2'/>
+<rect x='104.2' y='199.2' width='61.6' height='61.6' rx='4' fill='#f3f5f7' stroke='#9aa3ab' stroke-width='1.2'/>
+<rect x='174.2' y='199.2' width='61.6' height='61.6' rx='4' fill='#f3f5f7' stroke='#9aa3ab' stroke-width='1.2'/>
+<rect x='244.2' y='199.2' width='61.6' height='61.6' rx='4' fill='#f3f5f7' stroke='#9aa3ab' stroke-width='1.2'/>
+<rect x='314.2' y='199.2' width='61.6' height='61.6' rx='4' fill='#f3f5f7' stroke='#9aa3ab' stroke-width='1.2'/>
+<rect x='384.2' y='199.2' width='61.6' height='61.6' rx='4' fill='#f3f5f7' stroke='#9aa3ab' stroke-width='1.2'/>
+<rect x='454.2' y='199.2' width='61.6' height='61.6' rx='4' fill='#fff2c2' stroke='#d99a00' stroke-width='2.0'/>
+<rect x='34.2' y='129.2' width='61.6' height='61.6' rx='4' fill='#fff2c2' stroke='#d99a00' stroke-width='2.0'/>
+<rect x='104.2' y='129.2' width='61.6' height='61.6' rx='4' fill='#f3f5f7' stroke='#9aa3ab' stroke-width='1.2'/>
+<rect x='34.2' y='59.2' width='61.6' height='61.6' rx='4' fill='#f3f5f7' stroke='#9aa3ab' stroke-width='1.2'/>
+<polyline points='135.0,160.0 65.0,160.0 65.0,230.0 135.0,230.0 415.0,230.0 485.0,230.0' stroke='#1e6fd9' stroke-width='2.4' fill='none' fill-opacity='1.0' stroke-linejoin='round' marker-end='url(#arrB)'/>
+<polyline points='485.0,230.0 65.0,230.0 65.0,160.0 65.0,90.0' stroke='#2e9e44' stroke-width='1.8' fill='none' fill-opacity='1.0' stroke-linejoin='round' stroke-dasharray='7 4' marker-end='url(#arrG)'/>
+<text x='65.0' y='211.5' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='white' stroke='white' stroke-width='3.5' stroke-linejoin='round' text-anchor='middle' font-weight='normal'>galvo</text>
+<text x='65.0' y='211.5' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='#1f2328' text-anchor='middle' font-weight='normal'>galvo</text>
+<text x='65.0' y='226.2' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='white' stroke='white' stroke-width='3.5' stroke-linejoin='round' text-anchor='middle' font-weight='normal'>A + B</text>
+<text x='65.0' y='226.2' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='#1f2328' text-anchor='middle' font-weight='normal'>A + B</text>
+<text x='135.0' y='211.5' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='white' stroke='white' stroke-width='3.5' stroke-linejoin='round' text-anchor='middle' font-weight='normal'>scan</text>
+<text x='135.0' y='211.5' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='#1f2328' text-anchor='middle' font-weight='normal'>scan</text>
+<text x='135.0' y='226.2' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='white' stroke='white' stroke-width='3.5' stroke-linejoin='round' text-anchor='middle' font-weight='normal'>lens f50</text>
+<text x='135.0' y='226.2' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='#1f2328' text-anchor='middle' font-weight='normal'>lens f50</text>
+<text x='415.0' y='211.5' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='white' stroke='white' stroke-width='3.5' stroke-linejoin='round' text-anchor='middle' font-weight='normal'>tube</text>
+<text x='415.0' y='211.5' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='#1f2328' text-anchor='middle' font-weight='normal'>tube</text>
+<text x='415.0' y='226.2' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='white' stroke='white' stroke-width='3.5' stroke-linejoin='round' text-anchor='middle' font-weight='normal'>lens f160</text>
+<text x='415.0' y='226.2' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='#1f2328' text-anchor='middle' font-weight='normal'>lens f160</text>
+<text x='485.0' y='211.5' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='white' stroke='white' stroke-width='3.5' stroke-linejoin='round' text-anchor='middle' font-weight='normal'>splitter</text>
+<text x='485.0' y='211.5' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='#1f2328' text-anchor='middle' font-weight='normal'>splitter</text>
+<text x='65.0' y='141.5' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='white' stroke='white' stroke-width='3.5' stroke-linejoin='round' text-anchor='middle' font-weight='normal'>junction</text>
+<text x='65.0' y='141.5' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='#1f2328' text-anchor='middle' font-weight='normal'>junction</text>
+<text x='65.0' y='156.2' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='white' stroke='white' stroke-width='3.5' stroke-linejoin='round' text-anchor='middle' font-weight='normal'>dichroic</text>
+<text x='65.0' y='156.2' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='#1f2328' text-anchor='middle' font-weight='normal'>dichroic</text>
+<text x='135.0' y='141.5' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='white' stroke='white' stroke-width='3.5' stroke-linejoin='round' text-anchor='middle' font-weight='normal'>excitation</text>
+<text x='135.0' y='141.5' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='#1f2328' text-anchor='middle' font-weight='normal'>excitation</text>
+<text x='135.0' y='156.2' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='white' stroke='white' stroke-width='3.5' stroke-linejoin='round' text-anchor='middle' font-weight='normal'>fibre (XY)</text>
+<text x='135.0' y='156.2' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='#1f2328' text-anchor='middle' font-weight='normal'>fibre (XY)</text>
+<text x='65.0' y='71.5' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='white' stroke='white' stroke-width='3.5' stroke-linejoin='round' text-anchor='middle' font-weight='normal'>detection</text>
+<text x='65.0' y='71.5' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='#1f2328' text-anchor='middle' font-weight='normal'>detection</text>
+<text x='65.0' y='86.2' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='white' stroke='white' stroke-width='3.5' stroke-linejoin='round' text-anchor='middle' font-weight='normal'>fibre (XY)</text>
+<text x='65.0' y='86.2' font-family='Helvetica, Arial, sans-serif' font-size='11.76' fill='#1f2328' text-anchor='middle' font-weight='normal'>fibre (XY)</text>
+<circle cx='485.0' cy='230.0' r='7.0' fill='white' fill-opacity='1.0' stroke='#1e6fd9' stroke-width='2'/>
+<circle cx='485.0' cy='230.0' r='2.0' fill='#1e6fd9' fill-opacity='1.0' stroke='#1e6fd9' stroke-width='1.2'/>
+<text x='485.0' y='278.0' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1e6fd9' text-anchor='middle' font-weight='normal'>beam goes up to the</text>
+<text x='485.0' y='290.5' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1e6fd9' text-anchor='middle' font-weight='normal'>objective (FRAME)</text>
+<text x='510.0' y='70.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#1f2328' text-anchor='start' font-weight='bold'>Light paths</text>
+<line x1='510.0' y1='88.0' x2='550.0' y2='88.0' stroke='#1e6fd9' stroke-width='2.4' stroke-opacity='1.0' stroke-linecap='round'/>
+<text x='558.0' y='92.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#1f2328' text-anchor='start' font-weight='normal'>488 nm excitation (from the FLIM laser fibre)</text>
+<line x1='510.0' y1='108.0' x2='550.0' y2='108.0' stroke='#2e9e44' stroke-width='1.8' stroke-opacity='1.0' stroke-dasharray='7 4' stroke-linecap='round'/>
+<text x='558.0' y='112.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#1f2328' text-anchor='start' font-weight='normal'>fluorescence back through the galvo to the detection fibre</text>
+<rect x='510.0' y='124.0' width='36.0' height='18.0' rx='4' fill='#fff2c2' stroke='#d99a00' stroke-width='2'/>
+<text x='558.0' y='138.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#1f2328' text-anchor='start' font-weight='normal'>the two kinematic cubes you align after transport</text>
+<text x='510.0' y='170.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#1f2328' text-anchor='start' font-weight='bold'>Numbers from the CAD</text>
+<text x='510.0' y='188.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#333' text-anchor='start' font-weight='normal'>fibre collimator f 11.2 mm -&gt; about 2 mm beam (single-mode 488 fibre)</text>
+<text x='510.0' y='201.8' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#333' text-anchor='start' font-weight='normal'>galvo mirrors 10.2 x 6 mm, mirror A 7.4 mm above mirror B</text>
+<text x='510.0' y='215.5' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#333' text-anchor='start' font-weight='normal'>scan lens f50 at one cell, tube lens f160 four cells further</text>
+<text x='510.0' y='229.2' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#333' text-anchor='start' font-weight='normal'>beam 3.2x wider after the tube lens (2 mm -&gt; 6.4 mm)</text>
+<text x='510.0' y='243.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#333' text-anchor='start' font-weight='normal'>splitter 25 x 25 mm folds the beam up through the top-plate port</text>
+<text x='510.0' y='256.8' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#333' text-anchor='start' font-weight='normal'>galvo image (the pupil) ~158 mm after the tube lens: inside the objective</text>
+</svg>

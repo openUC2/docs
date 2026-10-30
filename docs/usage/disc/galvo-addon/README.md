@@ -1,6 +1,55 @@
+---
+title: Galvo Add-On
+sidebar_position: 0
+description: Laser scanning for the openUC2 FRAME - the FLIM scanner module, its galvo interface board, building and aligning it, troubleshooting, and how well the optics perform.
+---
+
 # Galvo Add-On - Scanning Microscopy Interface
 
 The Galvo Box (mAIkroscope Galvo Interface Board) brings advanced scanning capabilities to UC2 microscopes through precision galvanometer mirror control. This system enables laser scanning microscopy, time-resolved imaging, and synchronization with external detectors.
+
+Together with FLIM LABS it forms the **FLIM laser scanner** for the openUC2 FRAME (module
+`OPM - 0004 - FLIM 488`). A 488 nm fibre laser is scanned by a galvo pair through an f50 /
+f160 telescope into the objective. The fluorescence returns the same way to a detection
+fibre that acts as a confocal pinhole.
+
+![](./IMAGES/svg/opm0004_map.svg)
+
+## Where do I start?
+
+These pages follow [Diátaxis](https://diataxis.fr/): four kinds of page for four needs.
+
+### I am building or aligning the scanner => Tutorial
+
+- [**Build and align the FLIM laser scanner**](./tutorials/align-the-flim-scanner.md):
+  eleven steps from the fibre to a scanned image, each with a picture and a check.
+
+### Something specific needs fixing => How-to guides
+
+- [Re-align after transport](./how-to/realign-after-transport.md): only two kinematic cubes
+  and the galvo centre.
+- [Fix a clipped or off-centre beam](./how-to/fix-a-clipped-beam.md): D-shaped, crescent or
+  missing spot at the objective.
+- [Fix a stretched image](./how-to/fix-a-stretched-image.md): one axis longer than the
+  other.
+- [Choose an objective](./how-to/choose-an-objective.md): 4x, 10x or 20x, and how to
+  measure the PSF.
+
+### I want to understand it => Explanation
+
+- [How laser scanning works](./explanation/how-laser-scanning-works.md): confocal pinhole,
+  4f pupil relay, filling the pupil, descanned detection, timing.
+- [Optical quality and limits](./explanation/optical-quality-and-limits.md): what an
+  Optiland simulation of the module says about clipping, field curvature, the galvo
+  mirrors and alignment errors.
+
+### I need a number => Reference
+
+- [Optical layout of the FLIM module](./reference/optical-layout.md)
+- [Scan parameters](./reference/scan-parameters.md)
+- [Optical simulation (Optiland)](./reference/simulation.md)
+- [Galvo interface board](./reference/galvo-board.md)
+- [Trigger outputs (measured)](./reference/trigger-outputs.md)
 
 ## What is Galvo Scanning?
 
