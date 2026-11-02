@@ -37,13 +37,14 @@ The master sends commands **only via SDO**. PDOs carry feedback.
 | TPDO2 | `0x280+n` | GPIO satellite (60), PTZ bridge (61) | `0x2300:01–04` 4× u8 · `0x2310:01–02` 2× u16 (8) | on change only |
 | TPDO3 | `0x380+n` | motor satellites with sync latch on | `0x200C:01` latched position i32 · `0x200D:01` count u16 (6) | after each SYNC |
 | RPDO1–4 | `0x18A`–`0x18D` | consumed by **every** node | TPDO1 of nodes 10–13 → slot 0–3 of `0x2001/0x2004/0x2016` | — |
+| Multi-axis status | `0x480+n` | multi-axis satellites (standalone v4) | axis u8 · status u8 · homing u8 · `0x4D` · position i32 (8), one frame per axis | on change (≥ 10 ms apart), every 500 ms |
 
-Status byte (`0x2004`): bit 0 = running, bit 1 = 1 Hz toggle (keep-alive). Homing byte (`0x2016`): 0 idle, 1 homing, 2 done, 3 timeout.
+Status byte (`0x2004`): bit 0 = running, bit 1 = 1 Hz toggle (keep-alive). Homing byte (`0x2016`): 0 idle, 1 homing, 2 done, 3 timeout. The multi-axis status frame is sent as a raw frame (not mapped through `0x1A03`); the master decodes it directly.
 
 ## Conventions
 
 - Arrays: sub 0 = count (ro), sub 1…N = elements.
-- Motor-type arrays: sub = **stepperid + 1** (A = 1, X = 2, Y = 3, Z = 4). A single-axis motor satellite maps any sub to its one physical axis for move, home and hard-limit objects. `0x2005` and `0x2020–0x2026` are read from **sub 2 only**.
+- Motor-type arrays: sub = **axis + 1** (A = 1, X = 2, Y = 3, Z = 4). A single-axis motor satellite maps any sub to its one physical axis for move, home and hard-limit objects; `0x2005` and `0x2020–0x2026` are read from **sub 2 only**. A multi-axis satellite (`CAN_MULTI_AXIS_SLAVE`) maps sub k+1 to local axis k, TMC sub k+1 to driver k; `0x2005` (enable) is global.
 - Laser arrays: sub = channel + 1.
 - All manufacturer values are 0 after boot.
 - "doorbell" = writing the value triggers an action; the node clears it.

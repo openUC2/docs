@@ -63,7 +63,7 @@ If several boards share an ID, address by MAC (printed by `/can_act {"scan":true
 {"task":"/motor_act","qid":2,"motor":{"steppers":[{"stepperid":2,"position":500,"speed":5000}]}}
 ```
 
-On the HAT+ master, motor ids 0–3 already route to nodes 10–13. Other node IDs move but report no completion ([why](../explanation/architecture.md#feedback)).
+On the HAT+ master, motor ids 0–3 already route to nodes 10–13. A single-axis motor on another node ID moves but reports no completion ([why](../explanation/architecture.md#feedback)). For a standalone v4 with four axes see [Standalone v4 as CAN satellite](./standalone-v4-as-satellite.md).
 
 ## Other satellite types
 

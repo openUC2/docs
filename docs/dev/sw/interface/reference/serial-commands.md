@@ -118,7 +118,7 @@ Replies `{"qid":9,"return":1}`, then `{"strobesweep":{"n":[…],"x":[…]}}` bat
 |---|---|
 | `{"task":"/motor_get","qid":1}` | `{"motor":{"steppers":[{"stepperid":1,"position":-1500,"isRunning":0,"isforever":0,"hardLimitEnabled":0,…}]},"qid":1}` |
 | `{"task":"/motor_get","position":1}` | positions only |
-| `{"task":"/motor_get","motor":{"steppers":[{"stepperid":1}]}}` | `{"steppers":[{"stepperid":1,"position":p,"isRunning":0,"isDone":1}]}`, no qid; `isDone:-1` = no route |
+| `{"task":"/motor_get","qid":2,"motor":{"steppers":[{"stepperid":1}]}}` | `{"steppers":[{"stepperid":1,"position":p,"isRunning":0,"isDone":1}],"qid":2}` (CAN builds; older firmware: no qid); `isDone:-1` = no route |
 
 On a CAN master every call first reads `0x2001` from each remote axis over SDO (≈ 10–30 ms per axis).
 
@@ -271,10 +271,22 @@ The first matching key wins.
 
 ```json
 {"task":"/route_get"}
-{"task":"/route_set","type":"MOTOR","id":2,"where":"REMOTE","nodeId":12}
+{"task":"/route_set","type":"MOTOR","id":4,"where":"REMOTE","nodeId":14,"subAxis":0,"persist":1}
+{"task":"/route_set","type":"LASER","id":5,"where":"REMOTE","nodeId":14,"subAxis":1,"persist":1}
+{"task":"/route_set","reset":1}
 ```
 
-`/route_get` returns a bare array: `[{"type":"motor","id":1,"where":"remote","nodeId":11,"subAxis":1},…]`. `type`: MOTOR, LASER, LED, GALVO, HOME, TMC; `where`: LOCAL, REMOTE, OFF. Changes are RAM-only and set `subAxis` to 0. Remote motor feedback only works for nodes 10–13 ([why](../explanation/architecture.md#feedback)).
+| Key | Meaning |
+|---|---|
+| `type` | MOTOR, LASER, LED, GALVO, HOME, TMC. A **MOTOR** route also sets HOME and TMC for that id. |
+| `id` | logical id (`stepperid`, `LASERid`), 0–63; motor ids up to 9 on the HAT+ |
+| `where` | LOCAL, REMOTE, OFF |
+| `nodeId` | CAN node, 1–127 (REMOTE) |
+| `subAxis` | axis/channel on that node = OD sub − 1, 0–3. Default: `id` |
+| `persist` | 1 = save in NVS, restored at boot. Otherwise RAM only |
+| `reset` | 1 = forget all saved routes and rebuild the build defaults |
+
+Both return the table as a bare array: `[{"type":"motor","id":4,"where":"remote","nodeId":14,"subAxis":0,"saved":true},…]`. Invalid values return `{"error":"…"}`. Example setup: [Standalone v4 as CAN satellite](../how-to/standalone-v4-as-satellite.md).
 
 ### `/ota_start` {#ota_start}
 

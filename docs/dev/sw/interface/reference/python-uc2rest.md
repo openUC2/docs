@@ -45,15 +45,16 @@ Raw access: `esp.post_json("/can_get", {}, getReturn=False)` or `esp.serial.send
 
 ## Methods that match the firmware
 
-Axes: `"A"`/0, `"X"`/1, `"Y"`/2, `"Z"`/3. `steps` are in physical units (`steps × stepSize`, default `stepSize = 1`).
+Axes: a name or the firmware `stepperid`: `"A"`/0, `"X"`/1, `"Y"`/2, `"Z"`/3, `"B"`–`"G"`/4–9 (4–9 are usually CAN axes, see [`/route_set`](./serial-commands.md#route)). `motor.set_axis_ids({"T": 6})` adds or remaps names; unknown names and ids outside 0–9 raise `ValueError`. Per-axis state (`stepSize`, `direction`, `backlash`, `currentPosition`) is an array indexed by `stepperid`. `steps` are in physical units (`steps × stepSize`, default `stepSize = 1`).
 
 | Module | Method | Endpoint |
 |---|---|---|
 | `motor` | `move_x/y/z/a(steps, speed, acceleration=None, is_blocking=False, is_absolute=False)` | `/motor_act` |
-| | `move_xy`, `move_az`, `move_xyza(steps=(a,x,y,z), speed=(…))`, `move_stepper(...)` | `/motor_act` |
-| | `move_forever(speed=(a,x,y,z), is_stop=False)` — sends all 4 axes | `/motor_act` |
-| | `stop(axis=None)` | `/motor_act` `isStop` |
-| | `get_position()` → `np.array([A,X,Y,Z])` (zeros on timeout) | `/motor_get` |
+| | `move_axis_by_name(axis, steps, speed, …)`, `move_axes({axis: steps}, speed=v or {axis: v}, …)` — any axis | `/motor_act` |
+| | `move_xy`, `move_az`, `move_xyza(steps=(a,x,y,z), speed=(…))`, `move_stepper(...)` (arrays indexed by `stepperid`) | `/motor_act` |
+| | `move_forever(speed={axis: v})`; a tuple `(a,x,y,z)` sends those 4 axes | `/motor_act` |
+| | `stop(axis=None)` — one axis, a list, or A/X/Y/Z plus every axis commanded so far | `/motor_act` `isStop` |
+| | `get_position(axis=None)` → array indexed by `stepperid` (zeros where unknown); `axis=[…]` asks for those axes (needed for CAN ids) | `/motor_get` |
 | | `set_position(axis, position)` | `setpos` |
 | | `set_motor_enable(enable, enableauto)` | `isen` / `isenauto` |
 | | `set_hard_limits(axis, enabled, polarity)`, `clear_hard_limit(axis)` | `hardlimits` |
@@ -63,7 +64,7 @@ Axes: `"A"`/0, `"X"`/1, `"Y"`/2, `"Z"`/3. `steps` are in physical units (`steps 
 | | `start_strobe_sweep(axis, target, speed, period_us, trig_us, laser, delay_us, width_us, …)`, `stop_strobe_sweep()` | `strobesweep` (new) |
 | | `set_tmc_parameters(axis, msteps, rms_current, sgthrs, semin, semax, blank_time, toff)` | `/tmc_act` (no qid → non-blocking only) |
 | | `setup_motor(axis, minPos, maxPos, stepSize, backlash)` | Python-side scaling only |
-| `home` | `home(axis=<int>, endstoptimeout=20000, speed, direction, endstoppolarity, isBlocking, hardhome=False)` | `/home_act` |
+| `home` | `home(axis=<name or id>, endstoptimeout=20000, speed, direction, endstoppolarity, isBlocking, hardhome=False)` | `/home_act` |
 | | `home_xy(...)` | `/home_act` |
 | `laser` | `set_laser(channel, value)` — channel 1–3 or `"R"/"G"/"B"`, 4 = CAN illumination; raw PWM | `/laser_act` |
 | | `set_strobe(channel, enable, delay_us, width_us)` | `/laser_act` `strobe` (new) |
@@ -100,4 +101,4 @@ Callbacks run on the reader thread. Keep them short.
 
 These methods call endpoints or keys the firmware does not have, or fail in Python:
 
-`home.home_x/y/z/a()` with default arguments (sends `"timeout": null`), `home.home(axis="X")` (string axis), `home.stop_home()` (starts homing), `motor.move_xyz()` with default speed, `motor.set_motor_acceleration`, `set_motor`, `set_motor_currentPosition`, `setTrigger`, `*soft_limits*`, `get_motor(s)`, `get_hard_limits`, `get_tmc_parameters`, `isBusy`, `startStageScanning`, `stopStageScanning`, the closed-loop helpers (`setAxisMode`, `getAxisFeedback`, …), `can.get_available_devices`, `canota.start_ota_update` and `start_*_ota`, `message.trigger_message`, `state.set_state`, `led.set_led`, `laser.set_laserpin`, `analog.*`, `objective.*` (except `home`), `gripper.*`, `rotator.*`, `lcd.*`, `camera.*`, `wifi.*`, `modules.*`.
+`home.home_x/y/z/a()` with default arguments (sends `"timeout": null`), `home.stop_home()` (starts homing), `motor.set_motor_acceleration`, `set_motor`, `set_motor_currentPosition`, `setTrigger`, `*soft_limits*`, `get_motor(s)`, `get_hard_limits`, `get_tmc_parameters`, `isBusy`, `startStageScanning`, `stopStageScanning`, the closed-loop helpers (`setAxisMode`, `getAxisFeedback`, …), `can.get_available_devices`, `canota.start_ota_update` and `start_*_ota`, `message.trigger_message`, `state.set_state`, `led.set_led`, `laser.set_laserpin`, `analog.*`, `objective.*` (except `home`), `gripper.*`, `rotator.*`, `lcd.*`, `camera.*`, `wifi.*`, `modules.*`.

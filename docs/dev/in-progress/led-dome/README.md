@@ -29,3 +29,7 @@ and angles (for the reconstruction software), and a 3D-printable holder the flex
 angle are parameters: a flatter dome with a smaller NA gets denser LEDs.
 
 ![The flat flex board before folding](./img/dome_flex_pcb.png)
+
+![](./img/leddome.jpg)
+
+![](./img/VID_20261030_084940.gif)

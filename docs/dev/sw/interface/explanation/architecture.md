@@ -37,9 +37,12 @@ The host does not see whether an axis is local or on CAN. The JSON and the repli
 
 ## Limits of the master's feedback {#feedback}
 
-- The master's receive PDOs are fixed in `OD.c` to COB-IDs `0x18A–0x18D`, i.e. TPDO1 of nodes **10–13**. A motor on any other node can be moved, but the master never sees it stop: no `isDone`, no `done`, no homing result.
-- Feedback slots are keyed by `subAxis`. `/route_set` always sets `subAxis = 0`, so a re-routed motor reports through slot 0 (node 10).
-- Only motor ids 0–3 have routes. The standalone v4 drives A/X/Y/Z itself and does **not** forward extra motors (`stepperid ≥ 4`) to CAN. Its CAN port serves the illumination board (LED + laser id 4, node 30) and the galvo (node 40).
+The master matches feedback to a motor id by (node, `subAxis`) of its route:
+
+- **Single-axis satellites:** the master's receive PDOs are fixed in `OD.c` to COB-IDs `0x18A–0x18D`, i.e. TPDO1 of nodes **10–13**. A single-axis motor on any other node can be moved, but the master never sees it stop: no `isDone`, no `done`, no homing result.
+- **Multi-axis satellites** (standalone v4 in satellite mode, any node ID): one status frame per axis on `0x480 + node`. Up to 4 such nodes per master. See [Standalone v4 as CAN satellite](../how-to/standalone-v4-as-satellite.md).
+- Default routes cover motor ids 0–3. More motors (up to id 9 on the HAT+) are added with `/route_set`.
+- A standalone v4 running as **master** drives A/X/Y/Z itself and does not forward extra motors to CAN; its CAN port serves the illumination board (LED + laser id 4, node 30) and the galvo (node 40).
 - `/laser_get`, `/home_get` and `/ledarr_get` are not implemented for remote devices.
 
 ## Two paths onto the HAT+ bus {#two-paths}

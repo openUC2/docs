@@ -270,7 +270,7 @@ After flashing, unplug and replug the ESP. There are three ways to control the e
 
 **A — USB, computer (recommended):** open https://youseetoo.github.io/odmr in Chrome or Edge, click **Connect device** and pick the ESP32's port (115200 baud). Tabs: *Frequency Sweep*, *Live Monitor*, *B-Field Monitor*, *Alignment* (with a step-by-step tutorial) and *Info*. Sweeps can be overlaid, saved as CSV or PNG and shared.
 
-**B — USB, Android phone or tablet:** install the **UC2 Control** app ([download the APK](https://github.com/youseetoo/UC2Control/releases/latest) and allow the installation), connect the ESP32 with a USB-C (OTG) cable, allow USB access when Android asks, and open the **ODMR** tab. It is the same app as in A; CSV and PNG files are saved to `Download/UC2 ODMR/` and can be shared directly (e-mail, cloud, messenger). Chrome on Android cannot do Web Serial, so use the app there.
+**B — USB, Android phone or tablet:** install the **UC2 Control** app ([download the APK](https://github.com/youseetoo/UC2Control/releases/latest) and allow the installation), connect the ESP32 with a USB-C (OTG) cable, allow USB access when Android asks, and open the **ODMR** tab. It has the same measurements as A (sweep, live, B-field, alignment with tutorial); pinch the charts to zoom, tap a point for its value; CSV and PNG files are saved to `Download/UC2 ODMR/` and can be shared directly (e-mail, cloud, messenger). Chrome on Android cannot do Web Serial, so use the app there.
 
 **C — WiFi, any device:** wait until the device creates its own Wi-Fi network.
 - Click on the Wi-Fi / network icon in the bottom right corner of your screen (where you normally select your Wi-Fi).
