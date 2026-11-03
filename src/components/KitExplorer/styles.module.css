@@ -1,0 +1,14 @@
+.explorer { margin: 1rem 0; }
+.search { width: 100%; padding: 0.5rem 0.75rem; margin-bottom: 0.5rem; border: 1px solid var(--ifm-color-emphasis-300); border-radius: 6px; background: var(--ifm-background-color); color: inherit; }
+.group { margin: 1.25rem 0 0.4rem; }
+.row { border: 1px solid var(--ifm-color-emphasis-200); border-radius: 6px; margin-bottom: 0.35rem; }
+.open { border-color: var(--ifm-color-primary); }
+.title { width: 100%; text-align: left; padding: 0.5rem 0.75rem; background: none; border: none; color: inherit; font: inherit; font-weight: 600; cursor: pointer; }
+.detail { padding: 0 0.75rem 0.75rem; }
+.detail p { margin-bottom: 0.5rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.4rem 0 0.8rem; }
+.chip { display: inline-flex; align-items: center; gap: 0.35rem; }
+.card { margin-top: 0.5rem; }
+.links { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.missing { color: var(--ifm-color-warning-darkest); }
+.badge { font-size: 0.7rem; font-weight: 500; padding: 0.05rem 0.4rem; margin-left: 0.4rem; border-radius: 4px; background: var(--ifm-color-warning-contrast-background); color: var(--ifm-color-warning-contrast-foreground); }

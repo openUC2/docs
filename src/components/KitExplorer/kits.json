@@ -1,0 +1,210 @@
+{
+  "_help": "Edit this file to maintain the Kit Explorer. kits[].requires = boxes the shop says are needed first (shown as info). experiments[].kits = ALL boxes needed for that experiment. experiments[].doc = Docusaurus doc id (path under docs/ without extension, number prefixes like '01_' removed, or the frontmatter 'id') OR a full https:// URL, OR null if not documented yet. Unknown doc ids are flagged as broken on the page.",
+  "kits": [
+    {
+      "id": "core",
+      "name": "CoreBox",
+      "shop": "https://shop.openuc2.com/shop/discovery-corebox-1556",
+      "doc": "usage/disc/corebox/index",
+      "description": "Entry-level box for geometrical optics: lenses, mirrors, telescope and a smartphone microscope. Foundation for all microscopy add-ons.",
+      "requires": [],
+      "contents": [
+        "2x 45° mirror",
+        "2x lens f = 50 mm, 1x lens f = 100 mm, 1x lens f = -50 mm",
+        "Eyepiece",
+        "Universal smartphone holder",
+        "Sample holder",
+        "Manual Z-stage",
+        "Objective 4x, NA 0.1",
+        "10x puzzle base plates",
+        "2 samples + sample preparation kit",
+        "Torch, M3 screwdriver"
+      ]
+    },
+    {
+      "id": "electronics",
+      "name": "Electronics Add-On",
+      "shop": "https://shop.openuc2.com/shop/discovery-electronics-add-on-2765",
+      "doc": "usage/disc/electronics-addon/README",
+      "description": "Motorizes the microscope: ESP32 controller, stepper Z-stage and a programmable LED matrix.",
+      "requires": ["core"],
+      "contents": [
+        "Motorized Z-stage (NEMA 11, 25 mm travel)",
+        "LED matrix",
+        "UC2 electronics board (ESP32, TMC2209 drivers)",
+        "Objective 10x, NA 0.25",
+        "10x puzzle base plates",
+        "USB cables, game controller, 12 V power supply"
+      ]
+    },
+    {
+      "id": "infinity",
+      "name": "Infinity Add-On",
+      "shop": "https://shop.openuc2.com/shop/discovery-infinity-add-on-153",
+      "doc": "usage/disc/infinity-addon/README",
+      "description": "Infinity-corrected optics with an industrial camera for digital and computational microscopy.",
+      "requires": ["core", "electronics"],
+      "contents": [
+        "Monochrome USB3 camera (Sony IMX179)",
+        "100 mm C-mount tube lens",
+        "Infinity-corrected 10x objective",
+        "SK23 iris diaphragm",
+        "8x puzzle base plates",
+        "USB3 camera cable"
+      ]
+    },
+    {
+      "id": "fluo-led",
+      "name": "Fluorescence Add-On (LED, 488 nm)",
+      "shop": "https://shop.openuc2.com/shop/discovery-fluorescence-add-on-led-488nm-159",
+      "doc": "usage/disc/fluorescence-addon/README",
+      "description": "Entry into fluorescence microscopy with a high-power blue LED and a GFP filter set.",
+      "requires": ["core", "electronics", "infinity"],
+      "contents": [
+        "Dichroic beamsplitter + emission filter cube",
+        "Excitation filter",
+        "High-power 480 nm LED with aspheric lens",
+        "Adjustable iris",
+        "8x puzzle base plates"
+      ]
+    },
+    {
+      "id": "fluo-laser",
+      "name": "Fluorescence Add-On (Laser, 488 nm)",
+      "shop": "https://shop.openuc2.com/shop/discovery-fluorescence-add-on-laser-488nm-155",
+      "doc": "usage/disc/fluorescence-addon/README",
+      "description": "Laser-based fluorescence microscopy with a fiber-coupled 488 nm laser.",
+      "requires": ["core", "electronics", "infinity"],
+      "contents": [
+        "Dichroic beamsplitter + emission filter cube",
+        "Lens f = 18 mm",
+        "Fiber launcher",
+        "Fiber-coupled 488 nm laser (single-mode, ~20 mW, TTL)",
+        "8x puzzle base plates"
+      ]
+    },
+    {
+      "id": "raspi",
+      "name": "Raspberry Pi with ImSwitch",
+      "shop": "https://shop.openuc2.com/shop/raspberry-pi-with-imswitch-2720",
+      "doc": null,
+      "description": "Raspberry Pi 5 pre-installed with ImSwitch to control cameras, stages and lasers.",
+      "requires": [],
+      "contents": [
+        "Raspberry Pi 5 (2 GB)",
+        "Pre-flashed SD card (ImSwitch + UC2 firmware)",
+        "Power supply and cables"
+      ]
+    },
+    {
+      "id": "lightsheet",
+      "name": "Light-Sheet Add-On",
+      "shop": "https://shop.openuc2.com/shop/discovery-light-sheet-add-on-154",
+      "doc": "usage/disc/lightsheet-addon/README",
+      "description": "Turns the laser fluorescence setup into a light-sheet microscope for gentle 3D imaging.",
+      "requires": ["core", "electronics", "infinity", "fluo-laser", "raspi"],
+      "contents": [
+        "Cylindrical lens f = 100 mm",
+        "Water-fillable sample chamber with NeoPixel",
+        "Micrometer XYZ stage",
+        "Removable emission filter",
+        "Additional camera",
+        "Solid base plate + 8x puzzle base plates"
+      ]
+    },
+    {
+      "id": "qbox",
+      "name": "QBox (Quantum Box)",
+      "shop": "https://shop.openuc2.com/shop/discovery-qbox-2743",
+      "doc": "usage/disc/qbox/README",
+      "description": "Standalone laser box for interferometry, polarization and quantum optics up to ODMR with NV diamonds.",
+      "requires": [],
+      "contents": [
+        "Laser cube 532 nm (<1 mW, class 2)",
+        "2x kinematic 45°/90° mirror, 1x fixed 45°/90° mirror",
+        "Lenses f = 16 mm and 28 mm",
+        "Dichroic holder",
+        "4x polarization filter, 2x polarizing beam splitter",
+        "Magnet, XYZ stage with NV-diamond board",
+        "ESP32-S3 module (photodiode / microwave control)",
+        "Single and double slit",
+        "10x puzzle base plates + solid base plate"
+      ]
+    },
+    {
+      "id": "interferometer",
+      "name": "Interferometer Box",
+      "shop": "https://shop.openuc2.com/shop/discovery-interferometerbox-2794",
+      "doc": null,
+      "description": "Standalone box for interference and polarization experiments (QBox without the ODMR parts).",
+      "requires": [],
+      "contents": [
+        "2x kinematic mirror, 1x heating mirror",
+        "Lens f = 44 mm",
+        "Dichroic holder",
+        "5x polarization filter, 2x polarizing beam splitter",
+        "Single and double slit",
+        "10x puzzle base plates + solid base plate"
+      ]
+    },
+    {
+      "id": "holo",
+      "name": "HoloBox",
+      "shop": null,
+      "doc": "usage/disc/holobox/index",
+      "description": "Standalone box with laser, interferometer optics and a Raspberry Pi camera for digital holography.",
+      "requires": [],
+      "contents": [
+        "Dot laser 650 nm (red) + holography LED",
+        "Beam splitter cube, kinematic 45°/90° mirrors",
+        "Calliope heating mirror",
+        "Pinhole, fiber holder, lens f = 44.5 mm",
+        "Sample holder, RMS-thread insert",
+        "Raspberry Pi 5 + Camera Module",
+        "Base plate with puzzle pieces 5x4"
+      ]
+    }
+  ],
+  "experiments": [
+    { "id": "lens-projector", "name": "Magnifier & projector", "kits": ["core"], "doc": "usage/disc/corebox/tutorials/from-lens-to-projector", "description": "Use a single lens as a magnifying glass and project a sharp image onto the wall." },
+    { "id": "focal-length", "name": "Measure a focal length", "kits": ["core"], "doc": "usage/disc/corebox/how-to/measure-a-focal-length", "description": "Determine the focal length of each lens with a ruler and a distant light source." },
+    { "id": "telescope", "name": "Galilean & Kepler telescope", "kits": ["core"], "doc": "usage/disc/corebox/tutorials/build-a-telescope", "description": "Build both classic telescope types and find out why one image is upside-down." },
+    { "id": "smartphone-microscope", "name": "Smartphone microscope", "kits": ["core"], "doc": "usage/disc/corebox/tutorials/your-first-microscope", "description": "Build a real microscope and take pictures of cells with your own phone." },
+    { "id": "finite-microscope", "name": "Finite microscope with 4x objective", "kits": ["core"], "doc": "usage/disc/corebox/how-to/build-the-finite-microscope", "description": "Build a classic 160 mm finite-conjugate microscope with objective and eyepiece." },
+    { "id": "infinity-microscope-core", "name": "Infinity-corrected microscope", "kits": ["core"], "doc": "usage/disc/corebox/how-to/build-the-infinity-microscope", "description": "Use a tube lens to build the optical layout found in every modern research microscope." },
+    { "id": "motorized-microscope", "name": "Motorized microscope", "kits": ["core", "electronics"], "doc": "usage/disc/electronics-addon/Quickstart", "description": "Focus the microscope with a stepper motor and control illumination from the ESP32." },
+    { "id": "automation-intro", "name": "Automated microscopy with the ESP32", "kits": ["core", "electronics"], "doc": "usage/disc/electronics-addon/automation_intro", "description": "Program the controller to automate focusing and LED-matrix illumination." },
+    { "id": "camera-microscope", "name": "Digital microscope with industrial camera", "kits": ["core", "electronics", "infinity"], "doc": null, "description": "Replace the smartphone with a USB3 camera and acquire images on the computer." },
+    { "id": "dpc", "name": "Differential phase contrast (DPC)", "kits": ["core", "electronics", "infinity"], "doc": "usage/disc/infinity-addon/DPCmicroscopy", "description": "Reveal transparent cells by combining images under asymmetric LED-matrix illumination." },
+    { "id": "abbe", "name": "Abbe diffraction experiment", "kits": ["core", "electronics", "infinity"], "doc": "usage/disc/infinity-addon/ABBE", "description": "Filter the diffraction orders in the Fourier plane and see how image resolution emerges." },
+    { "id": "smartphone-fluorescence", "name": "Smartphone fluorescence microscope", "kits": ["core", "fluo-led"], "doc": "usage/disc/fluorescence-addon/Fluorescence_Smartphone_Microscope", "description": "Image GFP-labelled samples with a blue LED, a filter set and your phone." },
+    { "id": "led-fluorescence", "name": "LED fluorescence microscope", "kits": ["core", "electronics", "infinity", "fluo-led"], "doc": "usage/disc/fluorescence-addon/LED_Fluoresence_microscope_V1", "description": "Build an epi-fluorescence microscope with a high-power LED and a camera." },
+    { "id": "laser-fluorescence", "name": "Laser fluorescence microscope", "kits": ["core", "electronics", "infinity", "fluo-laser"], "doc": "usage/disc/fluorescence-addon/LASER_Fluoresence_microscope", "description": "Excite fluorescent samples with a fiber-coupled 488 nm laser for brighter images." },
+    { "id": "lightsheet", "name": "Light-sheet microscope", "kits": ["core", "electronics", "infinity", "fluo-laser", "raspi", "lightsheet"], "doc": "usage/disc/lightsheet-addon/Light_sheet_Fluoresence_microscope", "description": "Illuminate only a thin plane of the sample and scan it in 3D." },
+    { "id": "lightsheet-calibration", "name": "Light-sheet alignment & calibration", "kits": ["core", "electronics", "infinity", "fluo-laser", "raspi", "lightsheet"], "doc": "usage/disc/lightsheet-addon/LightsheetCalibration", "description": "Align the light sheet with the focal plane of the detection objective." },
+
+    { "id": "q-michelson", "name": "Michelson interferometer", "kits": ["qbox"], "doc": "usage/disc/qbox/MichelsonInterferometer/MichelsonInterferometer", "description": "Split a laser beam, recombine it and observe interference fringes." },
+    { "id": "q-mach-zehnder", "name": "Mach-Zehnder interferometer", "kits": ["qbox"], "doc": "usage/disc/qbox/MachZehnderInterferometer/mach-zehnder_interferometer", "description": "Send light along two separate paths to study phase differences." },
+    { "id": "q-offaxis", "name": "Off-axis holography", "kits": ["qbox"], "doc": "usage/disc/qbox/MachZehnderInterferometer/off_axis_holography", "description": "Record amplitude and phase of an object with a tilted reference beam." },
+    { "id": "q-malus", "name": "Malus's law", "kits": ["qbox"], "doc": "usage/disc/qbox/DiscoveryPolarization/Malus_principle/malus_principle", "description": "Measure how transmitted intensity depends on the angle between two polarizers." },
+    { "id": "q-crossed-pol", "name": "Crossed polarizers", "kits": ["qbox"], "doc": "usage/disc/qbox/DiscoveryPolarization/APP_POL_Crossed_Polarizers/Readme", "description": "Block light completely with two crossed polarization filters." },
+    { "id": "q-three-pol", "name": "Three-polarizer paradox", "kits": ["qbox"], "doc": "usage/disc/qbox/DiscoveryPolarization/APP_POL_Three_Polarizers/Readme", "description": "Make light reappear by inserting a third polarizer between two crossed ones." },
+    { "id": "q-stress", "name": "Stress-induced birefringence", "kits": ["qbox"], "doc": "usage/disc/qbox/DiscoveryPolarization/APP_POL_Stress_Birefringence/Readme", "description": "Visualize mechanical stress in transparent plastics as colorful patterns." },
+    { "id": "q-eraser", "name": "Quantum eraser", "kits": ["qbox"], "doc": "usage/disc/qbox/Quantum_Eraser/README", "description": "Erase which-path information with polarizers and watch the interference return." },
+    { "id": "q-odmr", "name": "ODMR with NV diamonds", "kits": ["qbox"], "doc": "usage/disc/qbox/ODMR/en/odmr_experiment_eng", "description": "Detect magnetic resonance of NV centers in diamond optically, incl. the Zeeman effect." },
+
+    { "id": "i-michelson", "name": "Michelson interferometer", "kits": ["interferometer"], "doc": "usage/disc/qbox/MichelsonInterferometer/MichelsonInterferometer", "description": "Split a laser beam, recombine it and observe interference fringes." },
+    { "id": "i-mach-zehnder", "name": "Mach-Zehnder interferometer", "kits": ["interferometer"], "doc": "usage/disc/qbox/MachZehnderInterferometer/mach-zehnder_interferometer", "description": "Send light along two separate paths to study phase differences." },
+    { "id": "i-polarization", "name": "Polarization experiments", "kits": ["interferometer"], "doc": "usage/disc/qbox/DiscoveryPolarization/Readme", "description": "Malus's law, crossed polarizers and stress birefringence." },
+    { "id": "i-eraser", "name": "Quantum eraser", "kits": ["interferometer"], "doc": "usage/disc/qbox/Quantum_Eraser/README", "description": "Erase which-path information with polarizers and watch the interference return." },
+    { "id": "i-heating-mirror", "name": "Thermal expansion with the heating mirror", "kits": ["interferometer"], "doc": null, "description": "Heat one interferometer mirror and count the moving fringes to measure nanometer expansion." },
+
+    { "id": "h-michelson", "name": "Your first interference pattern", "kits": ["holo"], "doc": "usage/disc/holobox/tutorials/first-michelson-fringes", "description": "Build a Michelson interferometer and see light behave as a wave." },
+    { "id": "h-mach-zehnder", "name": "Mach-Zehnder interferometer", "kits": ["holo"], "doc": "usage/disc/holobox/how-to/build-a-mach-zehnder", "description": "Record interference fringes of a Mach-Zehnder interferometer with the camera." },
+    { "id": "h-inline", "name": "Inline holographic microscope", "kits": ["holo"], "doc": "usage/disc/holobox/tutorials/your-first-hologram", "description": "Record a lensless hologram and refocus the hidden image on the computer." },
+    { "id": "h-print", "name": "Print your own hologram", "kits": ["holo"], "doc": "usage/disc/holobox/tutorials/print-a-hologram", "description": "Compute a hologram, print it on foil and reconstruct the picture with a laser." },
+    { "id": "h-calliope", "name": "Calliope heating-mirror interferometer", "kits": ["holo"], "doc": "usage/disc/holobox/tutorials/HoloBox_plus_Calliope/MichelsonInterferometer_calliopeEN", "description": "Heat a mirror with a Calliope mini and measure thermal expansion via fringes." },
+    { "id": "h-tomography", "name": "Off-axis holo-tomography", "kits": ["holo"], "doc": "usage/disc/holobox/tutorials/HoloBox_OffAxis_Tomographic_Microscope/chromatix_offaxis_tomography", "description": "Reconstruct 3D refractive-index maps from off-axis holograms." },
+    { "id": "h-polarization", "name": "Polarization experiments", "kits": ["holo"], "doc": "usage/disc/holobox/tutorials/DiscoveryPolarization/Readme", "description": "Explore polarizers, Malus's law and birefringence with the HoloBox." }
+  ]
+}
