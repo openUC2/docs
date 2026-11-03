@@ -1,0 +1,10 @@
+.maker { margin: 1rem 0 1.5rem; padding: 1rem; border: 1px solid var(--ifm-color-emphasis-300); border-radius: 8px; }
+.controls { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: center; margin-bottom: 1rem; }
+.controls label { display: inline-flex; align-items: center; gap: 0.4rem; }
+.controls input[type='number'] { width: 4rem; }
+.panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; }
+.panels figure { margin: 0; }
+.panels canvas { width: 100%; aspect-ratio: 1; image-rendering: pixelated; background: #000; border-radius: 4px; }
+.panels figcaption { font-size: 0.85rem; text-align: center; }
+.info { margin: 0.75rem 0; min-height: 3em; }
+.error { color: var(--ifm-color-danger); }

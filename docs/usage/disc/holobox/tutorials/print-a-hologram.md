@@ -4,6 +4,8 @@ sidebar_position: 3
 description: Turn any picture into a computer-generated hologram, print it on overhead foil with an office laser printer, and make the picture appear on the wall with a laser.
 ---
 
+import HologramMaker from '@site/src/components/HologramMaker';
+
 # Tutorial: Print your own hologram
 
 *Learning-oriented. By the end you'll have printed a hologram on a piece of overhead foil and seen your own picture appear on the wall in laser light. About 45 minutes, plus a trip to a laser printer.*
@@ -32,7 +34,7 @@ Simple, bold shapes work best: big letters, a logo, a smiley. Fine detail and ph
 
 Our example: [uc2.png](./IMAGES/CGH/uc2.png).
 
-:::tip No Python? Use a ready-made hologram
+:::tip No time? Use a ready-made hologram
 Skip to [Step 3](#step-3-print-it-on-foil) with one of these files:
 - [uc2_cgh.pdf](./IMAGES/CGH/uc2_cgh.pdf) for a 1200 dpi printer (21.7 mm square)
 - [uc2_600dpi_cgh.pdf](./IMAGES/CGH/uc2_600dpi_cgh.pdf) for a 600 dpi printer (32.5 mm square, made with `--dpi 600 --size 64 --tiles 12`)
@@ -40,7 +42,17 @@ Skip to [Step 3](#step-3-print-it-on-foil) with one of these files:
 
 ## Step 2: Calculate the hologram
 
-Download [cgh_ifta.py](./scripts/cgh/cgh_ifta.py), put it next to your picture, and run:
+### In your browser
+
+Choose your picture below. The calculation runs on your own computer, nothing is uploaded. After a few seconds you see the preview: if the right-hand panel shows your picture, click **Download PDF** and go on to [Step 3](#step-3-print-it-on-foil). The options are explained [below](#the-options).
+
+<HologramMaker />
+
+The third panel is the ideal case. With a real laser beam the picture is made of blurrier, speckled dots, see [Option B](#option-b-holobox-beam-expander-sharp).
+
+### With Python
+
+The same algorithm as a script, with a more detailed preview. Download [cgh_ifta.py](./scripts/cgh/cgh_ifta.py), put it next to your picture, and run:
 
 ```bash
 pip install numpy pillow matplotlib
@@ -66,17 +78,17 @@ You get three files:
 
 The script uses an **IFTA** (iterative Fourier transform algorithm). It starts from your picture with random phases and goes back and forth between "mask" and "wall" 100 times, until it has a pattern that contains only black and clear pixels and still makes your picture. The [explanation page](../explanation/computer-generated-holograms.md) shows how this works.
 
-The options you are most likely to change:
+### The options
 
-| Option | Default | What it does |
-|---|---|---|
-| `--dpi` | 1200 | Your printer's **real** resolution. Look it up in the printer's data sheet. |
-| `--dots` | 1 | Printer dots per hologram pixel. Use 2 if your printer smears fine dots. |
-| `--size` | 128 | Tile size in pixels. This is the sharpness of the picture on the wall. |
-| `--tiles` | 8 | How often the tile is repeated in each direction, which sets the print size. |
-| `--beam` | 2 | Your laser beam diameter in mm. Only used for the preview. |
-| `--invert` | off | Light up the other colour, for example the background instead of the letters. |
-| `--iters` | 100 | Number of IFTA rounds |
+| Browser | Python | Default | What it does |
+|---|---|---|---|
+| Printer | `--dpi` | 1200 | Your printer's **real** resolution. Look it up in the printer's data sheet. |
+| Dots per pixel | `--dots` | 1 | Printer dots per hologram pixel. Use 2 if your printer smears fine dots. |
+| Tile | `--size` | 128 | Tile size in pixels. This is the sharpness of the picture on the wall. |
+| Tiles | `--tiles` | 8 | How often the tile is repeated in each direction, which sets the print size. |
+| Invert | `--invert` | off | Light up the other colour, for example the background instead of the letters. |
+| | `--beam` | 2 | Your laser beam diameter in mm. Only used for the preview. |
+| | `--iters` | 100 | Number of IFTA rounds |
 
 :::tip Match the tile to your laser beam
 The laser beam should cover at least one tile, better two. The script prints the tile size: 2.71 mm by default. A bare laser pointer has a beam of about 2 mm, so keep `--size 128` at 1200 dpi, or `--size 64` at 600 dpi. With the beam expander from [Step 4](#option-b-holobox-beam-expander-sharp) you can go up to `--size 256`.
