@@ -68,6 +68,15 @@ can see the contrast directly.
 | Numerical aperture (NA) | numerische Apertur | A measure of light-collection angle; affects resolution. |
 | ROI (region of interest) | Bildausschnitt | The crop of the image that gets reconstructed. |
 
+## Computer-generated holograms
+
+| English | Deutsch | Meaning |
+|---|---|---|
+| Computer-generated hologram (CGH) | computergeneriertes Hologramm | A hologram that is calculated instead of recorded, then printed or displayed. |
+| Far field / Fourier plane | Fernfeld / Fourier-Ebene | Where the diffraction pattern is the Fourier transform of the mask: very far away, or where the beam is focused. |
+| Zero order | nullte Beugungsordnung | Light that passes the mask without being diffracted: the bright spot in the middle. |
+| IFTA / Gerchberg–Saxton algorithm | IFTA / Gerchberg-Saxton-Algorithmus | Jumps back and forth between mask and far field, enforcing what is required in each, until both fit. |
+
 ## People & history
 
 | Name | Contribution |
@@ -76,6 +85,8 @@ can see the contrast directly.
 | Thomas Young (1801) | Double-slit experiment — proved light interferes. |
 | Albert Michelson (1881) | Invented the Michelson interferometer; Nobel Prize 1907. |
 | Dennis Gabor (1948) | Invented holography; Nobel Prize 1971. |
+| Byron Brown & Adolf Lohmann (1966) | First computer-generated hologram. |
+| Ralph Gerchberg & Owen Saxton (1972) | The iterative phase-retrieval algorithm behind CGH design. |
 
 ## Related
 
