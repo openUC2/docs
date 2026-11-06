@@ -31,10 +31,14 @@ Optiland model from the slit to the camera sensor:
 
 ![Simulated spectrum](./img/raman_spectrum.png)
 
-## Latest: a printed slit stage
+## Latest: a printed slit stage and spectrometer
 
 The XY stage we planned for the slit is out of stock. Instead, a printed flexure stage moves the slit ±1 mm across the
 slit: two thin leaves guide it and a micrometer screw drives it. There is no friction and no backlash, so the slit can
 be set to a few micrometres.
 
 ![Slit flexure stage](./img/slit_stage.png)
+
+![](./img/ramanopen.jpg)
+
+![](./img/ramanclosed.jpg)

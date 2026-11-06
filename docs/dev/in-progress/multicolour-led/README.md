@@ -31,3 +31,5 @@ leave the cube on the same axis.
 
 The cube is meant for the LED fluorescence path of the FRAME OPM, in place of separate LED cubes and a combiner, and it
 can work together with the [filter changer](../filter-changer/README.md).
+
+![](./img/rgbled.jpg)

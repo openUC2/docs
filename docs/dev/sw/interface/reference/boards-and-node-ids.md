@@ -26,7 +26,7 @@ Release images (web flasher, [youseetoo/uc2-esp32-binaries](https://github.com/y
 | Env | Board | Role | Default node | Serial baud | CAN TX / RX |
 |---|---|---|---|---|---|
 | `UC2_3`, `UC2_4` | standalone v3 / v4 (ESP32 DevKit) | standalone | — | 115200 | — |
-| `UC2_canopen_standalone_v4_release` | standalone v4 | master (hybrid) | 1 | 115200 | GPIO32 / GPIO33 |
+| `UC2_canopen_standalone_v4_release` | standalone v4 | master (hybrid); satellite with `canRole` 2 | 1 (satellite: 14) | 115200 | GPIO32 / GPIO33 |
 | `UC2_canopen_master` | HAT+ v2 ESP32 | master | 1 | **921600** | GPIO17 / GPIO18 |
 | `UC2_canopen_slave_motor` | stepper backpack (XIAO ESP32-S3) | slave | 11 (CI: `_motA/X/Y/Z` = 10/11/12/13) | USB-CDC | D2 GPIO3 / D1 GPIO2 |
 | `UC2_canopen_slave_accelmotor` | XIAO, AccelStepper | slave | 11 | USB-CDC | D2 / D1 |
@@ -47,6 +47,7 @@ Most CAN envs also exist as `_release` and `_debug`; `_debug` builds print more 
 | 1 | master (HAT+ or standalone v4) |
 | 5 | PS4 bridge |
 | 10, 11, 12, 13 | motor A, X, Y, Z |
+| 14 | standalone v4 as multi-axis satellite (suggested; [how-to](../how-to/standalone-v4-as-satellite.md)) |
 | 20 | laser board (channels 0–3 = OD sub 1–4) |
 | 30 | LED / illumination board (also laser id 4 on sub 1) |
 | 40 | galvo |
@@ -54,7 +55,7 @@ Most CAN envs also exist as `_release` and `_debug`; `_debug` builds print more 
 | 61, 62 | PTZ bridge, M5 dial |
 
 - Motor satellites built without an axis suffix are all node 11. Set unique IDs before connecting several ([how](../how-to/add-can-satellite.md)).
-- The master receives motor feedback **only from nodes 10–13**.
+- Single-axis motor satellites report back only from nodes 10–13; multi-axis satellites (standalone v4) from any node.
 - `uc2canopen` (`NODE.*`) and ImSwitch's `UC2CANOpenManager` use different defaults: motor A 14, LED 20, laser 21, galvo 30. Pass node IDs explicitly.
 
 ## Default routing on the masters
@@ -64,9 +65,10 @@ Logical ids → where `/motor_act`, `/laser_act`, … go. Inspect with `{"task":
 | Device id | `UC2_canopen_master` (HAT+) | `UC2_canopen_standalone_v4_*` |
 |---|---|---|
 | motor / home / TMC 0–3 (A X Y Z) | node 10–13, sub id+1 | local |
-| motor ≥ 4 | — | — |
+| motor 4–9 | via `/route_set`, e.g. v4 satellite: node 14, sub 1–4 | — |
 | laser 0–3 | node 20, sub 1–4 | local (pins for 1–3) |
 | laser 4 | node 30, sub 1 | node 30, sub 1 |
+| laser ≥ 5 | via `/route_set`, e.g. v4 satellite lasers 1–3: node 14, sub 2–4 | — |
 | LED array | node 30 | node 30 + local mirror |
 | galvo | node 40 | node 40 |
 | digital I/O, gpio, i2c with `"node"` | node 60 | node 60 |

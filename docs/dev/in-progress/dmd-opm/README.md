@@ -28,3 +28,20 @@ We compared several illumination layouts. Depending on the layout and the object
 the micromirror chip reaches the sample. The cone of light coming from the fibre matters most.
 
 ![Light budget](./img/dmd_light_budget.png)
+
+## In Action
+
+In ImSwitch we have a little tool that is helping you align the camera image to the slm:
+
+![](./img/dmdtest.gif)
+
+Evaulation board in the module:
+
+![](./img/dmd.jpg)
+
+
+in Frame: 
+
+![](./img/dmdframe.jpg)
+
+![](./img/dmdminiframe.jpg)

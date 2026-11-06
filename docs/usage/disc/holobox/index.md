@@ -47,6 +47,7 @@ Step-by-step, can't-fail walkthroughs. Start here if you have the box in front o
 
 - [**Your first interference pattern (Michelson)**](./tutorials/first-michelson-fringes.md) — the friendliest first success. ~30 min.
 - [**Your first hologram (inline holography)**](./tutorials/your-first-hologram.md) — record a hologram and bring a hidden image into focus on the computer. ~45 min.
+- [**Print your own hologram**](./tutorials/print-a-hologram.md) — let the computer calculate a hologram, print it on overhead foil, and make your picture appear on the wall with a laser. ~45 min.
 
 ### I know the basics and have a specific goal => **How-to guides**
 
@@ -64,6 +65,7 @@ Read these on the sofa. No equipment needed.
 - [Interference and diffraction](./explanation/interference-and-diffraction.md)
 - [**What *is* a hologram?**](./explanation/what-is-a-hologram.md) — the one idea most people get wrong.
 - [How the computer reconstruction works](./explanation/how-reconstruction-works.md)
+- [How a printed hologram works](./explanation/computer-generated-holograms.md) — why a noisy black-and-white pattern turns into a picture, and the algorithm that calculates it.
 
 ### I just need a number or a definition => **Reference**
 
@@ -81,6 +83,7 @@ Münster teaching materials:
 1. **Discuss** [What is a hologram?](./explanation/what-is-a-hologram.md) — connect what they saw to the idea of recording a wave.
 2. **Build** the [inline holographic microscope](./tutorials/your-first-hologram.md) and reconstruct a real sample.
 3. **Go deeper** with [how reconstruction works](./explanation/how-reconstruction-works.md).
+4. **Turn it around:** [print your own hologram](./tutorials/print-a-hologram.md), where the computer calculates the hologram and the laser does the reconstruction.
 
 ## What can you actually observe?
 

@@ -31,7 +31,7 @@ The board resets when the port opens; the constructor waits for it.
 ```python
 r = esp.motor.move_x(steps=1000, speed=5000, is_blocking=True)
 print(r)                                 # [ack, done] reply dicts
-print(esp.motor.get_position())          # array([A, X, Y, Z])
+print(esp.motor.get_position())          # indexed by stepperid: A, X, Y, Z, B…G
 
 esp.motor.move_xyza(steps=(0, 0, 0, 0), speed=(0, 5000, 5000, 0), is_absolute=True, is_blocking=True)
 ```
