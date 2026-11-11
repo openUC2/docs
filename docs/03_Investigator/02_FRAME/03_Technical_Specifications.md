@@ -207,10 +207,6 @@ Frontend-only:
 - **Ethernet**: IEEE 802.3 standard
 - **WiFi**: IEEE 802.11ac/ax standards
 
-### Safety Standards
-- **IEC 61010-1**: Safety requirements for electrical equipment
-- **IEC 62471**: Photobiological safety of lamps and lamp systems
-- **EN 55011**: Electromagnetic compatibility
 
 ## Performance Specifications
 

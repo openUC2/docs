@@ -5,10 +5,6 @@ sidebar_label: Reference
 
 # Technical Reference
 
-:::note Draft outline
-Scaffold. Replace the bullet prompts with your own text and delete this banner when done.
-:::
-
 Information-oriented lookup pages — for both users and developers.
 
 - [Specifications](./specifications/README.md)

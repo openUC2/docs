@@ -19,7 +19,7 @@ First, we will insert the DC barrel plug of the power adapter into the DC barrel
 
 ![rear](rear.jpeg)
 
-The DC barrel jack is the round jack in the upper-right of the rear panel of the box.
+The DC barrel jack is the round jack in the upper-right of the rear panel of the box. On the units ID10–ID20 it is at the side of the electronics box.
 Now insert the power adapter's plug into that jack:
 
 | Before                       | After                    |

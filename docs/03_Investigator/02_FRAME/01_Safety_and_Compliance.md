@@ -1,13 +1,10 @@
 # Safety and Compliance
 
-## CE Compliance Declaration
+## Intended Use and Regulatory Status
 
-The FRAME Microscopes have been designed, produced and tested in compliance with:
-- **DIN EN 61010-1 (IEC 61010-1)** - Safety requirements for electrical measuring, control and laboratory instruments
-- **IEC 61010-2-101** - Safety requirements for electrical equipment for measurement, control and laboratory use
-- **EC Directive IVDD 98/79/EC** - In Vitro Diagnostic Medical Devices
+The FRAME is a laboratory microscope for research use only (RUO). It is not a medical device and not an in-vitro diagnostic device, and it must not be used for diagnosis or for decisions about the treatment of humans or animals.
 
-The instruments meet the requirements and are marked with the **CE** mark.
+This manual makes no statement about conformity with EU legislation or with standards. For the regulatory status of your unit, contact openUC2 GmbH (hello@openuc2.com).
 
 ## Important Safety Information
 
@@ -96,15 +93,14 @@ The FRAME Microscope is intended for:
 ### Contraindications
 
 The FRAME Microscope is **NOT** intended for:
-- Direct medical diagnosis without proper validation
+- Diagnosis, screening or monitoring of disease in humans or animals, or any other medical or in-vitro diagnostic purpose
 - Use by untrained personnel
 - Operation in hazardous environments (explosive atmospheres, etc.)
 - Use with samples that may damage optical components
 
-## Regulatory Information
+## Disposal
 
-- **RoHS Directive 2011/65/EU**: Restriction of hazardous substances
-- **WEEE Directive 2012/19/EU**: Waste electrical and electronic equipment
+Do not dispose of the FRAME, its power supply or its electronic parts with household waste. Electrical and electronic equipment is collected separately in the EU (WEEE Directive 2012/19/EU). For return and disposal, contact openUC2 GmbH (hello@openuc2.com).
 
 ### Patent Information
 

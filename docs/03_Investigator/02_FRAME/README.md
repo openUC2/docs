@@ -2,7 +2,7 @@
 
 ## Fast Rigid Automated Microscope Engine (FRAME)
 
-This comprehensive operational manual provides complete documentation for the FRAME Microscope system, designed to meet CE compliance requirements and provide clear, user-friendly guidance for operation, maintenance, and troubleshooting.
+This comprehensive operational manual provides complete documentation for the FRAME Microscope system, with clear, user-friendly guidance for operation, maintenance, and troubleshooting.
 
 ### Manual Structure
 
@@ -10,12 +10,12 @@ This manual is organized into the following sections:
 
 #### 0. [Cover Page](./00_Cover_Page.md)
 - Document information and overview
-- CE compliance declaration
+- Intended use and regulatory status
 - Copyright and legal notices
 - Quick start reference
 
 #### 1. [Safety and Compliance](./01_Safety_and_Compliance.md)
-- CE compliance statements
+- Intended use and regulatory status
 - Safety warnings and precautions
 - Regulatory information
 - Risk assessment
@@ -84,7 +84,6 @@ The manual has been recently enhanced with:
 - Version: 1.0
 - Date: June 2024
 - Language: English
-- Compliance: CE Marking according to EU Directives
 
 **Copyright Notice:**
 © openUC2 GmbH. All rights reserved. This manual is provided for the operation of the FRAME Microscope system.

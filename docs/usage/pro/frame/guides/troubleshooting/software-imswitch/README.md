@@ -29,6 +29,18 @@ Each Notion folder has screenshots to reuse.
 
 - Symptom / cause / fix.
 
+## Live view is frozen
+
+- **Symptom:** the live image stops updating while the stage and the lamp still react.
+- **Cause:** the video stream to the browser stalled.
+- **Fix:** stop and start the stream in the *Live View*. If it stays frozen, reload the page.
+
+## A scan pauses for several seconds
+
+- **Symptom:** a scan stops between tiles and continues by itself.
+- **Cause:** not confirmed. Seen at a commissioning in November 2026 while frames were written to the micro SD card.
+- **Fix:** the data is complete. Write to a USB drive or an SSD if it happens often, and report it with the log.
+
 ## Related
 
 - [ImSwitch UI reference](../../../reference/imswitch-ui-reference/README.md)

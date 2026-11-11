@@ -26,22 +26,17 @@ Jena, Germany
 | **Document Version** | 1.0 |
 | **Publication Date** | June 2025 |
 | **Language** | English |
-| **Compliance** | CE Marking according to EU Directives |
+| **Intended Use** | Research use only; not for diagnostic use |
 | **Target Audience** | Research professionals, laboratory technicians, students |
 
 ---
 
-## CE Declaration of Conformity
+## Intended Use and Regulatory Status
 
-This product complies with the following European Directives and Standards:
+The FRAME is a laboratory microscope for research use only (RUO). It is not a medical device and not an in-vitro diagnostic device, and it must not be used for diagnosis or for decisions about the treatment of humans or animals.
 
-- **Directive 2014/30/EU** (Electromagnetic Compatibility)
-- **Directive 2014/35/EU** (Low Voltage)
-- **Directive 2011/65/EU** (RoHS)
-- **IEC 61010-1** (Safety requirements for electrical equipment)
-- **EN 55011** (Electromagnetic compatibility)
+This manual makes no statement about conformity with EU legislation or with standards. For the regulatory status of your unit, contact openUC2 GmbH (hello@openuc2.com).
 
-**The CE marking indicates conformity with applicable regulations.**
 ---
 
 ## Important Safety Notice

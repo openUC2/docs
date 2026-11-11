@@ -24,7 +24,9 @@ Each Notion folder has screenshots to reuse.
 
 ## Axis stuck at an endstop
 
-- Symptom / cause / fix.
+- **Symptom:** an axis stops and does not move further in one direction.
+- **Cause:** the axis reached its end switch, a light barrier. It does not move further into the switch.
+- **Fix:** move the axis in the opposite direction, out of the switch, then home it: [homing](../../day-2/homing/README.md).
 
 ## Coordinates wrong after homing
 

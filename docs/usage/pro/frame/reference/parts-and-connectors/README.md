@@ -9,20 +9,26 @@ This page says what plugs in where on a FRAME of the ID10–ID20 range. Board-le
 
 ## External connectors
 
-All external connectors are at the back, on the electronics box under the stage.
+![Back panel of the electronics box](../hardware-id10-id20/IMAGES/frame-back-panel.png)
+
+The connectors sit on the back panel of the electronics box, under the stage at the back of the unit.
 
 | Connector | Type | Use |
 |---|---|---|
-| Power | barrel jack, 5.5 / 2.5 mm, centre positive | 12 V DC from the supplied power supply only |
-| Emergency stop | 3.5 mm jack | external stop button; the unit does not power its bus without it |
-| Bus | 4-pin JST XH (ground, +12 V, CAN high, CAN low) | add-on modules such as the laser module or a galvo board |
-| I2C | 4-pin JST XH (5 V) | sensors |
-| Ethernet | RJ45 | network |
-| USB | USB-A on the Raspberry Pi | camera (blue USB 3 port), Wi-Fi stick |
-| USB-C, one per motor axis | on the stage claddings, labelled X, Y, Z, A | firmware update of that axis |
-| Display | micro HDMI on the Raspberry Pi | service |
+| Power | barrel jack 5.5 / 2.5 mm, centre positive, on the HAT+, at the side of the electronics box | 12 V DC from the supplied power supply only |
+| Emergency stop (EMG STOP) | 3.5 mm jack | external stop button; bus power stays off without it |
+| Power button | push button | marked ⏻ on the panel |
+| USB-C "Raspb." | USB-C | network link to the Raspberry Pi over USB |
+| USB-C "ESP32" | USB-C | HAT+ ESP32: a short cable to a USB port of the Raspberry Pi carries the commands; also used to write firmware |
+| Reset | push button | reset, next to the ESP32 port |
+| Camera trigger | SMA | trigger output to the camera, needed for fast scans |
+| LAN | RJ45 | network |
+| USB 3 | 2 x USB-A, blue | camera |
+| USB 2 | 2 x USB-A | Wi-Fi stick, accessories |
+| ARGB, STEMMA QT, STEMMA | headers | LED strip, I2C sensors |
+| USB-C, one per motor axis | on the stage claddings at the front right, labelled X, Y, Z, A | firmware update of that axis |
 
-Plug the emergency stop in before the power supply.
+Plug the emergency stop in before the power supply. The unit ships with a plug that closes the stop circuit. Pulling it removes power from the motors, the lamp and the lasers; the Raspberry Pi stays on. All cables in the order of a first set-up: [commissioning checklist](../../guides/day-1/hw-assembly/README.md).
 
 ## Power supply
 

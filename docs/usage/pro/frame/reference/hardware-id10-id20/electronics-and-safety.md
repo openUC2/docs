@@ -7,6 +7,8 @@ sidebar_position: 30
 
 One 12 V supply feeds a Raspberry Pi 5 with the HAT+ and a CAN bus that carries power and data to every motor, laser and lamp board. This page lists the boards, says what the emergency stop and the laser interlock do, and what they do not do.
 
+![Power, control and safety-related connections](./IMAGES/frame-control-block-diagram.png)
+
 For the bus protocol and node IDs see [Electronics and controllers](../../developers/hardware/electronics-controllers/README.md). Schematics are in the repository `FRAME-electronics-hardware`.
 
 ## Power
@@ -36,6 +38,23 @@ For the bus protocol and node IDs see [Electronics and controllers](../../develo
 | CAN GPIO board (FR120) | stage | force sensor, extra inputs |
 
 Three fans run in a unit: Pi cooler, a 40 mm fan in the electronics box and a 30 mm fan on the lamp.
+
+## Back panel
+
+![Back panel of the electronics box](./IMAGES/frame-back-panel.png)
+
+| Connector | Use |
+|---|---|
+| Power button | marked ⏻ on the panel |
+| USB-C, "Raspb." | network link to the Raspberry Pi over USB, for a computer that does not use the hotspot |
+| USB-C, "ESP32" | USB-C of the HAT+ ESP32: firmware and serial access |
+| EMG STOP | 3.5 mm jack for the external emergency stop, see below |
+| Reset button | reset, next to the ESP32 port |
+| Camera trigger | SMA, trigger output to the camera |
+| LAN, USB 3, USB 2 | Raspberry Pi: network, camera (blue USB 3), accessories |
+| ARGB, STEMMA QT, STEMMA | Panel board: addressable LED strip, I2C sensors |
+
+The 12 V input is the barrel jack of the HAT+. It is reached from the side of the electronics box, not from the back panel. Plug it in last.
 
 ## Bus
 

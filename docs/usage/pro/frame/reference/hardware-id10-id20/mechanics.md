@@ -28,6 +28,10 @@ A complete unit without optics modules has about 1,050 parts in CAD, of which ab
 
 ## XY stage
 
+![Stage with the covers and the sample plate removed](./IMAGES/frame-stage-open.png)
+
+*Stage with the cover plate, claddings and lamp arm hidden. Axis directions: [Coordinates and axes](../coordinates-and-axes/README.md).*
+
 | Property | X | Y |
 |---|---|---|
 | Travel | 127 mm | 86 mm |
@@ -111,6 +115,10 @@ A piezo stack without a position sensor shows 10 to 15 % hysteresis and creep. C
 
 ## Objective slider
 
+![Objective slider](./IMAGES/frame-objective-slider.png)
+
+*Stage base plate with the X and Y plates hidden. The objectives themselves are hidden; their supports sit on the slider.*
+
 | Property | Value |
 |---|---|
 | Positions | two, 29.8 mm apart |
@@ -126,6 +134,10 @@ One full step moves the objective 5 µm, which is 42 camera pixels at 20x. Calib
 The force sensor is intended as a crash detector: it reports when the objective touches the sample plate or a holder. It does not replace a height limit per objective in software.
 
 ## Optics drawer
+
+![Optics drawer](./IMAGES/frame-drawer.png)
+
+*The drawer with the stage, the intermediate plate and the columns hidden.*
 
 | Property | Value |
 |---|---|

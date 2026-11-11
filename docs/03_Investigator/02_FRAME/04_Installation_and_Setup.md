@@ -258,7 +258,7 @@ If you need to install ImSwitch locally on your computer:
 
 ⚠️ **CRITICAL SAFETY INFORMATION**
 
-Laser safety is paramount when working with the FRAME system. The device incorporates multiple safety mechanisms to ensure Class 1 laser operation, meaning no dangerous radiation can escape the device enclosure when properly assembled.
+Laser safety is paramount when working with the FRAME system. The device incorporates three safety mechanisms that switch the lasers off when the enclosure is opened. The laser classification of the FRAME configurations has not been published yet. Treat an instrument with open covers, or a removed optics block, as a source of hazardous laser radiation: never look into the beam or its reflections, keep all covers closed during operation, and remove the key when the lasers are not in use.
 
 ![](./IMAGES/04/FRAME_Manual_25.jpeg)
 *add the laser cover at the side*

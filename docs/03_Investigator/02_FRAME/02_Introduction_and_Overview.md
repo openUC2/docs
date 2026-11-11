@@ -53,9 +53,9 @@ The FRAME system integrates with several software platforms:
 
 ### Research Applications
 
-1. **Digital Pathology**: Automated image acquisition with AI analysis for early cancer detection
+1. **Digital Pathology Research**: Automated imaging of tissue sections and AI-based image analysis for research, not for diagnosis
 2. **Cell Biology/Live Cell Imaging**: Long-term observation of living cell cultures in incubators
-3. **Laboratory Automation**: Integration with pipetting robots in diagnostics and drug screening
+3. **Laboratory Automation**: Integration with pipetting robots in research and drug screening
 4. **Advanced Microscopy**: Super-resolution techniques, FLIM, and specialized imaging modes
 
 ### Industrial Applications

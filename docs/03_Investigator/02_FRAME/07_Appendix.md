@@ -255,17 +255,7 @@ Contact openUC2 for information about authorized distributors in your region.
 
 ### Standards and Compliance
 
-**Relevant Standards**:
-- ISO 8038: Optics and photonics - Microscopes
-- IEC 61010-1: Safety requirements for electrical equipment
-- EN 55011: Electromagnetic compatibility
-- RoHS Directive 2011/65/EU
-- WEEE Directive 2012/19/EU
-
-**Certification Bodies**:
-- CE marking through notified body
-- ISO certification for quality management
-- Environmental compliance verification
+This manual makes no statement about conformity with EU legislation or with standards. For the regulatory status of your unit, contact openUC2 GmbH (hello@openuc2.com).
 
 ## Warranty and Legal Information
 
@@ -307,7 +297,6 @@ This product may be subject to export control regulations. Check local regulatio
 |---------|------|---------|---------|
 | 1.0 | June 2024 | Initial release | openUC2 Technical Team |
 | | | Complete operational manual | |
-| | | CE compliance documentation | |
 | | | Multi-file structure for docusaurus | |
 
 ### Feedback and Improvements
@@ -334,7 +323,6 @@ We welcome feedback on this documentation. Please send suggestions to: documenta
 ### C
 - Calibration procedures, 150-154
 - Camera setup, 67, 89
-- CE compliance, 6-7
 - Cleaning procedures, 146-149
 - CAN-BUS communication, 56, 136
 

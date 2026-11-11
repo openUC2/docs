@@ -16,6 +16,12 @@ Every FRAME board runs the openUC2 ESP32 firmware ([youseetoo/uc2-esp32](https:/
 | Galvo | `UC2_canopen_slave_galvo` | 40 | CAN, or USB |
 | GPIO / E-stop | `UC2_canopen_slave_gpio` | 60 | CAN, or USB |
 
+## Where the files come from
+
+A release of [uc2-esp32](https://github.com/youseetoo/uc2-esp32) builds one binary per board. The binaries are packed into a small file-server container, and the pallet of the operating system pins that container next to the ImSwitch container. A machine therefore holds the firmware that its ImSwitch was tested with. ImSwitch reads the files from that local server, so writing firmware needs no internet once the pallet is installed.
+
+Over CAN, the master streams the binary into the free one of the two firmware slots of a satellite, and the satellite switches to it at the next restart. The bootloader must already be on the board, so a blank board is flashed over USB first.
+
 ## Update and verify
 
 1. Stop ImSwitch; it holds the serial port.

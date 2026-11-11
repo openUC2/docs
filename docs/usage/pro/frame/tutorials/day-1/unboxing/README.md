@@ -57,3 +57,11 @@ On the electronical panel, there are 2x USB3 and 2x USB2 ports. Use the short 10
 ![](./IMAGES/Wiring.png)
 
 Make sure the emergency stop is on the released position.
+
+Three more points for the units ID10–ID20:
+
+- The trigger cable goes from the SMA socket *camera trigger* to the camera. Fast scans need it.
+- The USB-C port marked *Raspb.* is a network link to the Raspberry Pi. Use it if you cannot use the hotspot.
+- Plug in the 12 V power supply last, at the side of the electronics box.
+
+All cables in one table: [commissioning checklist](../../../guides/day-1/hw-assembly/README.md).

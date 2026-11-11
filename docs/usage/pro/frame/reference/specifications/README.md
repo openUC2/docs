@@ -9,14 +9,18 @@ These are the specifications of FRAME units with serial numbers 10 to 20. Each v
 
 ## At a glance
 
+![FRAME ID10–ID20](../hardware-id10-id20/IMAGES/frame-overview-labelled.png)
+
 | Property | Value | Basis |
 |---|---|---|
 | Layout | inverted; sample moves in X, Y and Z, objectives fixed in height | design |
-| Footprint | 310 x 310 mm; 410 mm deep with the lamp arm | CAD |
-| Height | 258 mm to the sample plate, 392 mm with the lamp head | CAD |
+| Size (W x D x H) | 310 x 395 x 406 mm; 516 mm deep with the camera | CAD |
+| Sample plate height | 272 mm above the table | CAD |
 | Mass | not confirmed; weigh the unit before lifting instructions rely on it | |
 | Supply | 12 V DC, 6.67 A, from the supplied desktop power supply (100 to 240 V AC) | assembly |
 | Ambient | 15 to 35 °C; printed parts limit use to 38 °C | manual |
+
+![Overall dimensions](../hardware-id10-id20/IMAGES/frame-dimensions.png)
 
 ## Motion
 

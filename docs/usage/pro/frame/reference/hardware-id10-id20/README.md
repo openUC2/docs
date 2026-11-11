@@ -9,6 +9,10 @@ This section describes the hardware of the FRAME units with serial numbers 10 to
 
 All dimensions come from the CAD of unit 10 and from the FR120 part revision. Measured performance comes from two internal test series in 2026. Where a number is from CAD or a data sheet and not from a measurement, the page says so.
 
+![FRAME ID10–ID20, main assemblies](./IMAGES/frame-overview-labelled.png)
+
+*Main assemblies, rendered from the CAD of unit 10. The lamp arm stands at the back; the camera points to the front.*
+
 | Page | What it covers |
 |---|---|
 | [Optical path](./optics.md) | Openings on the axis, tube lens, field of view, sampling, illumination |
@@ -47,10 +51,13 @@ Heights are measured from the top of the base plate. The focus stages stand at t
 
 ## Key data
 
+![Overall dimensions](./IMAGES/frame-dimensions.png)
+
 | Property | Value | Basis |
 |---|---|---|
-| Footprint of the stand | 310 x 310 mm; 410 mm deep with the lamp arm | CAD |
-| Height | 258 mm to the sample plate, 392 mm with the lamp head | CAD |
+| Width | 310 mm | CAD |
+| Depth | 395 mm with the lamp arm; 516 mm with the camera at the front | CAD |
+| Height above the table | 272 mm to the sample plate, 406 mm to the top of the lamp head | CAD |
 | Mass | Not confirmed. Documents state under 16 kg, 20 kg and 25 kg | weigh your unit |
 | XY travel | 127 x 86 mm | manual |
 | Focus travel | 8 mm used; 12.7 mm actuator stroke | manual, data sheet |
