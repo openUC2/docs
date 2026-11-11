@@ -75,6 +75,8 @@ Logical ids → where `/motor_act`, `/laser_act`, … go. Inspect with `{"task":
 
 ## Bus wiring
 
+Pinouts and jumpers of each board (reference designators differ between revisions): [Electronics](../../../hw/electronics/README.mdx).
+
 | Item | Value |
 |---|---|
 | Bitrate | 500 kbit/s |

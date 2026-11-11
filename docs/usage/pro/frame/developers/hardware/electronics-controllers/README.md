@@ -5,17 +5,17 @@ sidebar_position: 20
 
 # Electronics and controllers
 
-FRAME electronics: a Raspberry Pi 5 with the HAT+ v2, plus satellite boards on one CANopen bus (500 kbit/s).
+FRAME electronics: a Raspberry Pi 5 with the HAT+, plus satellite boards on one CANopen bus (500 kbit/s). Pinouts, design files and flashing instructions for every board are in the developer section: [Electronics](../../../../../../dev/hw/electronics/README.mdx).
 
 | Board | Role | CAN node | Drives |
 |---|---|---|---|
 | Raspberry Pi 5 | runs ImSwitch | — (own MCP2515 on the HAT+ as `can0`) | — |
-| [HAT+ v2](../../../../../../dev/hw/electronics/hat-plus/v2/README.md) ESP32 | CANopen master, serial JSON from the Pi (USB-C, 921600 Bd) | 1 | routes commands to the satellites, switches 12 V bus power |
-| Stepper backpacks | motor satellites | 10/11/12/13 (A/X/Y/Z) | stepper driver, endstop |
-| Laser interface | satellite | 20 | laser channels 0–3 |
-| LED / illumination board | satellite | 30 | LED ring / matrix, laser id 4 |
-| Galvo interface | satellite | 40 | galvo scanner |
-| GPIO satellite | satellite | 60 | E-stop, collision sensor, I2C |
+| [HAT+](../../../../../../dev/hw/electronics/hat-plus/README.md) ESP32 | CANopen master, serial JSON from the Pi (USB-C, 921600 Bd) | 1 | routes commands to the satellites, switches 12 V bus power |
+| [Stepper backpacks](../../../../../../dev/hw/electronics/stepper-backpack/README.md) | motor satellites | 10/11/12/13 (A/X/Y/Z) | stepper driver, endstop |
+| [Laser interface](../../../../../../dev/hw/electronics/laser-interface/README.md) | satellite | 20 | laser channels 0–3 |
+| [LED / illumination board](../../../../../../dev/hw/electronics/illumination/README.md) | satellite | 30 | LED ring / matrix, laser id 4 |
+| [Galvo interface](../../../../../../dev/hw/electronics/galvo-interface/README.md) | satellite | 40 | galvo scanner |
+| [GPIO satellite](../../../../../../dev/hw/electronics/can-gpio/README.md) | satellite | 60 | E-stop, collision sensor, I2C |
 
 - **Bus:** JST-XH 4 (GND, +12 V, CAN_H, CAN_L), daisy-chained, 120 Ω termination at both ends only.
 - **Bus power** turns off on E-stop, Pi GPIO23 or `{"task":"/state_act","power":0}`.

@@ -1,145 +1,130 @@
 ---
-title: Galvo interface board
-sidebar_position: 4
-description: Hardware and firmware reference of the mAIkroscope galvo interface board - signal chain, connectors, power, pin map, raster engine.
+title: Galvo interface
+sidebar_position: 50
+description: Two-axis galvo scanner interface on the CAN bus - XIAO ESP32-S3, MCP4822 DAC, differential ±10 V outputs, pixel/line/frame triggers. Pinout, jumpers, firmware.
 ---
 
-# Galvo interface board: technical reference
+# Galvo interface
 
-*Information-oriented. Look things up here.*
+![Galvo interface Rev. B](./img/galvo-interface-iso.webp)
 
-mAIkroscope Galvo Interface Board – **Extended Hardware & Firmware Documentation**
-Rev A – 26 May 2025
+Drives the two driver boards of a galvo mirror pair. A XIAO ESP32-S3 generates the scan pattern and writes it to a 12-bit dual DAC. Op-amps turn the DAC voltage into the differential ±10 V signal that common galvo drivers expect. In sync with the scan, the board puts out pixel, line and frame triggers for a detector or a FLIM card. It also supplies the galvo drivers with ±12 V.
 
+How to use it in a setup is covered in the [galvo add-on](../../../../usage/disc/galvo-addon/README.md). This page is the board reference.
 
+| | |
+|---|---|
+| Current revision | Rev. B, 2026-09-25. Rev. A (2025-05) is electrically the same, with other reference designators and two extra holes. |
+| Controller | Seeed XIAO ESP32-S3 |
+| DAC | MCP4822, 2 × 12 bit, SPI |
+| Outputs | X and Y, differential, ±10 V. Three 50 Ω trigger outputs. One 50 Ω laser blanking output. |
+| Supply | 12 V from the bus. On board: 3.3 V, 5 V for the DAC and an inverting converter for −12 V. ±12 V are passed on, switched, to the galvo drivers. |
+| Firmware | `UC2_canopen_slave_galvo`, in the [web flasher](../flashing.md) as "Galvo satellite" |
+| CAN node | 40 |
+| Sources | [KiCad project](https://github.com/openUC2/FRAME-electronics-hardware/tree/main/kicad/galvo-interface) · [schematic PDF](https://github.com/openUC2/FRAME-electronics-hardware/blob/main/kicad/galvo-interface/OUTPUTS/for-humans/galvo-interface.pdf) {/* · <a href={require("./ibom-galvo-interface.html")} target="_blank">iBOM</a> */} |
 
-### 1  Purpose & Key Features
+![The board wired to a galvo pair](../../../../usage/disc/galvo-addon/IMAGES/galvo_1.jpg)
 
-* Dual-axis galvo driver interface for UC2 microscopes.
-* Seeed XIAO ESP32-S3 MCU handles scan synthesis and trigger generation.
-* On-board 12-bit SPI DAC (MCP4822) creates ±10 V differential XY signals for low-cost Chinese galvo drivers.
-* Three independent 50 Ω trigger outputs (pixel, line, frame).
-* CAN 2.0B bus for remote control via UC2-CAN protocol.
-* Integrated ±12 V/3.3 V/5 V analog rails, 2 A output budget for external driver modules.&#x20;
+## Signal path
 
-This is a scan using the Flimlabs.com software, their detector and their pulsed lasers. This is a 512x512 pixel^2 area
-
-![](../IMAGES/scan.gif)
-
-
-
-
-### 2  System Architecture
-
-```
-ESP32-S3  ↔  SPI  ↔  MCP4822  →  LM324 diff amps  →  SMA L± / R±
-            │              │                     ├─ pixel/line/frame triggers
-            │              │                     └─ U.FL laser blanking
-            └─ TWAI CAN bus → SN65HVD230 → JST-XH backbone
+```text
+XIAO ──SPI──> MCP4822 ──> op-amps (gain, offset, inverter) ──> X+ / X−, Y+ / Y−
+  ├── pixel, line, frame ──> 50 Ω buffers ──> SMA
+  ├── laser ──> 50 Ω buffer ──> U.FL
+  └── CAN ──> SN65HVD230 ──> bus
 ```
 
-* **Two-phase DAC update:** write 12-bit sample into DAC register (CS low), then pulse **LDAC** to latch both channels simultaneously; saves one SPI transaction per point.&#x20;
+Both DAC channels are written first and then latched together with LDAC, so X and Y change at the same instant.
 
-![](../IMAGES/galvo.png)
+## Connectors
 
+![Top view with silkscreen](./img/galvo-interface-top.webp)
 
-### 3  Electrical Specifications
+Reference designators are those of Rev. B. On Rev. A they have an extra zero (J101 is J1001 there, and so on).
 
-| Parameter              | Value                            | Comment                              |   |
-| - | -- |  | - |
-| Backbone input         | 12 V ±5 %                        | via J1001-1                          |   |
-| Board self-consumption | ≈ 50 mA                          | excludes external galvo drivers      |   |
-| Galvo supply pass-thru | ±12 V, 2 A max                   | J1004/J1007/J1008                    |   |
-| DAC resolution / range | 12 bit, 0 – 3.3V at 4096 steps               | converted to ±10 V diff              |   |
-| Output bandwidth       | ≈ 25 kHz (-3 dB)                 | limited by LM324 stage               |   |
-| Trigger level          | 3.3 V CMOS, 50 Ω back-terminated | SMA J1009-J1011                      |   |
-| CAN bus                | ISO11898-2, 1 Mbit/s default     | 120 Ω terminator selectable (JP2001) |   |
+| Ref | Type | Pin 1 → n | Use |
+|---|---|---|---|
+| J101 | JST XH 4 | GND, +12 V, CAN_H, CAN_L | bus. 12 V and GND alone are enough to run the board from USB. |
+| J105 | 3-pin | GND, L−, L+ | signal to galvo driver "L" |
+| J106 | 3-pin | GND, R−, R+ | signal to galvo driver "R" |
+| J107, J108 | 3-pin, 2.54 mm | −12 V, GND, +12 V | supply for the two galvo drivers |
+| J104 | 3-pin, 3.96 mm | +12 V, GND, −12 V | same supply on the larger plug some drivers use. Note the reversed order. |
+| J109 | SMA | pixel trigger | |
+| J110 | SMA | line trigger | |
+| J111 | SMA | frame trigger | |
+| J1201 | U.FL | laser blanking | |
+| SW101 | push button | D0 to GND | free for firmware use |
 
-![](../IMAGES/galvo_1.jpg)
+Check the pin order against the print on your galvo drivers before plugging in the supply. Swapping +12 V and −12 V destroys them.
 
+## XIAO pinout
 
-### 4  Connectors & Pinouts (summary)
+| XIAO pin | ESP32-S3 GPIO | Function |
+|---|---|---|
+| D0 | 1 | push button (enable the pull-up) |
+| D1 | 2 | pixel trigger |
+| D2 | 3 | line trigger |
+| D3 | 4 | frame trigger |
+| D4 | 5 | CAN TX |
+| D5 | 6 | DAC LDAC |
+| D6 | 43 | laser blanking |
+| D7 | 44 | CAN RX |
+| D8 | 7 | DAC SCK |
+| D9 | 8 | DAC CS |
+| D10 | 9 | DAC SDI |
 
-* **Power + CAN (J1001, JST-XH-4):**  GND, +12 V,  CAN\_H - CAN\_L
-* **Galvo power out (J1004 big Molex 3.96 mm, J1007/J1008 KF2510):**  ±12 V, GND – pin order matches driver boards.
-* **Differential XY (J1005/J1006, SMA-3):**  L+, L-, GND and R+, R-, GND.
-* **Triggers (SMA-2):**  Pixel (J1009), Line (J1010), Frame (J1011).
-* **Laser blanking (J10001, U.FL):** single-ended 50 Ω.
-* **XIAO headers (J1002/J1003):** break out all ESP32-S3 I/O; see GPIO map in §7.&#x20;
+## Solder jumpers
 
+| Function | Rev. A | Rev. B |
+|---|---|---|
+| 120 Ω CAN termination. Close only at a physical end of the bus. | JP2001 | JP201 |
+| CAN activity LED | JP2002 | JP202 |
 
+## Firmware
 
-### 5  Analog Signal Chain
+| | |
+|---|---|
+| Env | `UC2_canopen_slave_galvo` |
+| Pin map | [`main/config/UC2_canopen_slave_galvo/PinConfig.h`](https://github.com/youseetoo/uc2-esp32/blob/main/main/config/UC2_canopen_slave_galvo/PinConfig.h) |
+| Scanner code | [`main/src/scanner/GalvoController.cpp`](https://github.com/youseetoo/uc2-esp32/blob/main/main/src/scanner/GalvoController.cpp) |
+| Bus | CANopen, 500 kbit/s, node 40 |
+| USB | serial JSON over USB-CDC |
 
-1. **MCP4822-E/SN** generates 0-3.3 V (12-bit).
-2. **Gain/offset network (LM324)** maps 0 V→0 V, ±2.048 V→±10 V.
-3. Second LM324 stage inverts each leg, giving true differential L± and R±.
-4. Outputs drive ≥ 20 mA into the 10 kΩ inputs of typical galvo amps.
-5. LC filters on ±12 VA rails set 50 Hz cutoff to suppress switching noise.&#x20;
+Flash it as described in [Flashing the firmware](../flashing.md). If the XIAO does not accept the upload, hold BOOT while plugging it in.
 
+Coordinates are DAC counts, 0 to 4095, with 2048 in the middle:
 
-
-### 6  Power Subsystem
-
-* **TPS5430 buck:** 12 V → 3.3 V @ 0.8 A for MCU/CAN.
-* **TPS5430 inverting buck-boost:** 12 V → −12 V @ 1.5 A for op-amps.
-* **78L05 linear:** 5 V A for DAC/reference.
-* All rails filtered by π-LC networks; testpoints TP400x provided for bring-up.&#x20;
-
-
-
-### 7  Firmware Overview
-
-```cpp
-// Default pin mapping (Arduino style) on XIAO systems
-#define PIN_DAC_CS 8     // J1003-10 / GPIO8
-#define PIN_DAC_SCK 7    // J1003-9 / GPIO7
-#define PIN_DAC_SDI 9    // J1003-11 / GPIO9
-#define PIN_DAC_LDAC 6   // J1002-6 / GPIO6
-#define PIN_TRIG_PIXEL 2 // GPIO2
-#define PIN_TRIG_LINE 3  // GPIO3
-#define PIN_TRIG_FRAME 4 // GPIO4
-#define PIN_CAN_TX 5     // GPIO5
-#define PIN_CAN_RX 44    // GPIO44
-#define PIN_LASER 43     // GPIO43
-#define PIN_PUSHBUTTON 1 // GPIO1 (enable internal pull-up)
+```json
+{"task":"/galvo_act","galvo":{"x":2048,"y":2048}}
+{"task":"/galvo_act","stop":true}
 ```
 
-* **Loop structure:**
+Raster scans and point lists are described in the [serial command reference](../../../sw/interface/reference/serial-commands.md#galvo_act) and in the add-on's [scan parameters](../../../../usage/disc/galvo-addon/reference/scan-parameters.md) and [trigger outputs](../../../../usage/disc/galvo-addon/reference/trigger-outputs.md).
 
-  ```text
-  for each Y line:
-      for each X pixel:
-          write X,Y to DAC; assert TRIG_PIXEL
-      assert TRIG_LINE
-  assert TRIG_FRAME
-  ```
-* **Coordinate depth:** 12 bit full-scale → map image size (e.g. 512 × 512) by `coord = (pixel * 4095) / (size-1)`.
-* **PlatformIO project:** clone `openUC2/galvo-interface-fw`, select `env:xiao_esp32s3`, build & upload via USB-C.
-* **UC2-CAN commands:**
-*Coming soon*
+## Bring-up
 
+1. Connect 12 V. Without CAN the board still runs, controlled over USB.
+2. Connect each galvo driver with its 3-pin supply and its signal cable.
+3. Flash the firmware and start a slow scan.
+4. Look at the pixel trigger on an oscilloscope to confirm the timing.
+5. Tune the trim pots on the galvo drivers for minimal overshoot.
 
+![A 512 × 512 scan](../../../../usage/disc/galvo-addon/IMAGES/scan.gif)
 
-### 8  Typical Operating Procedure
+*A 512 × 512 scan, recorded with a FLIM LABS detector and pulsed laser.*
 
-1. Feed 12 V from microscope backbone into J1001-1 (CAN connecotr); connect CAN (optional), you can supply 12v/GND via the JST 4 Pin sconnector.
-2. Connect each galvo driver board with 3-pin power and SMA signal leads.
-3. Flash firmware; set parameters in firmware for min/max pixel and stepsize as well as pixel dwell time
-4. Monitor pixel trigger on oscilloscope
-5. Tune galvo PID on driver boards for minimal overshoot
+{/* iBOM switched off for now
+## iBOM
+<iframe width="100%" style={{aspectRatio: "16 / 9"}} src={require("./ibom-galvo-interface.html")} title="Galvo interface iBOM"></iframe>
+*/}
 
-### 9 iBOM
+---
 
-<iframe width="100%" style={{"aspect-ratio": "16 / 9"}} src="https://docs.openuc2.com/kicad/ibom-galvo.html" title="iBOM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Boards: [shop.openuc2.com](https://shop.openuc2.com). Questions: [openuc2.discourse.group](https://openuc2.discourse.group).
 
+## Stand-alone scanner firmware (openUC2-LaserScanner)
 
-
-### 10  Firmware Architecture (openUC2-LaserScanner)
-
-You can find the files here https://github.com/openUC2/openUC2-LaserScanner/blob/main/src/main.cpp
-
-The UC2-ESP Firmware also has the CAN-enabled version of it in its code base here: https://github.com/youseetoo/uc2-esp32/blob/main/main/src/scanner/GalvoController.cpp
+Before the scanner became part of uc2-esp32 there was a small dedicated firmware. It has no CAN support, but it is short and a good starting point for experiments with the render loop. Source: [openUC2/openUC2-LaserScanner](https://github.com/openUC2/openUC2-LaserScanner/blob/main/src/main.cpp).
 
 :::warning
 Sometimes the XIAO cannot be flashed immediately, for this you have to press boot and reset while firmware is flashed - or erase the firmware first using this tool: https://espressif.github.io/esptool-js/
@@ -153,7 +138,7 @@ Sometimes the XIAO cannot be flashed immediately, for this you have to press boo
 | **Board-select macros** | same header               | `IS_XIAO`, `IS_XIAO_UC2GALVOBOARD` choose the correct pin map at compile time. ([GitHub][3])                                                                                                           |
 | **Build system**        | `platformio.ini`          | Two build environments: **esp32dev** (generic) and **UC2\_3\_Xiao** (Seeed XIAO ESP32-S3). Both use ESP-IDF with Arduino component; UART at 921 kbit s⁻¹. ([GitHub][4])                                |
 
-#### 11.1  File structure
+### 1  File structure
 
 ```
 openUC2-LaserScanner
@@ -169,14 +154,14 @@ openUC2-LaserScanner
 └── sdkconfig.*          # pre-tuned IDF configs
 ```
 
-#### 11.2  Build flow (PlatformIO)
+### 2  Build flow (PlatformIO)
 
 1. Select **UC2\_3\_Xiao**  in *platformio.ini*.
 2. `pio run` → ESP-IDF CMake → compile + link with Arduino component.
 3. `pio run -t upload` flashes over USB-CDC (921 kbit s⁻¹).
 4. Partition scheme `custom_partition_esp32s3.csv` reserves PSRAM cache and 1 MiB for OTA.
 
-#### 11.3  Runtime tasks
+### 3  Runtime tasks
 
 | Task                          | Core affinity | Duty                                                                         |
 | ----------------------------- | ------------- | ---------------------------------------------------------------------------- |
@@ -186,7 +171,7 @@ openUC2-LaserScanner
 
 The code presently runs everything in the foreground; heavy processing (e.g. CAN command parsing) should be off-loaded to a FreeRTOS task to keep the raster loop deterministic.
 
-#### 11.4  SPIRenderer workflow
+### 4  SPIRenderer workflow
 
 ```text
 constructor()
@@ -216,7 +201,7 @@ draw()
 * **Throughput** – one SPI transaction per axis, LDAC latched once per pixel → 2 × 16 bits @ 20 MHz ≈ 1.6 µs transfer; 512×512 raster ≈ 0.42 s per frame exclusive of galvo settling.
 * **Triggers** – 50 Ω back-termination; rising edge marks *start* of integration for FLIM/PMT cards.
 
-#### 11.5  Customisation hooks
+### 5  Customisation hooks
 
 | Use case                 | Modification                                                                                                                        |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
@@ -225,7 +210,7 @@ draw()
 | **Scan patterns**        | replace the two nested `for` loops with a lookup table of `(x,y)` pairs (e.g. spiral, Lissajous).                                   |
 | **Higher speed**         | use queued (`spi_device_queue_trans`) DMA transfers and toggle LDAC from SPI post-trans callback to overlap SPI and galvo settling. |
 
-#### 11.6  Pin map (compile-time)
+### 6  Pin map (compile-time)
 
 | Signal          | GPIO (UC2-Galvo) | GPIO (bare XIAO) |
 | --------------- | ---------------- | ---------------- |
@@ -240,7 +225,7 @@ draw()
 
 Defined in `SPIRenderer.h`; switch boards via `-DIS_XIAO_UC2GALVOBOARD` or `-DIS_XIAO` build flag. ([GitHub][3])
 
-#### 11.7  Extending the firmware
+### 7  Extending the firmware
 
 * **Finite-state machine** – wrap the renderer in a state class (IDLE, SCANNING, PAUSED).
 * **Streaming points** – replace the nested loops by a ring buffer filled by CAN/UART for arbitrary point lists.

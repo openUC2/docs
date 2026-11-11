@@ -46,7 +46,7 @@ shows different scales, see [Fix a stretched image](../how-to/fix-a-stretched-im
 | | value |
 |---|---|
 | DAC range | 0-4095 per axis, centre 2048 |
-| board output | ±10 V differential per axis, see [Galvo interface board](./galvo-board.md) |
+| board output | ±10 V differential per axis, see [Galvo interface board](../../../../dev/hw/electronics/galvo-interface/README.md) |
 | optical scan angle | 2 × the mechanical mirror angle; the degrees per DAC count depend on the driver gain |
 | angle in the objective pupil | optical angle / 3.2 (f50 scan lens, f160 tube lens) |
 | spot shift at the sample | f_obj × angle in the pupil: about 245 µm per optical degree (4x, f 45), 110 µm (10x, f 20), 55 µm (20x, f 10) |

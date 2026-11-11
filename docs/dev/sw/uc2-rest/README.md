@@ -508,5 +508,5 @@ python -m pytest tests/integration/
 
 - **[UC2-ESP32 Firmware](../uc2-esp32/README.md)** - Firmware documentation
 - **[ImSwitch Integration](../imswitch/Advanced/02_Usage/UC2-REST.md)** - ImSwitch usage guide
-- **[Hardware Interfaces](../../hw/electronics/README.md#available-hardware-interfaces)** - Hardware components
+- **[Hardware Interfaces](../../hw/electronics/README.mdx#boards)** - Hardware components
 

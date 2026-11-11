@@ -70,7 +70,7 @@ const redirectsMinimal = [
 	},
 	{
 		from: "/docs/Toolboxes/GalvoBox/GalvoIntro",
-		to: "/usage/disc/galvo-addon/reference/galvo-board",
+		to: "/dev/hw/electronics/galvo-interface/",
 	},
 	{
 		from: "/docs/Toolboxes/GalvoBox/LaserScanner",
@@ -83,7 +83,12 @@ const redirectsMinimal = [
 	// 2026-10 galvo add-on Diataxis migration
 	{
 		from: "/usage/disc/galvo-addon/reference",
-		to: "/usage/disc/galvo-addon/reference/galvo-board",
+		to: "/usage/disc/galvo-addon/reference/scan-parameters",
+	},
+	// 2026-11 electronics reorganisation: board references live under /dev/hw/electronics/
+	{
+		from: "/usage/disc/galvo-addon/reference/galvo-board",
+		to: "/dev/hw/electronics/galvo-interface/",
 	},
 	{
 		from: "/usage/disc/galvo-addon/LaserScanner",

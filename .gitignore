@@ -20,3 +20,6 @@
 /yarn-debug.log*
 /yarn-error.log*
 /docs/usage/pro/frame/FRAME_DOKU_FROM_NOTION
+
+# iBOMs of the electronics pages are switched off for now (large files)
+/docs/dev/hw/electronics/**/ibom-*.html

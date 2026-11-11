@@ -106,6 +106,6 @@ Specialized deployments:
 
 ## 🔗 Related Documentation
 
-- **[Electronics](../../../hw/electronics/README.md)** - Hardware control and interfaces
+- **[Electronics](../../../hw/electronics/README.mdx)** - Hardware control and interfaces
 - **[Community Forum](https://openuc2.discourse.group/)** - Get help and share experiences
 

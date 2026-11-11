@@ -48,7 +48,7 @@ These pages follow [Diátaxis](https://diataxis.fr/): four kinds of page for fou
 - [Optical layout of the FLIM module](./reference/optical-layout.md)
 - [Scan parameters](./reference/scan-parameters.md)
 - [Optical simulation (Optiland)](./reference/simulation.md)
-- [Galvo interface board](./reference/galvo-board.md)
+- [Galvo interface board](../../../dev/hw/electronics/galvo-interface/README.md)
 - [Trigger outputs (measured)](./reference/trigger-outputs.md)
 
 ## What is Galvo Scanning?

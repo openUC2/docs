@@ -4,6 +4,10 @@ sidebar_label: v2
 
 # HAT+ v2
 
+:::note
+This page describes Rev. D and E, the boards in FRAMEs shipped up to autumn 2026. What changed with Rev. F is listed on the [HAT+ overview](../README.md#revisions).
+:::
+
 **Technical specification, integration & bring-up guide**
 
 ## 0) Quick links (hardware, firmware, docs)
@@ -224,80 +228,16 @@ Status: on early bring-up this is "not working currently" in the project notes, 
 | Env | `UC2_canopen_master` (`_release` / `_debug` variants) |
 | Role | CAN master, node 1, CANopen at 500 kbit/s |
 | Serial | 921600 baud, USB-C (CP2102) or Pi UART pins 8/10 |
-| Web flasher | [youseetoo.github.io/flasher.html](https://youseetoo.github.io/flasher.html), board **UC2 CAN Master** |
+| Web flasher | [youseetoo.github.io](https://youseetoo.github.io/), board **HAT+ ESP32 (CAN master)**. Step by step: [Flashing the firmware](../../flashing.md) |
 | Image | `esp32_UC2_canopen_master_release.bin` (`_merged.bin` for a full flash at 0x0) |
 
 Satellites (motors, laser, LED, galvo) are reached through the master's routing table; see [Boards, roles & node IDs](../../../../sw/interface/reference/boards-and-node-ids.md).
 
 
 
-## 12) Panel Board (more information)
+## 12) Panel Board
 
-The Panel Board is a small front-panel / breakout PCB powered by the HAT and intended to:
-
-* Provide convenient connectors for:
-
-  * STEMMA / STEMMA QT I2C at 3.3 V
-  * 5 V addressable LED headers (ARGB-style)
-  * SMA camera trigger output (for HIKROBOT camera Line 0)
-  * Fan header with tacho and controllable supply
-
-### 12.1 Panel Board input connector from HAT (J101, 7-pin)
-
-The harness from HAT to Panel Board carries:
-
-* `I2C_SDA`
-* `I2C_SCL`
-* `neopixel` (data)
-* `camera-trigger_esp-gpio`
-* `fan_tacho`
-* `GND`
-* `+12V`
-
-The Panel Board generates its local 5 V and 3.3 V from the 12 V input.
-
-### 12.2 STEMMA / STEMMA QT (I2C expansion)
-
-* Two connectors:
-
-  * JST-PH STEMMA (J107)
-  * JST-SH STEMMA QT (J106)
-* Output: 3.3 V + I2C, with max about 200 mA average (design note: 1 A peak), pullups are on the HAT (so do not duplicate aggressively).
-
-### 12.3 5 V LED headers (ARGB / NeoPixel ecosystem)
-
-* LED headers provide:
-
-  * 5 V (up to 3 A from the local 12 -> 5 V buck on the Panel Board)
-  * NeoPixel data
-  * GND
-* There are multiple header styles to match common PC ARGB ecosystems (notes in schematic).
-
-### 12.4 Camera trigger output to HIKROBOT (SMA)
-
-* The Panel Board includes a level interface that takes the ESP32 3.3 V trigger (`trigger_from-ESP`) and drives a 12 V level suitable for the camera input (HIKROBOT Cam In Line 0).
-* Implementation:
-
-  * NPN transistor + PMOS high-side stage (AO3401A) to drive the camera optoisolator input correctly.
-* Important notes from the schematic:
-
-  * Camera input is effectively an optocoupler LED with an internal resistor and needs a minimum voltage.
-  * This board drives a "12 V signal level" to meet the camera input requirements.
-
-### 12.5 Fan header and controllable fan supply
-
-* The Panel Board provides a 3-pin fan connector (J401) with:
-
-  * GND
-  * `Tacho` (open-drain from fan)
-  * a controllable supply rail (`DCDC_FAN_VOUT`)
-* Fan supply generation:
-
-  * A buck converter stage that can produce a variable output (design notes indicate 12 V down to about 3 V).
-  * Control uses an I2C digital potentiometer **MCP4017** at I2C address **0x2F** (design note).
-  * There is a local 3.3 V LDO supply dedicated for the fan control subsystem.
-
-
+The panel board has its own page: [HAT+ panel board](../../hat-panelboard/README.md).
 
 ## 13) Linux integration (CAN & sensors)
 
@@ -390,7 +330,3 @@ Camera opto input pin 2 = yellow, camera opto GND pin 5 = white, both soldered t
 ### HAT v2: 
 
 <iframe width="100%" style={{"aspect-ratio": "16 / 9"}} src="https://docs.openuc2.com/kicad/ibom-hatv2.html" title="iBOM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-### Panel Board:
-
-<iframe width="100%" style={{"aspect-ratio": "16 / 9"}} src="https://docs.openuc2.com/kicad/ibom-hatv2panel.html" title="iBOM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

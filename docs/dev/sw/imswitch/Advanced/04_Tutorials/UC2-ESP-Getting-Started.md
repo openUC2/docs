@@ -588,7 +588,7 @@ Configure ESP32 device in ImSwitch:
 
 - **[UC2-REST Integration](./UC2-REST-Getting-Started.md)** - Python interface setup
 - **[ImSwitch Configuration](../03_Configuration/README.md)** - Configure ImSwitch for ESP32
-- **[Hardware Assembly](../../../../hw/electronics/README.md)** - Physical hardware setup
+- **[Hardware Assembly](../../../../hw/electronics/README.mdx)** - Physical hardware setup
 
 ## Resources
 

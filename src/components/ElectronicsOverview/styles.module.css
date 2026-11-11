@@ -1,0 +1,20 @@
+.wrap { margin: 1.5rem 0; overflow-x: auto; }
+.svg { display: block; width: 100%; min-width: 720px; height: auto; color: var(--ifm-font-color-base); }
+.caption { font-size: 0.875rem; color: var(--ifm-color-emphasis-700); margin-top: 0.5rem; }
+
+.title { font: 700 16px var(--ifm-font-family-base); fill: currentColor; }
+.sub { font: 400 13.5px var(--ifm-font-family-base); fill: currentColor; opacity: 0.8; }
+.node { font: 400 12.5px var(--ifm-font-family-monospace); fill: currentColor; opacity: 0.65; }
+.note { font: 400 12.5px var(--ifm-font-family-base); fill: currentColor; opacity: 0.7; }
+.busLabel { font: 700 13px var(--ifm-font-family-base); fill: var(--ifm-color-primary); }
+
+.box { fill: var(--ifm-color-emphasis-100); stroke: var(--ifm-color-emphasis-400); stroke-width: 1.5; }
+.wire { stroke: var(--ifm-color-emphasis-500); stroke-width: 2; stroke-dasharray: 5 4; }
+.bus { fill: none; stroke: var(--ifm-color-primary); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+
+.board { cursor: pointer; }
+.board:hover { text-decoration: none; }
+.hit { fill: transparent; stroke: transparent; stroke-width: 1.5; transition: fill 0.15s, stroke 0.15s; }
+.board:hover .hit, .board:focus-visible .hit { fill: var(--ifm-color-emphasis-100); stroke: var(--ifm-color-primary); }
+.board:hover .title, .board:focus-visible .title { fill: var(--ifm-color-primary); text-decoration: underline; }
+.board:focus-visible { outline: none; }
