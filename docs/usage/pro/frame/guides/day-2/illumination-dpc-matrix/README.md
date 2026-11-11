@@ -24,7 +24,6 @@ contrast (DPC).
 
 - What DPC needs (opposing half-patterns); how to run it; the output.
 
-![](./IMAGES/led-matrix-dpc-placeholder.png)
 :::note TODO image
 LED matrix + DPC settings. Notion source: `FAT FRAME #0007 Korea - Part 3` ("Matrix LED"),
 `Part 7` ("LED Matrix RING"), `Part 8` ("LED Matrix settings test DPC").

@@ -19,7 +19,6 @@ workflow.
   the current frame (button, shortcut).
 - What file format / naming you get by default.
 
-![](./IMAGES/snap-button-placeholder.png)
 :::note TODO image
 Screenshot of the Live View capture control. Notion source:
 `FRAME_DOKU_FROM_NOTION/FAT FRAME #0007 Korea - Part 1` (Live View screenshots).
@@ -41,7 +40,6 @@ stored ...` documents where captures land and the issue that was fixed.
 - Copy/move a dataset from the File Manager to the USB device.
 - Safely eject.
 
-![](./IMAGES/file-manager-placeholder.png)
 :::note TODO image
 File Manager + USB copy screenshots. Notion source: `TASK-FR011 ...`.
 :::

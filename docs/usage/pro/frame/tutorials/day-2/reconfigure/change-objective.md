@@ -17,7 +17,6 @@ mounting a different objective.
 - How to select the objective position in ImSwitch; what updates automatically
   (pixel size, NA, Z-offset).
 
-![](./IMAGES/objective-switch-placeholder.png)
 :::note TODO image
 Objective selector in ImSwitch. Notion source: `TASK-FR035 Show objective position in
 software`, `TASK-FR023 Highlighting current objective`.

@@ -30,7 +30,6 @@ and view the tiles stitched into one large overview image.
 - How to set the scan area (corners / centre + size / well selection).
 - How to set tile overlap.
 
-![](./IMAGES/scan-region-placeholder.png)
 :::note TODO image
 Screenshot of the scan/region setup panel. Notion source:
 `FRAME_DOKU_FROM_NOTION/FAT FRAME #0007 Korea - Part 5` ("First Stitching Test").
@@ -44,7 +43,6 @@ Screenshot of the scan/region setup panel. Notion source:
 
 - Start the scan; what the progress display shows; roughly how long 4x takes.
 
-![](./IMAGES/scan-running-placeholder.png)
 :::note TODO image
 Scan-in-progress + resulting stitched overview. Notion source:
 `FAT FRAME #0007 Korea - Part 6` ("Stitching Tests 1-5") and `Part 7`/`Part 8`.

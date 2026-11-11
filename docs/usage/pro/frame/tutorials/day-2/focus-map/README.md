@@ -29,7 +29,6 @@ the tutorial. Decide whether to keep the video, replace with screenshots, or bot
 
 - How to add focus reference points across the region and focus each one.
 
-![](./IMAGES/focus-points-placeholder.png)
 :::note TODO image
 Focus-map point placement UI. Notion source:
 `FRAME_DOKU_FROM_NOTION/FAT FRAME #0007 Korea - Part 8 (1)`

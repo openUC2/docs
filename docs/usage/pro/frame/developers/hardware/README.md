@@ -14,6 +14,7 @@ Scaffold. Replace the bullet prompts with your own text and delete this banner w
 ## How the FRAME is modular
 
 - Mechanical interfaces (UC2 cubes, mounting rails/plates), the HAT, the controllers.
+- Dimensions, openings and heights you design against: [Hardware ID10–ID20](../../reference/hardware-id10-id20/README.md).
 
 ## In this track
 

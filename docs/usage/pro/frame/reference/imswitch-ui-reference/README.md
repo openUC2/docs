@@ -41,7 +41,6 @@ parts and the `TASK-FR024`/`FR025` folders — reuse them.
 
 - Selecting wells; per-well acquisition.
 
-![](./IMAGES/imswitch-liveview-placeholder.png)
 :::note TODO images
 Annotated screenshots for each area. Notion sources: `FAT FRAME #0007 Korea - Part 1`
 (start page, machine admin, ImSwitch tour), `TASK-FR024` (zoom), `TASK-FR025` (autofocus),

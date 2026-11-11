@@ -13,10 +13,8 @@ This page has real content below; the "Remove" section still needs writing.
 :::note TODO
 Write the removal steps: power/stage state before removing, which screws to loosen,
 how to lift the holder out without hitting the objective.
-Image placeholder below.
 :::
 
-![](./remove-holder-placeholder.png)
 
 ## Insert a slide holder
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: Calibrate pixel size
+sidebar_label: Axis backlash
 sidebar_position: 20
 ---
 
@@ -27,3 +27,7 @@ In an ideal case the light blue cross hair will be centered on the structure of 
  ![20x-move-back-X-red-arrow](./20x-move-back-X-red-arrow.png)
 
 To check backlash you can enter the estimated amount into *move distance* and then move. The light blue cross hair should now be centered on the structure of your choice again.
+
+## Typical values
+
+Backlash depends on position, direction and speed. On unit 10 it ranged from 1 to 15 µm on the X axis; see [Stage repeatability and drift](../../../reference/hardware-id10-id20/stage-repeatability-and-drift.md#backlash).

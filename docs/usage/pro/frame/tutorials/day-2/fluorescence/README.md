@@ -26,7 +26,6 @@ Fill in the exact laser classes and the required safety wording for the FRAME.
 - Which laser matches which dye (405 - DAPI, 488 - GFP, 635 - AlexaFluor 647, etc.).
 - Turn off LED/brightfield, enable the fluorescence channel.
 
-![](./IMAGES/illumination-panel-placeholder.png)
 :::note TODO image
 Illumination panel with fluorescence channel selected. Notion / existing source:
 `tutorials/day-1/first-sample` already shows the Illumination section with 488 nm.

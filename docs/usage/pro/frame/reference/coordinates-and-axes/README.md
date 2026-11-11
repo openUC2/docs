@@ -12,9 +12,8 @@ Scaffold. Replace the bullet prompts with your own text and delete this banner w
 - Axis definitions: X, Y, Z, and A (what A is).
 - Sign conventions and how they map to controller/stage motion.
 - Coordinate display and manual entry in ImSwitch.
-- Travel limits per axis (see [Specifications](../specifications/README.md)).
+- Travel limits per axis (see [Specifications](../specifications/README.md)); drives and step sizes in [Mechanics](../hardware-id10-id20/mechanics.md).
 
-![](./IMAGES/axes-diagram-placeholder.png)
 :::note TODO image
 Axis diagram overlaid on the machine. Notion sources:
 `TASK-FR031 displaying and entering X Y Z A coordinates`,

@@ -22,7 +22,6 @@ stack at one position and then across a small grid.
 - How to set the centre plane, the Z-range, and the number of steps.
 - Note the automatic stop at the upper/lower stage limits.
 
-![](./IMAGES/zstack-settings-placeholder.png)
 :::note TODO image
 Z-stack parameter panel. Notion source:
 `FRAME_DOKU_FROM_NOTION/FAT FRAME #0007 Korea - Part 8 (1)`
