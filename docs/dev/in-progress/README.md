@@ -17,5 +17,6 @@ numbers will still change.
 | [DLP projector in the OPM](./dmd-opm/README.md) | patterned light (for example photostimulation) through the FRAME's objective | printed case designed, FRAME fit checked |
 | [Filter changer](./filter-changer/README.md) | motorised linear changer for four complete filter sets | rev C designed, LED variant added |
 | [Multicolour LED](./multicolour-led/README.md) | three LEDs combined into one cube for fluorescence | rev A designed after a first print |
+| [DLP4710 LED projector](./dlp4710-projector/README.md) | blue, green or red light patterns through the FRAME's objective, LEDs built in | optics compared in theory; prototype once the module is here |
 
 Questions or ideas? Write to [support@openuc2.com](mailto:support@openuc2.com).
