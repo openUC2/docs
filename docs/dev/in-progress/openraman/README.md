@@ -5,8 +5,8 @@ sidebar_label: openRAMAN
 
 # openRAMAN spectrometer block
 
-**Status (16 November 2026): prototype.** The block is printed and assembled and has seen its first light. We are now
-calibrating it and collecting data. The slit is the next part to replace.
+**Status (17 November 2026): prototype.** The block is printed and assembled and has seen its first light. We are now
+calibrating it and collecting data. The slit is the next part to replace; a fibre input is designed as the alternative.
 
 The openRAMAN is our cube version of the open-source OpenRAMAN starter edition. The spectrometer is one printed block
 on the puzzle grid of a 6 × 4 base plate. The same block also serves our low-cost OCT: a second grating holder turns
@@ -17,7 +17,8 @@ the grating to the OCT angle.
 ## What is inside
 
 - **Entrance:** an edge filter on a slide, and an achromat (BFL 20 mm) that focuses onto the slit.
-- **Slit:** two blades on a printed flexure holder. A micrometer sets the width; a second screw sets the position.
+- **Slit:** two blades on a printed flexure holder. A micrometer sets the width; a second screw sets the position. A
+  fibre insert can take its place (see [Fibre input](#fibre-input)).
 - **Collimator:** a 35 mm achromat (Thorlabs AC254‑035‑A).
 - **Grating:** 1200 lines/mm, on a kinematic mount.
 - **Camera:** a 100 mm C‑mount lens (Berrybase CLENS‑100TEL) on a HIK MV‑CE060‑10UM (3072 × 2048 pixels, 2.4 µm).
@@ -46,9 +47,11 @@ Optiland model from the slit to the camera sensor (design values, not measured):
 
 ## First spectra (15 November 2026)
 
-Two frames: a white LED alone, and the same LED through a Thorlabs FEL0500 long‑pass filter (500 nm). No wavelength or
-intensity standard was recorded yet, so the spectral axis below is in **camera pixels** and the values are **relative**.
-Shorter wavelengths are to the right (the filter blocks the right part).
+Two frames: the white flash LED of a phone (Pixel 9, a blue LED with a yellow phosphor) alone, and the same LED through
+a Thorlabs FEL0500 long‑pass filter (500 nm). The grating was at a not yet calibrated angle (the blue–green part of the
+spectrum, not the Raman window). No wavelength or intensity standard was recorded yet, so the spectral axis below is in
+**camera pixels** and the values are **relative**. Shorter wavelengths are to the right (the filter blocks the right
+part).
 
 ![Raw frames](./img/spectra_raw_frames.png)
 
@@ -59,19 +62,23 @@ repository.
 
 What the frames show:
 
-- **Filter edge** (on the relative transmission, which cancels the LED spectrum):
-  - 50 % at pixel 1398; it falls from 90 % to 10 % over 40 pixels (32–42 along the slit). The filter passes about 69 %
-    above the edge in this frame.
-  - At the design dispersion (0.020 nm per pixel) that is 0.8 nm, the same as the image of a 50 µm slit (about 41
-    pixels). The resolution looks as designed. The width still includes the filter's own edge, so it is an upper limit;
-    a line source measures it properly (see calibration).
+- **Filter edge** (on the relative transmission, which cancels the LED spectrum): 50 % at pixel 1398; it falls from
+  90 % to 10 % over 40 pixels (32–42 along the slit). The filter passes about 69 % above the edge in this frame.
+- **LED spectrum:** the blue peak at pixel 2474 and the valley before the phosphor band at pixel 1847.
+- **Dispersion: about 0.045 nm per pixel, not the design 0.020.** Two features give the same number:
+  - filter edge (500 nm) to the blue peak (a phone flash LED peaks near 450 nm): 1076 pixels for about 50 nm;
+  - blue peak to the valley (about 30 nm apart for such LEDs): 627 pixels.
+
+  At 0.020 nm per pixel the blue peak would be at 478 nm, which no phosphor LED has. So the sensor sees about
+  140 nm of spectrum instead of 61 nm, and a 50 µm slit is only about 18 pixels wide.
+
+  Possible causes, to be checked: the grating's line density (a 600 lines/mm grating gives 0.040), or a different camera
+  lens or focal length than the 100 mm. The laser lines settle it (see [Aligning the grating](#aligning-the-grating)).
+- **Resolution:** the 40‑pixel edge is about 1.8 nm at this dispersion. Most of that is likely the filter's own edge,
+  so it is only an upper limit. A narrow line (laser or neon) measures the resolution properly.
 - **Curved slit image:** the edge position bows by 16 pixels from the top to the middle of the sensor. The slit image is
   slightly curved (a "smile"), which is normal for this kind of spectrometer. Before rows are summed, each row has to be
   shifted by its own amount, or the lines broaden.
-- **LED spectrum:** a peak at pixel 2474 and a dip at pixel 1847.
-  - For a white phosphor LED these are usually the blue peak and the valley before the phosphor band, about 30–40 nm
-    apart. Here they are 627 pixels apart, which would mean about 0.05 nm per pixel instead of the design 0.020.
-  - We do not trust this until it is calibrated: it depends on which LED was used.
 - **Exposure:** the frames are 8‑bit and the LED frame reaches 254 of 255. Use the camera's 12‑bit mode and stay below
   about 80 % of full scale.
 
@@ -100,6 +107,81 @@ What the frames show:
 Our recommendation: order a precision slit (or a set of etched slits) for the next measurements. In parallel, build the
 fibre input, which is also the natural way to bring light from a microscope or probe.
 
+## Fibre input
+
+The fibre insert (PRT‑9243‑B, SPCFIBINS) takes the place of the slit insert. It uses the same pocket and the same two
+M3 × 8 screws from the top, so the tray stays as it is.
+
+![Fibre insert in place of the slit insert](./img/raman_fibre_insert.png)
+
+- **Holder:** the openUC2 FC/PC fibre holder from the CAD library (15 × 15 mm flange, M8 × 0.75 thread) is screwed to the
+  insert's front face with four M2 × 5 (self‑tapping in the print).
+- **Fibre end in the slit plane:** an FC/PC connector puts the fibre end 2.7 mm beyond the flange's underside. The
+  insert's front face therefore sits 2.7 mm in front of the slit plane. The fibre core is the entrance slit: a 50 µm
+  core is about as wide as the 50 µm slit, but round and with clean edges, so it shows no stripes.
+- **Light‑tight:** above the pedestal the insert is one solid block from wall to wall and up to the lid, up to the
+  partition. It also covers the micrometer and key holes in the side wall from the inside.
+- **Light path:** a fibre with NA 0.22 fills the 35 mm collimator to 16 mm. The grating takes up to NA 0.24, so nothing
+  is cut off. On the sensor a 50 µm core is a band about 60 rows high (105 µm: about 125 rows).
+- **Cable:** the lens insert and the edge‑filter slide come out. The connector sits in the lens bay and the cable leaves
+  through the entrance bore; the free radius there is 9 mm, the connector's boot needs 3.5.
+- **Assembly:** screw the holder onto the insert, drop the insert in, tighten the two tab screws, then plug the fibre in.
+  The hex key for tab screw 1 passes where the connector's nut will be.
+- **Print:** FDM, black PETG, standing on its back face, no support. 12.4 cm³.
+- **Focus:** the fibre end is fixed. The collimator insert moves ±1.5 mm in its slots, and the camera lens does the fine
+  focus.
+- **Status:** all checks pass, on the parameters and on the STEP files (light, stray light through the side holes, fit
+  in the tray). Not printed yet.
+
+![Fibre insert on the STEP files: section along the axis and in plan](./img/raman_fibre_insert_sections.png)
+
+Files in openuc2‑openraman:
+- `fibre_insert.py`: parameters and checks;
+- `build_fibre_insert.py`: the part and the block assembly ASS‑9258 in Inventor;
+- `check_fibre_insert.py`: the checks on the STEP files;
+- `INVENTOR/D_block_3x3/PRT - 9243 - SPCFIBINS - V04 - B` (.ipt, .stp, .stl).
+
+An SMA holder from the same library has the same four holes but a different fibre‑end depth: measure it before using it.
+
+## Aligning the grating
+
+The grating sits on a wedge holder in the kinematic mount. The wedge sets the coarse angle: A for Raman, B for OCT. The
+mount's two adjusters, reached through the holes in the back wall, do the rest:
+- the adjuster that turns the grating about the vertical axis moves the spectrum **along** the sensor (wavelength);
+- the other one moves it **up and down** (rows).
+
+**What you need:** the camera live in ImSwitch (spectrometer app, raw view) and one or two known lines. Use the lasers
+(488, 520, 532 or 635 nm), sent in by scattering them off a white card in front of the entrance. Never shine a laser
+straight into the entrance: it saturates the camera, and keep laser safety in mind with the lid off. Use the lowest power
+and a short exposure.
+
+1. **Focus.**
+   - Before mounting, focus the camera lens at infinity (on a distant object).
+   - Then slide the collimator insert in its slots until a line is narrowest, and lock it.
+   - Fine‑tune with the camera lens's focus ring.
+2. **Lines upright.** Turn the camera in its cradle until a line in the middle of the sensor is parallel to the pixel
+   columns. Near the top and bottom edges the line stays slightly curved (the smile).
+3. **Height.** With the second adjuster, centre the light band in the rows. With a fibre the band is narrow, so this
+   matters.
+4. **Measure the dispersion.** Put two known lines on the sensor at the same time and divide their wavelength
+   difference by their pixel distance. For example, 488 and 520 nm are 711 pixels apart at 0.045 nm/px, or 1600 pixels
+   at 0.020.
+5. **Work out the target.** With dispersion D (nm/px) and the window centre λc you want, a line λ belongs at
+
+   `pixel = 1536 + (λc − λ) / D`
+
+   (shorter wavelengths to the right, 1536 = sensor centre). Find out how many pixels one turn of the adjuster moves a
+   line, then turn by the difference. If the line would leave the sensor first, hand over to a second line that is
+   already coming in.
+6. **Example, Raman at 532 nm and 0.045 nm/px:**
+   - put the 532 nm line (filter out, low power) near pixel 2950;
+   - the window is then about 527–665 nm (0–3750 cm⁻¹), and the 635 nm laser shows at about pixel 660, a direct check.
+
+   At the design 0.020 nm/px the window is only 61 nm: centre it at about 566 nm for the fingerprint region.
+7. **Lock and record.** Mark the adjuster's position. Then run the wavelength calibration (next section).
+
+The ImSwitch spectrometer app shows the line's current and target position live while you turn.
+
 ## Calibration plan
 
 **1. Before every measurement series**
@@ -118,6 +200,22 @@ fibre input, which is also the natural way to bring light from a microscope or p
   phosphor lines near 487.7, 542.4 and 611.6 nm.
 - The width of a single neon line (in pixels) gives the **real resolution** and checks the focus of the camera lens.
 
+**2b. Without a neon lamp: lasers and RGB LEDs (what we have now).**
+
+- **Laser lines** (488, 520, 532, 635 nm) are narrow and bright.
+  - Diode lasers differ from their nominal wavelength by a few nm from unit to unit, and drift by about 0.2–0.3 nm per
+    °C. Measure each one once with a reference spectrometer and store the value.
+  - With three lines across the window, fit a 2nd‑order polynomial; with two, a straight line (good enough for a first
+    axis).
+- **NeoPixel ring (WS2812‑type RGB LEDs):** switch R, G and B on one at a time.
+  - The bands are broad (about 15–35 nm wide). Their position is found by matching each measured band to a reference
+    spectrum of the same ring, measured with another spectrometer.
+  - Expect about 0.5–1 nm accuracy. The green LED in particular shifts with current and temperature, so calibrate at
+    the same brightness and after a minute of warm‑up.
+  - Good for a quick check; the laser lines are better for the fit.
+- The ImSwitch calibration wizard (below) does both: it switches the sources, finds the lines or matches the bands, fits,
+  shows the residual of every point and saves the result.
+
 **3. Raman shift axis.**
 
 - Measure the laser line itself (with the edge filter out, at low power) to set 0 cm⁻¹.
@@ -135,33 +233,54 @@ fibre input, which is also the natural way to bring light from a microscope or p
 
 ## Software: ImSwitch
 
-ImSwitch already drives the HIK camera (`HikCamManager`) and our lasers. What is missing is the spectrometer itself.
-Next steps:
+A first version of a spectrometer module exists on the ImSwitch branch `feat/spectrometer` (17 November 2026; not merged,
+not yet run on the real camera, lasers or LED ring). It is built into ImSwitch rather than as a plugin, because plugins
+do not receive the setup file yet.
 
-1. **Spectrometer controller (as an ImSwitch plugin):**
-   - camera in 12‑bit, a row region of interest around the slit image;
-   - dark subtraction, averaging and frame adding, removal of cosmic‑ray spikes (median of frames);
-   - live spectrum plot in the web interface.
-2. **Calibration in the controller:**
-   - store the pixel → nm polynomial per row (smile correction) and the laser wavelength, and show nm or cm⁻¹;
-   - a "calibrate" button that switches a neon lamp on (relay or a free output of the UC2‑ESP32), finds the lines, fits
-     and saves.
-3. **Laser and shutter** through the existing laser controller, so that dark, signal and calibration frames are taken
-   in one sequence.
-4. **REST endpoints** (acquire, calibrate, get spectrum) for notebooks. Save spectra with their metadata (exposure,
-   averages, calibration, laser power) as HDF5 or CSV + JSON.
-5. **Processing** in Python with RamanSPy, as AutoOpenRaman does: crop, despike, smoothing, baseline removal,
-   normalisation.
-6. **Later:** Raman maps with the XY stage and the z stage of the FRAME.
+- **Processing (plain numpy, also usable in a notebook):**
+  - row region around the slit image, dark subtraction;
+  - averaging or frame adding (for more than the camera's 1 s);
+  - cosmic‑ray removal, per‑row smile shift, rows combined;
+  - pixel → nm polynomial with residuals; nm → cm⁻¹ from the laser wavelength.
+- **Manager and controller** with REST endpoints: live spectrum and raw region, camera settings (exposure, gain, bit
+  depth), dark, acquire, save (HDF5 or CSV + JSON with metadata, the raw region as `.npy`), calibration get/set.
+- **Web app "Spectrometer":**
+  - live raw region and live spectrum, axis in pixels, nm or cm⁻¹;
+  - camera settings and dark;
+  - the calibration wizard: NeoPixel R/G/B against stored reference spectra, the 488 and 635 nm lasers, the 520 nm laser
+    switched by hand, lamp line lists;
+  - the alignment helper for the grating (see above), and saving.
+- **Checked** with a simulated instrument and with the frames of 15 November: the pipeline gives the same edge, plateau
+  and LED peak as the analysis above.
+- **Design note** `docs/SPECTROMETER.md` in that branch: how the same data path extends to
+  - Raman: laser line and cm⁻¹, processing with RamanSPy;
+  - OCT: resampling to linear k, FFT per line;
+  - multispectral imaging with the galvo scanner: one spectrum per scan point, stored as a data cube.
+
+Next steps for the software:
+
+1. Run it on the real camera, the lasers and the LED ring; load the measured reference spectra and laser wavelengths.
+2. Laser and shutter in one sequence with dark, signal and calibration frames.
+3. Raman standards (acetonitrile, cyclohexane) as calibration sources in the wizard.
+4. Processing with RamanSPy (BSD‑3), as AutoOpenRaman does: crop, despike, smoothing, baseline removal, normalisation.
+5. Later: Raman maps with the XY and z stages of the FRAME, and galvo scanning.
+
+**Can we take over the AutoOpenRaman software?**
+- It is MIT‑licensed, so reusing its code is allowed as long as the licence notice is kept.
+- Its GUI (PyQt on µManager / Pycro‑Manager) does not fit ImSwitch's web interface.
+- What is worth taking over is its calibration procedure (neon, then acetonitrile) and its processing with RamanSPy.
+- The module above copies no code from it.
 
 ## Next steps
 
-- [ ] neon lamp spectrum → wavelength axis, real resolution, smile
+- [ ] two laser lines on the sensor → real dispersion (0.045 or 0.020 nm/px?), check the grating's lines/mm and the
+      camera lens
+- [ ] align the grating to the Raman window (protocol above)
+- [ ] wavelength axis from the lasers (neon lamp later), real resolution from a line's width, smile
 - [ ] LED and filter frames again in 12‑bit with a dark frame
-- [ ] order a precision slit; build the fibre input
-- [ ] turn the grating to the fingerprint window (about 544–590 nm for 532 nm excitation)
+- [ ] order a precision slit; print the fibre insert and try a 50 µm fibre
 - [ ] first Raman spectra of standards (cyclohexane, polystyrene, paracetamol tablet)
-- [ ] spectrometer plugin in ImSwitch
+- [x] spectrometer module in ImSwitch (first version, branch `feat/spectrometer`) → test on the hardware
 
 ## Related work
 
