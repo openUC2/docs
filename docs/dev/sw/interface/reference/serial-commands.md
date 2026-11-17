@@ -30,7 +30,7 @@ On a CAN master, motor, home, laser, LED, galvo, TMC and digital I/O commands ar
 | [`/digitalout_act`](#digital-io), `/digitalout_get`, `/digitalin_get` | digital I/O, local or on node 60 | all |
 | [`/gpio_act`](#digital-io), `/gpio_get`, `/i2c_act`, `/i2c_get` | GPIO satellite: E-stop, collision ADC, I2C bridge | all |
 | [`/qid_state`](#qid), `/qid_pause`, `/qid_resume` | qid tracking | all |
-| [misc](#misc) | buzzer, signal LED, message, heat, fan, DAC, Bluetooth, joystick, PTZ | per build |
+| [misc](#misc) | buzzer, signal LED, message, heat, fan, status OLED, DAC, Bluetooth, joystick, PTZ | per build |
 
 Declared in `Endpoints.h` but **not dispatched** (reply `{"qid":-1,"success":-1}`): `/motor_setcalibration`, `/config_act`, `/dac_get`, `/encoder_act|get`, `/linearencoder_act|get`, `/readanalogin_act|get`, `/bt_remove`, `/bt_paireddevices`, `/resetnv`. Endpoints such as `/led_act`, `/motor_set`, `/laser_set`, `/objective_act`, `/wifi/*` do not exist.
 
@@ -325,6 +325,23 @@ Trigger outputs (local): `digitalout1IsTrigger`, `digitalout1TriggerDelayOn`, `d
 | `/message_act` | `{"message":{"key":1,"value":2}}` → push `{"message":{"key":1,"data":2}}` |
 | `/heat_act`, `/heat_get`, `/ds18b20_*` | `active`, `target`, `Kp`, `Ki`, `Kd` (integers), `timeout`, `heat_updaterate` |
 | `/fan_act`, `/fan_get`, `/temp_get`, `/temp_act` | `{"fan":{"mode","wiper","kick","curve"}}` |
+| `/display_act`, `/display_get` | `{"display":{"name","status","progress","on","flip","contrast","splash"}}`, see [Status OLED](#display) |
 | `/dac_act` | `dac_channel`, `frequency`, `offset`, `amplitude`, `divider`, `phase`, `invert`, `dac_value` |
 | `/bt_scan`, `/bt_connect`, `/bt_disconnect` | PS4/PS3 pairing; no reply |
 | `/joystick_act`, `/ptz_act` | only on the PS4 / PTZ bridge boards themselves |
+
+### Status OLED {#display}
+
+`UC2_canopen_master` builds drive an optional 0.91" 128x32 SSD1306 on the HAT's I2C bus (GPIO21/22, address 0x3C or 0x3D, found automatically; without a panel `/display_get` reports `present:0` and the module probes again every 10 s). The master shows the firmware version for 10 s after power-up, then a title line (the device name, `openuc2` until one is set), a status line and the firmware version, or a progress bar. Text wider than the display scrolls on the ESP.
+
+| Key (inside `"display"`) | Meaning | Kept after reboot |
+|---|---|---|
+| `name` | title line; the host sends its hostname = Wi-Fi SSID. `""` restores `openuc2` | yes |
+| `status` | status line, e.g. the running experiment step. `""` clears | no |
+| `progress` | 0-100 shows a bar in place of the version line, `-1` hides it | no |
+| `on` | `0` switches the panel and its charge pump off, `1` on | yes |
+| `flip` | `1` rotates the picture by 180 degrees | yes |
+| `contrast` | 0-255, default 143 | yes |
+| `splash` | `1` replays the firmware-version screen | no |
+
+`{"task":"/display_get"}` returns `{"display":{present,on,addr,name,status,progress,fw,flip,contrast,splash}}`; `/modules_get` lists `"display":1` on firmware that has it. Text is plain ASCII (UC2-REST transliterates). From Python: `ESP32.display.set_name(...)`, `set_status("Scanning 12/340", progress=3)`, `off()`. In ImSwitch, any controller can emit `commChannel.sigDisplayStatus(text, progress)`; `UC2ConfigController` sends the device name at startup and throttles the status line to 2 updates per second.
