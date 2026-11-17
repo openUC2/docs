@@ -34,6 +34,8 @@ These pages follow [Diátaxis](https://diataxis.fr/): four kinds of page for fou
   other.
 - [Choose an objective](./how-to/choose-an-objective.md): 4x, 10x or 20x, and how to
   measure the PSF.
+- [Stripes, dots or lines in FLIM images](./explanation/flim-image-artefacts.md#what-you-see-and-what-to-do):
+  from what you see to what to do.
 
 ### I want to understand it => Explanation
 
@@ -42,11 +44,14 @@ These pages follow [Diátaxis](https://diataxis.fr/): four kinds of page for fou
 - [Optical quality and limits](./explanation/optical-quality-and-limits.md): what an
   Optiland simulation of the module says about clipping, field curvature, the galvo
   mirrors and alignment errors.
+- [Stripes, dots and lines in FLIM images](./explanation/flim-image-artefacts.md): what the
+  scan configuration, the USB link and the pixel clock timing do to a FLIM LABS image.
 
 ### I need a number => Reference
 
 - [Optical layout of the FLIM module](./reference/optical-layout.md)
-- [Scan parameters](./reference/scan-parameters.md)
+- [Scan parameters](./reference/scan-parameters.md): every field of the raster command, what
+  it does to the image, and the recommended values for FLIM
 - [Optical simulation (Optiland)](./reference/simulation.md)
 - [Galvo interface board](../../../dev/hw/electronics/galvo-interface/README.md)
 - [Trigger outputs (measured)](./reference/trigger-outputs.md)

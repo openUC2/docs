@@ -141,3 +141,54 @@ After configuration, you can:
 For more advanced usage examples, see the [µManager documentation](https://micro-manager.org/).
 
 
+
+## Micro-Manager devices inside ImSwitch (openUC2 OS)
+
+This works the other way round from the adapter above: ImSwitch loads Micro-Manager device
+adapters through [pymmcore-plus](https://pymmcore-plus.github.io/pymmcore-plus/) and drives
+cameras, stages and lasers that only have a Micro-Manager driver. In the setup file you use the
+`MMCoreDetectorManager`, `MMCorePositionerManager` and `MMCoreLaserManager`. For working examples,
+see `example_mmcore_demo.json` and `example_mmcore_andor.json` in ImSwitch's
+`imswitch/_data/user_defaults/imcontrol_setups`. The developer notes are in ImSwitch's
+[`docs/pymmcore-integration.md`](https://github.com/openUC2/ImSwitch/blob/master/docs/pymmcore-integration.md).
+
+### Switching openUC2 OS to the Micro-Manager image
+
+On openUC2 OS, ImSwitch runs as the `imswitch` deployment. Its `micromanager` feature swaps the
+ImSwitch container image for the variant that includes Micro-Manager. Ports, settings
+(`/home/pi/ImSwitchConfig`) and data (`/home/pi/Datasets`) stay the same.
+
+To switch to the Micro-Manager image, run:
+
+```bash
+forklift plt enable-depl-feat imswitch micromanager
+forklift plt apply
+```
+
+To switch back to the standard image, run:
+
+```bash
+forklift plt disable-depl-feat imswitch micromanager
+forklift plt apply
+```
+
+The Micro-Manager image isn't on the SD card, so the microscope needs internet access the first
+time you apply it: it downloads about 1.5 GB.
+
+:::warning Not available yet
+As of November 2026, ImSwitch doesn't publish the `-mm` image yet. Until it does, enabling the
+feature makes the download fail, so leave it off. You also don't need it yet: the current
+standard ImSwitch image still includes Micro-Manager.
+:::
+
+### For developers: a smaller image with Micro-Manager
+
+`docker/build-micromanager.sh` in the ImSwitch repository installs `build-essential`, `swig`,
+`python3-dev` and `libboost-all-dev` to compile pymmcore, but afterwards removes only
+`build-essential` and `swig`. The Boost and Python headers stay in the image. They are probably a
+large share of the 546 MB Micro-Manager layer (not measured yet). To shrink the image, with or
+without Micro-Manager, either:
+
+- also purge `python3-dev` and `libboost-all-dev` at the end of the script, or
+- compile pymmcore in a separate build stage and copy only the installed package into the final
+  image.
