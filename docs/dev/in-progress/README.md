@@ -12,7 +12,7 @@ numbers will still change.
 | project | what it is | status (November 2026) |
 | --- | --- | --- |
 | [openSIM (DLP2000)](./opensim/README.md) | structured illumination with a small DLP projector, fibre-fed, in the FRAME OPM | rev B designed, electronics redrawn |
-| [openRAMAN](./openraman/README.md) | compact Raman spectrometer block, shared with our low-cost OCT | first block printed and fits; slit stage designed |
+| [openRAMAN](./openraman/README.md) | compact Raman spectrometer block, shared with our low-cost OCT | prototype: first light, calibration and data collection |
 | [LED dome](./led-dome/README.md) | 221 addressable LEDs on a foldable flex PCB for illumination from many angles | board and holder generated |
 | [DLP projector in the OPM](./dmd-opm/README.md) | patterned light (for example photostimulation) through the FRAME's objective | printed case designed, FRAME fit checked |
 | [Filter changer](./filter-changer/README.md) | motorised linear changer for four complete filter sets | rev C designed, LED variant added |
