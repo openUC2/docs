@@ -229,11 +229,11 @@ Dies ist eine empfohlene Schritt-für-Schritt-Anleitung zum Aufbau des ODMR-Setu
 
 1. Verbinden Sie den ESP32 auf der ODMR-Platine über das USB-C-Kabel mit Ihrem Computer.
 
-2. Stellen Sie sicher, dass Ihr ESP32-Board über die neueste Firmware verfügt. Öffnen Sie den [openUC2-Webflasher](https://youseetoo.github.io/) in **Chrome** oder **Edge** auf einem Computer, wählen Sie die Kategorie **qBOX (ODMR)** und Ihr Board (höchstwahrscheinlich **ODMR server (XIAO ESP32-C3)**) und klicken Sie dann auf die Schaltfläche „Verbinden“.
+2. Stellen Sie sicher, dass Ihr ESP32-Board über die neueste Firmware verfügt. Öffnen Sie den [openUC2-Webflasher](https://youseetoo.github.io/) in **Chrome** oder **Edge** auf einem Computer, wählen Sie die Kategorie **qBOX (ODMR)** und Ihr Board (**ODMR Xiao ESP32C3** oder **ODMR Xiao ESP32S3**, steht auf der kleinen Platine) und klicken Sie dann auf die Schaltfläche „Verbinden“.
 
   Den Quellcode finden Sie [hier](https://github.com/openUC2/TechnicalDocs-openUC2-QBox/tree/main/Production_Files/Software/ODMR_Server).
 
-3. Im Browser werden Sie in einem Dialogfeld aufgefordert, den seriellen Port Ihres ESP32 auszuwählen. Der XIAO nutzt seinen eingebauten USB-Anschluss und erscheint daher als „USB JTAG/serial debug unit“ (Windows: „USB-Serielles Gerät (COMx)“, macOS: „cu.usbmodem…“) – ein Treiber ist nicht nötig. Sobald die Verbindung hergestellt ist, installieren Sie die neueste Firmware mit einem Klick auf „Installieren“. Die Firmware enthält auch die Webseiten des Boards.
+3. Im Browser werden Sie in einem Dialogfeld aufgefordert, den seriellen Port Ihres ESP32 auszuwählen. Der XIAO nutzt seinen eingebauten USB-Anschluss und erscheint daher als „USB JTAG/serial debug unit“ (Windows: „USB-Serielles Gerät (COMx)“, macOS: „cu.usbmodem…“) – ein Treiber ist nicht nötig. Sobald die Verbindung hergestellt ist, installieren Sie die neueste Firmware mit einem Klick auf „Installieren“. Die Firmware enthält die Steuer-App, das Board liefert sie also selbst aus.
 
 4. Warten Sie, bis die Firmware erfolgreich geflasht wurde.
 
@@ -248,20 +248,35 @@ Dies ist eine empfohlene Schritt-für-Schritt-Anleitung zum Aufbau des ODMR-Setu
   />
 </div>
 
-### 2.3: Web‑Interface verbinden
+### 2.3: Steuer-App verbinden
 
-Nach dem Flashen der Firmware ziehen Sie den Stecker des ESP ab und stecken ihn wieder ein. Es gibt drei Wege, das Experiment zu steuern – alle bieten dieselben Messungen:
+Nach dem Flashen der Firmware ziehen Sie den Stecker des ESP ab und stecken ihn wieder ein. Auf allen unten genannten Wegen läuft dieselbe Steuer-App – gleiche Reiter, gleiche Messungen: *Anleitung* (16 animierte Schritte zum Aufbau und zur Justage, bei den Justageschritten mit Live-Signal), *Frequenz-Sweep*, *Live-Monitor*, *B-Field Monitor*, *Justage* und *Infos*. Vom Board geladen braucht sie kein Internet. Jedes Diagramm hat einen Knopf **↕ Auto**, der die y-Achse neu skaliert.
 
-**A – USB am Computer (empfohlen):** Öffnen Sie https://youseetoo.github.io/odmr in Chrome oder Edge, klicken Sie auf **Gerät verbinden** und wählen Sie den Port des ESP32 (115200 Baud). Reiter: *Frequenz-Sweep*, *Live-Monitor*, *B-Field Monitor*, *Justage* (mit Schritt-für-Schritt-Anleitung) und *Infos*. Sweeps lassen sich überlagern, als CSV oder PNG speichern und teilen.
+**A – USB am Computer (empfohlen):** Öffnen Sie https://youseetoo.github.io/odmr in Chrome oder Edge (oder nutzen Sie die unten eingebettete App), klicken Sie auf **Gerät verbinden** und wählen Sie den Port des ESP32 (115200 Baud). Sweeps lassen sich überlagern, als CSV oder PNG speichern und teilen.
 
-**B – USB am Android-Smartphone oder -Tablet:** Installieren Sie die App **UC2 Control** ([APK herunterladen](https://github.com/youseetoo/UC2Control/releases/latest) und die Installation erlauben), verbinden Sie den ESP32 mit einem USB-C-(OTG-)Kabel, erlauben Sie den USB-Zugriff, wenn Android fragt, und öffnen Sie den Reiter **ODMR**. Der Reiter bietet dieselben Messungen wie A (Sweep, Live, B-Feld, Justage mit Anleitung); Diagramme lassen sich mit zwei Fingern zoomen, ein Tipp zeigt den Messwert; CSV- und PNG-Dateien landen in `Download/UC2 ODMR/` und können direkt geteilt werden (E-Mail, Cloud, Messenger). Chrome auf Android unterstützt kein Web Serial, dort also die App verwenden.
+**B – USB am iPad / iPhone (nur XIAO ESP32-S3):** Verbinden Sie das Board mit einem USB-C-Kabel. Es erscheint als kabelgebundenes Netzwerk; öffnen Sie http://192.168.7.1 in Safari. Das klappt auch an Computern, deren Browser kein Web Serial kann (Safari, Firefox). Das iPad behält seine eigene Internetverbindung.
 
-**C – WLAN, beliebiges Gerät:** Warten Sie, bis das Gerät sein eigenes WLAN-Netzwerk erstellt.
-Klicken Sie auf das WLAN-/Netzwerksymbol in der unteren rechten Ecke Ihres Bildschirms (wo Sie normalerweise Ihr WLAN auswählen).
-- Nach einigen Sekunden sollte ein neues Netzwerk mit einem Namen wie „ODMR-XXXX“ in der Liste erscheinen.
-- Wählen Sie dieses Netzwerk aus, um eine Verbindung zum Gerät herzustellen.
-- Sobald die Verbindung hergestellt ist, öffnen Sie Ihren Browser und gehen Sie zu http://192.168.4.1
-- Auf der Website gehen Sie zu „Messung(Device)“.
+**C – USB am Android-Smartphone oder -Tablet:** Installieren Sie die App **UC2 Control** ([APK herunterladen](https://github.com/youseetoo/UC2Control/releases/latest) und die Installation erlauben), verbinden Sie den ESP32 mit einem USB-C-(OTG-)Kabel, erlauben Sie den USB-Zugriff, wenn Android fragt, und öffnen Sie den Reiter **ODMR**. Er bietet dieselben Messungen (Sweep, Live, B-Feld, Justage mit Anleitung); Diagramme lassen sich mit zwei Fingern zoomen, ein Tipp zeigt den Messwert; CSV- und PNG-Dateien landen in `Download/UC2 ODMR/` und können direkt geteilt werden (E-Mail, Cloud, Messenger). Chrome auf Android unterstützt kein Web Serial, dort also die App verwenden.
+
+**D – WLAN, beliebiges Gerät (ab Werk aus):** Der Funk des Boards ist bei Auslieferung ausgeschaltet.
+
+:::warning
+Das Gerät ist mit ausgeschaltetem Funk CE-konform. Mit eingeschaltetem WLAN gilt diese Konformitätsbewertung nicht mehr – Betrieb auf eigene Verantwortung.
+:::
+
+- Zum Einschalten einmal über A oder B verbinden, oben auf **📶 WLAN aus** klicken und bestätigen. Die Einstellung bleibt auch nach einem Neustart erhalten, bis Sie sie dort wieder ausschalten (serieller Befehl: `WIFI ON` / `WIFI OFF`).
+- Mit dem Netzwerk `openUC2_ODMR_XXXXXX` verbinden (kein Passwort) und http://192.168.4.1 in einem beliebigen Browser öffnen.
+
+#### Direkt hier ausprobieren
+
+Board per USB anschließen und auf **Gerät verbinden** klicken (Chrome oder Edge am Computer):
+
+<iframe
+  src="https://youseetoo.github.io/odmr/"
+  title="openUC2 ODMR control app"
+  allow="serial"
+  style={{width: '100%', height: '850px', border: '1px solid #ddd', borderRadius: '8px'}}
+/>
 
 
 ### 2.4: Test im Web‑Interface

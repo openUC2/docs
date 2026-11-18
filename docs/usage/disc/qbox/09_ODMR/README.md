@@ -26,7 +26,8 @@ ODMR combines optical spectroscopy with magnetic resonance to detect spin transi
 | Firmware (flash in Chrome/Edge, category **qBOX (ODMR)**) | [openUC2 web flasher](https://youseetoo.github.io/) |
 | Control app, computer (USB, Chrome/Edge) | [youseetoo.github.io/odmr](https://youseetoo.github.io/odmr) |
 | Control app, Android (USB-C OTG, **ODMR** tab) | [UC2 Control APK](https://github.com/youseetoo/UC2Control/releases/latest) |
-| Control without a cable | the board's own WiFi, `http://192.168.4.1` |
+| Control app, iPad/iPhone (USB-C, XIAO ESP32-S3) | the board appears as a wired network: `http://192.168.7.1` in Safari |
+| Control without a cable | the board's own WiFi, `http://192.168.4.1` — **off by default**, switch it on in the app (📶); with WiFi on, the CE assessment no longer applies |
 | Source code, serial protocol | [ODMR_Server](https://github.com/openUC2/TechnicalDocs-openUC2-QBox/tree/main/Production_Files/Software/ODMR_Server) |
 
 Step-by-step: section 2.2–2.3 of the ODMR tutorial.
