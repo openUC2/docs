@@ -18,5 +18,7 @@ numbers will still change.
 | [Filter changer](./filter-changer/README.md) | motorised linear changer for four complete filter sets | rev C designed, LED variant added |
 | [Multicolour LED](./multicolour-led/README.md) | three LEDs combined into one cube for fluorescence | rev A designed after a first print |
 | [DLP4710 LED projector](./dlp4710-projector/README.md) | blue, green or red light patterns through the FRAME's objective, LEDs built in | optics compared in theory; prototype once the module is here |
+| [Cube bus contacts](./cube-bus/README.md) | spring-pin contacts that connect a cube to the CAN bus and 12 V when it stands on the plate | concept checked against the cube CAD; first test parts in preparation |
+| [Markers on cubes](./cube-markers/README.md) | small codes on a cube that tell a camera which module it is and where it stands | collection of ideas; first print test planned |
 
 Questions or ideas? Write to [support@openuc2.com](mailto:support@openuc2.com).
