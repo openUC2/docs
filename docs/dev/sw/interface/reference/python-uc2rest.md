@@ -77,6 +77,9 @@ Axes: a name or the firmware `stepperid`: `"A"`/0, `"X"`/1, `"Y"`/2, `"Z"`/3, `"
 | `digitalout` / `digitalin` | `set_digitalout(id, val)` (−1 = pulse), `set_trigger(...)`, `get_digitalin(id)` | local only (no `node`) |
 | `gpio`, `i2c` | `get_status(node)`, `set_threshold`, `calibrate`, …; `transaction(addr, write, read, node)`, `scan(node)` | `/gpio_*`, `/i2c_*` |
 | `fan` | `get_fan()`, `get_temp()`, `set_mode(mode, wiper)` | `/fan_*`, `/temp_get` |
+| `display` | `get_display()` → `{present, on, addr, name, status, progress, fw, flip, contrast, splash}` (`{}` without the module), `is_present()` | `/display_get` |
+| | `set_name(name)`, `set_status(text, progress=None)`, `set_progress(0-100)`, `clear_status()`, `show_splash()` — ASCII only, longer text scrolls on the ESP | `/display_act` |
+| | `on()`, `off()`, `set_on(bool)`, `set_flip(bool)`, `set_contrast(0-255)` — stored on the ESP | `/display_act` |
 | `can` | `scan(timeout=5)` → result also in `can.scanResults` | `/can_act` `scan` |
 | | `reboot_remote(can_address=N)` (non-blocking) | `/can_act` `restart` |
 | | `set_remote_node_id(new_id, target=old, isBlocking=False)`, `assign_node_id_by_mac(mac, new_id)` | `/can_act` `setRemoteNodeId` |

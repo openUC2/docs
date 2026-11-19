@@ -80,6 +80,7 @@ A 3.5 mm TRS jack takes an external box with a normally-closed stop button betwe
 | Pin map | [`main/config/UC2_canopen_master/PinConfig.h`](https://github.com/youseetoo/uc2-esp32/blob/main/main/config/UC2_canopen_master/PinConfig.h) |
 | Bus | CANopen master, node 1, 500 kbit/s |
 | Default routing | motors A / X / Y / Z to nodes 10 to 13, lasers 0 to 3 to node 20, LED array and laser 4 to node 30, galvo to node 40, digital I/O to node 60 |
+| Status display | optional 0.91" OLED on the I2C bus, shows the firmware version, device name and experiment step: [Status display](../../../sw/interface/how-to/status-display.md) |
 
 Flash it over the USB-C port of the HAT as described in [Flashing the firmware](../flashing.md). In a FRAME running ImSwitch OS, the Pi can also do it without a cable through its UART and the auto-program lines.
 

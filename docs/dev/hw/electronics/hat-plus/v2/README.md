@@ -32,6 +32,7 @@ This page describes Rev. D and E, the boards in FRAMEs shipped up to autumn 2026
   - **Sensors & I/O**:
     - INA226 current sensor (I2C addr 0x46)
     - two TMP102 temperature sensors (I2C addrs typically 0x4A and 0x4B)
+    - optional 0.91" 128x32 OLED status display (SSD1306, I2C addr 0x3C or 0x3D) on the shared I2C bus, see [Status display](../../../../sw/interface/how-to/status-display.md)
     - NeoPixel header/extend, camera trigger out, fan tacho feedback, front-panel header
   - Dual **HAT+ EEPROMs** (Standard class + Power MODE1 class "5 A capable") for automatic OS configuration. (not working currently, workaround through our Raspi OS)
 
@@ -104,6 +105,7 @@ Matches the Rev D netlist and the firmware env `UC2_canopen_master` (`main/confi
 - ESP32 uses:
   - GPIO21 = SDA
   - GPIO22 = SCL
+- On the bus: INA226 (0x46), TMP102 (0x4A, 0x4B), the fan potentiometer on the [panel board](../../hat-panelboard/README.md) (MCP4017, 0x2F) and the optional status display (0x3C or 0x3D). The firmware runs the bus at 100 kHz and raises it to 400 kHz only while the display is refreshed.
 
 ### Bridging Pi ↔ ESP I2C
 - **JP101 (SDA)** and **JP102 (SCL)** are the solder jumpers that connect the Pi I2C-1 lines into the HAT shared I2C net (and therefore to the ESP32 I2C pins and the I2C header ecosystem).  
@@ -274,6 +276,7 @@ Expected addresses:
 
 * INA226: 0x46
 * TMP102: typically 0x4A and 0x4B
+* OLED status display, if connected: 0x3C (some modules 0x3D)
 
 
 
