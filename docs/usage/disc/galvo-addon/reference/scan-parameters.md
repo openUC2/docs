@@ -32,9 +32,11 @@ controller) and the UC2 flasher (Galvo tab) send the same fields.
 Validated with FLIM LABS (PLF reconstruction, 40 MHz) in August 2026 and checked again in
 November 2026, see [Stripes, dots and lines in FLIM images](../explanation/flim-image-artefacts.md).
 ImSwitch and the flasher use them as defaults. The firmware's own defaults, used when nothing
-is saved on the board, do not suit FLIM.
+is saved on the board, do not suit FLIM in firmware up to November 2026. From the next
+firmware release on they are the recommended values (hardware pixel clock off). A board that
+has a configuration saved keeps it: load the recommended values and save them once.
 
-| parameter | recommended | firmware default (nothing saved) |
+| parameter | recommended | firmware default up to Nov. 2026 (nothing saved) |
 |---|---|---|
 | `sample_period_us` | 25 | 1 |
 | `pre_samples` | 64 | 4 |
@@ -116,7 +118,7 @@ shortening the fly-back or settle for faster frames, check the left edge of the 
 |---|---|---|
 | DAC step per pixel | (x_max - x_min) / (nx - 1) | 11.8 counts |
 | samples per line | pre + 2 × overscan + nx + fly-back + settle (no fly-back when bidirectional); at most 4096 | 768 |
-| line time | samples per line × dwell, plus about 56 µs for the Y step and line pulse | 19.26 ms (measured) |
+| line time | samples per line × dwell, plus about 56 µs for the Y step and line pulse; the next firmware release adds a 0.2 ms pause per line, see below | 19.26 ms (measured) |
 | frame time | ny × line time | 4.93 s |
 | time spent on image pixels | nx / samples per line | 33 % |
 | photons per pixel | proportional to the dwell | |
@@ -144,7 +146,56 @@ Note the DAC values that put the beam on the optical axis (tutorial,
 after a scan, so that the laser comes out of the objective on the axis and not into the
 edge of an opening.
 
-:::note ✏️ TODO - Benedict
-Describe how to park the beam in the current ImSwitch / firmware version (button or
-command, and whether the scanner returns to the park position after a scan stops).
-:::
+- **ImSwitch** (galvo scanner app, Parking Position): Park X / Park Y, **Park now**, and
+  **Park on stop** (on by default: every stop of a raster or point scan ends with a park).
+  The values are saved in `~/.imswitch/galvo_park_<name>.json` and survive a restart; the
+  setup file can preset them (`park_x`, `park_y`, `park_on_stop`).
+- **Firmware**: `{"task": "/galvo_act", "galvo": {"x": 2048, "y": 2048}}` stops a running scan
+  and writes the position straight to the DAC. It works the same through a CAN master. The
+  board itself does not park when a scan stops, and after a reboot with auto-start it scans
+  again: parking is the job of the software that stops the scan.
+- The park position goes through the X/Y output scale like every other DAC value.
+
+## Over a CAN master
+
+When the galvo board is a CAN satellite, the master translates `/galvo_act` into CANopen
+object writes, and only part of the raster command arrives (firmware of November 2026):
+
+| field | over CAN |
+|---|---|
+| `nx`, `ny`, `x_min`, `y_min`, `sample_period_us`, `pre_samples`, `fly_samples`, `line_settle_samples`, `bidirectional`, `enable_trigger` | sent; nx and ny are 16 bit, so rasters above 512 × 512 arrive intact |
+| `x_max`, `y_max` | up to November 2026 not sent: the master sends the integer step (x_max - x_min) / nx, and the satellite rebuilds x_max = x_min + nx × step. From the next firmware release on sent exactly (step 0, x_max/y_max in object 0x2600 sub 1/2); master and satellite both need the new firmware |
+| `overscan_samples`, `trig_width_us`, `trig_delay_us`, `laser_blanking`, `apply_x_lut`, `frame_count`, `hw_pixel_clock`, `save` | not sent; the satellite uses its firmware defaults (up to November 2026: overscan 0, trigger width 1 µs, hardware pixel clock **on**; from the next release: the recommended values above) and scans until stopped |
+
+Up to November 2026 the integer step shrinks the scanned window, more so the more pixels
+there are. With X 500-3500:
+
+| nx | step | x_max reached | share of the window |
+|---|---|---|---|
+| 256 | 11 | 3316 | 94 % |
+| 512 | 5 | 3060 | 85 % |
+| 1024 | 2 | 2548 | 68 % |
+
+If nx is larger than x_max - x_min, the step is 0 and the satellite rejects the raster; the
+master still answers `return: 1`, so the host does not see it. With older firmware, connect
+the galvo board directly over USB for FLIM rasters and anything above 256 pixels per line.
+A satellite with the new firmware still accepts the step from an old master; an old satellite
+rejects the step 0 of a new master and does not scan.
+
+## Size limits (direct USB)
+
+- One line holds at most 4096 samples: pre + 2 × overscan + nx + fly-back + settle. With the
+  recommended timing that leaves nx up to 3584.
+- ny up to 65535; all timing fields are 16 bit.
+- The hardware pixel clock works up to nx = 1023; above that the board uses the software
+  pixel clock.
+- Arbitrary points: at most 256.
+
+## Serial replies during a scan
+
+Up to November 2026 the scan loop kept the processor core that sends serial replies busy for a
+whole frame, so replies sent during a scan came seconds late or were lost (details in
+[Stripes, dots and lines](../explanation/flim-image-artefacts.md#still-open)). From the next
+firmware release on the scanner pauses for 0.2 ms after every line; replies go out then. The
+pause lies after the last pixel, where PLF drops the photons anyway, so the image is unchanged
+and a frame of the recommended raster takes about 51 ms longer.

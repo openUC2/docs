@@ -100,19 +100,15 @@ module.exports = async function createConfigAsync() {
           },
           blog: false,
           theme: {
-            customCss: require.resolve('./src/css/custom.css'),
+            // KaTeX CSS (and its fonts) is bundled from node_modules rather than
+            // loaded from a CDN, so the site also renders offline without hanging.
+            customCss: [
+              require.resolve('katex/dist/katex.min.css'),
+              require.resolve('./src/css/custom.css'),
+            ],
           },
         } satisfies Options),
       ],
-    ],
-    stylesheets: [
-      {
-        href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-        type: 'text/css',
-        integrity:
-        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-        crossorigin: 'anonymous',
-      },
     ],
     themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */

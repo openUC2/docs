@@ -66,11 +66,25 @@ to a protection circuit. If the hardware checks are clean, record the scan comma
 ImSwitch sends (x_min, x_max, y_min, y_max, nx, ny) at the moment the image is stretched,
 and report it together with the image.
 
-## Workaround until it is fixed
+## Compensate a remaining difference in ImSwitch
 
-Set the DAC ranges so that one pixel has the same size in x and y. This is what a
-rectangular scan range does. Use the calibration from step 1 to compute the ranges, and
-note the values with the images.
+Driver gains never match exactly. ImSwitch has an **X/Y Output Scale** per galvo scanner
+(galvo scanner app, below Parking Position), 1.0 by default:
+
+1. Run the scanner-camera calibration (step 1).
+2. Press **Equalise from calibration**. ImSwitch lowers the scale of the axis with more
+   µm per DAC count until both match. You can also type the factors (0.1-2.0).
+3. Run the calibration again: x and y now give the same µm per DAC count, and a square
+   DAC window scans a square field.
+
+Every DAC value that goes to the board (raster window, arbitrary points, park position)
+becomes 2048 + scale × (value - 2048). The values you see and type stay nominal. The factors
+are saved with the park position (`~/.imswitch/galvo_park_<name>.json`). They can also be
+preset in the setup file (`scale_x`, `scale_y` in the galvo scanner's `managerProperties`)
+or set over the API (`setGalvoAxisScale`).
+
+The scale makes the image square, but it does not fix the cause. A factor far from 1, or
+one that changes from day to day, still points to the hardware checks above.
 
 :::note ✏️ TODO - Benedict
 Add the measured angle per volt of the galvo drivers we ship (degrees per DAC count at the

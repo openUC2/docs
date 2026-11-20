@@ -104,6 +104,12 @@ same direction (dichroic tilt).
 Put the galvo cube back (galvo still powered and centred). The beam meets **mirror A** first
 (upper, it scans x) and then **mirror B**, 7.4 mm below it (it scans z).
 
+:::note ✏️ TODO - Benedict
+Once the galvo cube is closed, the mirrors cannot be seen. Planned: a slide-out window (or a
+rotatable cover) in the galvo cube so that the spot on both mirrors can be checked without
+taking the cube out. Describe it here when the part exists.
+:::
+
 - Look at both mirrors from above. The spot must sit in the **middle of each mirror**,
   especially across the short side (6 mm): at 45° the spot is 1.4 times wider than the
   beam, so a 2 mm beam covers 2.8 mm of the 6 mm.
@@ -126,7 +132,9 @@ cell after the galvo, and a second one far away (at the end of the row or on the
 
 - Steer the beam onto both crosses with the **galvo centre** in ImSwitch (X / Y position).
   This makes "galvo centre" equal to "optical axis".
-- **Write the two DAC values down.** They are your parking position from now on.
+- **Enter the two DAC values as Park X / Park Y** in ImSwitch (galvo scanner, Parking
+  Position). ImSwitch keeps them across restarts and, with *Park on stop*, sends the beam
+  there whenever a scan stops.
 - Leave the junction dichroic alone: it would move the beam off the mirror centres you set
   in step 4.
 
@@ -206,7 +214,9 @@ camera.
    scale in µm per DAC count for x and for y.
 3. The two scales should agree within a few per cent. The optics give both axes the same
    scale. If they differ by a factor of 2 or more, go to
-   [Fix a stretched image](../how-to/fix-a-stretched-image.md).
+   [Fix a stretched image](../how-to/fix-a-stretched-image.md). A small remaining difference
+   from the two galvo drivers is compensated with **X/Y Output Scale → Equalise from
+   calibration** in ImSwitch; run the calibration once more afterwards.
 
 ![](../IMAGES/FLIMBUILD_7.jpg)
 

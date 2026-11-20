@@ -166,12 +166,24 @@ clock, feeding the watchdog after the DAC write instead of before the pulse woul
   each. The idle rate of that driver was 1.5 per frame, so the difference is within the
   noise. Repeat it: if the lattice is gone and cut lines do not increase, make
   `hw_pixel_clock: 1` the default.
-- **Firmware.** Feed the watchdog outside the pulse path, and build the galvo firmware as a
-  release build instead of the debug build.
-- **Firmware: replies after a reboot.** With `auto_start` the busy-waiting scan task (core 0,
-  priority 23) starves the serial reply task on the same core. For about 4 minutes after a
-  reboot the board answers commands late or not at all, and the console shows task-watchdog
-  warnings for IDLE0. Read the console log, wait, then send the save command on its own.
+- **Firmware.** Build the galvo firmware as a release build instead of the debug build. Fixes
+  for the next release (in the code, not yet tested on hardware): the watchdog is fed after
+  the DAC write instead of before the pixel pulse; the defaults are the recommended raster;
+  laser blanking now reaches GPIO43 (it set the wrong register for pins above 31).
+- **Firmware: serial replies get lost while a scan runs.** The scan task busy-waits on
+  core 0 at priority 23 and yields once per frame. The task that sends replies over USB
+  sits on the same core at priority 1, so it sends about one message per frame (several
+  seconds with the FLIM raster). Its queue holds 10 messages. When it is full, each further
+  reply is dropped after 100 ms, and the warning about it goes to UART0, whose pin the
+  scanner has taken over as the laser output. On top of that, `printf` logs from the galvo
+  code write into the same 64-byte USB FIFO and can cut bytes out of a reply. Incoming
+  commands are not lost: the receive side has 8 KiB buffers on core 1. After a reboot with
+  `auto_start` the same starvation also stretches the setup to about 4 minutes, with
+  task-watchdog warnings for IDLE0. Until the firmware is fixed: stop the scan before
+  sending several commands, read the console log, and send the save command on its own.
+  Fixed for the next release, not yet tested on hardware: the scanner pauses 0.2 ms after
+  every line so the reply task can run, and the release build no longer copies log output
+  to the USB port (the debug build still does).
 - **One reboot during the test**, cause unknown.
 - **Faster frames.** Only a third of each line is image (256 of 768 samples). A shorter
   fly-back and settle need a check of the left edge first.
