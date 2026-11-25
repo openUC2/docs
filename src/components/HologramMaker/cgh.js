@@ -92,12 +92,16 @@ export function ifta(A, W, n, iters = 100) {
   return { mask, intensity: Float64Array.from(Gr, (v, k) => v * v + Gi[k] * Gi[k]) };
 }
 
+export const A4 = [210, 297]; // mm
+
 // Single-page A4 PDF with the 1-bit pattern (1 = clear) at exact size, lossless (Flate).
-export async function makePdf(bits, w, dpi) {
+// x, y: top-left corner of the pattern in mm from the top-left of the page (default: centred).
+export async function makePdf(bits, w, dpi, x = (A4[0] - (w / dpi) * 25.4) / 2, y = (A4[1] - (w / dpi) * 25.4) / 2) {
   const rowBytes = Math.ceil(w / 8), raw = new Uint8Array(rowBytes * w);
   for (let y = 0; y < w; y++) for (let x = 0; x < w; x++) if (bits[y * w + x]) raw[y * rowBytes + (x >> 3)] |= 0x80 >> (x & 7);
   const data = new Uint8Array(await new Response(new Blob([raw]).stream().pipeThrough(new CompressionStream('deflate'))).arrayBuffer());
-  const s = ((w / dpi) * 72).toFixed(3), x0 = ((595.28 - s) / 2).toFixed(3), y0 = ((841.89 - s) / 2).toFixed(3);
+  const pt = 72 / 25.4, s = ((w / dpi) * 72).toFixed(3);
+  const x0 = (x * pt).toFixed(3), y0 = (841.89 - y * pt - s).toFixed(3); // PDF counts from the bottom
   const draw = `q ${s} 0 0 ${s} ${x0} ${y0} cm /Im Do Q`;
   const objects = [
     ['<< /Type /Catalog /Pages 2 0 R >>'],

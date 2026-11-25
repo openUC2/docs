@@ -121,6 +121,7 @@ Repeating the tile has a second benefit: every tile contains the whole picture, 
 - R. W. Gerchberg and W. O. Saxton, "A practical algorithm for the determination of phase from image and diffraction plane pictures", *Optik* 35, 237 (1972)
 - J. R. Fienup, "Phase retrieval algorithms: a comparison", *Applied Optics* 21, 2758 (1982)
 - T. G. Walker, "Holography without photography", *American Journal of Physics* 67, 783 (1999). The same experiment with a laser printer and overhead film: 300 × 300 pixels at 300 dpi on a 600 dpi printer, lit by a beam expanded to fill the whole 1-inch hologram.
+- J. Kilpatrick, ["Binary holograms"](https://kilpatrick.co.uk/post/2023-11-24-binary-holograms) (blog post, 2023). Gerchberg–Saxton in Python, 300 × 300 pixels printed at 600 dpi (42 µm) on overhead film, lit with a bare red laser pointer a few metres from the wall.
 - F. Wyrowski and O. Bryngdahl, "Iterative Fourier-transform algorithm applied to computer holography", *JOSA A* 5, 1058 (1988)
 
 **Back to:** [Print your own hologram](../tutorials/print-a-hologram.md)

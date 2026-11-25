@@ -1,6 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react';
 import demo from '@site/docs/usage/disc/holobox/tutorials/IMAGES/CGH/uc2.png';
-import {ifta, makePdf, shift} from './cgh';
+import {A4, ifta, makePdf, shift} from './cgh';
+
+const MARGIN = 5; // mm, most printers can't print closer to the edge
 import styles from './styles.module.css';
 
 // Binarized picture in the upper half of an n x n far field, see make_target() in cgh_ifta.py
@@ -55,6 +57,7 @@ export default function HologramMaker() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
   const [busy, setBusy] = useState(false);
+  const [spot, setSpot] = useState(null); // centre of the print on the sheet in mm, null = page centre
   const refs = [useRef(), useRef(), useRef()];
 
   useEffect(() => {
@@ -90,7 +93,7 @@ export default function HologramMaker() {
       sheet[y * w + x] = result.mask[(Math.floor(y / dots) % n) * n + (Math.floor(x / dots) % n)];
     }
     const a = document.createElement('a');
-    a.href = URL.createObjectURL(await makePdf(sheet, w, dpi));
+    a.href = URL.createObjectURL(await makePdf(sheet, w, dpi, place.x, place.y));
     a.download = `${name}_cgh_${dpi}dpi.pdf`;
     a.click();
     URL.revokeObjectURL(a.href);
@@ -98,6 +101,10 @@ export default function HologramMaker() {
 
   const set = (key, cast = Number) => (e) => setOpt({...opt, [key]: cast(e.target.value)});
   const pitch = (25.4 / opt.dpi) * opt.dots; // mm per hologram pixel
+  const side = opt.size * opt.tiles * pitch; // printed square in mm
+  const clamp = (v, page) => Math.round(Math.min(page - MARGIN - side, Math.max(MARGIN, v - side / 2)));
+  const place = {x: clamp(spot ? spot[0] : A4[0] / 2, A4[0]), y: clamp(spot ? spot[1] : A4[1] / 2, A4[1])}; // top-left in mm
+  const fits = side <= A4[0] - 2 * MARGIN;
 
   return (
     <div className={styles.maker}>
@@ -134,7 +141,23 @@ export default function HologramMaker() {
           Light in the picture: {(result.efficiency * 100).toFixed(1)} %.
         </>}
       </p>
-      <button className="button button--primary" disabled={busy || !result} onClick={download}>Download PDF</button>
+      <div className={styles.placement}>
+        <div className={styles.sheet} title="Click where the hologram should go"
+          onClick={(e) => {
+            const r = e.currentTarget.getBoundingClientRect();
+            setSpot([((e.clientX - r.left) / r.width) * A4[0], ((e.clientY - r.top) / r.height) * A4[1]]);
+          }}>
+          <div className={styles.print} style={{left: `${(place.x / A4[0]) * 100}%`, top: `${(place.y / A4[1]) * 100}%`,
+            width: `${(side / A4[0]) * 100}%`, height: `${(side / A4[1]) * 100}%`}} />
+        </div>
+        <div>
+          <p>Click on the A4 sheet to choose where the hologram is printed, so you can use the rest of the foil for the next one.</p>
+          <p>Top-left corner: <b>{place.x} mm</b> from the left edge, <b>{place.y} mm</b> from the top edge.</p>
+          {!fits && <p className={styles.error}>The print is too big for A4. Use fewer tiles.</p>}
+          <button className="button button--secondary button--sm" onClick={() => setSpot(null)}>Centre</button>{' '}
+          <button className="button button--primary" disabled={busy || !result || !fits} onClick={download}>Download PDF</button>
+        </div>
+      </div>
     </div>
   );
 }

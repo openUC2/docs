@@ -8,3 +8,8 @@
 .panels figcaption { font-size: 0.85rem; text-align: center; }
 .info { margin: 0.75rem 0; min-height: 3em; }
 .error { color: var(--ifm-color-danger); }
+.placement { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }
+.placement p { margin-bottom: 0.5rem; }
+.placement > div:last-child { flex: 1 1 220px; }
+.sheet { position: relative; width: 140px; aspect-ratio: 210 / 297; background: #fff; border: 1px solid var(--ifm-color-emphasis-400); box-shadow: 0 1px 4px rgb(0 0 0 / 20%); cursor: crosshair; }
+.print { position: absolute; background: repeating-conic-gradient(#222 0 25%, #888 0 50%) 0 0 / 4px 4px; outline: 1px solid var(--ifm-color-primary); pointer-events: none; }
