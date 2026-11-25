@@ -28,3 +28,6 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* "Last updated" is shown at the top of each doc (src/theme/DocItem/Content), not in the footer. */
+.theme-doc-footer-edit-meta-row { display: none; }

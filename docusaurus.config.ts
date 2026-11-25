@@ -57,6 +57,7 @@ module.exports = async function createConfigAsync() {
         },
       ],
       './plugins/html-assets',
+      './plugins/change-history',
       // NOTE: docusaurus-plugin-papersaurus is not compatible with Docusaurus v3.
       // Uncomment or replace once a v3-compatible version is available.
       // [
@@ -81,6 +82,10 @@ module.exports = async function createConfigAsync() {
             routeBasePath: '/',
             sidebarPath: require.resolve(`./config/sidebars.${variant}.ts`),
             remarkPlugins: [math],
+            // Git-based "last updated" stamp, rendered at the top of each page by
+            // src/theme/DocItem/Content. Needs full git history at build time.
+            showLastUpdateTime: true,
+            showLastUpdateAuthor: true,
             rehypePlugins: [katex],
             // Keep raw, unpublished source material out of the built site while
             // leaving it on disk for reuse (e.g. Notion exports of internal notes).
@@ -193,6 +198,10 @@ module.exports = async function createConfigAsync() {
               {
                 label: 'GitHub',
                 href: 'https://github.com/openUC2/',
+              },
+              {
+                label: 'Change history',
+                to: '/change-history',
               },
               {
                 label: 'Contact',
