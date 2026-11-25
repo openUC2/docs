@@ -8,8 +8,8 @@ description: The red single-axis servo driver boards that come with the low-cost
 
 *Reference. The servo driver that turns the differential signal (at most ±8.2 V, from the schematic) of the
 [galvo interface board](../../../../dev/hw/electronics/galvo-interface/README.md) into
-mirror angle. There is one driver per axis. Status 25 November 2026: scale (P1) and offset
-(P6) are identified, the other trimmers are not.*
+mirror angle. There is one driver per axis. Status 25 November 2026: the trimmers are named
+from the vendor's layout drawing; scale (P1) and offset (P6) are confirmed on the bench.*
 
 ![Driver board from above, with the seven trimmers numbered P1 to P7](../IMAGES/galvo_driver/driver_top_pots.webp)
 
@@ -23,9 +23,9 @@ Seen on the boards in the FLIM module (photos above and below):
 | op-amps | four 5532 dual op-amps (ST) |
 | power stage | a TDA2030 audio power amplifier, screwed to the black bracket, which is the heat sink |
 | supply | ±15 V; two 25 V electrolytic capacitors |
-| trimmers | six side-adjust multi-turn trimmers along the left edge (P1-P4 in one block, P5-P6 below) and one top-adjust trimmer in the middle (P7). The printed values read 103 (10 kΩ) or 104 (100 kΩ) |
+| trimmers | six side-adjust multi-turn trimmers along the left edge (P1-P4 in one block, P5-P6 below, with fixed resistors in the gap between them) and one top-adjust trimmer in the middle (P7). The printed values read 103 (10 kΩ) or 104 (100 kΩ) |
 | film capacitors | 220 nF, 100 nF and 22 nF, next to P1-P4 and P7 |
-| connectors | top: two 3-pin (one marked +15 V / GND / −15 V); bottom: a 6-pin to the galvo motor and a 3-pin marked +15 V / GND / Out |
+| connectors | signal input (+ signal, − signal, GND), power input (+15 V, GND, −15 V), the galvo motor, and a 3-pin "Output Power" (+15 V, GND, −15 V) that passes the supply on to the next board, according to the vendor's drawing |
 
 ![The driver board at an angle, with the bracket that cools the TDA2030](../IMAGES/galvo_driver/driver_angled.webp)
 
@@ -47,29 +47,32 @@ the same family (20 kpps galvo sets, closed-loop moving-magnet galvos, ±15 V), 
 The RGB-SCAN20 takes a **±5 V** differential input with 200 kΩ input resistance, needs
 +15 V at 1 A and −15 V at 0.6 A, and is specified for ±30° optical and 20 kpps at 20°.
 
-Our board is laid out differently: on the RGB-SCAN20 the six trimmers sit in one row along
-the long edge, and the motor connector has 7 pins. Our board has seven trimmers and a
-6-pin motor connector. P1 and P6 are identified (table below); the others are not yet.
+Our board is laid out differently from the RGB-SCAN20. The vendor of our boards sent a layout
+drawing with Chinese labels. It shows the seven trimmers of the board family in one row; on our
+board that row runs down the left edge (P1-P6), and position 5 is not a trimmer but fixed
+resistors (the gap between P4 and P5). The bench tests agree with this order: P1 is the
+scale and P6 the shift.
 
-| trimmer | value printed | function |
-|---|---|---|
-| P1 | 103 | **scale**: the scanned pattern grows or shrinks (IS or PS) |
-| P2 | 104 | no visible effect on a slow scan pattern |
-| P3 | 103 | no visible effect on a slow scan pattern |
-| P4 | 104 | no visible effect on a slow scan pattern |
-| P5 | 103 | no visible effect on a slow scan pattern |
-| P6 | 104 | **offset**: the pattern shifts (LIN) |
-| P7 | 103 | not tested |
+| our trimmer | vendor label | translation | most likely function | bench test, 25 Nov 2026 |
+|---|---|---|---|---|
+| P1 | 幅度1 | amplitude 1 | input scale (IS) | **scale**: the pattern grows or shrinks |
+| P2 | 加速 | acceleration | servo gain or damping: how hard the mirror is driven towards a new position | no visible effect on a slow pattern |
+| P3 | 角度 | angle | possibly the position-sensor scale (PS) or an angle limit | no visible effect on a slow pattern |
+| P4 | 减速 | deceleration | damping: how the mirror is braked at the target (overshoot) | no visible effect on a slow pattern |
+| - | 幅度2 | amplitude 2 | a second scale stage, here set by fixed resistors | - |
+| P5 | 对称 | symmetry | balance between the positive and the negative half of the deflection | no visible effect on a small, centred pattern |
+| P6 | 移动 | shift | offset (LIN) | **offset**: the pattern shifts |
+| P7 | not in the drawing | - | unknown | not tested |
 
-Tested 25 November 2026 by turning each trimmer while a scan pattern ran with the beam on a
-wall. P2-P5 are most likely servo gain and damping (SG, LFD, HFD): these only change how the
-mirror follows fast steps, which a slow pattern on a wall does not show. To tell them apart,
-watch the corners of a fast square pattern, as described below.
+The translations are literal. The functions in the fourth column are our reading of the labels,
+not the vendor's description. Acceleration and deceleration only change how the mirror follows
+fast steps, which a slow pattern on a wall does not show; watch the corners of a fast square
+pattern instead (next section). To see symmetry, scan close to the full range: one half of the
+pattern should grow while the other stays.
 
 :::note ✏️ TODO - Benedict
-Fill in P2-P5 and P7 once identified (next section), whether P1 is IS or PS, the input range of our boards
-(±5 V or more), and what the 3-pin "Out" connector carries. The printed values are read from
-a photo and need a check.
+Confirm P2-P5 with a fast square pattern, find out what P7 does, and check the input range of
+our boards (±5 V or more). The printed trimmer values are read from a photo and need a check.
 :::
 
 ## Finding out which trimmer is which
@@ -124,7 +127,7 @@ so tuning for speed brings little. A stable, well-damped response matters more.
 
 The two boards never have exactly the same gain. Compensate a remaining difference in
 software with the X/Y Output Scale in ImSwitch, see
-[Fix a stretched image](../how-to/fix-a-stretched-image.md). Turn the input scale (IS) only
+[Fix a stretched image](../how-to/fix-a-stretched-image.md). Turn the input scale (IS, P1 on our boards) only
 for a large difference that the hardware checks there do not explain, and calibrate the
 scanner again afterwards.
 
