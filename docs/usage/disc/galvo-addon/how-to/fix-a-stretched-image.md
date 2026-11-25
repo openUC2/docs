@@ -48,7 +48,8 @@ Check the hardware of the axis with the odd scale:
 
 1. **Driver gain.** The low-cost galvo drivers have a scale (gain) trimmer, and some have an
    input-range jumper. Compare the two driver boards. The same model should have the same
-   setting.
+   setting. See [Galvo driver board](../reference/galvo-driver-board.md) for the
+   trimmers of these drivers.
 2. **Differential input wiring.** Each axis is driven differentially (L+ / L- and
    R+ / R- SMA outputs of the galvo board). A loose, swapped or single-ended leg changes
    the amplitude by 2x, sometimes only now and then.

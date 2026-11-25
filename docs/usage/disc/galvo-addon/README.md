@@ -36,6 +36,8 @@ These pages follow [Diátaxis](https://diataxis.fr/): four kinds of page for fou
   measure the PSF.
 - [Stripes, dots or lines in FLIM images](./explanation/flim-image-artefacts.md#what-you-see-and-what-to-do):
   from what you see to what to do.
+- [A second peak in the FLIM decay](./explanation/flim-signal-cables.md#choosing-and-checking-the-cables):
+  choose and check the detector and sync cables.
 
 ### I want to understand it => Explanation
 
@@ -46,6 +48,9 @@ These pages follow [Diátaxis](https://diataxis.fr/): four kinds of page for fou
   mirrors and alignment errors.
 - [Stripes, dots and lines in FLIM images](./explanation/flim-image-artefacts.md): what the
   scan configuration, the USB link and the pixel clock timing do to a FLIM LABS image.
+- [Signal cables and a second peak in the decay](./explanation/flim-signal-cables.md): an
+  echo on the detector cable, how the bench tests found it, and why to calibrate again after
+  any cable change.
 
 ### I need a number => Reference
 
@@ -55,6 +60,8 @@ These pages follow [Diátaxis](https://diataxis.fr/): four kinds of page for fou
 - [Optical simulation (Optiland)](./reference/simulation.md)
 - [Galvo interface board](../../../dev/hw/electronics/galvo-interface/README.md)
 - [Trigger outputs (measured)](./reference/trigger-outputs.md)
+- [Galvo driver board](./reference/galvo-driver-board.md): the red ±15 V servo drivers, their
+  trimmers and how to identify them
 
 ## What is Galvo Scanning?
 

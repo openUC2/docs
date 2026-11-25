@@ -22,6 +22,7 @@ reconstruction, laser at 40 MHz, 256 × 256 pixels. What each scan parameter doe
 | A single very bright pixel near the end of a line, black after it | Same overflow, but pixel pulses were lost too, so the line ended early | Same |
 | A faint, sheared lattice of brighter pixels, about every 10 pixels | The 1 kHz FreeRTOS tick delays some pulses of the software pixel clock | `hw_pixel_clock: 1`, see [the 1 ms dot lattice](#the-1-ms-dot-lattice) |
 | Faint vertical lines at columns 32, 96, 160 and 224 | The scan loop feeds the task watchdog every 64 samples, just before a pixel pulse | `hw_pixel_clock: 1`, see [brighter columns](#brighter-columns-32-96-160-and-224) |
+| A second, smaller peak a few ns after the main one in the TCSPC histogram | An echo on the coax cable from the detector to the card | Use one continuous 50 Ω cable, see [Signal cables and a second peak](./flim-signal-cables.md) |
 
 A quick test separates the computer from the scanner: load the computer (for example a large
 compile) while FLIM Imager runs. If the streaks multiply, the cause is on the computer's
