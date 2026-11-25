@@ -51,7 +51,7 @@ function loadImage(src) {
 export default function HologramMaker() {
   const [src, setSrc] = useState(demo);
   const [name, setName] = useState('uc2');
-  const [opt, setOpt] = useState({dpi: 1200, dots: 1, size: 128, tiles: 8, invert: false});
+  const [opt, setOpt] = useState({dpi: 1200, dots: 1, size: 128, tiles: 8, nm: 520, invert: false});
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
   const [busy, setBusy] = useState(false);
@@ -81,7 +81,7 @@ export default function HologramMaker() {
       if (!cancelled) setBusy(false);
     }, 30);
     return () => { cancelled = true; clearTimeout(timer); };
-  }, [src, opt]);
+  }, [src, opt.size, opt.invert]); // the other options only change the print and the numbers
 
   async function download() {
     const {size: n, tiles, dots, dpi} = opt, w = n * tiles * dots;
@@ -110,12 +110,13 @@ export default function HologramMaker() {
           <option value={1200}>1200 dpi</option><option value={600}>600 dpi</option>
         </select></label>
         <label>Dots per pixel <select value={opt.dots} onChange={set('dots')}>
-          {[1, 2, 3].map((v) => <option key={v} value={v}>{v}</option>)}
+          {[1, 2, 3, 4].map((v) => <option key={v} value={v}>{v}</option>)}
         </select></label>
         <label>Tile <select value={opt.size} onChange={set('size')}>
           {[64, 128, 256].map((v) => <option key={v} value={v}>{v} px</option>)}
         </select></label>
         <label>Tiles <input type="number" min={1} max={32} value={opt.tiles} onChange={set('tiles', (v) => Math.min(32, Math.max(1, Number(v) || 1)))} /></label>
+        <label>Laser <input type="number" min={350} max={1100} step={1} value={opt.nm} onChange={set('nm', (v) => Number(v) || 520)} /> nm</label>
         <label><input type="checkbox" checked={opt.invert} onChange={(e) => setOpt({...opt, invert: e.target.checked})} /> Invert</label>
       </div>
       {error && <p className={styles.error}>{error}</p>}
@@ -128,7 +129,8 @@ export default function HologramMaker() {
         {busy ? 'Calculating…' : result && <>
           Pixel {(pitch * 1000).toFixed(1)} µm, tile {(opt.size * pitch).toFixed(2)} mm,
           print <b>{(opt.size * opt.tiles * pitch).toFixed(1)} mm square</b> (check with a ruler).
-          The pattern repeats every {(0.532 / pitch).toFixed(0)} mm per metre to the wall (532 nm).
+          At {opt.nm} nm and 1 m to the wall, the picture centre sits {(opt.nm * 1e-6 / pitch / 4 * 1000).toFixed(1)} mm above
+          the bright spot and the pattern repeats every {(opt.nm * 1e-6 / pitch * 1000).toFixed(1)} mm (both grow with the distance).
           Light in the picture: {(result.efficiency * 100).toFixed(1)} %.
         </>}
       </p>

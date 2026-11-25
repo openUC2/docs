@@ -86,6 +86,7 @@ The script uses an **IFTA** (iterative Fourier transform algorithm). It starts f
 | Dots per pixel | `--dots` | 1 | Printer dots per hologram pixel. Use 2 if your printer smears fine dots. |
 | Tile | `--size` | 128 | Tile size in pixels. This is the sharpness of the picture on the wall. |
 | Tiles | `--tiles` | 8 | How often the tile is repeated in each direction, which sets the print size. |
+| Laser | | 520 nm | Your laser's wavelength. Only changes the sizes printed below the preview, not the hologram. |
 | Invert | `--invert` | off | Light up the other colour, for example the background instead of the letters. |
 | | `--beam` | 2 | Your laser beam diameter in mm. Only used for the preview. |
 | | `--iters` | 100 | Number of IFTA rounds |
@@ -165,7 +166,7 @@ Try these:
 
 | What you see | What to do |
 |---|---|
-| Only the bright spot and some haze, no picture | Your printer can't print the fine dots. Use the 600 dpi file or `--dots 2`, and check that toner saving is off. |
+| Only the bright spot and some haze, or only speckle | Your printer can't print the fine dots. Most office printers can't print isolated single dots at their advertised resolution. Use **4 dots per pixel** at 1200 dpi (or 2 at 600 dpi). That is 85 µm pixels, as in [Walker 1999](https://pages.physics.wisc.edu/~tgwalker/047.holo.pdf). The picture gets 4× smaller, so put the wall 3–5 m away, and the tile gets 4× bigger, so widen the beam with the beam expander. Check that toner saving is off. |
 | The picture is a blurry mess of speckles | The beam isn't focused on the wall, or it is too narrow. Focus the laser, use a larger distance, or use the beam expander (option B). |
 | The picture is very dim | That's normal, only a few percent of the light ends up in it. Darken the room completely and use a white screen. |
 | The picture is mirrored | Turn the foil over. |
