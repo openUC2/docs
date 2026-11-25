@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="1000" height="700" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1000" height="700" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333"/>
+    </marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f6fb2"/>
+    </marker>
+  </defs>
+
+  <!-- lifelines -->
+  <rect x="80" y="20" width="180" height="44" rx="4" fill="#f4f4f4" stroke="#666"/>
+  <text x="170" y="48" font-size="15" text-anchor="middle" fill="#222">Scheduler</text>
+  <rect x="410" y="20" width="180" height="44" rx="4" fill="#f4f4f4" stroke="#666"/>
+  <text x="500" y="48" font-size="15" text-anchor="middle" fill="#222">Robot arm</text>
+  <rect x="740" y="20" width="180" height="44" rx="4" fill="#e9f2fa" stroke="#1f6fb2" stroke-width="2"/>
+  <text x="830" y="48" font-size="15" text-anchor="middle" fill="#123d63" font-weight="bold">Microscope</text>
+  <line x1="170" y1="64" x2="170" y2="680" stroke="#999" stroke-dasharray="5 5"/>
+  <line x1="500" y1="64" x2="500" y2="680" stroke="#999" stroke-dasharray="5 5"/>
+  <line x1="830" y1="64" x2="830" y2="680" stroke="#999" stroke-dasharray="5 5"/>
+
+  <!-- steps: scheduler -> microscope (blue), scheduler -> robot (grey) -->
+  <g font-size="13" fill="#222">
+    <line x1="170" y1="96" x2="826" y2="96" stroke="#1f6fb2" stroke-width="1.6" marker-end="url(#b)"/>
+    <text x="180" y="89">LockServer(id, timeout)</text>
+
+    <line x1="170" y1="140" x2="826" y2="140" stroke="#1f6fb2" stroke-width="1.6" marker-end="url(#b)"/>
+    <text x="180" y="133">PrepareForInput(Stage, 1, plate type, plate id)</text>
+    <rect x="846" y="124" width="142" height="40" rx="3" fill="#fff8e6" stroke="#c9a227"/>
+    <text x="917" y="140" font-size="12" text-anchor="middle">light off</text>
+    <text x="917" y="156" font-size="12" text-anchor="middle">stage → loading pos.</text>
+
+    <line x1="170" y1="190" x2="496" y2="190" stroke="#333" stroke-width="1.6" marker-end="url(#a)"/>
+    <text x="180" y="183">PrepareForOutput · PutLabware</text>
+    <line x1="500" y1="214" x2="826" y2="214" stroke="#333" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#a)"/>
+    <text x="512" y="208" font-size="12" fill="#555">plate placed on the stage</text>
+
+    <line x1="170" y1="258" x2="826" y2="258" stroke="#1f6fb2" stroke-width="1.6" marker-end="url(#b)"/>
+    <text x="180" y="251">LabwareDelivered(Stage)</text>
+
+    <rect x="200" y="282" width="600" height="138" rx="4" fill="#f7fafd" stroke="#1f6fb2" stroke-dasharray="4 3"/>
+    <text x="214" y="302" font-size="12" fill="#123d63" font-weight="bold">imaging steps, any of</text>
+    <line x1="170" y1="326" x2="826" y2="326" stroke="#1f6fb2" stroke-width="1.6" marker-end="url(#b)"/>
+    <text x="214" y="319">ImageWells(plate type, ["A1", "B2:B4"], light, intensity, exposure, autofocus)</text>
+    <line x1="170" y1="362" x2="826" y2="362" stroke="#1f6fb2" stroke-width="1.6" marker-end="url(#b)"/>
+    <text x="214" y="355">RunJob(name, parameters, confirmed)</text>
+    <line x1="826" y1="402" x2="174" y2="402" stroke="#1f6fb2" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#b)"/>
+    <text x="214" y="395" fill="#555">data path (OME-Zarr / OME-TIFF on the microscope)</text>
+
+    <line x1="170" y1="460" x2="826" y2="460" stroke="#1f6fb2" stroke-width="1.6" marker-end="url(#b)"/>
+    <text x="180" y="453">PrepareForOutput(Stage, 1)</text>
+    <rect x="846" y="444" width="142" height="40" rx="3" fill="#fff8e6" stroke="#c9a227"/>
+    <text x="917" y="460" font-size="12" text-anchor="middle">light off</text>
+    <text x="917" y="476" font-size="12" text-anchor="middle">stage → loading pos.</text>
+
+    <line x1="170" y1="512" x2="496" y2="512" stroke="#333" stroke-width="1.6" marker-end="url(#a)"/>
+    <text x="180" y="505">PrepareForInput · GetLabware</text>
+    <line x1="826" y1="536" x2="504" y2="536" stroke="#333" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#a)"/>
+    <text x="560" y="530" font-size="12" fill="#555">plate taken from the stage</text>
+
+    <line x1="170" y1="580" x2="826" y2="580" stroke="#1f6fb2" stroke-width="1.6" marker-end="url(#b)"/>
+    <text x="180" y="573">LabwareRemoved(Stage)</text>
+
+    <line x1="170" y1="624" x2="826" y2="624" stroke="#1f6fb2" stroke-width="1.6" marker-end="url(#b)"/>
+    <text x="180" y="617">UnlockServer(id)</text>
+  </g>
+  <text x="500" y="668" font-size="12" text-anchor="middle" fill="#666">Out of order (a second PrepareForInput, LabwareDelivered without PrepareForInput) → InvalidCommandSequence</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1000" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- states -->
+  <rect x="40" y="40" width="260" height="120" rx="8" fill="#f4f4f4" stroke="#666" stroke-width="1.5"/>
+  <text x="170" y="74" font-size="17" text-anchor="middle" fill="#222" font-weight="bold">Unlocked</text>
+  <text x="170" y="100" font-size="13" text-anchor="middle" fill="#333">workcell and UI both work</text>
+  <text x="170" y="120" font-size="13" text-anchor="middle" fill="#333">busy checks keep them</text>
+  <text x="170" y="138" font-size="13" text-anchor="middle" fill="#333">from running at once</text>
+
+  <rect x="700" y="40" width="260" height="120" rx="8" fill="#e9f2fa" stroke="#1f6fb2" stroke-width="2"/>
+  <text x="830" y="74" font-size="17" text-anchor="middle" fill="#123d63" font-weight="bold">Locked by the workcell</text>
+  <text x="830" y="100" font-size="13" text-anchor="middle" fill="#333">workcell calls pass</text>
+  <text x="830" y="120" font-size="13" text-anchor="middle" fill="#333">each call restarts the timeout</text>
+  <text x="830" y="138" font-size="13" text-anchor="middle" fill="#333">timeout 0 s = until unlocked</text>
+
+  <line x1="300" y1="80" x2="696" y2="80" stroke="#333" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="498" y="70" font-size="13" text-anchor="middle" fill="#222">LockServer(id, timeout)</text>
+  <line x1="700" y1="124" x2="304" y2="124" stroke="#333" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="498" y="114" font-size="13" text-anchor="middle" fill="#222">UnlockServer(id) · timeout · releaseWorkcellLock</text>
+
+  <!-- what the UI may do while locked -->
+  <text x="40" y="214" font-size="15" fill="#222" font-weight="bold">While locked, the ImSwitch HTTP API (UI, scripts) gets</text>
+  <rect x="40" y="232" width="440" height="160" rx="6" fill="#eef7ee" stroke="#3a8a3a"/>
+  <text x="60" y="260" font-size="15" fill="#225522" font-weight="bold">200 · open</text>
+  <text x="60" y="288" font-size="13" fill="#333">get… is… list… read…   (positions, images, status)</text>
+  <text x="60" y="312" font-size="13" fill="#333">stop… cancel… abort… force…   (an operator can always stop)</text>
+  <text x="60" y="336" font-size="13" fill="#333">live stream (mjpeg), downloads, the UI itself</text>
+  <text x="60" y="360" font-size="13" fill="#333">SiLa2Controller/getSiLA2Status, releaseWorkcellLock</text>
+
+  <rect x="520" y="232" width="440" height="160" rx="6" fill="#fbeeec" stroke="#b23a1f"/>
+  <text x="540" y="260" font-size="15" fill="#7a2310" font-weight="bold">423 Locked</text>
+  <text x="540" y="288" font-size="13" fill="#333">stage moves, jog, homing, objective change</text>
+  <text x="540" y="312" font-size="13" fill="#333">light on, intensity changes</text>
+  <text x="540" y="336" font-size="13" fill="#333">starting recordings, experiments, jobs</text>
+  <text x="540" y="360" font-size="13" fill="#333">camera and setup changes</text>
+</svg>
