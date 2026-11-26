@@ -73,7 +73,18 @@ lists the taught types. Teach again after you change the stage insert.
 ## 5. Check it, in three rounds {#check}
 
 `imswitch-sila-check` calls every SiLA command, the way the workcell will. Run it from any
-computer that reaches the FRAME:
+computer that reaches the FRAME (it needs only `pip install unitelabs-sila` and ImSwitch's
+`sila_check.py`). First see whether the FRAME is found on the network, with its LAN address:
+
+```bash
+imswitch-sila-check --list
+```
+
+```bash
+imswitch-sila-check --discover --name "FRAME 12"
+```
+
+Or, without discovery:
 
 ```bash
 imswitch-sila-check --host <frame> --port 50052
@@ -113,10 +124,20 @@ while locked, the ImSwitch UI can watch and stop but not move or light up.
 | `NotConfirmed` on RunJob | The job homes or changes the objective; run it with `Confirmed` set. |
 | `getSiLA2Status` shows an `error` | The server did not start, e.g. the port is taken; the ImSwitch log has the details. |
 
-## Extend the check with an AI coding agent
+## Let an AI agent test it as an outsider
 
-The check is plain Python in ImSwitch (`controllers/sila2/check.py`). To have a coding agent
-extend it for new commands, give it the ImSwitch file `docs/SILA2.md`, the
-[UniteLabs client tutorial](https://docs.unitelabs.io/connector-development/tutorial/build-a-sila-client/)
-and a running virtual microscope, and ask it to add a step for every new command and refusal,
-behind the existing flags, and to report server bugs instead of loosening the check.
+Before handing a FRAME to a workcell team, let a coding agent that has never seen ImSwitch build
+its own client, the way an integrator would. Give it only the running server and the
+[UniteLabs client tutorial](https://docs.unitelabs.io/connector-development/tutorial/build-a-sila-client/):
+
+> Build a test client that locates the SiLA server "FRAME 12" on the network by discovery,
+> connects to it, and tests all of its endpoints, following the tutorial. Treat the server as a
+> black box: learn its features from GetFeatureDefinition. Read every property, take a value
+> from every observable property, call every command, and provoke every declared error.
+> Report coverage, failures, and everything in the feature definitions that made the client
+> hard to write.
+
+Do this on the virtual microscope, or on a FRAME with the stage free. The first such run found
+eight faults the built-in check had missed (see [Architecture](../explanation/architecture.md#testing-every-command)).
+Fold what it finds into `imswitch-sila-check` (`imswitch/sila_check.py`), so the next run of the
+check catches it too.

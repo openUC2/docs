@@ -19,10 +19,12 @@ progress and return when done.
 |---|---|---|---|
 | Position | property | → Position `{X, Y, Z}` | NotAvailable |
 | LivePosition | observable property | → Position, twice per second | NotAvailable |
-| MoveTo | command | X, Y → Position (Z stays) | StageLimitReached, NotAvailable |
-| MoveFocusTo | command | Z → Position | StageLimitReached, NotAvailable |
-| MoveBy | command | X, Y, Z (relative; 0 = axis stays) → Position | StageLimitReached, NotAvailable |
-| MoveToLoadingPosition | command | → Position | NotAvailable |
+| TravelLimits | property | → list of `{Axis, Minimum, Maximum}`; axes without limits are not listed | NotAvailable |
+| LoadingPosition | property | → Position where hand-over drives the stage | NotAvailable |
+| MoveTo | command | X, Y → Position (Z stays) | StageLimitReached, InstrumentBusy, NotAvailable |
+| MoveFocusTo | command | Z → Position | StageLimitReached, InstrumentBusy, NotAvailable |
+| MoveBy | command | X, Y, Z (relative; 0 = axis stays) → Position | StageLimitReached, InstrumentBusy, NotAvailable |
+| MoveToLoadingPosition | command | → Position | InstrumentBusy, NotAvailable |
 | TeachLoadingPosition | command | current position becomes the loading position, saved | NotAvailable |
 | Home | observable command | → Position; Z first and lifted, then X, Y to the end switches | NotAvailable, InstrumentBusy |
 | Stop | command | stops every axis | NotAvailable |
@@ -33,8 +35,10 @@ progress and return when done.
 
 | Element | Kind | Parameters → responses | Errors |
 |---|---|---|---|
-| Detectors | property | → list of camera names | |
+| Detectors | property | → cameras that take images | |
+| ExposureTimes | property | → list of `{Detector, ExposureTime}` | |
 | IlluminationSources | property | → list of LED / laser names | |
+| Illumination | property | → list of `{Source, Enabled, Intensity, MinimumIntensity, MaximumIntensity, Units, Wavelength}` | |
 | Objectives | property | → list of `{Slot, Name, Magnification, NumericalAperture, PixelSize}` | NotAvailable |
 | CurrentObjective | property | → slot index | NotAvailable |
 | SnapImage | command | Detector, MaxSize (px, 0 = full) → Width, Height, Image (JPEG, 8 bit, min–max scaled) | UnknownDevice, NotAvailable |
@@ -42,7 +46,7 @@ progress and return when done.
 | SetExposureTime | command | Detector, ExposureTime (ms) | UnknownDevice, NotAvailable |
 | SetIllumination | command | Source, Intensity (units and range of the source), Enabled | UnknownDevice, NotAvailable, ValidationError |
 | SwitchOffIllumination | command | every source off | |
-| Autofocus | observable command | Range (±µm, ≤ 1000), Step (µm) → FocusPosition | NotAvailable, InstrumentBusy |
+| Autofocus | observable command | Range (±µm, ≤ 1000), Step (µm) → FocusPosition; refused while a scan runs | NotAvailable, InstrumentBusy |
 | MoveToObjective | observable command | Slot → CurrentObjective; the turret moves, Z follows the focus offset | NotAvailable, InstrumentBusy, UnknownDevice |
 
 ## Experiment Controller
@@ -57,8 +61,8 @@ progress and return when done.
 | LastDataPath | property | → folder of the last experiment | NotAvailable |
 | ExperimentSchema | property | → JSON schema of StartExperiment's input | |
 | SetPlateOrigin | command | Labware, Well; the stage is centred over the well; saved | UnknownDevice, NotAvailable |
-| MoveToWell | command | Labware, Well → Position | UnknownDevice, PlateNotCalibrated, StageLimitReached, NotAvailable |
-| ImageWells | observable command | Labware, Wells (e.g. `["A1", "B2:B4"]`), Illumination, Intensity, ExposureTime, Autofocus → DataPath (one OME-Zarr per well; light off afterwards) | UnknownDevice, PlateNotCalibrated, InstrumentBusy, NotAvailable |
+| MoveToWell | command | Labware, Well → Position | UnknownDevice, PlateNotCalibrated, StageLimitReached, InstrumentBusy, NotAvailable |
+| ImageWells | observable command | Labware, Wells (at least one, e.g. `["A1", "B2:B4"]`), Illumination, Intensity, ExposureTime, Autofocus → DataPath (one OME-Zarr per well; light off afterwards; the stage stays at the last well) | UnknownDevice, PlateNotCalibrated, InstrumentBusy, NotAvailable, ValidationError |
 | StartExperiment | command | Experiment (JSON, as ImSwitch's `startWellplateExperiment`) → Name; returns at once | InstrumentBusy, NotAvailable, ValidationError |
 | PauseExperiment, ResumeExperiment, StopExperiment | command | | NotAvailable |
 
@@ -70,7 +74,7 @@ progress and return when done.
 |---|---|---|---|
 | Jobs | property | → saved jobs and bundled examples | NotAvailable |
 | JobStatus | property | → idle, running, paused, finished, failed, aborted | NotAvailable |
-| RunJob | observable command | Name, Parameters (JSON object or empty), Confirmed → DataPath (empty without images) | UnknownDevice, InstrumentBusy, NotConfirmed, JobFailed, NotAvailable |
+| RunJob | observable command | Name, Parameters (JSON object or empty), Confirmed → DataPath (empty without images) | UnknownDevice, InstrumentBusy, NotConfirmed, JobFailed, NotAvailable, ValidationError |
 | AbortJob | command | stops the running job, the stage and the light | NotAvailable |
 
 ## Labware Transfer Site Controller
@@ -88,7 +92,8 @@ one internal position.
 | PrepareForOutput | observable command | HandoverPosition, InternalPosition | light off, stage to the loading position |
 | LabwareRemoved | command | HandoverPosition | the stage is empty |
 
-Out of order or at an unknown position: `InvalidCommandSequence`. Busy: `InstrumentBusy`.
+Out of order: `InvalidCommandSequence`. An unknown handover position or an internal position
+other than 1: validation error. Busy: `InstrumentBusy`.
 
 ## Lock Controller
 
@@ -118,7 +123,8 @@ advisory.
 | PlateNotCalibrated | No taught origin for this plate type |
 | NotConfirmed | The job has ask-first steps; run it with Confirmed |
 | JobFailed | The job ended failed or aborted, or asked an operator question |
-| InvalidCommandSequence | Hand-over calls out of order, or an unknown handover position |
+| InvalidCommandSequence | Hand-over calls out of order |
+| ValidationError (SiLA) | Malformed input: bad JSON, an empty well list, an intensity out of range, an unknown handover position |
 
 ## Setup keys {#setup}
 
@@ -149,14 +155,18 @@ The loading position is `sampleLoadingPositionX/Y/Z` in the positioner's `manage
 
 ## Check client flags
 
-`imswitch-sila-check [--host H] [--port P] [--tls --ca CA.pem | --discover --name N] …`
+`imswitch-sila-check [--list] [--host H --port P | --discover --name N | --discover --uuid U] [--tls --ca CA.pem] …`
+
+Needs only the `unitelabs-sila` Python package, so it runs on any computer that reaches the
+microscope.
 
 | Flag | Adds |
 |---|---|
-| (none) | Properties, snaps, exposure, the refusals, the lock; nothing moves, no light |
+| `--list` | Only lists the SiLA servers announcing themselves on the network |
+| (none) | Properties, every feature definition, snaps, exposure, the refusals, the lock; nothing moves, no light |
 | `--motion` | Small relative moves, loading position, MoveToWell, the objective, the hand-over |
 | `--light` | Illumination at `--intensity` |
 | `--motion --light` | Autofocus, ImageWells, RunJob (`--job`) |
-| `--teach` | Overwrites the plate origin and the loading position |
+| `--teach` | Overwrites the plate origin and the loading position; toggles the server-initiated connection mode and sets it back |
 | `--home` | Homing |
 | `--json FILE` | Writes the results |

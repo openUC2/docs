@@ -83,7 +83,7 @@ on every call to a covered feature, even when nothing is locked, which breaks cl
 lock. In a workcell the scheduler is the only SiLA client, so the lock protects against the case
 that matters: the person at the UI.
 
-## Testing every command
+## Testing every command {#testing-every-command}
 
 The check client (`imswitch-sila-check`) is a SiLA client that calls every command and checks
 every refusal, the way a scheduler would. It runs in continuous integration against the virtual
@@ -91,6 +91,16 @@ microscope, and by hand against a real FRAME in rounds: first nothing that moves
 light, then homing. Every command is either run or reported as skipped, so a new command without
 a test shows up as a failure. The idea came from connector development at UniteLabs: build the
 server, build a client that exercises every endpoint, and iterate until both agree.
+
+A check written by the people who wrote the server shares their blind spots. So the server was
+also tested as an outsider sees it: a coding agent with no access to ImSwitch, given only the
+UniteLabs client tutorial and the running virtual microscope, found the server by discovery,
+read its feature definitions and wrote its own client for all 85 elements. It found eight faults
+the built-in check had missed - moves and autofocus not refused during a scan, malformed input
+reported as an undefined error instead of a validation error, a timed-out lock not announced to
+subscribers, the server-initiated connection mode failing - and a list of integrator complaints:
+travel limits, loading position, light state and exposure could not be read back. All are fixed
+and now part of the built-in check.
 
 ## Limits
 
