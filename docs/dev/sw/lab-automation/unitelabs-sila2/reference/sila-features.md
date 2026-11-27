@@ -136,7 +136,7 @@ advisory.
 | `serverName`, `serverDescription`, `serverVersion`, `vendorUrl` | | Reported to clients |
 | `serverHost`, `serverPort` | `0.0.0.0`, `50052` | Bind address |
 | `serverUUID` | derived from host name and port | Fixed server UUID |
-| `discovery` | `true` | mDNS announcement |
+| `discovery` | `true` | mDNS announcement, with the address of each network interface |
 | `tls`, `certificateChain`, `privateKey` | off | TLS |
 | `cloudEndpoint`, `cloudPort` | none, 443 | UniteLabs cloud connection; none = local network only |
 | `handoverPositionName` | `Stage` | Name of the handover position |

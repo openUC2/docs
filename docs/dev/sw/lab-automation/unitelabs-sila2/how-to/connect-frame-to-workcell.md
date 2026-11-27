@@ -1,6 +1,6 @@
 ---
 title: Connect a FRAME to a workcell
-sidebar_position: 1
+sidebar_position: 2
 description: Switch on the SiLA 2 server of a FRAME, put it on the workcell network, teach the hand-over position and plate origins, and check it step by step.
 ---
 
@@ -35,8 +35,9 @@ curl http://<frame>:8001/imswitch/api/SiLa2Controller/getSiLA2Status
 ## 2. Network
 
 - The workcell must reach TCP port 50052 (gRPC) on the FRAME.
-- Discovery uses mDNS (UDP 5353 multicast). Guest Wi-Fi, VPNs and separate VLANs often block
-  it; then give the workcell the FRAME's address and port instead.
+- Discovery uses mDNS (UDP 5353 multicast). The FRAME announces the address of each of its
+  network interfaces (Ethernet, Wi-Fi) on that interface. Guest Wi-Fi, VPNs and separate VLANs
+  often block multicast; then give the workcell the FRAME's address and port instead.
 - Give the FRAME a fixed host name or address. The server UUID is derived from host name and
   port; set `serverUUID` in the `sila2` block if the host name will change.
 - For TLS set `tls: true` with `certificateChain` and `privateKey` (paths or PEM text); the
@@ -90,6 +91,9 @@ Or, without discovery:
 imswitch-sila-check --host <frame> --port 50052
 ```
 
+To click through the same commands by hand, open the FRAME in UniteLabs GroundControl:
+[Try the FRAME in GroundControl](./try-in-groundcontrol.md).
+
 Round 1 moves nothing and switches no light. Then, with the stage free:
 
 ```bash
@@ -118,6 +122,7 @@ while locked, the ImSwitch UI can watch and stop but not move or light up.
 |---|---|
 | The UI says *423 Locked* | A workcell holds the lock. Wait for its workflow, or after a crash free it: `curl -X POST http://<frame>:8001/imswitch/api/SiLa2Controller/releaseWorkcellLock` |
 | Discovery finds nothing | Multicast blocked; connect by address. Check that `discovery` is `true`. |
+| GroundControl lists the FRAME, but every request fails | The FRAME announced `127.0.0.1` (ImSwitch before 27 November 2026); see [GroundControl troubleshooting](./try-in-groundcontrol.md#troubleshooting). |
 | `StageLimitReached` | The target lies outside the stage travel limits; the limit is the answer, check the plate origin or the position. |
 | `PlateNotCalibrated` | Teach the plate type (step 4). |
 | `InstrumentBusy` | An acquisition, job or calibration runs in ImSwitch; wait or stop it. |

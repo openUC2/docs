@@ -16,7 +16,9 @@ A workcell has a **workflow layer** - the scheduler, inventory and sample regist
 and more AI agents that turn a scientist's intent into steps - and a **device layer** of
 incubators, robots, liquid handlers and microscopes. SiLA 2 is the boundary between them: each
 device describes its features (commands, properties, units, errors) and the workflow layer calls
-them over gRPC.
+them over gRPC. In a UniteLabs workcell the workflow layer is the UniteLabs Platform, and
+GroundControl on the lab network finds the devices; the ImSwitch SiLA server is built with the
+UniteLabs connector development kit, so the FRAME is a connector like the others.
 
 The FRAME is a device. It does not know about the other stations, the plate's history or the
 next step; the scheduler does. What the FRAME knows, and nothing above it can know, is its
