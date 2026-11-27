@@ -47,8 +47,7 @@ Illumination panel with fluorescence channel selected. Notion / existing source:
 ## Step 4 — Save
 
 - Channel metadata in OME-TIFF; opening in Fiji.
-- <img width="1920" height="1200" alt="ThermofischerSlide_20x_AF488" src="https://github.com/user-attachments/assets/2a334df2-35e5-48c8-b34f-b634d2316ceb" />
-![Alex Flour 488 labeled Microtubules](.\IMAGES\ThermofischerSlide_20x_AF488.png)
+![Alex Flour 488 labeled Microtubules](./IMAGES/ThermofischerSlide_20x_AF488.png)
 
 
 
