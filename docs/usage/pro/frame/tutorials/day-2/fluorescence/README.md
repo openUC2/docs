@@ -24,7 +24,7 @@ Fill in the exact laser classes and the required safety wording for the FRAME.
 # Setup information
 Frame is able to have epi-fluoresence mode, which means the illumination light from Laser or LED will be reflected by the dichroic mirror and enter the objective, the fluorescence signal will pass through the dichroic mirror to the camera.
 For Frame11, the fluorescence illumination LED was controlled by the control board and LED driver board. The control board get the signal via CAN bus and send PWM control to the driver board. The driver board provides up to 1A to the LED.
-
+![Illumination control](.\IMAGES\Fluorescence_Control.png)
 ## Step 1 — Select a channel
 
 - Which laser matches which dye (405 - DAPI, 488 - GFP, 635 - AlexaFluor 647, etc.).
@@ -46,6 +46,14 @@ Illumination panel with fluorescence channel selected. Notion / existing source:
 ## Step 4 — Save
 
 - Channel metadata in OME-TIFF; opening in Fiji.
+- <img width="1920" height="1200" alt="ThermofischerSlide_20x_AF488" src="https://github.com/user-attachments/assets/2a334df2-35e5-48c8-b34f-b634d2316ceb" />
+![Alex Flour 488 labeled Microtubules](.\IMAGES\ThermofischerSlide_20x_AF488.png)
+
+
+
+
+
+
 
 # Demostration video
 
