@@ -9,7 +9,7 @@ sidebar_position: 50
 Scaffold. Replace the bullet prompts with your own text and delete this banner when done.
 :::
 
-*Learning-oriented, for users (biologists).* If your FRAME is equipped with laser
+*Learning-oriented, for users (biologists).* If your FRAME is equipped with laser or LED
 illumination, this tutorial captures a single fluorescence channel and then a
 multi-channel image.
 
@@ -20,6 +20,10 @@ multi-channel image.
 :::note TODO
 Fill in the exact laser classes and the required safety wording for the FRAME.
 :::
+
+# Setup information
+Frame is able to have epi-fluoresence mode, which means the illumination light from Laser or LED will be reflected by the dichroic mirror and enter the objective, the fluorescence signal will pass through the dichroic mirror to the camera.
+For Frame11, the fluorescence illumination LED was controlled by the control board and LED driver board. The control board get the signal via CAN bus and send PWM control to the driver board. The driver board provides up to 1A to the LED.
 
 ## Step 1 — Select a channel
 
@@ -42,6 +46,10 @@ Illumination panel with fluorescence channel selected. Notion / existing source:
 ## Step 4 — Save
 
 - Channel metadata in OME-TIFF; opening in Fiji.
+
+# Demostration video
+
+
 
 ## Related
 
