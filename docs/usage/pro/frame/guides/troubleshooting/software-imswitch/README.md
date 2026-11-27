@@ -41,6 +41,12 @@ Each Notion folder has screenshots to reuse.
 - **Cause:** not confirmed. Seen at a commissioning in November 2026 while frames were written to the micro SD card.
 - **Fix:** the data is complete. Write to a USB drive or an SSD if it happens often, and report it with the log.
 
+## ImSwitch exits at start: port in use
+
+- **Symptom:** ImSwitch stops right after starting. Its log says *Port 8001 is in use (another ImSwitch?): not opening the hardware.*
+- **Cause:** another program already uses the port, usually an ImSwitch that is still running. Two ImSwitch programs on one FRAME send commands to the same stage and controller, and the stage can lose its position.
+- **Fix:** stop the other ImSwitch first. If it was started through a launcher, for example `arch -x86_64` on a Mac, stop the Python process itself: the launcher can end while ImSwitch keeps running. To run a second, separate ImSwitch, such as the virtual microscope, give it another `--http-port`.
+
 ## Related
 
 - [ImSwitch UI reference](../../../reference/imswitch-ui-reference/README.md)

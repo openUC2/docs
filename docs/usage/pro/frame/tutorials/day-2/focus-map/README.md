@@ -47,3 +47,4 @@ Focus-map point placement UI. Notion source:
 
 - [Autofocus how-to](../../../guides/day-2/autofocus/README.md)
 - [Autofocus explained](../../../explanations/autofocus-explained/README.md)
+- [Focus across slides](../../../explanations/whole-slide-scanning/README.md#focus-across-slides): how far the focus moves over a slide holder, and how the focus map follows it

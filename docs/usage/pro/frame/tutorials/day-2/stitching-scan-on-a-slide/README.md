@@ -202,6 +202,7 @@ You are all set now and you can start your scan/experiment/run by pressing the g
 
 ## Related
 
+- [Scan the tissue on histology slides](../histology-slide-scan/README.md): the FRAME finds the sections itself and corrects the illumination
 - [Acquire a Z-stack](../z-stack/README.md)
 - [Keep a big scan in focus with a focus map](../focus-map/README.md)
 - How-to (after you've learned it): [pixel-size calibration](../../../guides/day-2/calibrate-pixel-size/README.md)
