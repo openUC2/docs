@@ -14,7 +14,7 @@ Welcome to the openUC2 development documentation! Here you'll find:
 
 **Start here** to control UC2 electronics from your own code: [Serial & CANopen interface](./sw/interface/index.md).
 
-**Lab automation:** run a FRAME as a SiLA 2 station in a robotic workcell: [Lab automation (SiLA 2)](./sw/lab-automation/index.md).
+**Lab automation:** run a FRAME as a station in a UniteLabs workcell over SiLA 2: [Lab automation](./sw/lab-automation/index.md).
 
 You can find source files (including editable design files) for our products [on GitHub](http://github.com/openUC2).
 

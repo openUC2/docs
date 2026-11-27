@@ -200,6 +200,13 @@ const redirectsMinimal = [
 		from: "/docs/ImSwitch/Quickstart",
 		to: "/dev/sw/imswitch/Quickstart",
 	},
+	// 2026-11 lab automation: SiLA docs moved under unitelabs-sila2/ (Arkitekt to follow)
+	...["tutorials/virtual-workcell", "how-to/connect-frame-to-workcell",
+		"reference/sila-features", "explanation/architecture",
+		"explanation/vision"].map((page) => ({
+		from: `/dev/sw/lab-automation/${page}`,
+		to: `/dev/sw/lab-automation/unitelabs-sila2/${page}`,
+	})),
 ];
 
 const redirectsQBox = [

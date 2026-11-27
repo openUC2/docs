@@ -11,7 +11,7 @@ SiLA 2 server, let the check client call every command, and then write the clien
 scheduler would be: lock the microscope, take a plate, image two wells, give the plate back.
 
 You need a Python environment with ImSwitch installed (see
-[ImSwitch installation](../../imswitch/README.md)). The SiLA parts come with it
+[ImSwitch installation](../../../imswitch/README.md)). The SiLA parts come with it
 (`unitelabs-cdk`, `unitelabs-sila`).
 
 ## 1. A setup with SiLA switched on
